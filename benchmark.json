@@ -1,7 +1,7 @@
 {
   "dataset": {
     "repo_id": "kairosmaterial/Magbench",
-    "revision": "TODO(owner)",
+    "revision": "to be provided",
     "data_version": "0.2.3",
     "license": "CC-BY-2.0",
     "targets": [
@@ -2678,13 +2678,13 @@
   },
   "awaiting_publication": {
     "prophet-spin-ex": {
-      "model_name": "Prophet-Spin-ex",
+      "model_name": "Prophet-Spin v1 ex",
       "score_sha256": "8433024ce7446820e24e78eba6840bc9c270c734fd7001d8cd0a4c765052b991",
       "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
       "inference_available": false
     },
     "prophet-spin-v2": {
-      "model_name": "Prophet-Spinv2",
+      "model_name": "Prophet-Spin v2",
       "score_sha256": "3eb46af0f3c7fe69632112ec5f1d2b8301c9a9257f6465b9fdc4a9759926aaf5",
       "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
       "inference_available": false

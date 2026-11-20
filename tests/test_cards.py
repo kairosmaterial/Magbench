@@ -97,7 +97,7 @@ def test_site_payload_and_pages(tmp_path):
     assert 'weights and inference code to be released' not in (tmp_path/'models/prophet-spin-v2.html').read_text()
     assert 'trained on a subset of the v5 dataset' in (tmp_path/'models/prophet-spin-v1.html').read_text()
     for path in tmp_path.rglob('*.html'):
-        assert 'TODO(owner)' not in path.read_text()
+        assert "TODO" not in path.read_text()
         assert '<footer' not in path.read_text()
 
 

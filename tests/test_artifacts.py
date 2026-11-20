@@ -108,7 +108,7 @@ def test_phonon_manifest_rejects_unlisted_and_duplicate_files(tmp_path):
 
 def test_unresolved_release_revision_requires_verified_local_data(tmp_path):
     p=tmp_path/'targets/scoring.json';p.parent.mkdir();p.write_bytes(b'{}')
-    settings={'dataset':{'revision':'TODO(owner)','targets':[{'path':'targets/scoring.json','size':2,'sha256':hashlib.sha256(b'{}').hexdigest()}]}}
+    settings={'dataset':{'revision':'to be provided','targets':[{'path':'targets/scoring.json','size':2,'sha256':hashlib.sha256(b'{}').hexdigest()}]}}
     assert artifacts.targets(settings,data=tmp_path,offline=True)==tmp_path/'targets'
     with pytest.raises(ValueError,match='immutable commit SHA'):
         artifacts.targets(settings,cache=tmp_path)

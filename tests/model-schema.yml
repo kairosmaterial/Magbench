@@ -54,7 +54,7 @@ properties:
   repo:
     anyOf:
     - *id002
-    - const: TODO(owner)
+    - const: to be provided
   checkpoint:
     type: object
     additionalProperties: false
@@ -62,19 +62,19 @@ properties:
       url:
         anyOf:
         - *id002
-        - const: TODO(owner)
+        - const: to be provided
       sha256:
         anyOf:
         - &id004
           type: string
           pattern: ^[0-9a-f]{64}$
-        - const: TODO(owner)
+        - const: to be provided
       size:
         anyOf:
         - &id003
           type: integer
           minimum: 1
-        - const: TODO(owner)
+        - const: to be provided
       filename:
         type: string
         pattern: ^[A-Za-z0-9][A-Za-z0-9_.-]*$
@@ -87,17 +87,17 @@ properties:
             - type: string
               format: uri
               pattern: ^https://[^\s]+$
-            - const: TODO(owner)
+            - const: to be provided
           sha256:
             anyOf:
             - type: string
               pattern: ^[0-9a-f]{64}$
-            - const: TODO(owner)
+            - const: to be provided
           size:
             anyOf:
             - type: integer
               minimum: 1
-            - const: TODO(owner)
+            - const: to be provided
           filename:
             type: string
             pattern: ^[A-Za-z0-9][A-Za-z0-9_.-]*$
@@ -120,7 +120,7 @@ properties:
   model_params:
     anyOf:
     - *id003
-    - const: TODO(owner)
+    - const: to be provided
   targets:
     type: array
     minItems: 1
@@ -137,16 +137,16 @@ properties:
         url:
           anyOf:
           - *id002
-          - const: TODO(owner)
+          - const: to be provided
         size:
           anyOf:
           - type: integer
             minimum: 0
-          - const: TODO(owner)
+          - const: to be provided
         open:
           anyOf:
           - type: boolean
-          - const: TODO(owner)
+          - const: to be provided
       required:
       - name
       - url
@@ -155,7 +155,7 @@ properties:
   test_set_informed:
     anyOf:
     - type: boolean
-    - const: TODO(owner)
+    - const: to be provided
   evaluation:
     type: object
     additionalProperties: false
@@ -201,7 +201,7 @@ properties:
         anyOf:
         - type: string
           pattern: ^\d+\.\d+(?:\.\d+)?$
-        - const: TODO(owner)
+        - const: to be provided
       dependencies:
         type: array
         minItems: 1
@@ -222,15 +222,15 @@ properties:
       url: &id005
         anyOf:
         - *id002
-        - const: TODO(owner)
+        - const: to be provided
       sha256: &id006
         anyOf:
         - *id004
-        - const: TODO(owner)
+        - const: to be provided
       size: &id007
         anyOf:
         - *id003
-        - const: TODO(owner)
+        - const: to be provided
       phonons:
         type: object
         additionalProperties: false
@@ -394,7 +394,7 @@ allOf:
             anyOf:
             - type: integer
               minimum: 1
-            - const: TODO(owner)
+            - const: to be provided
           filename:
             type: string
             pattern: ^[A-Za-z0-9][A-Za-z0-9_.-]*$
@@ -407,17 +407,17 @@ allOf:
                 - type: string
                   format: uri
                   pattern: ^https://[^\s]+$
-                - const: TODO(owner)
+                - const: to be provided
               sha256:
                 anyOf:
                 - type: string
                   pattern: ^[0-9a-f]{64}$
-                - const: TODO(owner)
+                - const: to be provided
               size:
                 anyOf:
                 - type: integer
                   minimum: 1
-                - const: TODO(owner)
+                - const: to be provided
               filename:
                 type: string
                 pattern: ^[A-Za-z0-9][A-Za-z0-9_.-]*$
@@ -453,17 +453,17 @@ allOf:
                 - type: string
                   format: uri
                   pattern: ^https://[^\s]+$
-                - const: TODO(owner)
+                - const: to be provided
               sha256:
                 anyOf:
                 - type: string
                   pattern: ^[0-9a-f]{64}$
-                - const: TODO(owner)
+                - const: to be provided
               size:
                 anyOf:
                 - type: integer
                   minimum: 1
-                - const: TODO(owner)
+                - const: to be provided
               files:
                 type: array
                 minItems: 1

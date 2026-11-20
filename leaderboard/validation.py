@@ -93,16 +93,16 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
     def unavailable(name,reason):
         review.record(name,'FAIL' if require_public else 'AWAITING ARTEFACTS',reason)
     def public_check(name,url,call):
-        if awaiting and url=='TODO(owner)':unavailable(name,'awaiting artefacts: a public address has not been supplied')
+        if awaiting and url=='to be provided':unavailable(name,'awaiting artefacts: a public address has not been supplied')
         elif offline:
             review.record(name,'NOT RUN' if awaiting and not require_public else 'FAIL','Offline mode cannot establish public availability')
         else:review.check(name,call)
     public_check('Public inference repository',card['repo'],lambda:artifacts.probe(card['repo']))
     public_check('Public checkpoint (range request)',card['checkpoint']['url'],lambda:artifacts.probe(card['checkpoint']['url'],checkpoint=True))
     def licenses():
-        if any(v=='TODO(owner)' or not v.strip() for v in card['license'].values()):raise ValueError('Both code and checkpoint licences must be stated')
+        if any(v=='to be provided' or not v.strip() for v in card['license'].values()):raise ValueError('Both code and checkpoint licences must be stated')
         return 'Code and checkpoint licences stated'
-    if awaiting and any(v=='TODO(owner)' for v in card['license'].values()):unavailable('Licences','awaiting artefacts: licence metadata requires owner confirmation')
+    if awaiting and any(v=='to be provided' for v in card['license'].values()):unavailable('Licences','awaiting artefacts: licence metadata requires owner confirmation')
     else:review.check('Licences',licenses)
     script=review.check('Inference syntax and adapter definition',lambda:str(check_adapter(card,folder).relative_to(folder)))
     if awaiting and not settings['awaiting_publication'][key].get('inference_available',False):

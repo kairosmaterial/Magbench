@@ -1,32 +1,32 @@
-model_name: Prophet-Spin-ex
+model_name: Prophet-Spin v1 ex
 model_key: prophet-spin-ex
 model_version: ex
 lifecycle: pending
 dates:
   benchmark_added: '2026-11-20'
 authors:
-- name: TODO(owner)
+- name: to be provided
   affiliation: Kairos Materials
   corresponding: true
-repo: TODO(owner)
+repo: to be provided
 checkpoint:
-  url: TODO(owner)
-  sha256: TODO(owner)
+  url: to be provided
+  sha256: to be provided
 license:
-  code: TODO(owner)
-  checkpoint: TODO(owner)
+  code: to be provided
+  checkpoint: to be provided
 architecture: Bilinear EFS
-model_params: TODO(owner)
+model_params: to be provided
 targets:
 - energy
 - forces
 - stress
 training_sets:
-- name: TODO(owner)
-  url: TODO(owner)
-  size: TODO(owner)
-  open: TODO(owner)
-test_set_informed: TODO(owner)
+- name: to be provided
+  url: to be provided
+  size: to be provided
+  open: to be provided
+test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
   seed_amplitudes: model
@@ -38,7 +38,7 @@ inference:
   script: inference.py
   adapter: Model
   command: python models/prophet-spin-ex/inference.py --help
-  python_version: TODO(owner)
+  python_version: to be provided
   dependencies:
   - torch==2.7.1+cu128
   - numpy==2.2.6
@@ -333,7 +333,7 @@ metrics:
   magnetovolume: 0.04872680585876527
   ground_state_passes: 155
 notes:
-  disclosure: TODO(owner)
+  disclosure: to be provided
   publication: weights and inference code to be released
   organisation: Kairos Materials
   exchange_readout: Bilinear exchange readout.

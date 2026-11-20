@@ -82,7 +82,7 @@ For energy mapping, map fixed DFT moment magnitudes from the starting cell to ea
 
 For readout, retain periodic lattice shifts, combine reverse directed half-bond contributions, convert eV coefficients and fixed DFT magnitude products into meV in the normalized-sign convention, and average equivalent physical bonds for each prescribed parameter. Finite-range unsupported bonds may have J=0. Missing in-range terms must not be silently dropped.
 
-TODO(owner): The owner accepted on 2026-11-19 an effective pair coupling derived analytically from the model energy as an exchange-readout route; this approval is recorded in the research review, not in the delivered package. TODO(owner): Confirm the public wording and scope of that extension, including density-mediated pair coefficients, while retaining the delivered scorer and reference values.
+to be provided: The owner accepted on 2026-11-19 an effective pair coupling derived analytically from the model energy as an exchange-readout route; this approval is recorded in the research review, not in the delivered package. to be provided: Confirm the public wording and scope of that extension, including density-mediated pair coefficients, while retaining the delivered scorer and reference values.
 
 For volume coupling, use the supplied isotropic volume deltas (−0.01, −0.005, +0.005, +0.01), scale cell lengths by `(1+delta)^(1/3)` at fixed fractional coordinates and fixed signed DFT moments, and evaluate the same exchange route at each volume and at zero. With `x=ln(1+delta)`, solve `J(delta)-J(0) = a*x + b*x²` by least squares with `rcond=None`; the slope a is dJ/dlnV in meV. Do not substitute a different zero-strain fit.
 
@@ -112,7 +112,7 @@ A missing, nonfinite or wrong-length slope array gives the entire material slope
 
 For dimension d with fixed cohort C_d, let `M_d = sum(S_i,d for i in C_d)/len(C_d)`. Report the dimension contribution `0.20*M_d`; total is the sum of the five contributions. The ground-state gate is applied before each property score. Scores are not bond-pooled. Materials outside a property cohort have no score for that property.
 
-TODO(owner): Confirm tie handling; the site uses the model key for deterministic ordering of identical totals.
+to be provided: Confirm tie handling; the site uses the model key for deterministic ordering of identical totals.
 
 ## Reproducibility and versioning
 
@@ -120,7 +120,7 @@ The delivered runner fingerprints checkpoint bytes, moment-head bytes, all infer
 
 The reference inference environment was Python 3.11.15, PyTorch 2.5.1+cu121, e3nn 0.5.8, torch-scatter 2.1.2+pt25cu121, OpenEquivariance 0.5.4, ASE 3.28.0 and Phonopy 4.1.0, with Ninja and a CUDA development toolkit for its kernels. These are reference model dependencies, not requirements for offline scoring. The reference kernel patch is in `benchmark_runner/operations/`.
 
-TODO(owner): Protocol releases must identify changes in rules, reference arrays and cohorts and retain old score records; do not silently reinterpret scores across versions. TODO(owner): Ratify the versioning and archival policy before publication. The delivered input manifest retains its historical internal version 0.1.0 and runner resume receipts retain runner_version 0.6.0; the scoring protocol is 0.2.1.
+to be provided: Protocol releases must identify changes in rules, reference arrays and cohorts and retain old score records; do not silently reinterpret scores across versions. to be provided: Ratify the versioning and archival policy before publication. The delivered input manifest retains its historical internal version 0.1.0 and runner resume receipts retain runner_version 0.6.0; the scoring protocol is 0.2.1.
 
 ## Benchmark-informed model disclosure
 
@@ -130,4 +130,4 @@ Every submission declares `test_set_informed`. Any use of the benchmark material
 
 Data version v0.2.2 corrects signs on non-magnetic species in the magnetovolume energy-mapping designs. It does not change the v0.2.1 scoring rules, cohorts, targets or exchange-readout reference scores. Energy-mapping runs must use the corrected designs. Data version v0.2.3 adds material 221 (bcc Fe) to the phonon cohort. Cohort sizes above are read from the current score records; all other reference arrays, rules and defaults are unchanged. Dataset repository, immutable revision and target hashes are pinned in `benchmark.json`.
 
-The repository code licence is MIT; the dataset licence is CC BY 2.0. TODO(owner): Supply benchmark authors, affiliations and citation metadata. TODO(owner): Confirm stable public URLs and remaining model-card metadata before completing artefact release.
+The repository code licence is MIT; the dataset licence is CC BY 2.0. to be provided: Supply benchmark authors, affiliations and citation metadata. to be provided: Confirm stable public URLs and remaining model-card metadata before completing artefact release.

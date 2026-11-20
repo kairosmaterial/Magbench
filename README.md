@@ -76,8 +76,8 @@ The static site compares three owner-approved result records using data v0.2.3. 
 <!-- leaderboard:start -->
 | Model | Total | Ground-state passes | Availability |
 |---|---:|---:|---|
-| [Prophet-Spinv2](models/prophet-spin-v2/prophet-spin-v2.yml) | 0.605398474 | 159/191 | Weights awaiting public release |
-| [Prophet-Spin-ex](models/prophet-spin-ex/prophet-spin-ex.yml) | 0.546779806 | 155/191 | Weights awaiting public release |
+| [Prophet-Spin v2](models/prophet-spin-v2/prophet-spin-v2.yml) | 0.605398474 | 159/191 | Weights awaiting public release |
+| [Prophet-Spin v1 ex](models/prophet-spin-ex/prophet-spin-ex.yml) | 0.546779806 | 155/191 | Weights awaiting public release |
 | [Prophet-Spin v1](models/prophet-spin-v1/prophet-spin-v1.yml) | 0.437756477 | 146/191 | Weights awaiting public release |
 <!-- leaderboard:end -->
 

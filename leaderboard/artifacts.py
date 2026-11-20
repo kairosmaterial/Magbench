@@ -112,7 +112,7 @@ def extract_phonons(archive, destination, limits):
 
 def targets(settings, *, data=None, cache=None, offline=False):
     dataset=settings['dataset']
-    if not re.fullmatch('[0-9a-f]{40}',dataset['revision']) and not (data and dataset['revision']=='TODO(owner)'):
+    if not re.fullmatch('[0-9a-f]{40}',dataset['revision']) and not (data and dataset['revision']=='to be provided'):
         raise ValueError('Dataset revision must be an immutable commit SHA; the release pin awaits owner confirmation')
     if not data and not cache:raise ValueError('Supply --data or --cache for pinned targets')
     root=Path(data) if data else Path(cache)/'dataset'/dataset['revision']

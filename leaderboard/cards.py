@@ -42,7 +42,7 @@ def load_card(key, root=ROOT, policy_root=ROOT):
         raise ValueError('Card and directory keys differ')
     if card['lifecycle'] in ('pending', 'active') and not card.get('publication_status'):
         mandatory = {k: v for k, v in card.items() if k not in ('notes','paper','doi','docs','pr_url','training_cost')}
-        if 'TODO(owner)' in json.dumps(mandatory):
+        if 'to be provided' in json.dumps(mandatory):
             raise ValueError('Submission metadata requires verified facts')
     if card.get('publication_status'):
         trusted = config(policy_root)['awaiting_publication'].get(key)

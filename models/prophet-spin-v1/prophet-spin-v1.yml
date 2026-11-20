@@ -5,33 +5,33 @@ lifecycle: pending
 dates:
   benchmark_added: '2026-11-20'
 authors:
-- name: TODO(owner)
+- name: to be provided
   affiliation: Kairos Materials
   corresponding: true
 repo: https://github.com/kairosmaterial/Magbench
 checkpoint:
   filename: prophet-v2-mag.pt
-  url: TODO(owner)
+  url: to be provided
   sha256: 3e06937a3d38346f91399ccf7b56880d8c83cbd7493ab7fd03202c157d550252
   head:
     filename: prophet-v2-mag-head.pt
-    url: TODO(owner)
+    url: to be provided
     sha256: 8a2293f131ff95f42e7b011c0d9667a5ca2bf5a76d071b268c0648aa0578bb92
 license:
   code: MIT
-  checkpoint: TODO(owner)
+  checkpoint: to be provided
 architecture: Bilinear spin model, 10 layers
-model_params: TODO(owner)
+model_params: to be provided
 targets:
 - energy
 - forces
 - stress
 training_sets:
-- name: TODO(owner)
-  url: TODO(owner)
-  size: TODO(owner)
-  open: TODO(owner)
-test_set_informed: TODO(owner)
+- name: to be provided
+  url: to be provided
+  size: to be provided
+  open: to be provided
+test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
   seed_amplitudes: uniform_3muB
@@ -329,9 +329,9 @@ metrics:
   magnetovolume: 0.06659093635624218
   ground_state_passes: 146
 notes:
-  disclosure: 'TODO(owner): Confirm training and selection exposure to the benchmark
+  disclosure: 'to be provided: Confirm training and selection exposure to the benchmark
     materials.'
-  weights: 'TODO(owner): Supply public addresses and checkpoint licence for the evaluated
+  weights: 'to be provided: Supply public addresses and checkpoint licence for the evaluated
     weights and moment head.'
   organisation: Kairos Materials
   training: trained on a subset of the v5 dataset
