@@ -1,102 +1,29 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="MagBench: a five-dimensional benchmark for magnetic interatomic potentials."><title>Submit a model · MagBench</title><link rel="icon" href="assets/kairos-mark.png"><link rel="stylesheet" href="assets/style.css"><script defer src="assets/plot-math.js"></script><script defer src="assets/scatter.js"></script><script defer src="assets/app.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="brand" href="index.html" aria-label="Kairos Materials, MagBench home"><img class="logo" src="assets/kairos-mark.png" alt=""><span>KAIROS MATERIALS<br><small>MagBench</small></span></a><nav aria-label="Main navigation"><a href="index.html">Leaderboard</a><a href="protocol.html">Protocol</a><a href="submit.html">Submit a model</a><a href="https://github.com/kairosmaterial/Magbench">Repository ↗</a><a href="https://huggingface.co/datasets/kairosmaterial/Magbench">Dataset ↗</a></nav></header><main id="main"><article class="document"><h1 id="submit-a-model">Submit a model</h1>
-<p>A submission is one pull request that adds the folder <code>models/&lt;model_key&gt;/</code>. The key is lowercase with hyphens.</p>
-<h2 id="requirements">Requirements</h2>
-<ul>
-<li>The inference code is open source in a public repository.</li>
-<li>The evaluated weights can be downloaded from a public URL.</li>
-<li>Licences are stated for the code and for the weights.</li>
-<li>The predictions were produced with the shared runner and its default settings, on the current protocol and data version.</li>
-</ul>
-<p>Weights and prediction files are hosted by the submitter at stable HTTPS addresses, for example Hugging Face, Zenodo or figshare. They are not committed to this repository.</p>
-<h2 id="files-in-the-pull-request">Files in the pull request</h2>
-<pre><code class="language-text">models/&lt;model_key&gt;/
-  &lt;model_key&gt;.yml    model card
-  inference.py       adapter and the command that reproduces the predictions
-  scores.json        output of `magbench score`
-</code></pre>
-<p>Nothing outside this folder is changed.</p>
-<p><code>inference.py</code> defines the adapter that connects the model to the runner. The interface is <code>initial_moments</code>, <code>energy</code>, <code>energy_gradient</code>, <code>joint_efs</code>, <code>efs</code> and, optionally, <code>exchange_bonds</code>; see <code>benchmark_runner/magbench/adapters.py</code> and <a href="runner.html"><code>benchmark_runner/README.md</code></a>.</p>
-<h2 id="model-card">Model card</h2>
-<p>The card follows <code>tests/model-schema.yml</code>; unknown keys are rejected.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Content</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code>, <code>model_key</code>, <code>model_version</code></td>
-<td>Identity</td>
-</tr>
-<tr>
-<td><code>lifecycle</code></td>
-<td><code>pending</code></td>
-</tr>
-<tr>
-<td><code>dates.benchmark_added</code></td>
-<td>Date, <code>YYYY-MM-DD</code></td>
-</tr>
-<tr>
-<td><code>authors</code></td>
-<td>Name and affiliation of each author; one with <code>corresponding: true</code></td>
-</tr>
-<tr>
-<td><code>repo</code></td>
-<td>Public repository with the inference code</td>
-</tr>
-<tr>
-<td><code>checkpoint</code></td>
-<td><code>url</code> and <code>sha256</code> of the evaluated weights</td>
-</tr>
-<tr>
-<td><code>license</code></td>
-<td><code>code</code> and <code>checkpoint</code></td>
-</tr>
-<tr>
-<td><code>architecture</code>, <code>targets</code></td>
-<td>Short architecture description; predicted quantities</td>
-</tr>
-<tr>
-<td><code>hyperparams.architecture</code></td>
-<td><code>cutoff_A</code>, <code>exchange_range_A</code>, <code>n_layers</code>, <code>model_params</code></td>
-</tr>
-<tr>
-<td><code>training_sets</code></td>
-<td>Data used for training and pretraining</td>
-</tr>
-<tr>
-<td><code>test_set_informed</code></td>
-<td><code>true</code> if benchmark materials or benchmark scores were used in training, validation or model selection; then add one sentence in <code>notes.disclosure</code></td>
-</tr>
-<tr>
-<td><code>evaluation</code></td>
-<td><code>moment_initialisation</code> (<code>moment_head</code> or <code>energy_gradient</code>), <code>seed_amplitudes</code> (<code>uniform_3muB</code> or <code>model</code>), <code>exchange_route</code> (<code>energy_mapping</code> or <code>exchange_readout</code>), <code>protocol_version</code>, <code>data_version</code>, <code>runner_version</code></td>
-</tr>
-<tr>
-<td><code>inference</code></td>
-<td><code>script</code>, <code>adapter</code>, the exact <code>command</code>, <code>python_version</code>, pinned <code>dependencies</code></td>
-</tr>
-<tr>
-<td><code>predictions</code></td>
-<td><code>url</code>, <code>sha256</code> and <code>size</code> of <code>predictions.json</code>, and the same for the phonon prediction files</td>
-</tr>
-<tr>
-<td><code>metrics</code></td>
-<td><code>total</code>, <code>ground_state</code>, <code>hull</code>, <code>phonons</code>, <code>J</code>, <code>magnetovolume</code>, <code>ground_state_passes</code></td>
-</tr>
-</tbody>
-</table>
-<p>Optional: <code>paper</code>, <code>doi</code>, <code>docs</code>, <code>training_cost</code>, <code>notes</code>. The current versions are listed in <code>benchmark.json</code>.</p>
-<h2 id="produce-predictions-and-scores">Produce predictions and scores</h2>
-<pre><code class="language-sh">python -m pip install ./benchmark_runner
-python models/&lt;model_key&gt;/inference.py &lt;arguments recorded in the card&gt;
-magbench score --targets data/targets --predictions run/predictions.json --output models/&lt;model_key&gt;/scores.json
-</code></pre>
-<p>The reference data are downloaded as described in the <a href="https://github.com/kairosmaterial/Magbench#readme">README</a>. Upload <code>predictions.json</code> and the files of <code>run/phonons/</code> (as one archive, or as a directory listed in the card), and record their addresses, SHA-256 values and sizes in the card.</p>
-<h2 id="check-before-opening-the-pull-request">Check before opening the pull request</h2>
-<pre><code class="language-sh">python -m pip install -r requirements-dev.txt
-python scripts/validate_submission.py &lt;model_key&gt; --offline --data data --predictions run/predictions.json
-</code></pre>
-<p>The same checks run on the pull request. There the prediction files are downloaded from the addresses in the card and the scores are recomputed with the packaged scorer; the declared metrics must equal the recomputed ones.</p></article></main></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>MagBench</title><style>
+html,body{height:100%;margin:0}body{background:#f5f4f0;color:#27212d;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;align-items:center;justify-content:center}
+form{width:min(320px,calc(100vw - 32px))}h1{font-size:28px;font-weight:500;margin:0 0 24px}label{display:block;font-size:13px;color:#78737b;margin-bottom:6px}
+input{box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid #d8d3d9;background:#fbfaf8;color:inherit;font:inherit}input:focus{outline:2px solid #5c3b7e;outline-offset:1px}
+button{margin-top:12px;width:100%;padding:10px 12px;border:0;background:#27212d;color:#f5f4f0;font:inherit;cursor:pointer}button:focus-visible{outline:2px solid #5c3b7e;outline-offset:2px}
+p{min-height:1.5em;margin:10px 0 0;font-size:13px;color:#8a2b2b}
+</style></head><body><form id="gate" hidden><h1>MagBench</h1><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required><button type="submit">Enter</button><p id="message" role="alert"></p></form>
+<script id="payload" type="application/octet-stream">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</script>
+<script>
+(async()=>{
+const bytes=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+const salt=bytes("WWbgHD8tUjb85QkzRNK/Mg=="),iv=bytes("qRb0vqTHIXALaZXh"),store="magbench-site-key";
+const form=document.getElementById("gate"),field=document.getElementById("password"),message=document.getElementById("message");
+const decrypt=async raw=>{const key=await crypto.subtle.importKey("raw",raw,"AES-GCM",false,["decrypt"]);
+  return new TextDecoder().decode(await crypto.subtle.decrypt({name:"AES-GCM",iv},key,bytes(document.getElementById("payload").textContent)))};
+const derive=async text=>{const material=await crypto.subtle.importKey("raw",new TextEncoder().encode(text),"PBKDF2",false,["deriveBits"]);
+  return new Uint8Array(await crypto.subtle.deriveBits({name:"PBKDF2",hash:"SHA-256",salt,iterations:600000},material,256))};
+const loaded=()=>document.readyState==="complete"?Promise.resolve():new Promise(done=>addEventListener("load",done,{once:true}));
+const show=async html=>{await loaded();document.open();document.write(html);document.close()};
+let saved=null;try{saved=localStorage.getItem(store)}catch(error){}
+if(saved){try{const html=await decrypt(bytes(saved));await show(html);return}catch(error){try{localStorage.removeItem(store)}catch(inner){}}}
+form.hidden=false;field.focus();
+form.addEventListener("submit",async event=>{event.preventDefault();message.textContent="";
+  try{const raw=await derive(field.value),html=await decrypt(raw);
+    try{localStorage.setItem(store,btoa(String.fromCharCode(...raw)))}catch(error){}
+    await show(html)}
+  catch(error){message.textContent="Incorrect password";field.select()}});
+})();
+</script></body></html>
