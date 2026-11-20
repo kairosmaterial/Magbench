@@ -66,3 +66,38 @@ The complete per-material scores are in `results/prophet_spin_v1/scores.json` of
 ## License
 
 The code in this repository is released under the MIT License (see [LICENSE](LICENSE)). The benchmark data are released under CC BY 2.0 (see the dataset page).
+
+## Leaderboard
+
+The static site compares three owner-approved result records. The two pending release entries are marked **weights and inference code to be released**; Prophet-Spin v1 is a scores-only reference with an explicit replay exemption. Test-set-informed models stay listed with a disclosure marker.
+
+<!-- leaderboard:start -->
+| Model | Total | Ground-state passes | Availability |
+|---|---:|---:|---|
+| [Prophet-Spinv2](models/prophet-spin-v2/prophet-spin-v2.yml) | 0.605028719 | 159/191 | Awaiting artefacts |
+| [Prophet-Spin-ex](models/prophet-spin-ex/prophet-spin-ex.yml) | 0.546331416 | 155/191 | Awaiting artefacts |
+| [Prophet-Spin v1](models/prophet-spin-v1/prophet-spin-v1.yml) | 0.437307590 | 146/191 | Reference; replay exempt |
+<!-- leaderboard:end -->
+
+Build and preview locally:
+
+```sh
+python -m pip install -r requirements-dev.txt
+python scripts/build_site.py
+cd site/dist
+python -m http.server
+```
+
+See [the complete protocol](PROTOCOL.md) and [protocol questions](docs/known_issues.md). No data, weights or raw predictions are stored in this code repository.
+
+## Submitting a model
+
+Add a model card, an inference adapter and scorer-written `scores.json` in `models/<model_key>/`. Public inference code and evaluated weights, licences, externally hosted prediction artefacts and reproducible score replay are required for new submissions.
+
+```sh
+python scripts/check_cards.py
+python scripts/validate_submission.py <model_key> --cache <large-storage-cache>
+python -m pytest -q
+```
+
+Follow [CONTRIBUTING.md](CONTRIBUTING.md) for the strict schema, disclosure rule, local replay, CI checks and review steps. Protocol, data revision and target hashes are pinned in `benchmark.json`; the initial target upload is still in progress.

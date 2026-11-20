@@ -1,0 +1,94 @@
+# Submit a model
+
+A submission is one pull request adding `models/<model_key>/`. Use a unique lowercase key with hyphens. New submissions start with `lifecycle: pending`. They must provide public open-source inference code, publicly downloadable evaluated weights, stated code and checkpoint licences, and reproducible predictions. Submitters host weights and prediction artefacts at stable HTTPS URLs, for example Hugging Face, Zenodo or figshare. Commit neither weights nor prediction artefacts to this repository.
+
+## Required files
+
+```text
+models/<model_key>/
+  <model_key>.yml
+  inference.py
+  scores.json
+```
+
+The inference filename may differ if the card names it. The script defines the adapter named by `inference.adapter`, supplies everything needed to connect it to the shared runner, and records the exact reproduction command. The interface is `initial_moments`, `energy`, `energy_gradient`, `joint_efs`, `efs`, and optional `exchange_bonds`; see `benchmark_runner/magbench/adapters.py` and the [runner guide](benchmark_runner/README.md). Keep all submission code inside its own model folder. Do not change other models. Changes outside that folder are flagged for maintainer review; changes to another model fail the path guard.
+
+## Model card
+
+`tests/model-schema.yml` rejects unknown keys, including unknown nested keys. Only `notes` allows free-form content. Required fields are:
+
+| Field | Required content |
+|---|---|
+| `model_name`, `model_key`, `model_version`, `lifecycle` | Identity; lifecycle is `pending` on submission |
+| `dates.benchmark_added` | ISO date, `YYYY-MM-DD` |
+| `authors` | Names and affiliations, with exactly one `corresponding: true` |
+| `repo` | Public HTTPS repository containing open-source inference code |
+| `checkpoint` | Evaluated public weights `url`, `sha256`, optionally `size` in bytes |
+| `license` | `code` and `checkpoint`, both stated |
+| `architecture`, `model_params`, `targets` | Architecture, positive integer parameter count, predicted quantities |
+| `training_sets` | Each dataset's `name`, `url`, `size` and `open` boolean |
+| `test_set_informed` | Boolean; see disclosure rule below |
+| `evaluation` | `moment_initialisation`, `seed_amplitudes`, `exchange_route`, `protocol_version`, `data_version`, `runner_version`; optional hardware and wall time |
+| `inference` | `script` relative to the model folder, `adapter` definition name, exact `command`, `python_version`, pinned `dependencies` using `package==version` |
+| `predictions` | `url`, `sha256`, `size` of `predictions.json`; `phonons` with the same three fields for its ZIP or tar archive |
+| `metrics` | `total`, `ground_state`, `hull`, `phonons`, `J`, `magnetovolume`, `ground_state_passes` |
+
+Optional fields are `paper`, `doi`, `docs`, `pr_url`, `training_cost` and free-form `notes`. Metrics are the weighted dimension contributions, each out of 0.20, not the mean unweighted material scores. The total is out of 1.00.
+
+Evaluation choices are `moment_head` or `energy_gradient`; `uniform_3muB` or `model` seed amplitudes; `energy_mapping` or `exchange_readout`. Protocol, data and runner versions must match `benchmark.json` (currently 0.2.1, 0.2.2 and 0.6.0). The installable package version, 0.1.0, is a separate identifier.
+
+Any use of the 191 benchmark materials or benchmark scores in training, validation, model or checkpoint selection requires `test_set_informed: true` and a one-sentence `notes.disclosure`. This includes benchmark-informed seed-table selection. The site marks these entries and keeps them listed.
+
+Ordinary submissions cannot contain `TODO(owner)` in required metadata. The three existing owner-approved records have explicitly bounded exceptions: the scores-only reference has a schema-level replay exemption, and the two pending release entries show “weights and inference code to be released”. These exceptions are pinned in trusted policy and are unavailable to other submissions. They do not establish public reproducibility.
+
+## Run and score
+
+Install the shared runner and validation tools in an environment appropriate to the model:
+
+```sh
+python -m pip install ./benchmark_runner
+python -m pip install -r requirements-dev.txt
+python models/<model_key>/inference.py <the exact arguments recorded in the card>
+magbench score --targets data/targets --predictions run/predictions.json --output models/<model_key>/scores.json
+```
+
+The runner usage and selection/property stages are documented in `benchmark_runner/README.md`. The reproduction command must use `magbench run` through the adapter, with unchanged benchmark defaults. Preserve the prediction JSON and the adjacent `phonons/` NPZ files. Archive the NPZ files with their relative paths matching `phonon_file` in the JSON. Only bounded ordinary NPZ files are accepted; archive links and paths outside the extraction folder are rejected.
+
+Upload the predictions and phonon archive to your chosen stable host. Record exact persisted byte sizes and SHA-256 digests. Limits are 32 MiB for prediction JSON, 128 MiB for the archive, 512 MiB expanded, at most 2048 archive members, and 64 MiB per NPZ file. Weights are probed with a range request and are not downloaded by validation.
+
+## Validate locally
+
+```sh
+python scripts/check_cards.py
+python scripts/validate_submission.py <model_key> --cache <large-storage-cache> --base-ref origin/dev --summary review.md
+python -m pytest -q
+python scripts/build_site.py
+```
+
+Online validation uses the exact dataset repository and immutable revision in `benchmark.json`; there is no fallback to an unpinned revision. Local datasets are verified against every pinned target size and SHA-256:
+
+```sh
+python scripts/validate_submission.py <model_key> --offline --data <dataset-root> --predictions <run/predictions.json> --summary review.md
+```
+
+Offline mode never claims public availability. For ordinary new submissions the public repository, checkpoint and artefact-download checks fail offline. For the two owner-approved pending release entries those checks explicitly report `AWAITING ARTEFACTS`; supplying local predictions still runs target verification, exchange-route checks and the full scorer replay. The original reference is explicitly `EXEMPT` from replay until its missing predictions are supplied.
+
+## Pull request checks
+
+Every push and pull request runs unit tests, all card/schema checks and the static site build. Model pull requests additionally run the validator from the trusted base revision with read-only permissions and no secrets. Submitted inference code is compiled and its declared adapter is checked with syntax-tree inspection; it is never imported or executed in this job.
+
+The job checks the card, files and path guard; unauthenticated code and weight availability; both licences; bounded prediction downloads and SHA-256; pinned targets; the current versions and recorded exchange route; and a replay with the unchanged packaged scorer. All numerical fields of `scores.json` and all declared metrics must match the replay within 1e-9, and the integer ground-state pass count must match. Every check appears in a Markdown job summary. Any failed check fails the job; changes outside the model folder require maintainer review.
+
+The initial data upload is in progress. The current immutable remote revision contains no target files; online replay will fail until a maintainer verifies the complete upload and updates the revision in `benchmark.json` to the matching data release. Local validation uses the pinned target hashes in the meantime.
+
+## Maintainer review
+
+After reviewing the submission and after all public artefacts are available, activate it locally:
+
+```sh
+python scripts/ingest_model.py <model_key> --cache <large-storage-cache>
+```
+
+Ingest repeats strict public validation, sets `lifecycle: active`, and rebuilds the site payload. Owner-approved pending release records cannot be activated while artefacts or inference scripts are awaiting release. The reference is a reference record, not an activation candidate.
+
+Preview the static build with `python -m http.server` from `site/dist/`. The Pages workflow deploys only on a push to `main`; pull requests receive a site build artefact for review. No publication occurs during a local build.
