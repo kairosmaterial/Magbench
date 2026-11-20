@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="MagBench: a five-dimensional benchmark for magnetic interatomic potentials."><title>Submit a model · MagBench</title><link rel="icon" href="assets/kairos-mark.png"><link rel="stylesheet" href="assets/style.css"><script defer src="assets/app.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="brand" href="index.html" aria-label="Kairos Materials, MagBench home"><img class="logo" src="assets/kairos-mark.png" alt=""><span>KAIROS MATERIALS<br><small>MagBench</small></span></a><nav aria-label="Main navigation"><a href="index.html">Leaderboard</a><a href="protocol.html">Protocol</a><a href="submit.html">Submit a model</a><a href="https://github.com/kairosmaterial/Magbench">Repository ↗</a><a href="https://huggingface.co/datasets/kairosmaterial/Magbench">Dataset ↗</a></nav></header><main id="main"><article class="document"><h1 id="submit-a-model">Submit a model</h1>
+<p>A submission is one pull request adding <code>models/&lt;model_key&gt;/</code>. Use a unique lowercase key with hyphens. New submissions start with <code>lifecycle: pending</code>. They must provide public open-source inference code, publicly downloadable evaluated weights, stated code and checkpoint licences, and reproducible predictions. Submitters host weights and prediction artefacts at stable HTTPS URLs, for example Hugging Face, Zenodo or figshare. Commit neither weights nor prediction artefacts to this repository.</p>
+<h2 id="required-files">Required files</h2>
+<pre><code class="language-text">models/&lt;model_key&gt;/
+  &lt;model_key&gt;.yml
+  inference.py
+  scores.json
+</code></pre>
+<p>The inference filename may differ if the card names it. The script defines the adapter named by <code>inference.adapter</code>, supplies everything needed to connect it to the shared runner, and records the exact reproduction command. The interface is <code>initial_moments</code>, <code>energy</code>, <code>energy_gradient</code>, <code>joint_efs</code>, <code>efs</code>, and optional <code>exchange_bonds</code>; see <code>benchmark_runner/magbench/adapters.py</code> and the <a href="runner.html">runner guide</a>. Keep all submission code inside its own model folder. Do not change other models. Changes outside that folder are flagged for maintainer review; changes to another model fail the path guard.</p>
+<h2 id="model-card">Model card</h2>
+<p><code>tests/model-schema.yml</code> rejects unknown keys, including unknown nested keys. Only <code>notes</code> allows free-form content. Required fields are:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model_name</code>, <code>model_key</code>, <code>model_version</code>, <code>lifecycle</code></td>
+<td>Identity; lifecycle is <code>pending</code> on submission</td>
+</tr>
+<tr>
+<td><code>dates.benchmark_added</code></td>
+<td>ISO date, <code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td><code>authors</code></td>
+<td>Names and affiliations, with exactly one <code>corresponding: true</code></td>
+</tr>
+<tr>
+<td><code>repo</code></td>
+<td>Public HTTPS repository containing open-source inference code</td>
+</tr>
+<tr>
+<td><code>checkpoint</code></td>
+<td>Evaluated public weights <code>url</code>, <code>sha256</code>, optionally <code>size</code> in bytes</td>
+</tr>
+<tr>
+<td><code>license</code></td>
+<td><code>code</code> and <code>checkpoint</code>, both stated</td>
+</tr>
+<tr>
+<td><code>architecture</code>, <code>model_params</code>, <code>targets</code></td>
+<td>Architecture, positive integer parameter count, predicted quantities</td>
+</tr>
+<tr>
+<td><code>training_sets</code></td>
+<td>Each dataset's <code>name</code>, <code>url</code>, <code>size</code> and <code>open</code> boolean</td>
+</tr>
+<tr>
+<td><code>test_set_informed</code></td>
+<td>Boolean; see disclosure rule below</td>
+</tr>
+<tr>
+<td><code>evaluation</code></td>
+<td><code>moment_initialisation</code>, <code>seed_amplitudes</code>, <code>exchange_route</code>, <code>protocol_version</code>, <code>data_version</code>, <code>runner_version</code>; optional hardware and wall time</td>
+</tr>
+<tr>
+<td><code>inference</code></td>
+<td><code>script</code> relative to the model folder, <code>adapter</code> definition name, exact <code>command</code>, <code>python_version</code>, pinned <code>dependencies</code> using <code>package==version</code></td>
+</tr>
+<tr>
+<td><code>predictions</code></td>
+<td><code>url</code>, <code>sha256</code>, <code>size</code> of <code>predictions.json</code>; <code>phonons</code> with the same three fields for its ZIP or tar archive</td>
+</tr>
+<tr>
+<td><code>metrics</code></td>
+<td><code>total</code>, <code>ground_state</code>, <code>hull</code>, <code>phonons</code>, <code>J</code>, <code>magnetovolume</code>, <code>ground_state_passes</code></td>
+</tr>
+</tbody>
+</table>
+<p>Optional fields are <code>paper</code>, <code>doi</code>, <code>docs</code>, <code>pr_url</code>, <code>training_cost</code> and free-form <code>notes</code>. Metrics are the weighted dimension contributions, each out of 0.20, not the mean unweighted material scores. The total is out of 1.00.</p>
+<p>Evaluation choices are <code>moment_head</code> or <code>energy_gradient</code>; <code>uniform_3muB</code> or <code>model</code> seed amplitudes; <code>energy_mapping</code> or <code>exchange_readout</code>. Protocol, data and runner versions must match <code>benchmark.json</code> (currently 0.2.1, 0.2.2 and 0.6.0). The installable package version, 0.1.0, is a separate identifier.</p>
+<p>Any use of the 191 benchmark materials or benchmark scores in training, validation, model or checkpoint selection requires <code>test_set_informed: true</code> and a one-sentence <code>notes.disclosure</code>. This includes benchmark-informed seed-table selection. The site marks these entries and keeps them listed.</p>
+<p>Ordinary submissions cannot contain <code>to be provided</code> in required metadata. The three existing owner-approved records have explicitly bounded exceptions: the scores-only reference has a schema-level replay exemption, and the two pending release entries show “weights and inference code to be released”. These exceptions are pinned in trusted policy and are unavailable to other submissions. They do not establish public reproducibility.</p>
+<h2 id="run-and-score">Run and score</h2>
+<p>Install the shared runner and validation tools in an environment appropriate to the model:</p>
+<pre><code class="language-sh">python -m pip install ./benchmark_runner
+python -m pip install -r requirements-dev.txt
+python models/&lt;model_key&gt;/inference.py &lt;the exact arguments recorded in the card&gt;
+magbench score --targets data/targets --predictions run/predictions.json --output models/&lt;model_key&gt;/scores.json
+</code></pre>
+<p>The runner usage and selection/property stages are documented in <code>benchmark_runner/README.md</code>. The reproduction command must use <code>magbench run</code> through the adapter, with unchanged benchmark defaults. Preserve the prediction JSON and the adjacent <code>phonons/</code> NPZ files. Archive the NPZ files with their relative paths matching <code>phonon_file</code> in the JSON. Only bounded ordinary NPZ files are accepted; archive links and paths outside the extraction folder are rejected.</p>
+<p>Upload the predictions and phonon archive to your chosen stable host. Record exact persisted byte sizes and SHA-256 digests. Limits are 32 MiB for prediction JSON, 128 MiB for the archive, 512 MiB expanded, at most 2048 archive members, and 64 MiB per NPZ file. Weights are probed with a range request and are not downloaded by validation.</p>
+<h2 id="validate-locally">Validate locally</h2>
+<pre><code class="language-sh">python scripts/check_cards.py
+python scripts/validate_submission.py &lt;model_key&gt; --cache &lt;large-storage-cache&gt; --base-ref origin/dev --summary review.md
+python -m pytest -q
+python scripts/build_site.py
+</code></pre>
+<p>Online validation uses the exact dataset repository and immutable revision in <code>benchmark.json</code>; there is no fallback to an unpinned revision. Local datasets are verified against every pinned target size and SHA-256:</p>
+<pre><code class="language-sh">python scripts/validate_submission.py &lt;model_key&gt; --offline --data &lt;dataset-root&gt; --predictions &lt;run/predictions.json&gt; --summary review.md
+</code></pre>
+<p>Offline mode never claims public availability. For ordinary new submissions the public repository, checkpoint and artefact-download checks fail offline. For the two owner-approved pending release entries those checks explicitly report <code>AWAITING ARTEFACTS</code>; supplying local predictions still runs target verification, exchange-route checks and the full scorer replay. The original reference is explicitly <code>EXEMPT</code> from replay until its missing predictions are supplied.</p>
+<h2 id="pull-request-checks">Pull request checks</h2>
+<p>Every push and pull request runs unit tests, all card/schema checks and the static site build. Model pull requests additionally run the validator from the trusted base revision with read-only permissions and no secrets. Submitted inference code is compiled and its declared adapter is checked with syntax-tree inspection; it is never imported or executed in this job.</p>
+<p>The job checks the card, files and path guard; unauthenticated code and weight availability; both licences; bounded prediction downloads and SHA-256; pinned targets; the current versions and recorded exchange route; and a replay with the unchanged packaged scorer. All numerical fields of <code>scores.json</code> and all declared metrics must match the replay within 1e-9, and the integer ground-state pass count must match. Every check appears in a Markdown job summary. Any failed check fails the job; changes outside the model folder require maintainer review.</p>
+<p>The initial data upload is in progress. The current immutable remote revision contains no target files; online replay will fail until a maintainer verifies the complete upload and updates the revision in <code>benchmark.json</code> to the matching data release. Local validation uses the pinned target hashes in the meantime.</p>
+<h2 id="maintainer-review">Maintainer review</h2>
+<p>After reviewing the submission and after all public artefacts are available, activate it locally:</p>
+<pre><code class="language-sh">python scripts/ingest_model.py &lt;model_key&gt; --cache &lt;large-storage-cache&gt;
+</code></pre>
+<p>Ingest repeats strict public validation, sets <code>lifecycle: active</code>, and rebuilds the site payload. Owner-approved pending release records cannot be activated while artefacts or inference scripts are awaiting release. The reference is a reference record, not an activation candidate.</p>
+<p>Preview the static build with <code>python -m http.server</code> from <code>site/dist/</code>. The Pages workflow deploys only on a push to <code>main</code>; pull requests receive a site build artefact for review. No publication occurs during a local build.</p></article></main><footer><span>MagBench <span class="footer-muted">· Protocol 0.2.1 · Data 0.2.2 · Built 2026-11-20 UTC</span></span><div><a href="https://huggingface.co/datasets/kairosmaterial/Magbench">Dataset ↗</a><a href="https://github.com/kairosmaterial/Magbench">Repository ↗</a></div></footer></body></html>
