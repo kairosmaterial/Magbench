@@ -8980,7 +8980,7 @@
     },
     {
       "card": {
-        "model_name": "Prophet-Spin-ex",
+        "model_name": "Prophet-Spin v1 ex",
         "model_key": "prophet-spin-ex",
         "model_version": "ex",
         "lifecycle": "pending",
