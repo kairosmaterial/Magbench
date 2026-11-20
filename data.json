@@ -28,7 +28,6 @@
           "checkpoint": "to be provided"
         },
         "architecture": "HD-MLP EFS + Delta-E20",
-        "model_params": "to be provided",
         "targets": [
           "energy",
           "forces",
@@ -554,9 +553,22 @@
           "disclosure": "to be provided",
           "publication": "weights and inference code to be released",
           "organisation": "Kairos Materials",
-          "exchange_readout": "Analytic effective pair coupling from the model energy."
+          "exchange_readout": "Analytic effective pair coupling from the model energy.",
+          "parameter_count": "Energy-model parameters, including frozen parameters; deterministic buffers and the separate moment-initialisation head are excluded.",
+          "architecture": "Direct exchange envelope: 6 A. Density radius: 6 A. Density-mediated pair couplings reach 12 A, twice the density radius."
         },
-        "publication_status": "awaiting_artifacts"
+        "publication_status": "awaiting_artifacts",
+        "hyperparams": {
+          "architecture": {
+            "cutoff_A": [
+              3.0,
+              6.0
+            ],
+            "exchange_range_A": 12.0,
+            "n_layers": 6,
+            "model_params": 35836962
+          }
+        }
       },
       "scores": {
         "total_score": 0.6053984742150986,
@@ -9004,7 +9016,6 @@
           "checkpoint": "to be provided"
         },
         "architecture": "Bilinear EFS",
-        "model_params": "to be provided",
         "targets": [
           "energy",
           "forces",
@@ -9515,9 +9526,22 @@
           "disclosure": "to be provided",
           "publication": "weights and inference code to be released",
           "organisation": "Kairos Materials",
-          "exchange_readout": "Bilinear exchange readout."
+          "exchange_readout": "Bilinear exchange readout.",
+          "parameter_count": "Energy-model parameters, including frozen parameters; deterministic buffers and the separate moment-initialisation head are excluded.",
+          "architecture": "The direct exchange envelope uses the largest graph cutoff, 6 A."
         },
-        "publication_status": "awaiting_artifacts"
+        "publication_status": "awaiting_artifacts",
+        "hyperparams": {
+          "architecture": {
+            "cutoff_A": [
+              3.0,
+              6.0
+            ],
+            "exchange_range_A": 6.0,
+            "n_layers": 6,
+            "model_params": 35746946
+          }
+        }
       },
       "scores": {
         "total_score": 0.5467798064153615,
@@ -17768,7 +17792,6 @@
           "checkpoint": "to be provided"
         },
         "architecture": "Bilinear spin model, 10 layers",
-        "model_params": "to be provided",
         "targets": [
           "energy",
           "forces",
@@ -18254,9 +18277,21 @@
           "weights": "to be provided: Supply public addresses and checkpoint licence for the evaluated weights and moment head.",
           "organisation": "Kairos Materials",
           "training": "trained on a subset of the v5 dataset",
-          "inference_code": "The inference runtime is vendored in benchmark_runner/vendor/prophet_spin under the MIT licence."
+          "inference_code": "The inference runtime is vendored in benchmark_runner/vendor/prophet_spin under the MIT licence.",
+          "parameter_count": "Energy-model parameters, including frozen parameters; deterministic buffers and the separate moment-initialisation head are excluded."
         },
-        "publication_status": "awaiting_artifacts"
+        "publication_status": "awaiting_artifacts",
+        "hyperparams": {
+          "architecture": {
+            "cutoff_A": [
+              3.0,
+              7.0
+            ],
+            "exchange_range_A": 10.0,
+            "n_layers": 10,
+            "model_params": 66916259
+          }
+        }
       },
       "scores": {
         "total_score": 0.4377564772834376,

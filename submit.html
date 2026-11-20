@@ -42,8 +42,12 @@
 <td><code>code</code> and <code>checkpoint</code>, both stated</td>
 </tr>
 <tr>
-<td><code>architecture</code>, <code>model_params</code>, <code>targets</code></td>
-<td>Architecture, positive integer parameter count, predicted quantities</td>
+<td><code>architecture</code>, <code>targets</code></td>
+<td>Architecture description and predicted quantities</td>
+</tr>
+<tr>
+<td><code>hyperparams.architecture</code></td>
+<td><code>cutoff_A</code> (positive number or ordered list), <code>exchange_range_A</code> (positive number or null), <code>n_layers</code> (positive integer), <code>model_params</code> (positive integer)</td>
 </tr>
 <tr>
 <td><code>training_sets</code></td>
@@ -74,7 +78,7 @@
 <p>Optional fields are <code>paper</code>, <code>doi</code>, <code>docs</code>, <code>pr_url</code>, <code>training_cost</code> and free-form <code>notes</code>. Metrics are the weighted dimension contributions, each out of 0.20, not the mean unweighted material scores. The total is out of 1.00.</p>
 <p>Evaluation choices are <code>moment_head</code> or <code>energy_gradient</code>; <code>uniform_3muB</code> or <code>model</code> seed amplitudes; <code>energy_mapping</code> or <code>exchange_readout</code>. Protocol, data and runner versions must match <code>benchmark.json</code> (currently 0.2.1, 0.2.3 and 0.6.0). The installable package version, 0.1.0, is a separate identifier.</p>
 <p>Any use of the benchmark materials or benchmark scores in training, validation, model or checkpoint selection requires <code>test_set_informed: true</code> and a one-sentence <code>notes.disclosure</code>. This includes benchmark-informed seed-table selection. The declaration remains part of the model card; entries remain listed.</p>
-<p>Ordinary submissions cannot contain <code>to be provided</code> in required metadata. The three existing owner-approved records have bounded metadata exceptions pinned in trusted policy while weights or inference code await public release. These exceptions cannot be claimed by other submissions. All three records have delivered predictions and must replay; there is no replay exemption. Prophet-Spin v1 was trained on a subset of the v5 dataset.</p>
+<p>Ordinary submissions cannot contain <code>to be provided</code> in required metadata. The existing owner-approved listed records have bounded metadata exceptions pinned in trusted policy while weights or inference code await public release. These exceptions cannot be claimed by other submissions. The listed records have delivered predictions and must replay; there is no replay exemption. Prophet-Spin v1 was trained on a subset of the v5 dataset.</p>
 <h2 id="run-and-score">Run and score</h2>
 <p>Install the shared runner and validation tools in an environment appropriate to the model:</p>
 <pre><code class="language-sh">python -m pip install ./benchmark_runner
@@ -93,7 +97,7 @@ python scripts/build_site.py
 <p>Online validation uses the exact dataset repository and immutable revision in <code>benchmark.json</code>; there is no fallback to an unpinned revision. Local datasets are verified against every pinned target size and SHA-256:</p>
 <pre><code class="language-sh">python scripts/validate_submission.py &lt;model_key&gt; --offline --data &lt;dataset-root&gt; --predictions &lt;run/predictions.json&gt; --summary review.md
 </code></pre>
-<p>Offline mode never claims public availability. For ordinary new submissions the public repository, checkpoint and artefact-download checks fail offline. For the three owner-approved pending release entries, missing code or weights explicitly report <code>AWAITING ARTEFACTS</code>; known public addresses report <code>NOT RUN</code> when offline. Public prediction downloads also report <code>NOT RUN</code> when verified local predictions are supplied offline. Local validation checks the prediction JSON and every manifest-listed phonon file, target hashes, exchange route and the complete scorer replay. Missing local predictions fail replay for every entry.</p>
+<p>Offline mode never claims public availability. For ordinary new submissions the public repository, checkpoint and artefact-download checks fail offline. For the owner-approved pending release entries, missing code or weights explicitly report <code>AWAITING ARTEFACTS</code>; known public addresses report <code>NOT RUN</code> when offline. Public prediction downloads also report <code>NOT RUN</code> when verified local predictions are supplied offline. Local validation checks the prediction JSON and every manifest-listed phonon file, target hashes, exchange route and the complete scorer replay. Missing local predictions fail replay for every entry.</p>
 <h2 id="pull-request-checks">Pull request checks</h2>
 <p>Every push and pull request runs unit tests, all card/schema checks and the static site build. Model pull requests additionally run the validator from the trusted base revision with read-only permissions and no secrets. Submitted inference code is compiled and its declared adapter is checked with syntax-tree inspection; it is never imported or executed in this job.</p>
 <p>The job checks the card, files and path guard; unauthenticated code and weight availability; both licences; bounded prediction downloads and SHA-256; pinned targets; the current versions and recorded exchange route; and a replay with the unchanged packaged scorer. All numerical fields of <code>scores.json</code> and all declared metrics must match the replay within 1e-9, and the integer ground-state pass count must match. Every check appears in a Markdown job summary. Any failed check fails the job; changes outside the model folder require maintainer review.</p>
@@ -102,10 +106,19 @@ python scripts/build_site.py
 <p>After reviewing the submission and after all public artefacts are available, activate it locally:</p>
 <pre><code class="language-sh">python scripts/ingest_model.py &lt;model_key&gt; --cache &lt;large-storage-cache&gt;
 </code></pre>
-<p>Ingest repeats strict public validation, sets <code>lifecycle: active</code>, and rebuilds the site payload. Owner-approved pending release records cannot be activated while artefacts or inference scripts are awaiting release. Prophet-Spin v1 has a usable wrapper around the vendored adapter; the other two inference scripts are explicit release placeholders. All three can be activated only after strict public validation passes and their bounded metadata exceptions are removed.</p>
+<p>Ingest repeats strict public validation, sets <code>lifecycle: active</code>, and rebuilds the site payload. Owner-approved pending release records cannot be activated while artefacts or inference scripts are awaiting release. Prophet-Spin v1 has a usable wrapper around the vendored adapter; the other two inference scripts are explicit release placeholders. Listed entries can be activated only after strict public validation passes and their bounded metadata exceptions are removed.</p>
 <p>Preview the static build with <code>python -m http.server</code> from <code>site/dist/</code>. The Pages workflow deploys only on a push to <code>main</code>; pull requests receive a site build artefact for review. No publication occurs during a local build.</p>
 <h2 id="prepare-the-github-pages-branch">Prepare the GitHub Pages branch</h2>
 <p>The intended site address is https://kairosmaterial.github.io/Magbench/. All internal references are relative, including links from model pages. The build includes <code>.nojekyll</code> and works from a local file, a local HTTP server or the repository sub-path.</p>
 <pre><code class="language-sh">bash scripts/publish_pages.sh
 </code></pre>
-<p>This builds the site and prepares a local commit on the orphan <code>gh-pages</code> branch in a separate sibling worktree. It never pushes. Running it again refreshes a clean Pages worktree. The maintainer decides when to push this branch and configure branch-based Pages publishing; the Actions workflow remains available for deployment from <code>main</code> later.</p></article></main></body></html>
+<p>This builds the site and prepares a local commit on the orphan <code>gh-pages</code> branch in a separate sibling worktree. It never pushes. Running it again refreshes a clean Pages worktree. The maintainer decides when to push this branch and configure branch-based Pages publishing; the Actions workflow remains available for deployment from <code>main</code> later.</p>
+<h2 id="architecture-hyperparameters">Architecture hyperparameters</h2>
+<p>Every card has a strict <code>hyperparams.architecture</code> block. Place <code>model_params</code> there; the previous top-level field is rejected. <code>cutoff_A</code> records the architecture's graph cutoffs in angstroms, preserving the model's list when it has several scales. The neighbour list may additionally expand to cover an explicit exchange term. <code>exchange_range_A</code> records the explicit exchange envelope or the longest representable spin-spin pair coupling. Use null only when the model has no such coupling, rather than when a separate range option is unset. State the direct envelope and density radius in <code>notes.architecture</code> for density-mediated models; pair couplings can extend to twice that radius. State the parameter-count convention in <code>notes.parameter_count</code>, including whether a separate moment head is counted.</p>
+<p>The leaderboard places these values immediately after the model column in every view. Cutoff lists retain their written order and sort by the largest cutoff. Hyperparameter values are not accuracy scores and receive no best-value emphasis.</p>
+<h2 id="prepared-owner-draft">Prepared owner draft</h2>
+<p>The owner-prepared <code>prophet-spin-v1-6a</code> card has <code>lifecycle: draft</code> while its evaluation is incomplete. Schema and adapter syntax remain checked; score checks and the site exclude it. A draft cannot pass submission validation. This state is restricted to the prepared key and does not bypass public validation for new submissions.</p>
+<p>After the complete external result folder contains prediction JSON, phonons and scores, run:</p>
+<pre><code class="language-sh">python scripts/ingest_model.py prophet-spin-v1-6a --predictions completed-run --data data
+</code></pre>
+<p>This command checks the trusted draft/card identity, file bounds and hashes, pinned local targets and exchange route, repeats scoring and compares the full score record within 1e-9. It stamps the actual benchmark-added date, prepares a pending owner record and rebuilds the payload. It keeps raw predictions external and preserves missing metadata as “to be provided”. The draft is neither listed nor scored before this command succeeds. Public activation still uses strict public ingest with <code>--cache</code>; the local draft path makes no public-download claim. A failed replay leaves tracked cards, scores and policy unchanged.</p></article></main></body></html>
