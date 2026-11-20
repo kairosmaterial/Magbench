@@ -4,7 +4,7 @@ import math
 from pathlib import Path
 import pytest
 import yaml
-from leaderboard.cards import ROOT,load_card,read,metrics_from,compare,reference_exempt,check_adapter,inside,config
+from leaderboard.cards import ROOT,load_card,read,metrics_from,compare,check_adapter,inside,config
 from leaderboard.site import payload,build
 from leaderboard.validation import validate,path_guard,route_check
 
@@ -16,8 +16,10 @@ def test_card_and_review_round_trip(key):
     card,folder=load_card(key);check_adapter(card,folder)
     compare(metrics_from(read(folder/'scores.json')),card['metrics'])
     review=validate(key,offline=True)
-    assert review.passed
-    assert any(r['status'] in ('EXEMPT','AWAITING ARTEFACTS') for r in review.rows)
+    assert not review.passed
+    assert any(r['status']=='AWAITING ARTEFACTS' for r in review.rows)
+    assert next(r['status'] for r in review.rows if r['check']=='Scorer replay')=='FAIL'
+    assert not any(r['status']=='EXEMPT' for r in review.rows)
 
 
 @pytest.mark.parametrize('path',[(),('evaluation',),('checkpoint',),('license',),('predictions',),('predictions','phonons'),('inference',),('dates',),('metrics',)])
@@ -59,9 +61,9 @@ def test_candidate_cannot_change_trusted_exception(checkout):
     with pytest.raises(ValueError,match='owner-approved'):load_card('prophet-spin-ex',checkout,ROOT)
 
 
-def test_reference_exemption_is_pinned(checkout):
+def test_reference_score_record_is_pinned(checkout):
     c,f=load_card('prophet-spin-v1',checkout,checkout);p=f/'scores.json';p.write_text(p.read_text()+' ')
-    with pytest.raises(ValueError,match='packaged record'):reference_exempt(c,p,ROOT)
+    with pytest.raises(ValueError,match='owner-approved'):load_card('prophet-spin-v1',checkout,ROOT)
 
 
 def test_pending_cannot_activate_without_public_release():
@@ -152,8 +154,7 @@ def test_site_counts_come_from_score_records(checkout,tmp_path):
         score['dimensions']['ground_state']['materials']=ground_count
         p.write_text(json.dumps(score,indent=2)+'\n')
         digest=hashlib.sha256(p.read_bytes()).hexdigest()
-        if key=='prophet-spin-v1':settings['reference']['score_sha256']=digest
-        else:settings['awaiting_publication'][key]['score_sha256']=digest
+        settings['awaiting_publication'][key]['score_sha256']=digest
     (checkout/'benchmark.json').write_text(json.dumps(settings))
     build(root=checkout,output=tmp_path/'output')
     text=(tmp_path/'output/index.html').read_text()

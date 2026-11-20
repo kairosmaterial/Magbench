@@ -1,8 +1,8 @@
 {
   "dataset": {
     "repo_id": "kairosmaterial/Magbench",
-    "revision": "a56f093c08b4bc0a3ec435f946e5b1aac8672593",
-    "data_version": "0.2.2",
+    "revision": "TODO(owner)",
+    "data_version": "0.2.3",
     "license": "CC-BY-2.0",
     "targets": [
       {
@@ -2616,6 +2616,16 @@
         "sha256": "a4dda60c33ec48f4fedce25ca175b8cb83f4535c079226df9469adc02275074a"
       },
       {
+        "path": "targets/phonons/221/reference.npz",
+        "size": 740617,
+        "sha256": "8624298c856a3c80dc91c5b4f7a32c1cae2b4153c22cb5759feb6eeb06b7d9ba"
+      },
+      {
+        "path": "targets/phonons/221/structure.json",
+        "size": 1144,
+        "sha256": "6774186b1a4c72b1eab1865fc6a84e3b002214277d5f6fa6dd3a78be019b3d6b"
+      },
+      {
         "path": "targets/phonons/222/reference.npz",
         "size": 15048,
         "sha256": "5f1bc0e7567b3449eb21344d716d194a2e52764eaf4982b831a28c136f704b02"
@@ -2647,8 +2657,8 @@
       },
       {
         "path": "targets/scoring.json",
-        "size": 15205,
-        "sha256": "e8481163fa9835b529ca2eb7497ec4f30afc35b2595937fe51f7b1930632a4a7"
+        "size": 15254,
+        "sha256": "c0b4b1ac37c860f1e56efbcc9d118abed530bb2828ae32cf94b8646c1dc9e1fe"
       },
       {
         "path": "targets/structures.extxyz",
@@ -2660,10 +2670,6 @@
   "protocol_version": "0.2.1",
   "runner_version": "0.6.0",
   "package_version": "0.1.0",
-  "reference": {
-    "model_key": "prophet-spin-v1",
-    "score_sha256": "326634ddbc96c09879a42436f81deee6e0ac9a2e8de84842b544af4d2f0ec9ed"
-  },
   "limits": {
     "predictions_bytes": 33554432,
     "phonon_archive_bytes": 134217728,
@@ -2673,19 +2679,27 @@
   "awaiting_publication": {
     "prophet-spin-ex": {
       "model_name": "Prophet-Spin-ex",
-      "score_sha256": "81b11f6d0477673ab8dfeb946ad618cd228d54f65a8b1839fb18de23b7de1c02",
-      "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256"
+      "score_sha256": "8433024ce7446820e24e78eba6840bc9c270c734fd7001d8cd0a4c765052b991",
+      "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
+      "inference_available": false
     },
     "prophet-spin-v2": {
       "model_name": "Prophet-Spinv2",
-      "score_sha256": "cbcebebae2989056d71471ade3b43ffda76c7b84e9dcada00195b63807efa6df",
-      "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256"
+      "score_sha256": "3eb46af0f3c7fe69632112ec5f1d2b8301c9a9257f6465b9fdc4a9759926aaf5",
+      "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
+      "inference_available": false
+    },
+    "prophet-spin-v1": {
+      "model_name": "Prophet-Spin v1",
+      "score_sha256": "02180c93bff3cd219ee26ddbe6c94141f9f043f67f28313254ba0e6d95436adb",
+      "inference_sha256": "b48076e299454ba70d16d899ca2b9bd59aa77701521494cdfe0434f983194298",
+      "inference_available": true
     }
   },
   "cohorts": {
     "ground_state": 191,
     "hull": 191,
-    "phonons": 110,
+    "phonons": 111,
     "J": 172,
     "magnetovolume": 133
   }

@@ -1,5 +1,5 @@
 {
-  "total_score": 0.43730758998721636,
+  "total_score": 0.4377564772834376,
   "maximum_score": 1.0,
   "dimensions": {
     "ground_state": {
@@ -17,12 +17,12 @@
       "accuracy_weighted_score": 0.041431888807172065
     },
     "phonons": {
-      "materials": 110,
-      "mean_material_score": 0.2891762406385415,
+      "materials": 111,
+      "mean_material_score": 0.29142067711964753,
       "weight": 0.2,
-      "weighted_score": 0.05783524812770831,
-      "stability_weighted_score": 0.042727272727272725,
-      "spectrum_weighted_score": 0.015107975400435555
+      "weighted_score": 0.05828413542392951,
+      "stability_weighted_score": 0.043243243243243246,
+      "spectrum_weighted_score": 0.015040892180686246
     },
     "J": {
       "materials": 172,
@@ -53,7 +53,7 @@
         "J": 0.5226522662766193,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.002947577592344766,
+      "weighted_contribution_to_total": 0.00293912955751973,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -82,9 +82,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -9.92439320496451e-08,
-          "W1_THz": 4.988272992640589,
+          "W1_THz": 4.98827299264059,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.01575252606845534
+          "spectrum_contribution": 0.01575252606845532
         }
       }
     },
@@ -115,7 +115,7 @@
         "J": 0.2189412702325255,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0035676251335375474,
+      "weighted_contribution_to_total": 0.0035563301162245516,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -177,7 +177,7 @@
         "J": 0.33617535674151816,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003112269974619028,
+      "weighted_contribution_to_total": 0.003101036579227328,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -223,7 +223,7 @@
         "J": 0.36562025038853047,
         "magnetovolume": 0.4200260962704171
       },
-      "weighted_contribution_to_total": 0.004317111430388299,
+      "weighted_contribution_to_total": 0.0043043721203726865,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -374,7 +374,7 @@
         "J": 0.3672233819730326,
         "magnetovolume": 0.32075204426392256
       },
-      "weighted_contribution_to_total": 0.004136655548412154,
+      "weighted_contribution_to_total": 0.004125128203712958,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -766,11 +766,11 @@
       "scores": {
         "ground_state": 1.0,
         "hull": 0.7990739765313586,
-        "phonons": 0.5320952600283891,
+        "phonons": 0.532095260028389,
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0028512930231686987,
+      "weighted_contribution_to_total": 0.0028425772940937045,
       "details": {
         "ground_state": {
           "seed_index": 31,
@@ -790,9 +790,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -0.01543063423225947,
-          "W1_THz": 3.9614959403545607,
+          "W1_THz": 3.961495940354561,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.03209526002838909
+          "spectrum_contribution": 0.03209526002838908
         }
       }
     },
@@ -855,7 +855,7 @@
         "J": 0.25848536391355764,
         "magnetovolume": 0.41248966987701624
       },
-      "weighted_contribution_to_total": 0.0037833805626650142,
+      "weighted_contribution_to_total": 0.0037724215735256447,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -910,7 +910,7 @@
         "J": 0.3017877214494457,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003604746799802997,
+      "weighted_contribution_to_total": 0.003594050588187458,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1192,7 +1192,7 @@
         "J": 0.30846879022551926,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0026207773232761805,
+      "weighted_contribution_to_total": 0.002611796727593722,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1380,7 +1380,7 @@
         "J": 0.3931077033180713,
         "magnetovolume": 0.5981638461690965
       },
-      "weighted_contribution_to_total": 0.004117749703981634,
+      "weighted_contribution_to_total": 0.004109095069076701,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -1418,9 +1418,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -1.323572874244793e-07,
-          "W1_THz": 4.139720881404102,
+          "W1_THz": 4.139720881404103,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.028365460946150542
+          "spectrum_contribution": 0.028365460946150525
         }
       }
     },
@@ -1906,7 +1906,7 @@
         "J": 0.34881296182865423,
         "magnetovolume": 0.5568147045738036
       },
-      "weighted_contribution_to_total": 0.004804243190073055,
+      "weighted_contribution_to_total": 0.004790704016259387,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -2410,7 +2410,7 @@
         "J": 0.20027061125979118,
         "magnetovolume": 0.409975878255168
       },
-      "weighted_contribution_to_total": 0.0034662758163573806,
+      "weighted_contribution_to_total": 0.003457126301768798,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2465,7 +2465,7 @@
         "J": 0.5688611446883101,
         "magnetovolume": 0.06870782779841124
       },
-      "weighted_contribution_to_total": 0.0031842944405504688,
+      "weighted_contribution_to_total": 0.0031745964311916705,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2503,9 +2503,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -1.1364568476897583e-06,
-          "W1_THz": 2.4412273477808677,
+          "W1_THz": 2.4412273477808673,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.09206347135464707
+          "spectrum_contribution": 0.0920634713546471
         }
       }
     },
@@ -2552,7 +2552,7 @@
         "J": 0.3723661938371684,
         "magnetovolume": 0.31971197671384854
       },
-      "weighted_contribution_to_total": 0.003545491460192109,
+      "weighted_contribution_to_total": 0.003537222842549376,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -2590,9 +2590,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -4.3413812336464034e-07,
-          "W1_THz": 6.703018278480319,
+          "W1_THz": 6.703018278480317,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.004799107088843466
+          "spectrum_contribution": 0.004799107088843472
         }
       }
     },
@@ -2907,7 +2907,7 @@
         "J": 0.1691572325170489,
         "magnetovolume": 0.31201058930996406
       },
-      "weighted_contribution_to_total": 0.0037224193489912454,
+      "weighted_contribution_to_total": 0.0037121485705504677,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2962,7 +2962,7 @@
         "J": 0.3542456157976643,
         "magnetovolume": 0.3181190488659143
       },
-      "weighted_contribution_to_total": 0.004271588904041692,
+      "weighted_contribution_to_total": 0.004258183563796874,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3017,7 +3017,7 @@
         "J": 0.30638343880162,
         "magnetovolume": 0.3230475666666463
       },
-      "weighted_contribution_to_total": 0.00420099291711147,
+      "weighted_contribution_to_total": 0.004187920601888761,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3127,7 +3127,7 @@
         "J": 0.2835909242944428,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003172504036906026,
+      "weighted_contribution_to_total": 0.003162101274849425,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3173,7 +3173,7 @@
         "J": 0.3651165384242722,
         "magnetovolume": 0.5333026764048261
       },
-      "weighted_contribution_to_total": 0.004695143037282395,
+      "weighted_contribution_to_total": 0.004681913394290521,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3464,7 +3464,7 @@
         "J": 0.29526317787422796,
         "magnetovolume": 0.2879378578992538
       },
-      "weighted_contribution_to_total": 0.0036883637296789107,
+      "weighted_contribution_to_total": 0.003677374390080965,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3590,7 +3590,7 @@
         "J": 0.600058747658853,
         "magnetovolume": 0.4611793745181152
       },
-      "weighted_contribution_to_total": 0.003509277463206128,
+      "weighted_contribution_to_total": 0.0035008210733864743,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3764,7 +3764,7 @@
         "J": 0.3930611556747312,
         "magnetovolume": 0.10000106334873005
       },
-      "weighted_contribution_to_total": 0.0036125072158505614,
+      "weighted_contribution_to_total": 0.0036020108834421243,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3874,7 +3874,7 @@
         "J": 0.2989972648964758,
         "magnetovolume": 0.3000000000072349
       },
-      "weighted_contribution_to_total": 0.003300554265550544,
+      "weighted_contribution_to_total": 0.0032874679690522443,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3929,7 +3929,7 @@
         "J": 0.31357844133858176,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003627151297424579,
+      "weighted_contribution_to_total": 0.0036138931517056623,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -4030,7 +4030,7 @@
         "J": 0.4226724825824624,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003133899199017871,
+      "weighted_contribution_to_total": 0.0031242649929177414,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -4059,9 +4059,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -8.552782208476462e-08,
-          "W1_THz": 2.5035964346181654,
+          "W1_THz": 2.5035964346181645,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.08816828241291058
+          "spectrum_contribution": 0.08816828241291064
         }
       }
     },
@@ -4312,7 +4312,7 @@
         "J": 0.23326956321593273,
         "magnetovolume": 0.5591631367125204
       },
-      "weighted_contribution_to_total": 0.004063480294760217,
+      "weighted_contribution_to_total": 0.004053458146488211,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4350,9 +4350,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -0.027458791355836433,
-          "W1_THz": 2.1603350811504343,
+          "W1_THz": 2.1603350811504347,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.11185215200596543
+          "spectrum_contribution": 0.11185215200596539
         }
       }
     },
@@ -4411,11 +4411,11 @@
       "scores": {
         "ground_state": 1.0,
         "hull": 0.9169127594182265,
-        "phonons": 0.5603752896034838,
+        "phonons": 0.5603752896034839,
         "J": 0.370388274439098,
         "magnetovolume": 0.36328025393471114
       },
-      "weighted_contribution_to_total": 0.00400307279064072,
+      "weighted_contribution_to_total": 0.003993893834218059,
       "details": {
         "ground_state": {
           "seed_index": 31,
@@ -4453,9 +4453,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -6.182450581180999e-08,
-          "W1_THz": 3.04989798560258,
+          "W1_THz": 3.0498979856025796,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.06037528960348386
+          "spectrum_contribution": 0.06037528960348388
         }
       }
     },
@@ -4486,7 +4486,7 @@
         "J": 0.28588373336616096,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0038991376212367465,
+      "weighted_contribution_to_total": 0.003885288104261641,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4532,7 +4532,7 @@
         "J": 0.27690349287973387,
         "magnetovolume": 0.4053472572314526
       },
-      "weighted_contribution_to_total": 0.004171316346009297,
+      "weighted_contribution_to_total": 0.0041581307208672395,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4587,7 +4587,7 @@
         "J": 0.2507174841917321,
         "magnetovolume": 0.11550125838834281
       },
-      "weighted_contribution_to_total": 0.004016158463493753,
+      "weighted_contribution_to_total": 0.00400220155443172,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4642,7 +4642,7 @@
         "J": 0.28328171019984383,
         "magnetovolume": 0.41954615390971
       },
-      "weighted_contribution_to_total": 0.004268610664495338,
+      "weighted_contribution_to_total": 0.004255492960837467,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4734,7 +4734,7 @@
         "J": 0.5378914364658094,
         "magnetovolume": 0.028468618049727404
       },
-      "weighted_contribution_to_total": 0.002940013950532238,
+      "weighted_contribution_to_total": 0.002929926310992095,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4844,7 +4844,7 @@
         "J": 0.3793791869152643,
         "magnetovolume": 0.41774864046816323
       },
-      "weighted_contribution_to_total": 0.004417528491257661,
+      "weighted_contribution_to_total": 0.004404680546457627,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5082,7 +5082,7 @@
         "J": 0.5892483400819728,
         "magnetovolume": 0.6397848846641184
       },
-      "weighted_contribution_to_total": 0.004780315465346416,
+      "weighted_contribution_to_total": 0.004770250411231481,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5137,7 +5137,7 @@
         "J": 0.18335723371857676,
         "magnetovolume": 0.3783711690546879
       },
-      "weighted_contribution_to_total": 0.003873047117067996,
+      "weighted_contribution_to_total": 0.003862554442699771,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5192,7 +5192,7 @@
         "J": 0.16829436353834015,
         "magnetovolume": 0.30140531823965944
       },
-      "weighted_contribution_to_total": 0.0038965988947149755,
+      "weighted_contribution_to_total": 0.0038850759983098224,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5247,7 +5247,7 @@
         "J": 0.2737031168616937,
         "magnetovolume": 0.3535054416940678
       },
-      "weighted_contribution_to_total": 0.00425435456881648,
+      "weighted_contribution_to_total": 0.00423977686702638,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5302,7 +5302,7 @@
         "J": 0.3586508521282682,
         "magnetovolume": 0.4330749498556897
       },
-      "weighted_contribution_to_total": 0.004530078744170942,
+      "weighted_contribution_to_total": 0.004516626499957976,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5460,7 +5460,7 @@
         "J": 0.15087681056259186,
         "magnetovolume": 0.16584599859407043
       },
-      "weighted_contribution_to_total": 0.0035780176787538784,
+      "weighted_contribution_to_total": 0.003566819901358568,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5662,7 +5662,7 @@
         "J": 0.36794409858404736,
         "magnetovolume": 0.3043017634115483
       },
-      "weighted_contribution_to_total": 0.004242769891281732,
+      "weighted_contribution_to_total": 0.004230589148626674,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5836,7 +5836,7 @@
         "J": 0.284815293980218,
         "magnetovolume": 0.8339263416572495
       },
-      "weighted_contribution_to_total": 0.004480116754385659,
+      "weighted_contribution_to_total": 0.004471557012721165,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5874,9 +5874,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -9.394870207371256e-08,
-          "W1_THz": 4.469307323017341,
+          "W1_THz": 4.4693073230173415,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.02257222861736908
+          "spectrum_contribution": 0.022572228617369065
         }
       }
     },
@@ -6035,7 +6035,7 @@
         "J": 0.5905990817559659,
         "magnetovolume": 0.13216046682118857
       },
-      "weighted_contribution_to_total": 0.003838464821212806,
+      "weighted_contribution_to_total": 0.0038291432651428245,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -7017,7 +7017,7 @@
         "J": 0.4096485558629123,
         "magnetovolume": 0.4069354087532587
       },
-      "weighted_contribution_to_total": 0.004764099306633566,
+      "weighted_contribution_to_total": 0.004749077196065252,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -7072,7 +7072,7 @@
         "J": 0.5314864342501182,
         "magnetovolume": 0.41270351525357307
       },
-      "weighted_contribution_to_total": 0.003455092200459126,
+      "weighted_contribution_to_total": 0.0034463114991877893,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7258,11 +7258,11 @@
       "scores": {
         "ground_state": 1.0,
         "hull": 0.1476507135193371,
-        "phonons": 0.585584896605839,
+        "phonons": 0.5855848966058389,
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.002266428307842383,
+      "weighted_contribution_to_total": 0.0022568364176440894,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -7282,9 +7282,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -1.959175259617251e-07,
-          "W1_THz": 2.546499966914391,
+          "W1_THz": 2.546499966914392,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.08558489660583898
+          "spectrum_contribution": 0.08558489660583894
         }
       }
     },
@@ -7434,7 +7434,7 @@
         "J": 0.5993416147117644,
         "magnetovolume": 0.5710245883336273
       },
-      "weighted_contribution_to_total": 0.004282204276442421,
+      "weighted_contribution_to_total": 0.00427363705352992,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7831,11 +7831,11 @@
       "scores": {
         "ground_state": 1.0,
         "hull": 0.1754239430762681,
-        "phonons": null,
+        "phonons": 0.53830869004131,
         "J": 0.32504686490770646,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0016087718824211012,
+      "weighted_contribution_to_total": 0.0025786974500631014,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -7860,6 +7860,13 @@
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
           "accuracy_contribution": 4.686490770645105e-05
+        },
+        "phonons": {
+          "stable": true,
+          "minimum_frequency_THz": -3.2272639301035094e-08,
+          "W1_THz": 3.7061844958640786,
+          "stability_contribution": 0.5,
+          "spectrum_contribution": 0.03830869004130995
         }
       }
     },
@@ -7874,7 +7881,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003193709505763924,
+      "weighted_contribution_to_total": 0.0031824561190074868,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -7954,10 +7961,5 @@
       }
     }
   ],
-  "protocol_version": "0.2.1",
-  "provisional": false,
-  "model": "Prophet-Spin v1",
-  "moment_head": true,
-  "exchange_method": "exchange-head",
-  "phase": "complete"
+  "protocol_version": "0.2.1"
 }

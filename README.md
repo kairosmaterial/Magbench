@@ -19,10 +19,10 @@ This repository contains the evaluation code. The benchmark data (inputs, DFT re
 |---|---:|---|
 | Magnetic ground state and MP hull | 191 | Final structures of the original DFT relaxations (EXTXYZ), experimental and DFT moments, MP hull labels |
 | Volume-exchange coupling | 133 | Volume-strain designs and reference slopes ∂J/∂ln V |
-| Phonon spectra | 110 | Displaced supercells, reference sampling points, DFT frequencies and force constants |
+| Phonon spectra | 111 | Displaced supercells, reference sampling points, DFT frequencies and force constants |
 | Magnetic exchange J | 172 | Exchange bonds, shells, energy-mapping designs and DFT J |
 
-In the dataset, `inputs/` is used for model inference and `targets/` for scoring. The current data version is v0.2.2; the scoring protocol is v0.2.1.
+In the dataset, `inputs/` is used for model inference and `targets/` for scoring. The current data version is v0.2.3; the scoring protocol is v0.2.1.
 
 ```sh
 huggingface-cli download kairosmaterial/Magbench --repo-type dataset --local-dir data
@@ -71,14 +71,14 @@ The code in this repository is released under the MIT License (see [LICENSE](LIC
 
 Site address: [kairosmaterial.github.io/Magbench/](https://kairosmaterial.github.io/Magbench/).
 
-The static site compares three owner-approved result records. The two pending release entries are marked **weights and inference code to be released**; Prophet-Spin v1 is a scores-only reference with an explicit replay exemption. Test-set-informed models stay listed with a disclosure marker.
+The static site compares three owner-approved result records using data v0.2.3. All three have prediction artefacts for scorer replay; public weights and some inference code await release. Prophet-Spin v1 was trained on a subset of the v5 dataset.
 
 <!-- leaderboard:start -->
 | Model | Total | Ground-state passes | Availability |
 |---|---:|---:|---|
-| [Prophet-Spinv2](models/prophet-spin-v2/prophet-spin-v2.yml) | 0.605028719 | 159/191 | Awaiting artefacts |
-| [Prophet-Spin-ex](models/prophet-spin-ex/prophet-spin-ex.yml) | 0.546331416 | 155/191 | Awaiting artefacts |
-| [Prophet-Spin v1](models/prophet-spin-v1/prophet-spin-v1.yml) | 0.437307590 | 146/191 | Reference; replay exempt |
+| [Prophet-Spinv2](models/prophet-spin-v2/prophet-spin-v2.yml) | 0.605398474 | 159/191 | Weights awaiting public release |
+| [Prophet-Spin-ex](models/prophet-spin-ex/prophet-spin-ex.yml) | 0.546779806 | 155/191 | Weights awaiting public release |
+| [Prophet-Spin v1](models/prophet-spin-v1/prophet-spin-v1.yml) | 0.437756477 | 146/191 | Weights awaiting public release |
 <!-- leaderboard:end -->
 
 Build and preview locally:

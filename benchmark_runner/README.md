@@ -1,6 +1,6 @@
 # MagBench model evaluation
 
-Five material-level scores, each weighted 0.2: magnetic ground state (191), MP hull (191), phonons (110), exchange J (172), and volume–exchange coupling (133). Wrong or missing ground-state order zeros all scores for that material. Fixed cohort denominators include failed predictions. Phonon minimum frequency below −0.1 THz gives zero phonon score.
+Five material-level scores, each weighted 0.2: magnetic ground state (191), MP hull (191), phonons (current data cohort), exchange J (172), and volume–exchange coupling (133). Wrong or missing ground-state order zeros all scores for that material. Fixed cohort denominators include failed predictions. Phonon minimum frequency below −0.1 THz gives zero phonon score.
 
 ## Run a model
 

@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
-from .cards import ROOT, load_card, config, read, reference_exempt, metrics_from, compare, check_adapter, inside
+from .cards import ROOT, load_card, config, read, metrics_from, compare, check_adapter, inside
 from . import artifacts
 
 
@@ -19,10 +19,10 @@ class Review:
     @property
     def passed(self):return not any(r['status']=='FAIL' for r in self.rows)
     def markdown(self):
-        expected=('Model card schema','Required files','Model path guard','Submission lifecycle','Version pins','Reference exception','Stored scores and metrics','Public inference repository','Public checkpoint (range request)','Licences','Inference syntax and adapter definition','Inference script','Prediction artefact download','Pinned target integrity','Prediction JSON','Recorded exchange route','Scorer replay','Replay equals scores.json','Replay equals declared metrics')
+        expected=('Model card schema','Required files','Model path guard','Submission lifecycle','Version pins','Stored scores and metrics','Public inference repository','Public checkpoint (range request)','Licences','Inference syntax and adapter definition','Inference script','Prediction artefact download','Pinned target integrity','Prediction JSON','Recorded exchange route','Scorer replay','Replay equals scores.json','Replay equals declared metrics')
         present={r['check'] for r in self.rows}
         for check in expected:
-            if check not in present:self.record(check,'NOT RUN','A prerequisite is unavailable; see the explicit failure, exemption or awaiting-artefacts result above')
+            if check not in present:self.record(check,'NOT RUN','A prerequisite is unavailable; see the explicit failure or awaiting-artefacts result above')
         clean=lambda v:str(v).replace('|','\\|').replace('\n',' ')
         return '| Check | Status | Result |\n|---|---|---|\n'+''.join('| '+ ' | '.join(clean(r[k]) for k in ('check','status','detail'))+' |\n' for r in self.rows)
 
@@ -81,7 +81,6 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
         expected={'protocol_version':settings['protocol_version'],'data_version':settings['dataset']['data_version'],'runner_version':settings['runner_version']}
         compare(expected,{k:card['evaluation'][k] for k in expected},'versions');return 'Current protocol, data and runner versions'
     review.check('Version pins',versions)
-    reference=review.check('Reference exception',lambda:reference_exempt(card,score_path,policy_root))
     awaiting=bool(card.get('publication_status'))
     def stored():
         result=read(score_path);compare(metrics_from(result),card['metrics'],'declared metrics')
@@ -92,21 +91,21 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
         return 'Declared metrics agree with scores.json within 1e-9; ground-state passes agree'
     review.check('Stored scores and metrics',stored)
     def unavailable(name,reason):
-        review.record(name,'FAIL' if require_public else ('EXEMPT' if reference else 'AWAITING ARTEFACTS'),reason)
-    def public_check(name,call):
-        if awaiting:unavailable(name,'awaiting artefacts: weights and inference code to be released')
-        elif reference:unavailable(name,'Packaged scores-only reference; original artefacts unavailable')
-        elif offline:review.record(name,'FAIL','Offline mode cannot establish public availability')
+        review.record(name,'FAIL' if require_public else 'AWAITING ARTEFACTS',reason)
+    def public_check(name,url,call):
+        if awaiting and url=='TODO(owner)':unavailable(name,'awaiting artefacts: a public address has not been supplied')
+        elif offline:
+            review.record(name,'NOT RUN' if awaiting and not require_public else 'FAIL','Offline mode cannot establish public availability')
         else:review.check(name,call)
-    public_check('Public inference repository',lambda:artifacts.probe(card['repo']))
-    public_check('Public checkpoint (range request)',lambda:artifacts.probe(card['checkpoint']['url'],checkpoint=True))
+    public_check('Public inference repository',card['repo'],lambda:artifacts.probe(card['repo']))
+    public_check('Public checkpoint (range request)',card['checkpoint']['url'],lambda:artifacts.probe(card['checkpoint']['url'],checkpoint=True))
     def licenses():
         if any(v=='TODO(owner)' or not v.strip() for v in card['license'].values()):raise ValueError('Both code and checkpoint licences must be stated')
         return 'Code and checkpoint licences stated'
-    if awaiting or reference:unavailable('Licences','awaiting artefacts: licence metadata requires owner confirmation')
+    if awaiting and any(v=='TODO(owner)' for v in card['license'].values()):unavailable('Licences','awaiting artefacts: licence metadata requires owner confirmation')
     else:review.check('Licences',licenses)
     script=review.check('Inference syntax and adapter definition',lambda:str(check_adapter(card,folder).relative_to(folder)))
-    if awaiting:
+    if awaiting and not settings['awaiting_publication'][key].get('inference_available',False):
         expected=settings['awaiting_publication'][key]['inference_sha256']
         actual=hashlib.sha256(inside(folder,card['inference']['script']).read_bytes()).hexdigest() if script else ''
         if actual==expected:unavailable('Inference script','awaiting artefacts: the tracked script is an explicit release placeholder')
@@ -116,23 +115,18 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
     if prediction:
         def local_prediction():
             if prediction.stat().st_size>settings['limits']['predictions_bytes']:raise ValueError('Prediction JSON exceeds size limit')
-            if awaiting:artifacts.verify(prediction,card['predictions']['sha256'],card['predictions']['size'])
+            artifacts.verify(prediction,card['predictions']['sha256'],card['predictions']['size'])
+            artifacts.verify_local_phonons(card,prediction,settings['limits'])
             return 'Explicit local predictions; not evidence of public availability'
         if review.check('Local prediction integrity',local_prediction) is None:prediction=None
-    if awaiting or reference:
-        unavailable('Prediction artefact download','awaiting artefacts: public prediction JSON and phonon archive URLs are not supplied')
-    elif offline:
-        review.record('Prediction artefact download','FAIL','Offline mode cannot verify the public artefact download')
+    if offline:
+        review.record('Prediction artefact download','NOT RUN' if awaiting and prediction and not require_public else 'FAIL','Public download is not tested offline; supplied local files are checked separately')
     elif not cache:
         review.record('Prediction artefact download','FAIL','Supply --cache on a filesystem with sufficient space')
     else:
         prediction=review.check('Prediction artefact download',lambda:artifacts.prediction_files(card,settings,cache))
-    if reference and not prediction:
-        unavailable('Scorer replay','Explicit schema-level reference exemption: original predictions were never delivered')
-        return review
     if not prediction:
-        if awaiting:unavailable('Scorer replay','awaiting artefacts: provide --predictions for a local replay')
-        else:review.record('Scorer replay','FAIL','Verified prediction artefacts are required')
+        review.record('Scorer replay','FAIL','Verified prediction artefacts are required for every entry')
         return review
     target_dir=review.check('Pinned target integrity',lambda:artifacts.targets(settings,data=data,cache=cache,offline=offline))
     preds=review.check('Prediction JSON',lambda:read(prediction))

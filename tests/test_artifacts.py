@@ -78,3 +78,37 @@ def test_archive_symlinks_and_duplicate_normalised_paths_rejected(tmp_path):
                 handle.writestr('phonons/001.npz',b'a');handle.writestr('phonons/./001.npz',b'b')
         with pytest.raises(ValueError,match='Duplicate or non-regular'):
             artifacts.extract_phonons(archive,tmp_path/variant,config()['limits'])
+
+
+def test_phonon_file_manifest_retrieval_and_integrity(monkeypatch,tmp_path):
+    body=b'phonon data';pred=json.dumps({'001':{'phonon_file':'phonons/001.npz'}}).encode()
+    ref=lambda url,data:{'url':url,'size':len(data),'sha256':hashlib.sha256(data).hexdigest()}
+    member={k:v for k,v in ref('https://example.org/phonons/001.npz',body).items() if k!='url'}
+    card={'predictions':{**ref('https://example.org/predictions.json',pred),'phonons':{'url':'https://example.org/phonons/','files':[{'path':'phonons/001.npz',**member}]}}}
+    urls=[]
+    def request(url,**kwargs):
+        urls.append(url);return Response(pred if url.endswith('predictions.json') else body)
+    monkeypatch.setattr(artifacts,'request',request)
+    prediction=artifacts.prediction_files(card,config(),tmp_path)
+    assert urls==['https://example.org/predictions.json','https://example.org/phonons/001.npz']
+    artifacts.verify_local_phonons(card,prediction,config()['limits'])
+    (prediction.parent/'phonons/001.npz').write_bytes(b'corrupted')
+    with pytest.raises(ValueError):artifacts.verify_local_phonons(card,prediction,config()['limits'])
+
+
+def test_phonon_manifest_rejects_unlisted_and_duplicate_files(tmp_path):
+    prediction=tmp_path/'predictions.json';prediction.write_text(json.dumps({'001':{'phonon_file':'phonons/002.npz'}}))
+    f=tmp_path/'phonons/001.npz';f.parent.mkdir();f.write_bytes(b'x')
+    member={'path':'phonons/001.npz','size':1,'sha256':hashlib.sha256(b'x').hexdigest()}
+    card={'predictions':{'phonons':{'files':[member]}}}
+    with pytest.raises(ValueError,match='unlisted'):artifacts.verify_local_phonons(card,prediction,config()['limits'])
+    card['predictions']['phonons']['files'].append(member)
+    with pytest.raises(ValueError,match='duplicate'):artifacts.verify_local_phonons(card,prediction,config()['limits'])
+
+
+def test_unresolved_release_revision_requires_verified_local_data(tmp_path):
+    p=tmp_path/'targets/scoring.json';p.parent.mkdir();p.write_bytes(b'{}')
+    settings={'dataset':{'revision':'TODO(owner)','targets':[{'path':'targets/scoring.json','size':2,'sha256':hashlib.sha256(b'{}').hexdigest()}]}}
+    assert artifacts.targets(settings,data=tmp_path,offline=True)==tmp_path/'targets'
+    with pytest.raises(ValueError,match='immutable commit SHA'):
+        artifacts.targets(settings,cache=tmp_path)

@@ -93,7 +93,7 @@
           td.append(textNode('span',c.notes?.organisation||'to be provided','organisation'));
           if(c.model_key==='prophet-spin-v1')td.append(textNode('span','trained on a subset of the v5 dataset','row-status'));
         }else{
-          td.textContent=value==null?'—':col.score?value.toFixed(3):String(value);
+          td.textContent=value==null?(col.id==='params'?'to be provided':'—'):col.score?value.toFixed(3):String(value);
           if(col.numeric)td.classList.add('num');
           if(col.score)td.classList.add('score');
           if(col.numeric&&value===best[col.id])td.classList.add('best');

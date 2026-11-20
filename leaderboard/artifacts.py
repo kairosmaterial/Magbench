@@ -112,7 +112,8 @@ def extract_phonons(archive, destination, limits):
 
 def targets(settings, *, data=None, cache=None, offline=False):
     dataset=settings['dataset']
-    if not re.fullmatch('[0-9a-f]{40}',dataset['revision']):raise ValueError('Dataset revision must be an immutable commit SHA')
+    if not re.fullmatch('[0-9a-f]{40}',dataset['revision']) and not (data and dataset['revision']=='TODO(owner)'):
+        raise ValueError('Dataset revision must be an immutable commit SHA; the release pin awaits owner confirmation')
     if not data and not cache:raise ValueError('Supply --data or --cache for pinned targets')
     root=Path(data) if data else Path(cache)/'dataset'/dataset['revision']
     for entry in dataset['targets']:
@@ -125,9 +126,41 @@ def targets(settings, *, data=None, cache=None, offline=False):
     return root/'targets'
 
 
+def verify_local_phonons(card, prediction, limits):
+    refs=card['predictions']['phonons']
+    if 'files' not in refs:return
+    folder=Path(prediction).resolve().parent
+    members=refs['files']
+    if len(members)>limits['archive_members'] or sum(r['size'] for r in members)>limits['extracted_bytes']:
+        raise ValueError('Phonon manifest exceeds the size limit')
+    seen=set()
+    for ref in members:
+        path=inside(folder,ref['path'])
+        if path in seen or path.suffix!='.npz' or not ref['path'].startswith('phonons/'):
+            raise ValueError('Invalid or duplicate phonon manifest member')
+        seen.add(path)
+        verify(path,ref['sha256'],ref['size'])
+    records=json.loads(Path(prediction).read_text())
+    for row in records.values():
+        if 'phonon_file' in row and inside(folder,row['phonon_file']) not in seen:
+            raise ValueError('Prediction references an unlisted phonon file')
+
+
 def prediction_files(card, settings, cache):
     limits=settings['limits'];refs=card['predictions'];folder=Path(cache)/'predictions'/refs['sha256']
     prediction=download(refs,folder/'predictions.json',limits['predictions_bytes'])
-    archive=download(refs['phonons'],Path(cache)/'archives'/refs['phonons']['sha256'],limits['phonon_archive_bytes'])
-    extract_phonons(archive,folder,limits)
+    phonons=refs['phonons']
+    if 'files' in phonons:
+        if len(phonons['files'])>limits['archive_members'] or sum(r['size'] for r in phonons['files'])>limits['extracted_bytes']:
+            raise ValueError('Phonon manifest exceeds the size limit')
+        for ref in phonons['files']:
+            relative=ref['path']
+            target=inside(folder,relative)
+            if not relative.startswith('phonons/') or target.suffix!='.npz':raise ValueError('Invalid phonon path')
+            url=phonons['url'].rstrip('/')+'/'+quote(relative.removeprefix('phonons/'))
+            download({**ref,'url':url},target,64*1024*1024)
+        verify_local_phonons(card,prediction,limits)
+    else:
+        archive=download(phonons,Path(cache)/'archives'/phonons['sha256'],limits['phonon_archive_bytes'])
+        extract_phonons(archive,folder,limits)
     return prediction

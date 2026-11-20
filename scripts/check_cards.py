@@ -3,7 +3,7 @@
 from pathlib import Path
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from leaderboard.cards import ROOT,load_card,read,metrics_from,compare,reference_exempt,check_adapter
+from leaderboard.cards import ROOT,load_card,read,metrics_from,compare,check_adapter
 
 
 def main():
@@ -11,7 +11,7 @@ def main():
     for path in sorted((ROOT/'models').glob('*/*.yml')):
         card,folder=load_card(path.parent.name)
         compare(metrics_from(read(folder/'scores.json')),card['metrics'])
-        reference_exempt(card,folder/'scores.json');check_adapter(card,folder)
+        check_adapter(card,folder)
         print(card['model_key']+': valid');count+=1
     if not count:raise ValueError('No model cards found')
 

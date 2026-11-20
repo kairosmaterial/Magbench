@@ -7,7 +7,7 @@ MagBench measures magnetic ground-state search, energy relative to the Materials
 |---|---:|---:|
 | Ground state | 191 | 0.20 |
 | MP hull | 191 | 0.20 |
-| Phonons | 110 | 0.20 |
+| Phonons | 111 | 0.20 |
 | Exchange J | 172 | 0.20 |
 | dJ/dlnV | 133 | 0.20 |
 <!-- cohorts:end -->
@@ -124,10 +124,10 @@ TODO(owner): Protocol releases must identify changes in rules, reference arrays 
 
 ## Benchmark-informed model disclosure
 
-Every submission declares `test_set_informed`. Any use of the benchmark materials or of benchmark scores in training, validation, model or checkpoint selection requires `true` and a one-sentence `notes.disclosure`. Seed-table selection informed by benchmark materials must also be disclosed. Such entries remain on the leaderboard with a visible marker. The scores-only reference retains visibly unknown exposure pending owner confirmation.
+Every submission declares `test_set_informed`. Any use of the benchmark materials or of benchmark scores in training, validation, model or checkpoint selection requires `true` and a one-sentence `notes.disclosure`. Seed-table selection informed by benchmark materials must also be disclosed. Such entries remain listed. Declarations are retained in model cards without table markers. The current owner-approved release entries leave undeclared exposure as an explicit placeholder. Prophet-Spin v1 was trained on a subset of the v5 dataset.
 
-## Data version v0.2.2
+## Data releases
 
-Data version v0.2.2 corrects signs on non-magnetic species in the magnetovolume energy-mapping designs. It does not change the v0.2.1 scoring rules, cohorts, targets or exchange-readout reference scores. Energy-mapping runs must use the corrected designs. Dataset repository, immutable revision and target hashes are pinned in `benchmark.json`.
+Data version v0.2.2 corrects signs on non-magnetic species in the magnetovolume energy-mapping designs. It does not change the v0.2.1 scoring rules, cohorts, targets or exchange-readout reference scores. Energy-mapping runs must use the corrected designs. Data version v0.2.3 adds material 221 (bcc Fe) to the phonon cohort. Cohort sizes above are read from the current score records; all other reference arrays, rules and defaults are unchanged. Dataset repository, immutable revision and target hashes are pinned in `benchmark.json`.
 
 The repository code licence is MIT; the dataset licence is CC BY 2.0. TODO(owner): Supply benchmark authors, affiliations and citation metadata. TODO(owner): Confirm stable public URLs and remaining model-card metadata before completing artefact release.

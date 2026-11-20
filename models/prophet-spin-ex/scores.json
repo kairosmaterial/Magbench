@@ -1,5 +1,5 @@
 {
-  "total_score": 0.546331416358473,
+  "total_score": 0.5467798064153615,
   "maximum_score": 1.0,
   "dimensions": {
     "ground_state": {
@@ -17,12 +17,12 @@
       "accuracy_weighted_score": 0.061671539015695706
     },
     "phonons": {
-      "materials": 110,
-      "mean_material_score": 0.7412747415939013,
+      "materials": 111,
+      "mean_material_score": 0.7435166918783431,
       "weight": 0.2,
-      "weighted_score": 0.14825494831878025,
-      "stability_weighted_score": 0.07727272727272727,
-      "spectrum_weighted_score": 0.07098222104605297
+      "weighted_score": 0.14870333837566863,
+      "stability_weighted_score": 0.07747747747747748,
+      "spectrum_weighted_score": 0.07122586089819112
     },
     "J": {
       "materials": 172,
@@ -69,7 +69,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0037688084937172266,
+      "weighted_contribution_to_total": 0.003752975779049793,
       "details": {
         "ground_state": {
           "seed_index": 6,
@@ -106,7 +106,7 @@
         "J": 0.4131149877252161,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.004282931578862006,
+      "weighted_contribution_to_total": 0.004267227608045286,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -152,7 +152,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0033665498429486535,
+      "weighted_contribution_to_total": 0.003353300212491846,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -189,7 +189,7 @@
         "J": 0.2833417936896008,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003869687515513222,
+      "weighted_contribution_to_total": 0.003853834789228626,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -235,7 +235,7 @@
         "J": 0.32224516151029825,
         "magnetovolume": 0.10254384490034589
       },
-      "weighted_contribution_to_total": 0.004089035303131609,
+      "weighted_contribution_to_total": 0.004073027944550068,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -386,7 +386,7 @@
         "J": 0.3154048038815545,
         "magnetovolume": 0.11994184809648187
       },
-      "weighted_contribution_to_total": 0.00419138225836051,
+      "weighted_contribution_to_total": 0.004175461075244341,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -441,7 +441,7 @@
         "J": 0.08792496285907733,
         "magnetovolume": 0.17659877081333214
       },
-      "weighted_contribution_to_total": 0.003711751607600878,
+      "weighted_contribution_to_total": 0.00369550387349518,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -789,7 +789,7 @@
         "J": 0.3547292744946165,
         "magnetovolume": 0.36813376434388373
       },
-      "weighted_contribution_to_total": 0.004746781250130224,
+      "weighted_contribution_to_total": 0.0047307363101319775,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -844,7 +844,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0034555531663460985,
+      "weighted_contribution_to_total": 0.003440781025325592,
       "details": {
         "ground_state": {
           "seed_index": 31,
@@ -929,7 +929,7 @@
         "J": 0.41494843066245435,
         "magnetovolume": 0.22063095920040796
       },
-      "weighted_contribution_to_total": 0.004505467589891305,
+      "weighted_contribution_to_total": 0.004489406646583144,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -984,7 +984,7 @@
         "J": 0.46409097478535416,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.004388984782535394,
+      "weighted_contribution_to_total": 0.0043731191018274084,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1030,7 +1030,7 @@
         "J": 0.5346052740534123,
         "magnetovolume": 0.691675361130829
       },
-      "weighted_contribution_to_total": 0.004715780408452578,
+      "weighted_contribution_to_total": 0.0047003546489029204,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1085,7 +1085,7 @@
         "J": 0.5020794770989632,
         "magnetovolume": 0.3151045371899819
       },
-      "weighted_contribution_to_total": 0.004914632969323124,
+      "weighted_contribution_to_total": 0.004898608035947257,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1266,7 +1266,7 @@
         "J": 0.30008294816478875,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003559694305659792,
+      "weighted_contribution_to_total": 0.003544440497690378,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1454,7 +1454,7 @@
         "J": 0.4522249359574096,
         "magnetovolume": 0.30416550238376183
       },
-      "weighted_contribution_to_total": 0.0042415662277726675,
+      "weighted_contribution_to_total": 0.004225655619192612,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -1820,7 +1820,7 @@
         "J": 0.3750000000000012,
         "magnetovolume": 0.2000000000001831
       },
-      "weighted_contribution_to_total": 0.0035673084362948977,
+      "weighted_contribution_to_total": 0.0035566523175592215,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -2019,7 +2019,7 @@
         "J": 0.3110511304119099,
         "magnetovolume": 0.2163620310633591
       },
-      "weighted_contribution_to_total": 0.004289126508944994,
+      "weighted_contribution_to_total": 0.004273069491041402,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -2241,7 +2241,7 @@
         "J": 0.5706780575979554,
         "magnetovolume": 0.42834076865519694
       },
-      "weighted_contribution_to_total": 0.004453440322433304,
+      "weighted_contribution_to_total": 0.00443721373325868,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -2326,7 +2326,7 @@
         "J": 0.22515424539125942,
         "magnetovolume": 0.3025846553941913
       },
-      "weighted_contribution_to_total": 0.003912299920979263,
+      "weighted_contribution_to_total": 0.0038969715011115793,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -2507,7 +2507,7 @@
         "J": 0.144414554662704,
         "magnetovolume": 0.1536214494467992
       },
-      "weighted_contribution_to_total": 0.004236952686306382,
+      "weighted_contribution_to_total": 0.004220981915351961,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -2562,7 +2562,7 @@
         "J": 0.15018263833081305,
         "magnetovolume": 0.001464244558993793
       },
-      "weighted_contribution_to_total": 0.003938787905599976,
+      "weighted_contribution_to_total": 0.003923181898648111,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2617,7 +2617,7 @@
         "J": 0.5153181220159827,
         "magnetovolume": 0.02343873575296622
       },
-      "weighted_contribution_to_total": 0.0039390371626881,
+      "weighted_contribution_to_total": 0.003923173283401489,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2672,7 +2672,7 @@
         "J": 0.42930290909251323,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.00393234777248805,
+      "weighted_contribution_to_total": 0.00391728676340687,
       "details": {
         "ground_state": {
           "seed_index": 21,
@@ -2718,7 +2718,7 @@
         "J": 0.37839131369007317,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.004110766053391242,
+      "weighted_contribution_to_total": 0.004095231421995195,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -2764,7 +2764,7 @@
         "J": 0.3564021182996419,
         "magnetovolume": 0.3122678267519627
       },
-      "weighted_contribution_to_total": 0.004074460990670201,
+      "weighted_contribution_to_total": 0.004058546648761813,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -2915,7 +2915,7 @@
         "J": 0.4061194118908052,
         "magnetovolume": 0.21478931012591826
       },
-      "weighted_contribution_to_total": 0.004352647127035166,
+      "weighted_contribution_to_total": 0.004337224409534128,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -2970,7 +2970,7 @@
         "J": 0.809674050863169,
         "magnetovolume": 0.6579008317590888
       },
-      "weighted_contribution_to_total": 0.005697301116711547,
+      "weighted_contribution_to_total": 0.005681337486098486,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3080,7 +3080,7 @@
         "J": 0.17642858484991406,
         "magnetovolume": 0.008510647175818922
       },
-      "weighted_contribution_to_total": 0.004074252048038598,
+      "weighted_contribution_to_total": 0.004058361443465902,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3135,7 +3135,7 @@
         "J": 0.3236796045509473,
         "magnetovolume": 0.11500062922136711
       },
-      "weighted_contribution_to_total": 0.0043523129712263135,
+      "weighted_contribution_to_total": 0.004336343887038734,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3190,7 +3190,7 @@
         "J": 0.3092769986617227,
         "magnetovolume": 0.11921227496119274
       },
-      "weighted_contribution_to_total": 0.004160387939223648,
+      "weighted_contribution_to_total": 0.004144221594720755,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3316,7 +3316,7 @@
         "J": 0.31669494854298363,
         "magnetovolume": 0.11516990985981992
       },
-      "weighted_contribution_to_total": 0.0042528671684235395,
+      "weighted_contribution_to_total": 0.004236780706268987,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3371,7 +3371,7 @@
         "J": 0.8843345698785681,
         "magnetovolume": 0.6837699742479584
       },
-      "weighted_contribution_to_total": 0.005791843133721841,
+      "weighted_contribution_to_total": 0.00577599736050724,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3552,7 +3552,7 @@
         "J": 0.3628619605876523,
         "magnetovolume": 0.22499965824056684
       },
-      "weighted_contribution_to_total": 0.004525711923215029,
+      "weighted_contribution_to_total": 0.004509509444265991,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3607,7 +3607,7 @@
         "J": 0.31712605136449823,
         "magnetovolume": 0.2923637771546723
       },
-      "weighted_contribution_to_total": 0.004358587832934723,
+      "weighted_contribution_to_total": 0.004342411685539888,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3710,7 +3710,7 @@
         "J": 0.15281631024013992,
         "magnetovolume": 0.318940884481959
       },
-      "weighted_contribution_to_total": 0.004022040731206928,
+      "weighted_contribution_to_total": 0.0040058041421243236,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3765,7 +3765,7 @@
         "J": 0.43997775746070633,
         "magnetovolume": 0.009660767955454539
       },
-      "weighted_contribution_to_total": 0.0035633840198143535,
+      "weighted_contribution_to_total": 0.003547576638102826,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3836,7 +3836,7 @@
         "J": 0.3185062030467725,
         "magnetovolume": 0.10000000408066785
       },
-      "weighted_contribution_to_total": 0.004368908150252754,
+      "weighted_contribution_to_total": 0.004352943881201724,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3978,7 +3978,7 @@
         "J": 0.3558491554210513,
         "magnetovolume": 0.3009781534488868
       },
-      "weighted_contribution_to_total": 0.0036344370586329396,
+      "weighted_contribution_to_total": 0.003619341110234232,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4033,7 +4033,7 @@
         "J": 0.43439168537542483,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.004176500248272812,
+      "weighted_contribution_to_total": 0.004161069154212106,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -4182,7 +4182,7 @@
         "J": 0.7292698595636791,
         "magnetovolume": 0.2509693755273154
       },
-      "weighted_contribution_to_total": 0.005098231952882668,
+      "weighted_contribution_to_total": 0.005082092748376547,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4333,7 +4333,7 @@
         "J": 0.2364416214711028,
         "magnetovolume": 0.20340487735950413
       },
-      "weighted_contribution_to_total": 0.004398496992733906,
+      "weighted_contribution_to_total": 0.004382558370770475,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4436,7 +4436,7 @@
         "J": 0.20688600460185072,
         "magnetovolume": 0.11383768102638055
       },
-      "weighted_contribution_to_total": 0.003987630371562536,
+      "weighted_contribution_to_total": 0.0039719656001611725,
       "details": {
         "ground_state": {
           "seed_index": 31,
@@ -4507,7 +4507,7 @@
         "J": 0.28345907101019646,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0039230445415586075,
+      "weighted_contribution_to_total": 0.003907185564674807,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4553,7 +4553,7 @@
         "J": 0.3124949346363014,
         "magnetovolume": 0.15337615260610313
       },
-      "weighted_contribution_to_total": 0.004148670381737293,
+      "weighted_contribution_to_total": 0.004132554406395198,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4608,7 +4608,7 @@
         "J": 0.25020768736642324,
         "magnetovolume": 0.11956166394215614
       },
-      "weighted_contribution_to_total": 0.0038826568200203844,
+      "weighted_contribution_to_total": 0.003867904786508131,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4663,7 +4663,7 @@
         "J": 0.30538715515274734,
         "magnetovolume": 0.10351006796876525
       },
-      "weighted_contribution_to_total": 0.004145378403433046,
+      "weighted_contribution_to_total": 0.004129280199771228,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4718,7 +4718,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0035384851320009398,
+      "weighted_contribution_to_total": 0.003523988303282625,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -4755,7 +4755,7 @@
         "J": 0.1105904453826812,
         "magnetovolume": 0.04453000327781922
       },
-      "weighted_contribution_to_total": 0.003376424827579313,
+      "weighted_contribution_to_total": 0.0033607103724040224,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4810,7 +4810,7 @@
         "J": 0.502974554943734,
         "magnetovolume": 0.5653032146617746
       },
-      "weighted_contribution_to_total": 0.004699254579571984,
+      "weighted_contribution_to_total": 0.0046832379421036475,
       "details": {
         "ground_state": {
           "seed_index": 7,
@@ -4865,7 +4865,7 @@
         "J": 0.24757987909748744,
         "magnetovolume": 0.01993496744081197
       },
-      "weighted_contribution_to_total": 0.0040559209897829,
+      "weighted_contribution_to_total": 0.004040912568077062,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4968,7 +4968,7 @@
         "J": 0.5973585378536546,
         "magnetovolume": 0.7142076167297766
       },
-      "weighted_contribution_to_total": 0.005649788952751031,
+      "weighted_contribution_to_total": 0.0056336040738625155,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5039,7 +5039,7 @@
         "J": 0.574063997368127,
         "magnetovolume": 0.5094394734938781
       },
-      "weighted_contribution_to_total": 0.004728964253835679,
+      "weighted_contribution_to_total": 0.004712900203226886,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5142,7 +5142,7 @@
         "J": 0.726168219032985,
         "magnetovolume": 0.10359444056952813
       },
-      "weighted_contribution_to_total": 0.004884149131202534,
+      "weighted_contribution_to_total": 0.004867975749540012,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5197,7 +5197,7 @@
         "J": 0.14874653944796928,
         "magnetovolume": 0.013414603268489462
       },
-      "weighted_contribution_to_total": 0.004027122955735079,
+      "weighted_contribution_to_total": 0.004011179140620807,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5252,7 +5252,7 @@
         "J": 0.17647268326432844,
         "magnetovolume": 0.10986209455762616
       },
-      "weighted_contribution_to_total": 0.0042133319739777325,
+      "weighted_contribution_to_total": 0.0041972736833204675,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5307,7 +5307,7 @@
         "J": 0.2919742408280563,
         "magnetovolume": 0.0904273310674647
       },
-      "weighted_contribution_to_total": 0.00431336845666778,
+      "weighted_contribution_to_total": 0.00429726711520865,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5362,7 +5362,7 @@
         "J": 0.31187730979093353,
         "magnetovolume": 0.22761386839740966
       },
-      "weighted_contribution_to_total": 0.0043412472316964636,
+      "weighted_contribution_to_total": 0.0043250502195722,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5465,7 +5465,7 @@
         "J": 0.8187806066346979,
         "magnetovolume": 0.6105967887759398
       },
-      "weighted_contribution_to_total": 0.005731767812063486,
+      "weighted_contribution_to_total": 0.005715493959308535,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5520,7 +5520,7 @@
         "J": 0.18323516549618482,
         "magnetovolume": 0.012227870106273913
       },
-      "weighted_contribution_to_total": 0.003742214074505972,
+      "weighted_contribution_to_total": 0.003727309680650146,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5639,7 +5639,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0036771435341181255,
+      "weighted_contribution_to_total": 0.003660930544442443,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -5715,7 +5715,7 @@
         "J": 0.3047519005673093,
         "magnetovolume": 0.0035494560199970946
       },
-      "weighted_contribution_to_total": 0.0042146637942200235,
+      "weighted_contribution_to_total": 0.004198598875760555,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5903,7 +5903,7 @@
         "J": 0.35279638471129804,
         "magnetovolume": 0.8828277634540738
       },
-      "weighted_contribution_to_total": 0.005592927730813667,
+      "weighted_contribution_to_total": 0.005576741779840829,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6102,7 +6102,7 @@
         "J": 0.5122584808114157,
         "magnetovolume": 0.26344181473849104
       },
-      "weighted_contribution_to_total": 0.004886410743110089,
+      "weighted_contribution_to_total": 0.004870145096300884,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6205,7 +6205,7 @@
         "J": 0.3091639459928534,
         "magnetovolume": 0.11090012948379845
       },
-      "weighted_contribution_to_total": 0.003502935020419251,
+      "weighted_contribution_to_total": 0.0034875242303381397,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -6260,7 +6260,7 @@
         "J": 0.7010900985236836,
         "magnetovolume": 0.5834939493718269
       },
-      "weighted_contribution_to_total": 0.005055058131487964,
+      "weighted_contribution_to_total": 0.005038841079776108,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6528,7 +6528,7 @@
         "J": 0.376536455084504,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0033318442628104965,
+      "weighted_contribution_to_total": 0.003316901874470258,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -6574,7 +6574,7 @@
         "J": 0.44290992934474416,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003507593620405594,
+      "weighted_contribution_to_total": 0.0034929599257231474,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -6755,7 +6755,7 @@
         "J": 0.44636736970066127,
         "magnetovolume": 0.3760099799770357
       },
-      "weighted_contribution_to_total": 0.004575183311002045,
+      "weighted_contribution_to_total": 0.004559591429892805,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -6810,7 +6810,7 @@
         "J": 0.2872898291106988,
         "magnetovolume": 0.10063557411094466
       },
-      "weighted_contribution_to_total": 0.00424246725164356,
+      "weighted_contribution_to_total": 0.004226434031585884,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6865,7 +6865,7 @@
         "J": 0.5122125371541305,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003637140615704382,
+      "weighted_contribution_to_total": 0.0036219969725539646,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -6959,7 +6959,7 @@
         "J": 0.18627600139021333,
         "magnetovolume": 0.28524372194179143
       },
-      "weighted_contribution_to_total": 0.003975684631552055,
+      "weighted_contribution_to_total": 0.003959455973903834,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7110,7 +7110,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0038393925440846767,
+      "weighted_contribution_to_total": 0.0038235462778460393,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -7250,7 +7250,7 @@
         "J": 0.020100354934388623,
         "magnetovolume": 0.022269459756974693
       },
-      "weighted_contribution_to_total": 0.0036665906693825515,
+      "weighted_contribution_to_total": 0.0036504849624185943,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -7305,7 +7305,7 @@
         "J": 0.6531392823933495,
         "magnetovolume": 0.38250593352684703
       },
-      "weighted_contribution_to_total": 0.005228585809530414,
+      "weighted_contribution_to_total": 0.005212331871847113,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7511,7 +7511,7 @@
         "J": 0.44947809411462475,
         "magnetovolume": 0.2068937915031427
       },
-      "weighted_contribution_to_total": 0.0045467019218574335,
+      "weighted_contribution_to_total": 0.004530871292161389,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -7566,7 +7566,7 @@
         "J": 0.4469426972441256,
         "magnetovolume": 0.5177286099809701
       },
-      "weighted_contribution_to_total": 0.004763172198945305,
+      "weighted_contribution_to_total": 0.004747472040851325,
       "details": {
         "ground_state": {
           "seed_index": 6,
@@ -7685,7 +7685,7 @@
         "J": 0.7380848662031602,
         "magnetovolume": 0.3906324354250319
       },
-      "weighted_contribution_to_total": 0.005333650900415027,
+      "weighted_contribution_to_total": 0.005317460204066156,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7740,7 +7740,7 @@
         "J": 0.30019638253792547,
         "magnetovolume": 0.0017918898629985984
       },
-      "weighted_contribution_to_total": 0.004202605570164908,
+      "weighted_contribution_to_total": 0.004186530865483585,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -7795,7 +7795,7 @@
         "J": 0.03217865032954273,
         "magnetovolume": 0.03620298846556108
       },
-      "weighted_contribution_to_total": 0.003170094580222399,
+      "weighted_contribution_to_total": 0.003154048613056217,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -7866,7 +7866,7 @@
         "J": 0.6451936602535211,
         "magnetovolume": 0.4148029606577144
       },
-      "weighted_contribution_to_total": 0.005245104401470605,
+      "weighted_contribution_to_total": 0.005228821957207567,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7921,7 +7921,7 @@
         "J": 0.5388348958396205,
         "magnetovolume": 0.5158030711919176
       },
-      "weighted_contribution_to_total": 0.005285271870940336,
+      "weighted_contribution_to_total": 0.005269061835532074,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7976,7 +7976,7 @@
         "J": 0.5529767759068593,
         "magnetovolume": 0.40642405342213084
       },
-      "weighted_contribution_to_total": 0.004568140548866561,
+      "weighted_contribution_to_total": 0.004551848684645707,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -8031,7 +8031,7 @@
         "J": 0.5405618682976036,
         "magnetovolume": 0.5271126703713944
       },
-      "weighted_contribution_to_total": 0.005313579410253228,
+      "weighted_contribution_to_total": 0.005297355643673757,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -8082,11 +8082,11 @@
       "scores": {
         "ground_state": 1.0,
         "hull": 0.24676407097923983,
-        "phonons": null,
+        "phonons": 0.990131223166945,
         "J": 0.2000000001060792,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.00153807025586686,
+      "weighted_contribution_to_total": 0.003322090477789283,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -8111,6 +8111,13 @@
           "weighted_sign_accuracy": 0.4,
           "sign_contribution": 0.2,
           "accuracy_contribution": 1.0607919764975624e-10
+        },
+        "phonons": {
+          "stable": true,
+          "minimum_frequency_THz": 2.0755071186988705e-07,
+          "W1_THz": 0.028760040216208906,
+          "stability_contribution": 0.5,
+          "spectrum_contribution": 0.4901312231669451
         }
       }
     },
@@ -8125,7 +8132,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0037107091073363824,
+      "weighted_contribution_to_total": 0.0036956568787524175,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -8162,7 +8169,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003623162027988366,
+      "weighted_contribution_to_total": 0.0036089276922386107,
       "details": {
         "ground_state": {
           "seed_index": 0,

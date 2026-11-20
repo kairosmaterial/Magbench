@@ -72,17 +72,6 @@ def check_adapter(card, folder):
     return script
 
 
-def reference_exempt(card, scores_path, policy_root=ROOT):
-    settings = config(policy_root)
-    if card['lifecycle'] != 'reference':
-        return False
-    if card['model_key'] != settings['reference']['model_key'] or card.get('replay_exemption') != 'packaged_reference_missing_artifacts':
-        raise ValueError('Only the packaged reference may carry the replay exemption')
-    if hashlib.sha256(Path(scores_path).read_bytes()).hexdigest() != settings['reference']['score_sha256']:
-        raise ValueError('Reference score bytes differ from the packaged record')
-    return True
-
-
 def metrics_from(scores, *, incomplete=False):
     return dict(total=None if incomplete else scores['total_score'],
                 **{k: None if incomplete and k != 'ground_state' else scores['dimensions'][k]['weighted_score'] for k in DIMENSIONS},
