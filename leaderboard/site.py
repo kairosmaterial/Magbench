@@ -52,7 +52,7 @@ def model_body(entry):
     hp=c['hyperparams']['architecture']
     cutoff=' / '.join(f'{v:g}' for v in hp['cutoff_A']) if isinstance(hp['cutoff_A'],list) else f"{hp['cutoff_A']:g}"
     exchange='None' if hp['exchange_range_A'] is None else f"{hp['exchange_range_A']:g}"
-    hypermeta=''.join(f'<dt>{label}</dt><dd>{esc(value)}</dd>' for label,value in [('Cutoff (Å)',cutoff),('Exchange range (Å)',exchange),('Layers',hp['n_layers']),('Parameters',f"{hp['model_params']:,}")])
+    hypermeta=''.join(f'<dt>{label}</dt><dd>{esc(value)}</dd>' for label,value in [('Cutoff (Å)',cutoff),('Exchange range (Å)',exchange),('Layers',hp['n_layers']),('Parameters',f"{hp['model_params']/1e6:.1f}M")])
     hypernote=' '.join(str(c.get('notes',{}).get(k,'')) for k in ('architecture','parameter_count'))
     linked={'Code','Weights','Predictions','Phonon predictions'}
     meta=''.join(f'<dt>{esc(k)}</dt><dd>{v if k in linked else esc(v)}</dd>' for k,v in fields)
