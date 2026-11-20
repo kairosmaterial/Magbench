@@ -19,7 +19,7 @@ def owner_draft(checkout):
     c['predictions']={'url':'to be provided','sha256':'to be provided','size':'to be provided',
                       'phonons':{'url':'to be provided','sha256':'to be provided','size':'to be provided'}}
     p.write_text(yaml.safe_dump(c,sort_keys=False,allow_unicode=True));(folder/'scores.json').unlink(missing_ok=True)
-    settings=config(checkout);settings['awaiting_publication'].pop(DRAFT,None)
+    settings=config(checkout);settings['awaiting_publication'].pop(DRAFT,None);settings.get('metadata_pending',{}).pop(DRAFT,None)
     settings.setdefault('draft_entries',{})[DRAFT]={'card_sha256':hashlib.sha256(p.read_bytes()).hexdigest(),
                                                 'inference_sha256':hashlib.sha256((folder/'inference.py').read_bytes()).hexdigest()}
     (checkout/'benchmark.json').write_text(json.dumps(settings))
@@ -92,3 +92,18 @@ def test_failed_draft_replay_changes_no_tracked_record(owner_draft,tmp_path,monk
     with pytest.raises(ValueError,match='number differs'):ingest(DRAFT,root=checkout,predictions=source,data=tmp_path)
     assert all(p.read_bytes()==v for p,v in before.items())
     assert not (checkout/'models'/DRAFT/'scores.json').exists()
+
+
+def test_completed_owner_entry_has_public_artifacts_and_restricted_metadata(checkout):
+    key='prophet-spin-v1-6a';card,folder=load_card(key,checkout,checkout)
+    assert card['lifecycle']=='active' and card['metrics']['ground_state_passes']==116
+    assert card['checkpoint']['url'].startswith('https://') and card['predictions']['url'].startswith('https://')
+    card['checkpoint']['url']='to be provided';(folder/f'{key}.yml').write_text(yaml.safe_dump(card))
+    with pytest.raises(ValueError,match='public artefacts'):load_card(key,checkout,checkout)
+
+
+def test_completed_metadata_exception_does_not_apply_to_new_submissions(public_model):
+    root,key,card,folder=public_model
+    card['lifecycle']='active';card['publication_status']='metadata_incomplete'
+    (folder/f'{key}.yml').write_text(yaml.safe_dump(card))
+    with pytest.raises(Exception):load_card(key,root,root)

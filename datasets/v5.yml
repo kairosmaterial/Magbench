@@ -1,0 +1,109 @@
+dataset_key: v5
+n_structures: 8674525
+n_elements: 85
+elements:
+- H
+- Li
+- Be
+- B
+- C
+- N
+- O
+- F
+- Na
+- Mg
+- Al
+- Si
+- P
+- S
+- Cl
+- K
+- Ca
+- Sc
+- Ti
+- V
+- Cr
+- Mn
+- Fe
+- Co
+- Ni
+- Cu
+- Zn
+- Ga
+- Ge
+- As
+- Se
+- Br
+- Rb
+- Sr
+- Y
+- Zr
+- Nb
+- Mo
+- Tc
+- Ru
+- Rh
+- Pd
+- Ag
+- Cd
+- In
+- Sn
+- Sb
+- Te
+- I
+- Xe
+- Cs
+- Ba
+- La
+- Ce
+- Pr
+- Nd
+- Pm
+- Sm
+- Eu
+- Gd
+- Tb
+- Dy
+- Ho
+- Er
+- Tm
+- Yb
+- Lu
+- Hf
+- Ta
+- W
+- Re
+- Os
+- Ir
+- Pt
+- Au
+- Hg
+- Tl
+- Pb
+- Bi
+- Ac
+- Th
+- Pa
+- U
+- Np
+- Pu
+name: v5 dataset
+open: false
+description: 'The v5 dataset contains 8,674,525 training frames across 85 elements: 4,126,042 from ELEMENTA,
+  459,884 Materials Project static calculations, and 4,088,599 Materials Project trajectory and vibrational
+  configurations. Two separate test sources are held out. It is to be released as the training dataset
+  of MagBench.
+
+
+  Each frame contains atomic species, positions and a periodic cell, energy, forces, stress, and signed
+  collinear site moments. Positions and cells are in angstrom, energy in eV, forces in eV/angstrom, stress
+  in eV/angstrom cubed, and moments in Bohr magnetons.'
+magnetic:
+  site_moments: true
+  spin_mode: collinear
+  states_per_geometry: 'ELEMENTA: median 1, maximum 15; Materials Project static: median 6, maximum 20;
+    Materials Project trajectories and vibrations: median 1, maximum 3'
+  magnetic_frame_fraction: 0.924
+notes: Magnetic frames account for 92.4% of training frames, using a site moment magnitude above 0.5 Bohr
+  magnetons. Magnetic states are counted at identical ordered geometries within each source, identifying
+  global moment reversal with a sitewise tolerance of 0.1 Bohr magnetons.

@@ -1,12 +1,12 @@
 model_name: Prophet-Spin v1 (6 Å)
 model_key: prophet-spin-v1-6a
 model_version: v1
-lifecycle: draft
+lifecycle: active
 dates:
-  benchmark_added: to be provided
+  benchmark_added: '2026-11-20'
 authors:
 - name: to be provided
-  affiliation: to be provided
+  affiliation: Kairos Materials
   corresponding: true
 repo: https://github.com/kairosmaterial/prophet
 checkpoint:
@@ -28,10 +28,10 @@ targets:
 - forces
 - stress
 training_sets:
-- name: to be provided
-  url: to be provided
-  size: to be provided
-  open: to be provided
+- dataset_key: omat
+  usage: pretraining
+- dataset_key: elementa
+  usage: pretraining
 test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
@@ -40,6 +40,8 @@ evaluation:
   protocol_version: 0.2.1
   data_version: 0.2.3
   runner_version: 0.6.0
+  hardware: NVIDIA A800-SXM4-80GB; 30 concurrent material workers on one GPU
+  wall_time_seconds: 1626.8059024997056
 inference:
   script: inference.py
   adapter: Model
@@ -51,34 +53,244 @@ inference:
     --public-source prophet run --inputs data/inputs --checkpoint prophet-v1-mag.pt
     --moment-head prophet-v1-mag-head.pt --output run --stages J magnetovolume phonons
     --ground-state-barrier run/selection.json
-  python_version: to be provided
+  python_version: 3.11.15
   dependencies:
   - torch==2.7.1+cu128
   - numpy==2.2.6
-  - scipy==1.16.1
   - ase==3.29.0
-  - e3nn==0.6.0
   - phonopy==3.5.0
+  - spglib==2.7.0
   - openequivariance==0.6.8
+  - e3nn==0.6.0
 predictions:
-  url: to be provided
-  sha256: to be provided
-  size: to be provided
+  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1_6a/predictions.json
+  sha256: aa348310b0f35b35acd0266e7db63055e2ab3ac1da6eba08b923a210e7a1f295
+  size: 1906650
   phonons:
-    url: to be provided
-    sha256: to be provided
-    size: to be provided
+    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1_6a/phonons/
+    files:
+    - path: phonons/001.npz
+      sha256: 3dbea71a2852e80bf37cafe8d8c3441db7b5b4242ff84823cfce5512a3e4c188
+      size: 115457
+    - path: phonons/004.npz
+      sha256: 478f8fdeaf9f9dd50bfb18766554d7d32a1e7617c442a9b164c40b5e9404d939
+      size: 67365
+    - path: phonons/006.npz
+      sha256: bc2b3871e8b53c9f1e0490384af7bbdafb0719eb3d2fc7f91f6d5e7976a14c56
+      size: 66669
+    - path: phonons/007.npz
+      sha256: 473da890af1788d109993eab611455b793f5127fcd7c00476a6a0799dda8bf9e
+      size: 63303
+    - path: phonons/010.npz
+      sha256: df18c222f4d8204be2c7fad5a3ffa673b7785dfbed414c99e2c7e6b0bb997995
+      size: 63201
+    - path: phonons/021.npz
+      sha256: d7eb9426a79b22fa9732a1d55bbba86a1a42b1d84c0030287bec10e3b46393eb
+      size: 288323
+    - path: phonons/024.npz
+      sha256: 723983f2a8682068e9d9fd230efb35757d534dc533f91fd3d6d407074355f349
+      size: 69778
+    - path: phonons/025.npz
+      sha256: 1c961dc3c51f4ae6b69b7d2d1ef02743f8a02108b8dfa4a704102586e0b5984e
+      size: 69372
+    - path: phonons/028.npz
+      sha256: f68c59c45fb8ffadeb783944b3469ea50783e691f0429452889a1964ac3148b8
+      size: 179464
+    - path: phonons/038.npz
+      sha256: 93e176339e844ffa9bb682dbe23ec8c44f5f631513ab0f0da30d6d9d018e5b4b
+      size: 163834
+    - path: phonons/041.npz
+      sha256: ec872d64b313685a598aabd979c9d6c99ffab7f8426762e6195a85734bf67bb9
+      size: 102475
+    - path: phonons/054.npz
+      sha256: b91fc096dccecf55d5718d09131feec2f9a326124699fb729a840efa95459890
+      size: 120710
+    - path: phonons/064.npz
+      sha256: 262bf6493f31d353f52f13ed41947a19d3b693b13e9f26de9a9e307490079b16
+      size: 140049
+    - path: phonons/069.npz
+      sha256: d4dd1d9cfafcdbf6e08a4a741eee3fa60e91ec601f53c775cbf1b8d9c1067dc0
+      size: 101985
+    - path: phonons/070.npz
+      sha256: c65a5b2d5fcb9ef3aa411d7adb1f699962a754da4a0953bf1b92a753668df89a
+      size: 83493
+    - path: phonons/071.npz
+      sha256: 31356a6401aa7e392e249744744dc34fccf6d9d91b2f40b0cd90d0174f133591
+      size: 164776
+    - path: phonons/072.npz
+      sha256: 23fb9aa3c885ecc538332cfa4235005a78c2c4120e2299d6864fa1786a64e834
+      size: 137292
+    - path: phonons/073.npz
+      sha256: 075742dade789673a16ed92af49bd929fed71e5994eeb86aba4d330b38e12585
+      size: 250660
+    - path: phonons/078.npz
+      sha256: ad63dd001663d6b532b4885d2169e5917c1d92364b9633b6e93479182bf2bfd4
+      size: 122490
+    - path: phonons/082.npz
+      sha256: a480262bebd163cbcdd0c13eb7908c1d7eba5f25a2fa8f86bba6ccdcb9ea7020
+      size: 79259
+    - path: phonons/083.npz
+      sha256: 96c7d8776aaa54c6b3699eed28da49af2b9372a11290cd75731fb29be6b2f507
+      size: 124291
+    - path: phonons/084.npz
+      sha256: caa612a9720c6c74a0efbf485b8fec8443eec7bcc1e60fa873045c73407563ae
+      size: 65547
+    - path: phonons/085.npz
+      sha256: 37b6c885ab3d9e2010d08c5aabd99d27592e97b0ee52c328e0b4672e9ba40e7a
+      size: 237292
+    - path: phonons/087.npz
+      sha256: ed687c9f78087a6f887a3701902e29ae458b4908527877b896de23cff188ebb2
+      size: 65946
+    - path: phonons/093.npz
+      sha256: 3b5a88a86e94dfd4a82efa5c536ece001fb7049e1176407dc104775de649d293
+      size: 89512
+    - path: phonons/094.npz
+      sha256: f9007d523d7a8096b3ee44f8042092353ec7636794b0cd9206aff6344a1fdbbc
+      size: 89475
+    - path: phonons/101.npz
+      sha256: 3c5352d8f3a186402b7a7b3342e15cd791e7c47d73480cdbbace09fd7f792f59
+      size: 376561
+    - path: phonons/102.npz
+      sha256: ba7df34ff832c025b086b33f9fa047092b6ac0101eed98fe089b30775033b66b
+      size: 108411
+    - path: phonons/104.npz
+      sha256: 20406737c16b6d603e5285c001991b07f142892a05f80c3fc2662a662c5f2ed6
+      size: 123583
+    - path: phonons/108.npz
+      sha256: 157f508d60a54e9bda5f72afde2a6f590b49be2f58bfaca66e7ea2c9c3e5aeeb
+      size: 65752
+    - path: phonons/109.npz
+      sha256: c75ba1d4ba4d3334a4485a0d99f5939e522b7550004446e241d608310f842b1d
+      size: 70281
+    - path: phonons/115.npz
+      sha256: 42a1c280929a945e2cef0bb1d03234d29d3ed5127e4c8033f4a244114c8723d0
+      size: 209666
+    - path: phonons/120.npz
+      sha256: 9083b67e73e3bb71138f4bbe8291e500e813f108dda4f38af7bfb0956fd7fb73
+      size: 74431
+    - path: phonons/124.npz
+      sha256: 3512092993f37617cfdc92e04429a5f50420f7f4b9b95320b328459384b8c008
+      size: 126700
+    - path: phonons/129.npz
+      sha256: bfa6ff2b17f46bd4fc6eda38300c285304905ed49e23f89c865c4d1271ef9ad6
+      size: 69780
+    - path: phonons/130.npz
+      sha256: f06a85ab877f9b0ab6bc6149b8786fb92957eb335efd8be77ef189bc65461d3f
+      size: 68051
+    - path: phonons/131.npz
+      sha256: 7fe9d601337d66053de6df0cb06d0a9b33c113a2c3c3e34781e9d9e73b18dbf2
+      size: 70548
+    - path: phonons/132.npz
+      sha256: ec4a2ce258d6e1b1bd9112f3eb81e94947b935107fc63943f33c0d33bd348507
+      size: 69672
+    - path: phonons/135.npz
+      sha256: daa472811759a085c27e07dc1b6a0b0ddfc8da96346c8ffbcf59864e5fea02d9
+      size: 276047
+    - path: phonons/138.npz
+      sha256: 97bb2e2f31540804f05800efcd418f48b15b347e2e3da0c40133b6951b4a7e94
+      size: 102242
+    - path: phonons/142.npz
+      sha256: 296a21b0ee9809405aacf5275f23b76f9d254aa424b44878f95f478228e10b07
+      size: 181583
+    - path: phonons/144.npz
+      sha256: 4ae26c30bd3ac0f35b7b45950b309af6cf97700edf113f2e2f308cf1ec276dcf
+      size: 79896
+    - path: phonons/145.npz
+      sha256: 6ff84db1656f22a7b22a4bc31e634b6b1f3830b18aa0152f8137f5e40c3b8534
+      size: 77433
+    - path: phonons/146.npz
+      sha256: 9c673c073ef07c34d89558e643c0fb946143f12b87abaa379eb558c2091b1f23
+      size: 117217
+    - path: phonons/147.npz
+      sha256: 5e043fca4cd379a1f75facb2c122986c0d514c8fbd89d09e4bf0b29286d31cb4
+      size: 141280
+    - path: phonons/149.npz
+      sha256: 906333a3049ad62090501f47b090827916c9f9ce283bdbfd611560b9356bfb39
+      size: 104431
+    - path: phonons/150.npz
+      sha256: 0cdc508250d98160333f5e40a8148fb3436864d5e2cfba924bfc8238f55c07f9
+      size: 153440
+    - path: phonons/152.npz
+      sha256: b2b55e4e82763c8b626dfdd5d5119d864553f0e87f408b62a5bc8d9ce9446112
+      size: 264923
+    - path: phonons/153.npz
+      sha256: d4ea5e4c8599a35db3e300c010827eb0fa8ff45c0e19891c3c647a025760f8c5
+      size: 163437
+    - path: phonons/155.npz
+      sha256: d795fbfb59cc2a7273085fdbeda68b5f8c60a2ba026c1ef5d296089d051c1387
+      size: 75950
+    - path: phonons/161.npz
+      sha256: 12f41de17786c16f2a6cbdcb3affd8e7dde7dc32d9f4d1e9ff9b351c2ad84b7f
+      size: 220055
+    - path: phonons/165.npz
+      sha256: 5b1f86c6ba18537d4e2d5281c3edef4a2b7b4e3810fd685e5806171c2fad742f
+      size: 138841
+    - path: phonons/168.npz
+      sha256: 9b31c8cfe1d0d1c9a73e3cf3a34d105e1359e4d8e532df279457d886ea84983a
+      size: 185451
+    - path: phonons/176.npz
+      sha256: e6c88f36edd1ac7ca101b9a4f5d22fb8c3d25889bd10a11dd9784458bc8e1bc2
+      size: 117939
+    - path: phonons/177.npz
+      sha256: 55f13c83d8b1d4fffa0fc28188c2a6625b44abdcdc1d6674fd8e7d4efbc3900b
+      size: 117489
+    - path: phonons/182.npz
+      sha256: f57344e5bad46b383d132c40f066903b1ee89dcb65bce85d86c7ac625a778cfe
+      size: 157678
+    - path: phonons/183.npz
+      sha256: 1bc9ad43e0bfc030c8ecd84332248ddac865101ab6dbc7f9ab155cf44e9712b8
+      size: 56697
+    - path: phonons/187.npz
+      sha256: cdd98480f713758a895e108806159cde964f0de1cf551be05fab47f020f7b9b0
+      size: 539795
+    - path: phonons/197.npz
+      sha256: d01468cfd328aadc2f7d2dbf713a71352e6c3c77fca68475dc60e6e2faeafee1
+      size: 266531
+    - path: phonons/204.npz
+      sha256: c577bb257b1bf06a9117b3ea143bc2ac7389ddfc6067f79b7b86ad4753410ff8
+      size: 173074
+    - path: phonons/206.npz
+      sha256: 4eff76efafd69f0bdd3cf55cf74724f3289139a08fdd04f4b131a25210b2fe14
+      size: 235005
+    - path: phonons/210.npz
+      sha256: 93f5c139b5d8c94b03254a4f1db67c747dba516f140e872ba552be0789df0202
+      size: 265387
+    - path: phonons/214.npz
+      sha256: 3aee6efbfab6b26b95d83992ec65060ae4e8aaa0c6061d54c3f526c515861225
+      size: 196594
+    - path: phonons/216.npz
+      sha256: b2c77337ad1bae20981b6dbfa9c54673e7493fafbe8f02af615853a26fd8074e
+      size: 273938
+    - path: phonons/217.npz
+      sha256: 6518fc5495e230ae7d956465e743e1460585d097cd0dd478173f9f3f4cbb1854
+      size: 266336
+    - path: phonons/218.npz
+      sha256: 9bb9310907a64c48365973a40ada7c9a95a39ba0b2e4fdd277ca598b42f1ab33
+      size: 265665
+    - path: phonons/219.npz
+      sha256: e4110275bbdab91b6e06b88eae6cbe39be4fb957d17fc4ca09d6d555c1524c50
+      size: 263648
+    - path: phonons/221.npz
+      sha256: 3ce5965ff46f3a2a9224ff5ebb8ed53d3d2f743851dd683da530ce10501b6d85
+      size: 753967
+    - path: phonons/222.npz
+      sha256: 4db1e49374f0221cdd6cd5d63d0ee5b20067459acfeacbcab0e8d5eb2a54a852
+      size: 33807
+    - path: phonons/223.npz
+      sha256: 76f20af10670e1970a313ba36268fccaa090d773f3ea279a425b8a4391a68494
+      size: 34645
 notes:
   organisation: Kairos Materials
   disclosure: to be provided
   architecture: The header has no separate exchange range; the public code sets its
     exchange envelope to the largest graph cutoff, 6 A.
-  parameter_count: Energy-model parameters, including frozen parameters; deterministic
-    buffers and the separate moment-initialisation head are excluded.
+  parameter_count: Trainable energy-model parameters from one saved state; buffers,
+    duplicate EMA copies and the separate moment-initialisation head are excluded.
   code_revision: 62bc2769fa83214fd564c7df263ee254e73fc6e9
-  environment: Listed dependencies describe the available preparation environment.
-    Confirm the evaluation Python version and dependency pins against the completed
-    evaluation receipt before release.
+  training: Pretraining datasets follow the public model documentation at the pinned
+    code revision. The spin-training corpus is not specified there.
+  runtime: Production elapsed time; concurrent worker spans overlap. Rehearsal costs
+    are excluded.
 hyperparams:
   architecture:
     cutoff_A:
@@ -87,3 +299,12 @@ hyperparams:
     exchange_range_A: 6.0
     n_layers: 6
     model_params: 35746945
+metrics:
+  total: 0.3423404608716243
+  ground_state: 0.12146596858638743
+  hull: 0.07212938606619256
+  phonons: 0.06003302332866922
+  J: 0.04707261313070338
+  magnetovolume: 0.04163946975967167
+  ground_state_passes: 116
+publication_status: metadata_incomplete

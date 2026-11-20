@@ -21,10 +21,12 @@ targets:
 - forces
 - stress
 training_sets:
-- name: to be provided
-  url: to be provided
-  size: to be provided
-  open: to be provided
+- dataset_key: v5
+  usage: training
+- dataset_key: mptrj
+  usage: pretraining
+- dataset_key: salex
+  usage: pretraining
 test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
@@ -336,8 +338,8 @@ notes:
   publication: weights and inference code to be released
   organisation: Kairos Materials
   exchange_readout: Bilinear exchange readout.
-  parameter_count: Energy-model parameters, including frozen parameters; deterministic
-    buffers and the separate moment-initialisation head are excluded.
+  parameter_count: Trainable energy-model parameters from one saved state; buffers, duplicate EMA copies
+    and the separate moment-initialisation head are excluded.
   architecture: The direct exchange envelope uses the largest graph cutoff, 6 A.
 publication_status: awaiting_artifacts
 hyperparams:

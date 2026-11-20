@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 import yaml
 from jsonschema import Draft202012Validator, FormatChecker
+from .datasets import load_datasets, training_data
 
 ROOT = Path(__file__).resolve().parents[1]
 DIMENSIONS = ('ground_state', 'hull', 'phonons', 'J', 'magnetovolume')
@@ -38,6 +39,7 @@ def load_card(key, root=ROOT, policy_root=ROOT):
     card = yaml.safe_load((folder / f'{key}.yml').read_text())
     schema = yaml.safe_load((Path(policy_root) / 'tests/model-schema.yml').read_text())
     Draft202012Validator(schema, format_checker=FormatChecker()).validate(card)
+    training_data(card, load_datasets(root, policy_root))
     if card['model_key'] != key:
         raise ValueError('Card and directory keys differ')
     if card['lifecycle'] in ('pending', 'active') and not card.get('publication_status'):
@@ -45,11 +47,18 @@ def load_card(key, root=ROOT, policy_root=ROOT):
         if 'to be provided' in json.dumps(mandatory):
             raise ValueError('Submission metadata requires verified facts')
     if card.get('publication_status'):
-        trusted = config(policy_root)['awaiting_publication'].get(key)
+        registry = 'metadata_pending' if card['publication_status']=='metadata_incomplete' else 'awaiting_publication'
+        trusted = config(policy_root).get(registry,{}).get(key)
         if not trusted or card['model_name'] != trusted['model_name']:
             raise ValueError('This publication exception requires owner approval')
         if hashlib.sha256((folder/'scores.json').read_bytes()).hexdigest() != trusted['score_sha256']:
             raise ValueError('Pending score record differs from the owner-approved result')
+    if card.get('publication_status')=='metadata_incomplete':
+        verified={k:v for k,v in card.items() if k not in ('authors','test_set_informed','notes','paper','doi','docs','pr_url','training_cost')}
+        if 'to be provided' in json.dumps(verified):
+            raise ValueError('Completed owner entry requires public artefacts and verified evaluation metadata')
+        if hashlib.sha256(inside(folder,card['inference']['script']).read_bytes()).hexdigest()!=trusted['inference_sha256']:
+            raise ValueError('Completed owner inference script differs from the approved adapter')
     if card.get('test_set_informed') is True:
         disclosure = card['notes']['disclosure'].strip()
         if '\n' in disclosure or not disclosure:

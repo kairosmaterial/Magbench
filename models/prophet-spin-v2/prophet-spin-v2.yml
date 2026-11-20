@@ -21,10 +21,12 @@ targets:
 - forces
 - stress
 training_sets:
-- name: to be provided
-  url: to be provided
-  size: to be provided
-  open: to be provided
+- dataset_key: v5
+  usage: training
+- dataset_key: mptrj
+  usage: pretraining
+- dataset_key: salex
+  usage: pretraining
 test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
@@ -345,10 +347,10 @@ notes:
   publication: weights and inference code to be released
   organisation: Kairos Materials
   exchange_readout: Analytic effective pair coupling from the model energy.
-  parameter_count: Energy-model parameters, including frozen parameters; deterministic
-    buffers and the separate moment-initialisation head are excluded.
-  architecture: 'Direct exchange envelope: 6 A. Density radius: 6 A. Density-mediated
-    pair couplings reach 12 A, twice the density radius.'
+  parameter_count: Trainable energy-model parameters from one saved state; buffers, duplicate EMA copies
+    and the separate moment-initialisation head are excluded.
+  architecture: 'Direct exchange envelope: 6 A. Density radius: 6 A. Density-mediated pair couplings reach
+    12 A, twice the density radius.'
 publication_status: awaiting_artifacts
 hyperparams:
   architecture:

@@ -27,17 +27,18 @@
   const dimensions=['ground_state','hull','phonons','J','magnetovolume'];
   const moment=prop('moment','Moments',e=>e.card.evaluation.moment_initialisation.replaceAll('_',' '));
   const route=prop('route','Exchange route',e=>e.card.evaluation.exchange_route.replaceAll('_',' '));
-  const openness=prop('openness','Code / weights licence',e=>`${e.card.license.code} / ${e.card.license.checkpoint}`);
+  const openness=prop('openness','Code / weights licence',e=>`${(e.card.license?.code ?? "pending")} / ${(e.card.license?.checkpoint ?? "pending")}`);
   const architecture=e=>e.card.hyperparams.architecture;
   const cutoff={...prop('cutoff','Cutoff (Å)',e=>{const v=architecture(e).cutoff_A;return Array.isArray(v)?Math.max(...v):v;},'hyperparams',true),format:e=>{const v=architecture(e).cutoff_A;return Array.isArray(v)?v.join(' / '):String(v);}};
   const exchangeRange=prop('exchange_range','Exchange range (Å)',e=>architecture(e).exchange_range_A,'hyperparams',true);
   const layers=prop('layers','Layers',e=>architecture(e).n_layers,'hyperparams',true);
-  const params={...prop('params','Parameters',e=>architecture(e).model_params,'hyperparams',true),format:e=>`${(architecture(e).model_params/1e6).toFixed(1)}M`};
+  const params={...prop('params','Parameters',e=>architecture(e).model_params,'hyperparams',true),format:e=>typeof architecture(e).model_params==='number'?`${(architecture(e).model_params/1e6).toFixed(1)}M`:'pending'};
+  const training=prop('training','Training data',e=>e.training_frames,'model',true);
   const hyperparams=[cutoff,exchangeRange,layers,params];
   const sets={
-    scores:[identity,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,route,openness,...hyperparams],
-    components:[identity,total,metric('ground_state','Score'),passes,component('hull','sign'),component('hull','accuracy'),component('phonons','stability'),component('phonons','spectrum'),component('J','sign'),component('J','accuracy'),component('magnetovolume','sign'),component('magnetovolume','accuracy'),moment,route,openness,...hyperparams],
-    details:[identity,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,prop('seeds','Seed amplitudes',e=>e.card.evaluation.seed_amplitudes.replaceAll('_',' ')),route,openness,prop('status','Status',e=>e.card.lifecycle),prop('added','Added',e=>e.card.dates.benchmark_added),...hyperparams]
+    scores:[identity,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,route,openness,training,...hyperparams],
+    components:[identity,total,metric('ground_state','Score'),passes,component('hull','sign'),component('hull','accuracy'),component('phonons','stability'),component('phonons','spectrum'),component('J','sign'),component('J','accuracy'),component('magnetovolume','sign'),component('magnetovolume','accuracy'),moment,route,openness,training,...hyperparams],
+    details:[identity,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,prop('seeds','Seed amplitudes',e=>e.card.evaluation.seed_amplitudes.replaceAll('_',' ')),route,openness,prop('status','Status',e=>e.card.lifecycle==='active'?'complete':e.card.lifecycle),prop('added','Added',e=>e.card.dates.benchmark_added),training,...hyperparams]
   };
   const scatter=window.MagbenchScatter(document.getElementById('comparison'),models,table);
   let columnSet='scores',sortKey='total',direction=-1;
@@ -57,10 +58,10 @@
       if(name==='moment'&&c.evaluation.moment_initialisation!==value)return false;
       if(name==='exchange'&&c.evaluation.exchange_route!==value)return false;
       if(name==='openness'){
-        const isPublic=c.repo.startsWith('https://')&&c.checkpoint.url.startsWith('https://')&&c.predictions.url.startsWith('https://');
+        const isPublic=c.repo?.startsWith('https://')&&c.checkpoint?.url?.startsWith('https://')&&c.predictions?.url?.startsWith('https://');
         if(value==='public'&&!isPublic)return false;
         if(value==='awaiting'&&isPublic)return false;
-        if(value==='MIT'&&c.license.code!=='MIT')return false;
+        if(value==='MIT'&&c.license?.code!=='MIT')return false;
       }
     }
     return true;
@@ -108,13 +109,21 @@
         if(col===identity){
           td.append(textNode('span',String(models.indexOf(entry)+1).padStart(2,'0'),'rank'));
           const anchor=textNode('a',c.model_name,'model-name');anchor.href=target;td.append(anchor);
-          td.append(textNode('span',c.notes?.organisation||'to be provided','organisation'));
+          td.append(textNode('span',c.notes?.organisation||'pending','organisation'));
           if(c.model_key==='prophet-spin-v1')td.append(textNode('span','trained on a subset of the v5 dataset','row-status'));
         }else{
-          td.textContent=value==null?(col.id==='params'?'to be provided':'—'):col.score?value.toFixed(3):String(value);
+          td.textContent=value==null?(col.id==='params'?'pending':'—'):col.score?value.toFixed(3):String(value);
           if(col.numeric)td.classList.add('num');
           if(col.group==='hyperparams')td.classList.add('hyperparam');
           if(col.format)td.textContent=col.format(entry);
+          if(col===training){
+            td.replaceChildren();
+            entry.training_data.forEach((item,index)=>{
+              if(index)td.append(document.createTextNode(', '));
+              const link=textNode('a',item.name);link.href=`datasets.html#${item.dataset_key}`;td.append(link);
+              if('subset' in item)td.append(document.createTextNode(' (subset)'));
+            });
+          }
           if(col.score)td.classList.add('score');
           if((col.score||col.id==='passes')&&value===best[col.id])td.classList.add('best');
           if(col.id==='passes')td.textContent=`${value} / ${entry.scores.dimensions.ground_state.materials}`;

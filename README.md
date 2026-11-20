@@ -1,6 +1,6 @@
 # MagBench
 
-MagBench is a five-dimensional benchmark for magnetic interatomic potentials. A model is evaluated on 191 magnetic materials for the magnetic ground state, the energy above the Materials Project hull, phonon spectra, exchange parameters J, and the volume dependence of J.
+MagBench is a five-dimensional benchmark for magnetic interatomic potentials. A model is evaluated on 191 magnetic materials for the magnetic ground state, MP hull with spin, Phonons with spin, exchange parameters J, and the volume dependence of J.
 
 This repository contains the evaluation code. The benchmark data (inputs, DFT reference targets, raw reference calculations and reference results) are hosted on Hugging Face: https://huggingface.co/datasets/kairosmaterial/Magbench.
 
@@ -17,9 +17,9 @@ This repository contains the evaluation code. The benchmark data (inputs, DFT re
 
 | Component | Materials | Content |
 |---|---:|---|
-| Magnetic ground state and MP hull | 191 | Final structures of the original DFT relaxations (EXTXYZ), experimental and DFT moments, MP hull labels |
+| Magnetic ground state and MP hull with spin | 191 | Final structures of the original DFT relaxations (EXTXYZ), experimental and DFT moments, MP hull labels |
 | Volume-exchange coupling | 133 | Volume-strain designs and reference slopes ∂J/∂ln V |
-| Phonon spectra | 111 | Displaced supercells, reference sampling points, DFT frequencies and force constants |
+| Phonons with spin | 111 | Displaced supercells, reference sampling points, DFT frequencies and force constants |
 | Magnetic exchange J | 172 | Exchange bonds, shells, energy-mapping designs and DFT J |
 
 In the dataset, `inputs/` is used for model inference and `targets/` for scoring. The current data version is v0.2.3; the scoring protocol is v0.2.1.
@@ -35,8 +35,8 @@ Each of the five dimensions carries 0.20 of the total score, and models are rank
 | Metric | Scoring rule |
 |---|---|
 | Magnetic ground-state search | Up to 32 collinear sign patterns are screened in the input cell, including the experimental sign pattern. Joint relaxation of at most 500 steps is carried out only if a sign pattern equivalent to the reference is among the top three. Crystal-symmetry permutations are constructed with a tolerance of 0.01 Å on the input cell, and a global flip is allowed. A passing configuration must lie within 1 meV/atom of the lowest converged candidate of the model, and the magnitude on every magnetic site must deviate from DFT by at most 25%. |
-| MP hull | Uses the model configuration that passed the ground-state check. 50% for the side of the hull (>0 versus ≤0) and 50% for numerical accuracy, `2^(-absolute error / 10 meV/atom)`. |
-| Phonon spectrum | Uses the selected configuration and the model moments. Atomic positions and lattice are refined to a force threshold of 0.01 eV/Å in at most 500 steps. The score is zero if the lowest frequency is below −0.1 THz; a stable spectrum scores `0.5 + 0.5 × 2^(-W₁ / 1 THz)`. |
+| MP hull with spin | Uses the model configuration that passed the ground-state check. 50% for the side of the hull (>0 versus ≤0) and 50% for numerical accuracy, `2^(-absolute error / 10 meV/atom)`. |
+| Phonons with spin | Uses the selected configuration and the model moments. Atomic positions and lattice are refined to a force threshold of 0.01 eV/Å in at most 500 steps. The score is zero if the lowest frequency is below −0.1 THz; a stable spectrum scores `0.5 + 0.5 × 2^(-W₁ / 1 THz)`. |
 | J | Uses the DFT reference structure and moments. 50% for the fraction of correct signs; signs are compared only for parameters with `abs(J_DFT) ≥ 0.2 meV`. 50% for the numerical accuracy of all parameters, `2^(-R)`, with the error scale `max(0.2 × abs(J_DFT), 0.2 meV)`. Both parts use the shell weights 3 : 2.5 : 2 : 1.5 : 1, and every further shell has weight 1. Parameters of the same shell share the weight of that shell equally. |
 | Volume-exchange coupling | Uses the DFT reference structure and moments. 50% for the fraction of correct signs; signs are compared only for parameters whose DFT slope has an absolute value of at least 1 meV. 50% for the numerical accuracy of all slopes, `2^(-R)`, with the error scale `max(0.2 × abs(DFT slope), 1 meV)`. All slope parameters have equal weight. |
 
@@ -55,11 +55,11 @@ magbench score --targets data/targets --predictions /path/to/predictions.json --
 
 ## Reference result
 
-Prophet-Spin v1, with moment-head initialisation and exchange-head readout, scores **0.43731 / 1** under protocol v0.2.1.
+Prophet-Spin v1, with moment-head initialisation and exchange-head readout, scores **0.437756477 / 1** under protocol v0.2.1 and data v0.2.3.
 
-| Magnetic ground state | MP hull | Phonon spectrum | J | Volume-exchange coupling |
+| Ground state | MP hull with spin | Phonons with spin | Exchange J | dJ/dlnV |
 |---:|---:|---:|---:|---:|
-| 0.15288 | 0.09850 | 0.05784 | 0.06150 | 0.06659 |
+| 0.152879581 | 0.098499952 | 0.058284135 | 0.061501873 | 0.066590936 |
 
 The complete per-material scores are in `results/prophet_spin_v1/scores.json` of the dataset.
 
@@ -79,6 +79,7 @@ The static site compares owner-approved result records using data v0.2.3. Listed
 | [Prophet-Spin v2](models/prophet-spin-v2/prophet-spin-v2.yml) | 0.605398474 | 159/191 | Weights awaiting public release |
 | [Prophet-Spin v1 ex](models/prophet-spin-ex/prophet-spin-ex.yml) | 0.546779806 | 155/191 | Weights awaiting public release |
 | [Prophet-Spin v1](models/prophet-spin-v1/prophet-spin-v1.yml) | 0.437756477 | 146/191 | Weights awaiting public release |
+| [Prophet-Spin v1 (6 Å)](models/prophet-spin-v1-6a/prophet-spin-v1-6a.yml) | 0.342340461 | 116/191 | Complete |
 <!-- leaderboard:end -->
 
 Build and preview locally:
@@ -103,3 +104,5 @@ python -m pytest -q
 ```
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md) for the strict schema, disclosure rule, local replay, CI checks and review steps. Protocol, data revision and target hashes are pinned in `benchmark.json`; the initial target upload is still in progress.
+
+Training datasets have YAML records in [`datasets/`](datasets/). Model cards reference these records; dataset submission is described in [Submitting a dataset](CONTRIBUTING.md#submitting-a-dataset).

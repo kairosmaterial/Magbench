@@ -19,8 +19,11 @@ else
   git -C "$repo_dir" worktree add --detach "$page_worktree" HEAD
   git -C "$page_worktree" checkout --orphan gh-pages
 fi
+publication_stage="$(mktemp -d "$(dirname "$page_worktree")/.magbench-pages-XXXXXXXX")"
+trap 'rm -rf -- "$publication_stage"' EXIT
+python "$repo_dir/scripts/prepare_pages.py" "$repo_dir/site/dist" "$publication_stage/site"
 git -C "$page_worktree" rm -rf -- .
-python - "$repo_dir/site/dist" "$page_worktree" <<'PY'
+python - "$publication_stage/site" "$page_worktree" <<'PY'
 from pathlib import Path
 import shutil
 import sys

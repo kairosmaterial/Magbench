@@ -1,6 +1,7 @@
 """Submission review without importing or running submitted inference code."""
 import hashlib
 import json
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -32,10 +33,22 @@ def changed_paths(root,base_ref):
     return [v.decode() for v in raw.split(b'\0') if v]
 
 
-def path_guard(paths,key):
+def path_guard(paths,key,*,root=None,base_ref=None):
     other=[p for p in paths if p.startswith('models/') and not p.startswith(f'models/{key}/')]
     if other: raise ValueError('Other model folders changed: '+', '.join(other))
-    return [p for p in paths if not p.startswith(f'models/{key}/')]
+    extras=[]
+    for path in paths:
+        if path.startswith(f'models/{key}/'):continue
+        if path.startswith('datasets/'):
+            if not re.fullmatch(r'datasets/[a-z0-9]+(?:-[a-z0-9]+)*\.yml',path):
+                raise ValueError('Dataset additions must be datasets/<dataset_key>.yml')
+            if root is None or base_ref is None:
+                raise ValueError('Dataset additions require a trusted base reference')
+            existed=subprocess.run(['git','cat-file','-e',f'{base_ref}:{path}'],cwd=root,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode==0
+            if existed:raise ValueError('Existing dataset records cannot be edited by a model submission: '+path)
+            if not (Path(root)/path).is_file():raise ValueError('A new dataset record is missing')
+        else:extras.append(path)
+    return extras
 
 
 def route_check(card,predictions):
@@ -71,7 +84,7 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
         return 'Card, scores.json and inference script are present'
     review.check('Required files',files)
     if base_ref:
-        extras=review.check('Model path guard',lambda:path_guard(changed_paths(root,base_ref),key))
+        extras=review.check('Model path guard',lambda:path_guard(changed_paths(root,base_ref),key,root=root,base_ref=base_ref))
         if extras:review.record('Maintainer review','REVIEW','Changes outside the model folder: '+', '.join(extras))
     else:review.record('Model path guard','NOT RUN','No --base-ref supplied; required in pull-request CI')
     if base_ref:
@@ -85,7 +98,8 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
         expected={'protocol_version':settings['protocol_version'],'data_version':settings['dataset']['data_version'],'runner_version':settings['runner_version']}
         compare(expected,{k:card['evaluation'][k] for k in expected},'versions');return 'Current protocol, data and runner versions'
     review.check('Version pins',versions)
-    awaiting=bool(card.get('publication_status'))
+    awaiting=card.get('publication_status')=='awaiting_artifacts'
+    owner_local=bool(card.get('publication_status')) and bool(predictions) and not require_public
     def stored():
         result=read(score_path);compare(metrics_from(result),card['metrics'],'declared metrics')
         if result.get('protocol_version') != settings['protocol_version']:raise ValueError('Score protocol differs')
@@ -99,7 +113,7 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
     def public_check(name,url,call):
         if awaiting and url=='to be provided':unavailable(name,'awaiting artefacts: a public address has not been supplied')
         elif offline:
-            review.record(name,'NOT RUN' if awaiting and not require_public else 'FAIL','Offline mode cannot establish public availability')
+            review.record(name,'NOT RUN' if (awaiting and not require_public) or owner_local else 'FAIL','Offline mode cannot establish public availability')
         else:review.check(name,call)
     public_check('Public inference repository',card['repo'],lambda:artifacts.probe(card['repo']))
     public_check('Public checkpoint (range request)',card['checkpoint']['url'],lambda:artifacts.probe(card['checkpoint']['url'],checkpoint=True))
@@ -124,7 +138,7 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
             return 'Explicit local predictions; not evidence of public availability'
         if review.check('Local prediction integrity',local_prediction) is None:prediction=None
     if offline:
-        review.record('Prediction artefact download','NOT RUN' if awaiting and prediction and not require_public else 'FAIL','Public download is not tested offline; supplied local files are checked separately')
+        review.record('Prediction artefact download','NOT RUN' if (awaiting or owner_local) and prediction and not require_public else 'FAIL','Public download is not tested offline; supplied local files are checked separately')
     elif not cache:
         review.record('Prediction artefact download','FAIL','Supply --cache on a filesystem with sufficient space')
     else:

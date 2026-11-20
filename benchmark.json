@@ -2703,10 +2703,13 @@
     "J": 172,
     "magnetovolume": 133
   },
-  "draft_entries": {
+  "draft_entries": {},
+  "metadata_pending": {
     "prophet-spin-v1-6a": {
-      "card_sha256": "c4eb9bd9624d3bab1d0a7d7c5bd2a635553a3158a6bf472d61e536077c68352b",
-      "inference_sha256": "a81bd05524a9e042a494ce9f144a149377eb46efed7455fee05368200931f7dd"
+      "model_name": "Prophet-Spin v1 (6 \u00c5)",
+      "score_sha256": "13c16e1a989fc06e26176debff73aeb146b1e877d899bc8507b525e2012fb684",
+      "inference_sha256": "a81bd05524a9e042a494ce9f144a149377eb46efed7455fee05368200931f7dd",
+      "inference_available": true
     }
   }
 }

@@ -1,0 +1,11 @@
+name: OMat24
+dataset_key: omat
+description: Inorganic structures from non-equilibrium single-point calculations and structural relaxations,
+  with total energies, forces and stresses.
+url: https://huggingface.co/datasets/facebook/OMAT24
+license: CC-BY-4.0
+open: true
+n_structures: 100824585
+size_scope: Public training release
+notes: The public validation release contains 1,025,361 additional structures. Used to pretrain the backbone
+  from which the linked models start.

@@ -1,0 +1,9 @@
+name: ELEMENTA
+dataset_key: elementa
+description: A DFT-labelled atomistic dataset covering unary, binary and selected ternary compositions.
+  The public release contains nearly 39 million core frames and 4.7 million spin frames with magnetic
+  initialisations and DFT-resolved magnetic energy landscapes.
+url: https://huggingface.co/datasets/kairosmaterial/ELEMENTA
+license: CC-BY-NC-4.0
+open: true
+notes: Used for pretraining according to the public Prophet model documentation.

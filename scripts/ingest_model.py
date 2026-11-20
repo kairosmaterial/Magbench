@@ -59,12 +59,15 @@ def complete_draft(key, predictions, data, root):
     settings['awaiting_publication'][key]={'model_name':card['model_name'],'score_sha256':hashlib.sha256(score_bytes).hexdigest(),
                                          'inference_sha256':digest(script),'inference_available':True}
     settings['draft_entries'].pop(key)
+    if trusted.get('completed_lifecycle')=='active':
+        card['lifecycle']='active';card['publication_status']='metadata_incomplete'
+        settings.setdefault('metadata_pending',{})[key]=settings['awaiting_publication'].pop(key)
     card_bytes=yaml.safe_dump(card,sort_keys=False,allow_unicode=True).encode()
     settings_bytes=(json.dumps(settings,indent=2)+'\n').encode()
     # Validate the prospective record before modifying any tracked file.
     with tempfile.TemporaryDirectory(prefix='magbench-review-') as temporary:
         review_root=Path(temporary);review_folder=review_root/'models'/key;review_folder.mkdir(parents=True)
-        (review_root/'tests').mkdir();shutil.copyfile(root/'tests/model-schema.yml',review_root/'tests/model-schema.yml')
+        (review_root/'tests').mkdir();shutil.copyfile(root/'tests/model-schema.yml',review_root/'tests/model-schema.yml');shutil.copyfile(root/'tests/dataset-schema.yml',review_root/'tests/dataset-schema.yml');shutil.copytree(root/'datasets',review_root/'datasets')
         (review_root/'benchmark.json').write_bytes(settings_bytes)
         (review_folder/f'{key}.yml').write_bytes(card_bytes);(review_folder/'scores.json').write_bytes(score_bytes)
         target_script=inside(review_folder,card['inference']['script']);target_script.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(script,target_script)

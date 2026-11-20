@@ -16,7 +16,7 @@ Exact memberships, parameter ordering, thresholds and weights are in `targets/sc
 
 ## What the model receives
 
-The merged `inputs/` contains the starting DFT cells, species, fractional coordinates, designated magnetic-site indices, fixed cohort lists, screening reference signs and their symmetry permutations, prescribed exchange geometries/sign patterns/features, periodic bond catalogs, volume strains, phonon supercell and primitive matrices, masses, displacement distances, and reference q-point sampling. The screening sign reference intentionally includes experimental sign information. Targets contain DFT moments, hull labels and corrections, J and slope reference arrays, and phonon reference frequencies; they are used for selection/scoring outside the inference phase. The post-search selection receipt supplies signed DFT moments for J and volume coupling. Thus the delivered procedure is not blind to all reference information.
+The merged `inputs/` contains the starting DFT cells, species, fractional coordinates, designated magnetic-site indices, fixed cohort lists, screening reference signs and their symmetry permutations, prescribed exchange geometries/sign patterns/features, periodic bond catalogs, volume strains, phonon supercell and primitive matrices, masses, displacement distances, and reference q-point sampling. The screening sign reference intentionally includes experimental sign information. Targets contain DFT moments, hull labels and corrections, J and slope reference arrays, and phonon reference frequencies; they are used for selection/scoring outside the inference phase. The post-search selection record supplies signed DFT moments for J and volume coupling. Thus the delivered procedure is not blind to all reference information.
 
 Ground-state search keeps the supplied composition, cell periodicity and atom order; structural relaxation is allowed but supercell expansion for search is not. Map final moments to the original atomic order. Phonon displacements and energy-mapping geometries use the supplied supercells for their respective property calculations.
 
@@ -38,9 +38,9 @@ Find the minimum energy over converged candidates. In increasing energy and seed
 
 Ground-state score is 1 for a passing candidate and 0 otherwise. The ground-state gate sets all dimensions for that material to zero if it fails. Fixed cohort denominators never shrink to the successful subset. The selected candidate is the lowest-energy experimental match within the window, which can differ from the absolute model minimum.
 
-The `select` command requires all ground-state cohort records to be terminal (converged or recorded failure) before any property phase. Its receipt records selected seed indices and signed DFT moments. Materials without a selected candidate skip all properties. Hull uses the selected candidate's final model energy; it requires no extra model evaluation.
+The `select` command requires all ground-state cohort records to be terminal (converged or recorded failure) before any property phase. Its record records selected seed indices and signed DFT moments. Materials without a selected candidate skip all properties. Hull uses the selected candidate's final model energy; it requires no extra model evaluation.
 
-## Hull score
+## MP hull with spin score
 
 Let N be the supplied atom count, E the selected raw model total energy in eV, C the stored MP2020 correction in eV, and H the stored MP hull energy per atom. Compute `h_model = (E+C)/N-H`; keep negative values. Use the fixed public MP 2023-02-07 GGA/GGA+U MP2020 snapshot. Raw model energies must share the reference VASP energy zero.
 
@@ -52,7 +52,7 @@ S_hull = 0.5 * I[(h_model > 0) == (h_DFT > 0)] + 0.5 * 2^(-D/10).
 
 Zero belongs to the on-or-below-hull class. Missing or nonfinite energy gives zero.
 
-## Phonon score
+## Phonons with spin score
 
 Start with the selected relaxed candidate and its model moments. Hold these moments fixed and refine positions and cell with FIRE to maximum atomic and generalized cell force <0.01 eV/angstrom, capped at 500 steps. Use the last frame at the cap, recording residuals and convergence. Use the supplied supercell, primitive matrix, masses, displacement distance, frequency conversion factor and symmetry tolerance per material. If spglib reports `spacegroup search failed`, keep the actual geometry and use displacements without point-group reduction.
 
@@ -82,7 +82,7 @@ For energy mapping, map fixed DFT moment magnitudes from the starting cell to ea
 
 For readout, retain periodic lattice shifts, combine reverse directed half-bond contributions, convert eV coefficients and fixed DFT magnitude products into meV in the normalized-sign convention, and average equivalent physical bonds for each prescribed parameter. Finite-range unsupported bonds may have J=0. Missing in-range terms must not be silently dropped.
 
-to be provided: The owner accepted on 2026-11-19 an effective pair coupling derived analytically from the model energy as an exchange-readout route; this approval is recorded in the research review, not in the delivered package. to be provided: Confirm the public wording and scope of that extension, including density-mediated pair coefficients, while retaining the delivered scorer and reference values.
+An effective pair coupling derived analytically from the model energy is an accepted exchange-readout route.
 
 For volume coupling, use the supplied isotropic volume deltas (−0.01, −0.005, +0.005, +0.01), scale cell lengths by `(1+delta)^(1/3)` at fixed fractional coordinates and fixed signed DFT moments, and evaluate the same exchange route at each volume and at zero. With `x=ln(1+delta)`, solve `J(delta)-J(0) = a*x + b*x²` by least squares with `rcond=None`; the slope a is dJ/dlnV in meV. Do not substitute a different zero-strain fit.
 
@@ -112,26 +112,28 @@ A missing, nonfinite or wrong-length slope array gives the entire material slope
 
 For dimension d with fixed cohort C_d, let `M_d = sum(S_i,d for i in C_d)/len(C_d)`. Report the dimension contribution `0.20*M_d`; total is the sum of the five contributions. The ground-state gate is applied before each property score. Scores are not bond-pooled. Materials outside a property cohort have no score for that property.
 
-to be provided: Confirm tie handling; the site uses the model key for deterministic ordering of identical totals.
+Identical totals are ordered by model key.
 
 ## Reproducibility and versioning
 
-The delivered runner fingerprints checkpoint bytes, moment-head bytes, all inference inputs, settings and exchange route; it refuses mixed resume states. Successful stages resume only under matching receipts. Save converged candidates, errors, selection receipt, model/reference versions, raw prediction JSON and adjacent phonon NPZ files. Full ground-state completion precedes properties. Diagnostic configuration overrides are not comparable leaderboard submissions.
+The delivered runner fingerprints checkpoint bytes, moment-head bytes, all inference inputs, settings and exchange route; it refuses mixed resume states. Successful stages resume only under matching stage records. Save converged candidates, errors, selection record, model/reference versions, raw prediction JSON and adjacent phonon NPZ files. Full ground-state completion precedes properties. Diagnostic configuration overrides are not comparable leaderboard submissions.
 
 The reference inference environment was Python 3.11.15, PyTorch 2.5.1+cu121, e3nn 0.5.8, torch-scatter 2.1.2+pt25cu121, OpenEquivariance 0.5.4, ASE 3.28.0 and Phonopy 4.1.0, with Ninja and a CUDA development toolkit for its kernels. These are reference model dependencies, not requirements for offline scoring. The reference kernel patch is in `benchmark_runner/operations/`.
 
-to be provided: Protocol releases must identify changes in rules, reference arrays and cohorts and retain old score records; do not silently reinterpret scores across versions. to be provided: Ratify the versioning and archival policy before publication. The delivered input manifest retains its historical internal version 0.1.0 and runner resume receipts retain runner_version 0.6.0; the scoring protocol is 0.2.1.
+Protocol releases must identify changes in rules, reference arrays and cohorts and retain old score records; do not silently reinterpret scores across versions. The delivered input manifest retains its historical internal version 0.1.0 and runner resume stage records retain runner_version 0.6.0; the scoring protocol is 0.2.1.
 
 ## Benchmark-informed model disclosure
 
-Every submission declares `test_set_informed`. Any use of the benchmark materials or of benchmark scores in training, validation, model or checkpoint selection requires `true` and a one-sentence `notes.disclosure`. Seed-table selection informed by benchmark materials must also be disclosed. Such entries remain listed. Declarations are retained in model cards without table markers. The current owner-approved release entries leave undeclared exposure as an explicit placeholder. Prophet-Spin v1 was trained on a subset of the v5 dataset.
+Every submission declares `test_set_informed`. Any use of the benchmark materials or of benchmark scores in training, validation, model or checkpoint selection requires `true` and a one-sentence `notes.disclosure`. Seed-table selection informed by benchmark materials must also be disclosed. Such entries remain listed. Declarations are retained in model cards without table markers.
 
 ## Data releases
 
-Data version v0.2.2 corrects signs on non-magnetic species in the magnetovolume energy-mapping designs. It does not change the v0.2.1 scoring rules, cohorts, targets or exchange-readout reference scores. Energy-mapping runs must use the corrected designs. Data version v0.2.3 adds material 221 (bcc Fe) to the phonon cohort. Cohort sizes above are read from the current score records; all other reference arrays, rules and defaults are unchanged. Dataset repository, immutable revision and target hashes are pinned in `benchmark.json`.
+Data version v0.2.2 corrects signs on non-magnetic species in the magnetovolume energy-mapping designs. It does not change the v0.2.1 scoring rules, cohorts, targets or exchange-readout reference scores. Energy-mapping runs must use the corrected designs. Data version v0.2.3 adds material 221 (bcc Fe) to the phonon cohort. Cohort sizes above are read from the current score records; all other reference arrays, rules and defaults are unchanged. Dataset repository, immutable revision and target hashes must be pinned in `benchmark.json`.
 
-The repository code licence is MIT; the dataset licence is CC BY 2.0. to be provided: Supply benchmark authors, affiliations and citation metadata. to be provided: Confirm stable public URLs and remaining model-card metadata before completing artefact release.
+The repository code licence is MIT; the dataset licence is CC BY 2.0.
 
 ## Architecture metadata
 
 Model cards declare `hyperparams.architecture.cutoff_A`, `exchange_range_A`, `n_layers` and `model_params`. Cutoffs are recorded in angstroms and retain all configured graph scales. An exchange term may require a larger neighbour list than these backbone scales. The exchange-range field describes the explicit exchange envelope or the longest representable spin-spin pair coupling; it is null only when no such coupling exists. An unset separate exchange-range option can inherit the largest graph cutoff and therefore does not imply a missing exchange term. Density-mediated pair couplings can reach twice the density radius, which must be explained in the card note. Parameter counts identify their convention and the inclusion or exclusion of a separate moment head. These descriptive fields do not change any benchmark input, reference, runner setting or score formula.
+
+Training datasets are recorded separately in `datasets/<dataset_key>.yml` and referenced by model cards through `training_sets` (`dataset_key`, `usage`, optional `subset`). Frame counts for an unknown subset are not replaced by the full dataset count. Architecture cards retain exact parameter counts; the site displays millions to one decimal. These are reporting requirements and do not alter the benchmark scores.

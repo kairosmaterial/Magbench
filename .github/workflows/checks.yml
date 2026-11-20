@@ -16,6 +16,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: browser-actions/setup-chrome@v2
+        id: chrome
       - run: python -m pytest -q
+        env:
+          MAGBENCH_BROWSER: ${{ steps.chrome.outputs.chrome-path }}
+          MAGBENCH_REQUIRE_BROWSER: '1'
+      - run: python scripts/check_datasets.py
       - run: python scripts/check_cards.py
       - run: python scripts/build_site.py

@@ -133,25 +133,20 @@ properties:
       type: object
       additionalProperties: false
       properties:
-        name: *id001
-        url:
-          anyOf:
-          - *id002
-          - const: to be provided
-        size:
-          anyOf:
-          - type: integer
-            minimum: 0
-          - const: to be provided
-        open:
-          anyOf:
-          - type: boolean
-          - const: to be provided
+        dataset_key:
+          type: string
+          pattern: ^[a-z0-9]+(?:-[a-z0-9]+)*$
+        usage:
+          enum:
+          - pretraining
+          - training
+          - fine-tuning
+        subset:
+          type: string
+          minLength: 1
       required:
-      - name
-      - url
-      - size
-      - open
+      - dataset_key
+      - usage
   test_set_informed:
     anyOf:
     - type: boolean
@@ -332,7 +327,9 @@ properties:
         minLength: 1
     additionalProperties: true
   publication_status:
-    const: awaiting_artifacts
+    enum:
+    - awaiting_artifacts
+    - metadata_incomplete
   hyperparams:
     type: object
     additionalProperties: false
@@ -590,8 +587,6 @@ allOf:
         - prophet-spin-ex
         - prophet-spin-v2
         - prophet-spin-v1-6a
-      lifecycle:
-        const: pending
     required:
     - publication_status
 - if:
@@ -612,3 +607,25 @@ allOf:
       dates:
         properties:
           benchmark_added: *id010
+- if:
+    properties:
+      publication_status:
+        const: metadata_incomplete
+    required:
+    - publication_status
+  then:
+    properties:
+      lifecycle:
+        const: active
+      model_key:
+        const: prophet-spin-v1-6a
+- if:
+    properties:
+      publication_status:
+        const: awaiting_artifacts
+    required:
+    - publication_status
+  then:
+    properties:
+      lifecycle:
+        const: pending

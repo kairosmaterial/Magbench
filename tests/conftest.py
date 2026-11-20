@@ -13,7 +13,7 @@ from leaderboard.cards import read
 
 @pytest.fixture
 def checkout(tmp_path):
-    for name in ('models','tests','site/assets'):
+    for name in ('models','datasets','tests','site/assets'):
         shutil.copytree(ROOT/name,tmp_path/name,ignore=shutil.ignore_patterns('__pycache__'))
     shutil.copy(ROOT/'benchmark.json',tmp_path/'benchmark.json')
     return tmp_path
@@ -30,7 +30,7 @@ def public_model(checkout):
     card.pop('publication_status');card['authors']=[dict(name='Example researcher',affiliation='Example institute',corresponding=True)]
     card['checkpoint']={'url':'https://example.org/weights','sha256':'a'*64,'size':16}
     card['license']={'code':'MIT','checkpoint':'MIT'}
-    card['training_sets']=[dict(name='Example set',url='https://example.org/data',size=10,open=True)]
+    card['training_sets']=[dict(dataset_key='v5',usage='training')]
     card['inference']['python_version']='3.11';card['inference']['command']='python inference.py run'
     card['predictions']={'url':'https://example.org/predictions.json','sha256':'b'*64,'size':10,'phonons':{'url':'https://example.org/phonons.zip','sha256':'c'*64,'size':10}}
     (folder/f'{key}.yml').write_text(yaml.safe_dump(card))

@@ -26,10 +26,9 @@ targets:
 - forces
 - stress
 training_sets:
-- name: to be provided
-  url: to be provided
-  size: to be provided
-  open: to be provided
+- dataset_key: v5
+  usage: training
+  subset: to be provided
 test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
@@ -336,8 +335,9 @@ notes:
   training: trained on a subset of the v5 dataset
   inference_code: The inference runtime is vendored in benchmark_runner/vendor/prophet_spin
     under the MIT licence.
-  parameter_count: Energy-model parameters, including frozen parameters; deterministic
-    buffers and the separate moment-initialisation head are excluded.
+  parameter_count: Trainable energy-model parameters from one saved state; buffers,
+    duplicate EMA copies and the separate moment-initialisation head are excluded.
+  pretraining: Pretraining datasets are to be provided.
 publication_status: awaiting_artifacts
 hyperparams:
   architecture:

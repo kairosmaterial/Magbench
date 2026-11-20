@@ -25,7 +25,7 @@
       position: value => start + (value - ticks[0]) / (ticks.at(-1) - ticks[0]) * (end - start)};
   }
   const overlaps = (a, b, gap = 4) => a.left < b.left + b.width + gap && a.left + a.width + gap > b.left && a.top < b.top + b.height + gap && a.top + a.height + gap > b.top;
-  function placeLabels(points, bounds) {
+  function placeLabels(points, bounds, obstacles = []) {
     const placed = [];
     const clamp = (value, minimum, maximum) => Math.max(minimum, Math.min(maximum, value));
     for (const point of points.filter(p => finite(p.x) && finite(p.y))) {
@@ -33,7 +33,7 @@
       if (width > bounds.right - bounds.left || height > bounds.bottom - bounds.top) throw new RangeError('Label exceeds plot area');
       const fit = (left, top) => ({left: clamp(left, bounds.left, bounds.right - width), top: clamp(top, bounds.top, bounds.bottom - height), width, height});
       const candidates = [fit(x + 13, y - height / 2), fit(x - 13 - width, y - height / 2), fit(x - width / 2, y - 14 - height), fit(x - width / 2, y + 14)];
-      const clear = box => !placed.some(other => overlaps(box, other)) && !points.some(p => finite(p.x) && finite(p.y) && overlaps(box, {left:p.x - 9, top:p.y - 9, width:18, height:18}, 2));
+      const clear = box => !obstacles.some(other => overlaps(box, other)) && !placed.some(other => overlaps(box, other)) && !points.some(p => finite(p.x) && finite(p.y) && overlaps(box, {left:p.x - 9, top:p.y - 9, width:18, height:18}, 2));
       let box = candidates.find(clear);
       if (!box) {
         const alternatives = [];
@@ -52,7 +52,31 @@
     }
     return placed;
   }
-  const api = {finite, scale, overlaps, placeLabels};
+  const formatParameters = (millions, tick = false) => `${tick ? Number(millions.toFixed(1)) : millions.toFixed(1)}M`;
+  const hiddenTicks = (plates, ticks) => ticks.map((tick, index) => plates.some(plate => overlaps(plate, tick, 0)) ? index : -1).filter(index => index >= 0);
+  function placeTooltip(point, size, bounds, obstacles = [], gap = 20) {
+    const {width, height} = size;
+    const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
+    const fits = box => box.left >= bounds.left && box.top >= bounds.top && box.left + width <= bounds.right && box.top + height <= bounds.bottom && !obstacles.some(other => overlaps(box, other, 2));
+    for (const side of ['right', 'left', 'below', 'above']) {
+      const horizontal = side === 'right' || side === 'left';
+      const desired = horizontal ? point.y - height / 2 : point.x - width / 2;
+      const low = horizontal ? bounds.top : bounds.left;
+      const high = (horizontal ? bounds.bottom - height : bounds.right - width);
+      if (high < low) continue;
+      const offsets = [desired, low, high, horizontal ? point.y - height - gap : point.x - width - gap, horizontal ? point.y + gap : point.x + gap];
+      for (const box of obstacles) offsets.push(horizontal ? box.top - height - 4 : box.left - width - 4, horizontal ? box.top + box.height + 4 : box.left + box.width + 4);
+      const positions = [...new Set(offsets.map(value => clamp(value, low, high)))].sort((a, b) => Math.abs(a - desired) - Math.abs(b - desired));
+      for (const offset of positions) {
+        const box = {width, height, side,
+          left: horizontal ? side === 'right' ? point.x + gap : point.x - gap - width : offset,
+          top: horizontal ? offset : side === 'below' ? point.y + gap : point.y - gap - height};
+        if (fits(box)) return box;
+      }
+    }
+    return null;
+  }
+  const api = {finite, scale, overlaps, placeLabels, formatParameters, hiddenTicks, placeTooltip};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.MagbenchPlotMath = api;
 })(typeof globalThis === 'undefined' ? this : globalThis);
