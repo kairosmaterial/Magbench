@@ -42,7 +42,7 @@
             "open": "to be provided"
           }
         ],
-        "test_set_informed": true,
+        "test_set_informed": "to be provided",
         "evaluation": {
           "moment_initialisation": "moment_head",
           "seed_amplitudes": "model",
@@ -86,7 +86,7 @@
           "ground_state_passes": 159
         },
         "notes": {
-          "disclosure": "The benchmark materials and scores informed evaluation and seed-table selection.",
+          "disclosure": "to be provided",
           "publication": "weights and inference code to be released",
           "organisation": "Kairos Materials",
           "exchange_readout": "Analytic effective pair coupling from the model energy."
@@ -8546,7 +8546,7 @@
             "open": "to be provided"
           }
         ],
-        "test_set_informed": true,
+        "test_set_informed": "to be provided",
         "evaluation": {
           "moment_initialisation": "moment_head",
           "seed_amplitudes": "model",
@@ -8590,7 +8590,7 @@
           "ground_state_passes": 155
         },
         "notes": {
-          "disclosure": "The benchmark materials and scores informed evaluation and seed-table selection.",
+          "disclosure": "to be provided",
           "publication": "weights and inference code to be released",
           "organisation": "Kairos Materials",
           "exchange_readout": "Bilinear exchange readout."
@@ -16891,9 +16891,9 @@
           "ground_state_passes": 146
         },
         "notes": {
-          "disclosure": "Confirm training and selection exposure to the benchmark materials.",
+          "disclosure": "to be provided: Confirm training and selection exposure to the benchmark materials.",
           "reference": "Packaged reference scores; original predictions and phonon artifacts were not delivered.",
-          "weights": "Supply the public checkpoint URL and digest.",
+          "weights": "to be provided: Supply the public checkpoint URL and digest.",
           "organisation": "Kairos Materials"
         }
       },
