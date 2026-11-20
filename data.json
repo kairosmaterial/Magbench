@@ -4,7 +4,7 @@
   "models": [
     {
       "card": {
-        "model_name": "Prophet-Spinv2",
+        "model_name": "Prophet-Spin v2",
         "model_key": "prophet-spin-v2",
         "model_version": "v2",
         "lifecycle": "pending",
