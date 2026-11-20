@@ -7,7 +7,7 @@ window.MagbenchScatter = (container, models, table) => {
   const fields = [
     {key:'total', label:'Total (out of 1)', score:true, get:e=>e.card.metrics.total},
     ...[['ground_state','Ground state'],['hull','MP hull with spin'],['phonons','Phonons with spin'],['J','Exchange J'],['magnetovolume','dJ/dlnV']].map(([key, name])=>({key,label:`${name} (out of 0.2)`,score:true,get:e=>e.card.metrics[key]})),
-    {key:'passes',label:`Ground-state passes (out of ${models[0]?.scores.dimensions.ground_state.materials ?? 'to be provided'})`,get:e=>e.card.metrics.ground_state_passes},
+    {key:'passes',label:`Ground-state passes (out of ${models[0]?.scores.dimensions.ground_state.materials ?? 'pending'})`,get:e=>e.card.metrics.ground_state_passes},
     {key:'cutoff',label:'Cutoff (Å)',get:e=>Array.isArray(hp(e).cutoff_A)?Math.max(...hp(e).cutoff_A):hp(e).cutoff_A},
     {key:'exchange_range',label:'Exchange range (Å)',get:e=>hp(e).exchange_range_A},
     {key:'training_frames',label:'Training frames',get:e=>e.training_frames},
@@ -56,9 +56,9 @@ window.MagbenchScatter = (container, models, table) => {
     const ticks=[...axes.querySelectorAll('.plot-tick')], plates=[...guides.querySelectorAll('rect')].map(node=>rectangle(node.getBBox()));
     for(const index of math.hiddenTicks(plates,ticks.map(node=>rectangle(node.getBBox()))))ticks[index].setAttribute('visibility','hidden');
     const name=document.createElement('strong');name.textContent=entry.card.model_name;
-    const org=document.createElement('div');org.className='muted';org.textContent=entry.card.notes?.organisation||'to be provided';
+    const org=document.createElement('div');org.className='muted';org.textContent=entry.card.notes?.organisation||'pending';
     const values=document.createElement('dl');
-    for(const field of fields){const value=field.get(entry);if(field.key==='training_frames'&&!math.finite(value))continue;const label=document.createElement('dt'),number=document.createElement('dd');label.textContent=field.key==='passes'?'Passes':field.label.replace(/ \(out of [^)]+\)/,'');number.textContent=math.finite(value)?(field.key==='params'?`${value.toFixed(1)}M`:field.key==='cutoff'&&Array.isArray(hp(entry).cutoff_A)?hp(entry).cutoff_A.join(' / '):format(field,value)):'to be provided';values.append(label,number);}
+    for(const field of fields){const value=field.get(entry);if(field.key==='training_frames'&&!math.finite(value))continue;const label=document.createElement('dt'),number=document.createElement('dd');label.textContent=field.key==='passes'?'Passes':field.label.replace(/ \(out of [^)]+\)/,'');number.textContent=math.finite(value)?(field.key==='params'?`${value.toFixed(1)}M`:field.key==='cutoff'&&Array.isArray(hp(entry).cutoff_A)?hp(entry).cutoff_A.join(' / '):format(field,value)):'pending';values.append(label,number);}
     tooltip.replaceChildren(name,org,values);tooltip.hidden=false;
     const box=container.getBoundingClientRect(),plot=svg.getBoundingClientRect();
     if(plot.top>=innerHeight||plot.bottom<=0){tooltip.hidden=true;return;}
