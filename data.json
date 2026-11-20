@@ -1,6 +1,6 @@
 {
   "protocol_version": "0.2.1",
-  "data_version": "0.2.2",
+  "data_version": "0.2.3",
   "models": [
     {
       "card": {
@@ -48,7 +48,7 @@
           "seed_amplitudes": "model",
           "exchange_route": "exchange_readout",
           "protocol_version": "0.2.1",
-          "data_version": "0.2.2",
+          "data_version": "0.2.3",
           "runner_version": "0.6.0"
         },
         "inference": {
@@ -67,20 +67,485 @@
           ]
         },
         "predictions": {
-          "url": "to be provided",
-          "sha256": "f5f7069001a2228b7117cabebe896cc014263b518d92b5e6ef8df98ea33f9808",
-          "size": 2116353,
+          "url": "https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v2/predictions.json",
+          "sha256": "d8be03c237d2576043bf9c15dc11c3fd47639442241e2767bbe0aa9402ce185a",
+          "size": 2117251,
           "phonons": {
-            "url": "to be provided",
-            "sha256": "to be provided",
-            "size": "to be provided"
+            "url": "https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v2/phonons/",
+            "files": [
+              {
+                "path": "phonons/001.npz",
+                "sha256": "8585ccac489eb3852a0edac91cb923780cc7ef77c91186c639f065658e1bbbc3",
+                "size": 115621
+              },
+              {
+                "path": "phonons/002.npz",
+                "sha256": "0b2704e173ef042c95c84fa1a32769ce6a5a6450c63724b5c186100165a61adf",
+                "size": 71401
+              },
+              {
+                "path": "phonons/004.npz",
+                "sha256": "1654cf7c313cd557cc5a3bd641ffc460796725e0389e06deeb467217e4bffb4c",
+                "size": 67259
+              },
+              {
+                "path": "phonons/006.npz",
+                "sha256": "de69bc7e0b236865f9aac02803098a13e98c8ec8bbe7808c639317c658c6bbff",
+                "size": 66657
+              },
+              {
+                "path": "phonons/007.npz",
+                "sha256": "fcb5ce6249cfa84fec40ab122d0b28397deaccf00bf6287505d62d8ad315b35c",
+                "size": 62960
+              },
+              {
+                "path": "phonons/010.npz",
+                "sha256": "ea5e09220d66255e0bc92569da4310bfe7baa9baf83786f3324a39530fbac6ef",
+                "size": 63103
+              },
+              {
+                "path": "phonons/011.npz",
+                "sha256": "3def4e221e3eacd41edae28133e83fedc140e05317afc5a19c5ca06bb877a595",
+                "size": 261091
+              },
+              {
+                "path": "phonons/018.npz",
+                "sha256": "df1410c87d65f62a6fdd4917635bf67fea6e140a20da82c341856215e20c3b8b",
+                "size": 147439
+              },
+              {
+                "path": "phonons/021.npz",
+                "sha256": "f41df25a506f548469cb3eceefa8e874e2dc1fa19aa75e5c849e80f5895ec88a",
+                "size": 286853
+              },
+              {
+                "path": "phonons/022.npz",
+                "sha256": "a3cc2c076493c5138e2118415f4cc63527575819d1c75cd22ff168168b697026",
+                "size": 502274
+              },
+              {
+                "path": "phonons/024.npz",
+                "sha256": "8f2d6b6e6346289012c0d4b7e1f9680dc4547e6638bf531a4ebfba796ad52f98",
+                "size": 70112
+              },
+              {
+                "path": "phonons/025.npz",
+                "sha256": "1f75b6305ef6d91f1fa6ade1626a131c13a75b9ed6d8e50e73c272c9685721fa",
+                "size": 69114
+              },
+              {
+                "path": "phonons/027.npz",
+                "sha256": "7f8636f68d298ca17cbbcb2737fa100e1c4402fc28a6a0289b01e02d7e7f89d7",
+                "size": 171423
+              },
+              {
+                "path": "phonons/028.npz",
+                "sha256": "a83701678268c5edf61b84fc7611e83a997bb6f5d3bb4ffb3a099a3cd494aeea",
+                "size": 179007
+              },
+              {
+                "path": "phonons/032.npz",
+                "sha256": "4f0c96c485d64674447b52f419a3a0cb4807a4b57f6119333262414692ab9c17",
+                "size": 87708
+              },
+              {
+                "path": "phonons/038.npz",
+                "sha256": "d4f37ea4e6b68cd299fed9c489c28948518f91e1451fb4caef101d1e5aa234d4",
+                "size": 163640
+              },
+              {
+                "path": "phonons/041.npz",
+                "sha256": "e1f85e522275f5cc0a1d8c168152054d7900d2eb5a78675aebdf5955758d2e96",
+                "size": 104313
+              },
+              {
+                "path": "phonons/046.npz",
+                "sha256": "9ee4df8682f386895df04448b6047c094596f823430e52a68d8b45b473f119e7",
+                "size": 137506
+              },
+              {
+                "path": "phonons/047.npz",
+                "sha256": "c8771c8238a0d6015900cb3c22a132c882b0099c738e99dc90e7ee7523dda733",
+                "size": 266789
+              },
+              {
+                "path": "phonons/051.npz",
+                "sha256": "583a264d5fb4cb5d6de2d255bb2cbfd8ac7969df7bed8c96995b98913f7a055e",
+                "size": 234040
+              },
+              {
+                "path": "phonons/054.npz",
+                "sha256": "bb48e126a91125ffd016c2ee6aa0de9413c5b57554a5843f1e1c44716028947d",
+                "size": 134112
+              },
+              {
+                "path": "phonons/061.npz",
+                "sha256": "0524d162d31ee75fd02324814fb07a10ba0fd76483c5a32be25084d42546f7af",
+                "size": 20975
+              },
+              {
+                "path": "phonons/064.npz",
+                "sha256": "8a2a5c9f0a2714cadff006644de0b2fdc682e533fd3168250549bd8c79db3051",
+                "size": 138853
+              },
+              {
+                "path": "phonons/068.npz",
+                "sha256": "368ed9efd09ad2f7cd183e4fbc78a67874d7877732429aa9481e70788245e12f",
+                "size": 212308
+              },
+              {
+                "path": "phonons/069.npz",
+                "sha256": "7746a8645e8ea6a097419aad461b0e130805e468d8d736b89ddad3d5fc6ef11f",
+                "size": 94812
+              },
+              {
+                "path": "phonons/070.npz",
+                "sha256": "f1fc9baa5a472bde6180d8e5462539db71419a8ac8f975a0799b5b97277c115b",
+                "size": 84116
+              },
+              {
+                "path": "phonons/071.npz",
+                "sha256": "de59dee3acd57b40c550fe83047d8d15f4fd567ff961de67156e887c817c90fe",
+                "size": 174683
+              },
+              {
+                "path": "phonons/073.npz",
+                "sha256": "5db2bab6d501706382b8b316d16c6d1ca37e780b09b3e4266d4e5a8abdc7f526",
+                "size": 251326
+              },
+              {
+                "path": "phonons/078.npz",
+                "sha256": "e39f3e3215c9b7ec207d207dae51edaced8a750355634e14d92822d96b99bb1e",
+                "size": 122535
+              },
+              {
+                "path": "phonons/079.npz",
+                "sha256": "ab1ad74188d632ba133081736e453af283d079c94176a8624769b44ab60e6894",
+                "size": 197432
+              },
+              {
+                "path": "phonons/081.npz",
+                "sha256": "dccc13156c4ac1e970279f863f5b2eae1ae07ce5b304d04810eea37621eb40e6",
+                "size": 235968
+              },
+              {
+                "path": "phonons/082.npz",
+                "sha256": "90111e3344d490e76ce0cca3d9881730d63d996816f15c7ecee85aedb0cb6991",
+                "size": 79014
+              },
+              {
+                "path": "phonons/083.npz",
+                "sha256": "8900b36d5330ceba245bf3a73ebeb5ec0472ec4044c7b4c844fb4e8b8d59b1e0",
+                "size": 122986
+              },
+              {
+                "path": "phonons/084.npz",
+                "sha256": "68d704e9b4ebef9302bbb9f511d8f86fddd42fdee87e509c0e5fc159f2ca88b7",
+                "size": 65362
+              },
+              {
+                "path": "phonons/085.npz",
+                "sha256": "84348d38cd6177f8e3e645a55414bcd227e52f8f80d99d28031d0a97d53aae4f",
+                "size": 227501
+              },
+              {
+                "path": "phonons/087.npz",
+                "sha256": "5822758a0698ddb891218e44755cb384c7c007db2ba448a2150027c097a84461",
+                "size": 65568
+              },
+              {
+                "path": "phonons/088.npz",
+                "sha256": "008c500e9ec2f25a752bbd2b5c1816af605a762d0a150035cfa76fa321ed0ef1",
+                "size": 154551
+              },
+              {
+                "path": "phonons/093.npz",
+                "sha256": "b21a33c885b872ff505ca4500b9f42a6893d80416920dc2cac4b7609091891b4",
+                "size": 88993
+              },
+              {
+                "path": "phonons/094.npz",
+                "sha256": "67b974a16ffeaf365d51cd5a9d17a914a00ce014e355124dec7633e5364529c6",
+                "size": 89789
+              },
+              {
+                "path": "phonons/096.npz",
+                "sha256": "4f4146f8cf36a75ae4c5c75ff67ea6e9fda83827c700040c5bdee32f5954e4a6",
+                "size": 184177
+              },
+              {
+                "path": "phonons/101.npz",
+                "sha256": "738894d55ddb62c3bfb7c28ca3a4e7f4c27c99478a42e9f8676b1c4c3ef1ff7f",
+                "size": 377391
+              },
+              {
+                "path": "phonons/102.npz",
+                "sha256": "be7715a158c4e944d5110947d725de8e0947809d91e114833f694d5ccda10472",
+                "size": 108877
+              },
+              {
+                "path": "phonons/104.npz",
+                "sha256": "dfc9e818ec08c772fd1cd6b6cbe7fe74456d660239e4f9b484501ca3084cec5c",
+                "size": 123528
+              },
+              {
+                "path": "phonons/108.npz",
+                "sha256": "0f249dd82f22e9662d928d81620fe0fff78b2008e9b3eaae9cb1f9de17f36437",
+                "size": 65325
+              },
+              {
+                "path": "phonons/109.npz",
+                "sha256": "76578993a414e71f736164899632a189d30eab3dacaf721ca2979fff3ecdfa80",
+                "size": 70597
+              },
+              {
+                "path": "phonons/115.npz",
+                "sha256": "8153e23c49151f09fc7d587699d0ccef067691b8f7ea76636f0821eb09e3d32c",
+                "size": 209732
+              },
+              {
+                "path": "phonons/116.npz",
+                "sha256": "c88d9f49266ccac2185b1be2a4dfc95cda3a603d31f62fe3f4202bab2f373089",
+                "size": 61839
+              },
+              {
+                "path": "phonons/120.npz",
+                "sha256": "280522648d81a362223e48e3ec24141257cc42ee8e50308036457c6d90b9254b",
+                "size": 74001
+              },
+              {
+                "path": "phonons/124.npz",
+                "sha256": "ceeca29b2d30ecde4eec1a05a1e7888727ee1f59a401cb745bd4bed57ccb3656",
+                "size": 125721
+              },
+              {
+                "path": "phonons/126.npz",
+                "sha256": "dd720eb35c10b89664024ea4232812db93cb5b630bed4671a90384d68b4680c7",
+                "size": 246195
+              },
+              {
+                "path": "phonons/129.npz",
+                "sha256": "80c484fe13859808a9cbaaa6e8ddc5181bd177d242e8f9d63e35ba22310880aa",
+                "size": 69560
+              },
+              {
+                "path": "phonons/130.npz",
+                "sha256": "d4c20920f5d9786f12a964565879b44866774291a8e83840b9d67b0d2d8ca783",
+                "size": 68122
+              },
+              {
+                "path": "phonons/131.npz",
+                "sha256": "d83206b8bed2dd67f9fe91ed96e10d99df9ab5670a81bbaf2afb71290119135e",
+                "size": 70240
+              },
+              {
+                "path": "phonons/132.npz",
+                "sha256": "7c1b75d642412ca3ffb24bdee1cd7d592bb06ae578663704f2926eb7d61f8be3",
+                "size": 69806
+              },
+              {
+                "path": "phonons/134.npz",
+                "sha256": "89fe2002cfd34614ff2d3d956670b9f7695cade4faaf61419b4f943a633987bc",
+                "size": 224054
+              },
+              {
+                "path": "phonons/135.npz",
+                "sha256": "9662effcc153152a8b2c4892c31bdd53874a24e529a87687703d61515c0a4f82",
+                "size": 274843
+              },
+              {
+                "path": "phonons/136.npz",
+                "sha256": "1536e89b2f766e4753aca9f93efe07a7df361e532d0980ada3fee7092a463dd1",
+                "size": 89616
+              },
+              {
+                "path": "phonons/138.npz",
+                "sha256": "23ef762e4adcf9215b72c28a186cdfec6a371170ed18489bc38292ba24b6da86",
+                "size": 102534
+              },
+              {
+                "path": "phonons/142.npz",
+                "sha256": "a1d119a1c1c2cb04b8f8747a9b43f765ce4ca8dc33b49d4e0e0e1251a72647bf",
+                "size": 179036
+              },
+              {
+                "path": "phonons/144.npz",
+                "sha256": "f81a63d89e635207ee76610d204f355d3bf729147738b59a378524844e6285a7",
+                "size": 79548
+              },
+              {
+                "path": "phonons/145.npz",
+                "sha256": "05a5e7a468bd5d2b1793b387b749e1bd8b86586befc98c60b0640b1de811518c",
+                "size": 77235
+              },
+              {
+                "path": "phonons/146.npz",
+                "sha256": "908077cdb59a0c5a99bcbee991913a46c47c228456e8a22f5cc47edbd80a90fb",
+                "size": 119621
+              },
+              {
+                "path": "phonons/147.npz",
+                "sha256": "a5cebb57b4dfc58d359d39425349c73b7d18992ac6333a0742b26a1a8cdbb01e",
+                "size": 141887
+              },
+              {
+                "path": "phonons/149.npz",
+                "sha256": "d7a7f29ba7881d3e3174f1534e5ef5fe37162af4261b2cba78d7ec72e935e3d4",
+                "size": 103241
+              },
+              {
+                "path": "phonons/150.npz",
+                "sha256": "ca261bf5e2b3440ddd3a5d55eeb30ea46c7fa15f67c5115c16b5bd7550ce7053",
+                "size": 152305
+              },
+              {
+                "path": "phonons/152.npz",
+                "sha256": "87cb5f5c58e28263d17dea561c926341c8f0e2d2ede84aee6c4bab801d012e39",
+                "size": 264244
+              },
+              {
+                "path": "phonons/153.npz",
+                "sha256": "6b48bfc01cd035dc4958d4e3dfa9c3e150c38cb23b3f7cbcf30fcf43e31573fe",
+                "size": 168704
+              },
+              {
+                "path": "phonons/155.npz",
+                "sha256": "a6a31fb0ed3dfe11fd434c254eb1a6f76f3dca83c1f5a9a4a5c735aa283059fe",
+                "size": 76044
+              },
+              {
+                "path": "phonons/160.npz",
+                "sha256": "97b88d812a9eefe637c5080a006d2a93051e6b9c35a724af16a2fbdcd9790908",
+                "size": 209714
+              },
+              {
+                "path": "phonons/161.npz",
+                "sha256": "390719c85ac1094b07cc98e3fa0bfb2d46ea48672f0f8d906b994161c5f91b40",
+                "size": 218095
+              },
+              {
+                "path": "phonons/165.npz",
+                "sha256": "99bb3fc8c00ddf3df6f223e0be7008ab3a2614676d2b4c66aaebd1792dc73cf9",
+                "size": 138867
+              },
+              {
+                "path": "phonons/167.npz",
+                "sha256": "3fd71abfb2756c8d7078628694696924cfdcc36bf28a3befe28c550d4c32da56",
+                "size": 244569
+              },
+              {
+                "path": "phonons/168.npz",
+                "sha256": "5cc795e82ba4e762ef89339671c8cec101e1e38ada11bfe736bad6d5e81f01ca",
+                "size": 185416
+              },
+              {
+                "path": "phonons/170.npz",
+                "sha256": "8f0af8ab511fbd5a1943954be067a3c1967a04087b9233683143c19b2852edf0",
+                "size": 244299
+              },
+              {
+                "path": "phonons/176.npz",
+                "sha256": "b8a1c2d8a69bd9f3563b9ae14f655483e0e8e2c6d24f592fbc2a63679b52747a",
+                "size": 117136
+              },
+              {
+                "path": "phonons/182.npz",
+                "sha256": "b5c08f220ff71952d3e5dae32e0443a2c59db267fa3e458e4f94ec8ae01ceb90",
+                "size": 156889
+              },
+              {
+                "path": "phonons/183.npz",
+                "sha256": "d9f6e1479faea0599f2f3953031c149c13b1b2dc1a63b584519e6f0d2b579004",
+                "size": 56914
+              },
+              {
+                "path": "phonons/184.npz",
+                "sha256": "03fe28b484fba671507d16949043111a3256ccc10f813ea22a2212713939c5c5",
+                "size": 287870
+              },
+              {
+                "path": "phonons/195.npz",
+                "sha256": "900c6f4ad2a925bf70dbe1cd792f771da69888b5c30926eafbf494591ba605f9",
+                "size": 167596
+              },
+              {
+                "path": "phonons/197.npz",
+                "sha256": "3b3a2354659c0d9ef04827d5280d63e085ccd39c1a083bfae79f171ec21fb6b2",
+                "size": 265721
+              },
+              {
+                "path": "phonons/204.npz",
+                "sha256": "83811bc547cd47c103afbdf8aed44cf31785dd6ecf1e2c033ecf02f5d0f0512a",
+                "size": 180511
+              },
+              {
+                "path": "phonons/206.npz",
+                "sha256": "3d22cc6b334686dd5a5fec57770f9d2786f3bf57d6dde4b6ee68103f25f30580",
+                "size": 234949
+              },
+              {
+                "path": "phonons/210.npz",
+                "sha256": "140c6b06f64fd33f67e1e44fa93d6a663a39ef7e21f90cc55013e5d626d7b651",
+                "size": 265498
+              },
+              {
+                "path": "phonons/211.npz",
+                "sha256": "aecef92ad196af7a93b1d03432679ff6068a7ff8ca35cc11599561cc33881792",
+                "size": 87602
+              },
+              {
+                "path": "phonons/214.npz",
+                "sha256": "107d3d227d53340efa1e608b54aa70e1c7376fcaabf05a60178d070b8f85b19c",
+                "size": 195136
+              },
+              {
+                "path": "phonons/215.npz",
+                "sha256": "b914220cf9767093be769abc66c9c0a512b6e113305f8c650f2451051aeaec21",
+                "size": 365628
+              },
+              {
+                "path": "phonons/216.npz",
+                "sha256": "8ec1d1bc62515703d6cf1dafd8d951b95ebbe7662c662fd483e32c4cc81e4a87",
+                "size": 264766
+              },
+              {
+                "path": "phonons/217.npz",
+                "sha256": "945b06b4e2cfc70ad12110ff5f73d4b49012a829df94e369fafe992cda653180",
+                "size": 265578
+              },
+              {
+                "path": "phonons/218.npz",
+                "sha256": "883b10fbae615e4c323344f3b1fbd03b60117a3d9be63a3e1fde84b7eba195dd",
+                "size": 263993
+              },
+              {
+                "path": "phonons/219.npz",
+                "sha256": "6e9bbee83b62024b6f62a070fb3b8ac2e425bc5f0a1cecc2aa5418d1f8c24c8c",
+                "size": 264557
+              },
+              {
+                "path": "phonons/221.npz",
+                "sha256": "193d11e3b04f9aa51190278516e6e3251daa0291f5bf6241d70c2f50ee0a2616",
+                "size": 753098
+              },
+              {
+                "path": "phonons/222.npz",
+                "sha256": "b823bd880abfe3b827f10562d606e7b7f35c53511d9e8cdb029a07cf6a530d60",
+                "size": 33925
+              },
+              {
+                "path": "phonons/223.npz",
+                "sha256": "ab0c017cf0b7cb344def8ecebea0cf696f75b7bb37f93cf040d672600639e5ab",
+                "size": 30836
+              }
+            ]
           }
         },
         "metrics": {
-          "total": 0.6050287189146376,
+          "total": 0.6053984742150986,
           "ground_state": 0.16649214659685865,
           "hull": 0.12495019768923675,
-          "phonons": 0.15392323003479483,
+          "phonons": 0.15429298533525576,
           "J": 0.0862994906042676,
           "magnetovolume": 0.07336365398947985,
           "ground_state_passes": 159
@@ -94,7 +559,7 @@
         "publication_status": "awaiting_artifacts"
       },
       "scores": {
-        "total_score": 0.6050287189146376,
+        "total_score": 0.6053984742150986,
         "maximum_score": 1.0,
         "dimensions": {
           "ground_state": {
@@ -112,12 +577,12 @@
             "accuracy_weighted_score": 0.060552291930074484
           },
           "phonons": {
-            "materials": 110,
-            "mean_material_score": 0.7696161501739741,
+            "materials": 111,
+            "mean_material_score": 0.7714649266762788,
             "weight": 0.2,
-            "weighted_score": 0.15392323003479483,
-            "stability_weighted_score": 0.08,
-            "spectrum_weighted_score": 0.07392323003479481
+            "weighted_score": 0.15429298533525576,
+            "stability_weighted_score": 0.08018018018018018,
+            "spectrum_weighted_score": 0.07411280515507554
           },
           "J": {
             "materials": 172,
@@ -148,7 +613,7 @@
               "J": 0.4859078864587514,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003224396673735418,
+            "weighted_contribution_to_total": 0.003210743359127365,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -194,7 +659,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0037759463876326227,
+            "weighted_contribution_to_total": 0.003760233978150609,
             "details": {
               "ground_state": {
                 "seed_index": 6,
@@ -231,7 +696,7 @@
               "J": 0.5049679985639586,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004305422073528285,
+            "weighted_contribution_to_total": 0.004289791330937902,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -293,7 +758,7 @@
               "J": 0.5353475813091381,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004321713052966582,
+            "weighted_contribution_to_total": 0.004306061364177792,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -339,7 +804,7 @@
               "J": 0.5646107702883596,
               "magnetovolume": 0.3034472266618146
             },
-            "weighted_contribution_to_total": 0.004679613969377659,
+            "weighted_contribution_to_total": 0.004663560292149552,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -490,7 +955,7 @@
               "J": 0.5518330578349591,
               "magnetovolume": 0.31941800394259023
             },
-            "weighted_contribution_to_total": 0.004750638401138668,
+            "weighted_contribution_to_total": 0.00473455253559352,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -545,7 +1010,7 @@
               "J": 0.6084628710285405,
               "magnetovolume": 0.7273104316249238
             },
-            "weighted_contribution_to_total": 0.005161440848736558,
+            "weighted_contribution_to_total": 0.005145224113232542,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -799,7 +1264,7 @@
               "J": 0.6578211476280642,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004563128315353053,
+            "weighted_contribution_to_total": 0.004547769360943385,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -893,7 +1358,7 @@
               "J": 0.5014786167993361,
               "magnetovolume": 0.4126280540294462
             },
-            "weighted_contribution_to_total": 0.004980279897159268,
+            "weighted_contribution_to_total": 0.004964159013527821,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -948,7 +1413,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0036135829653645545,
+            "weighted_contribution_to_total": 0.0035983674698884735,
             "details": {
               "ground_state": {
                 "seed_index": 31,
@@ -1033,7 +1498,7 @@
               "J": 0.3443764417380009,
               "magnetovolume": 0.3186461372846897
             },
-            "weighted_contribution_to_total": 0.004538622838258013,
+            "weighted_contribution_to_total": 0.004522572315092015,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -1088,7 +1553,7 @@
               "J": 0.4262614017243705,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004316141498236405,
+            "weighted_contribution_to_total": 0.0043005561596415835,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -1134,7 +1599,7 @@
               "J": 0.6194085262611153,
               "magnetovolume": 0.6932518927906044
             },
-            "weighted_contribution_to_total": 0.00486592191918384,
+            "weighted_contribution_to_total": 0.0048500060515107414,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -1189,7 +1654,7 @@
               "J": 0.5460766623280211,
               "magnetovolume": 0.6731117545927292
             },
-            "weighted_contribution_to_total": 0.005441267328514754,
+            "weighted_contribution_to_total": 0.0054254385705715304,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -1370,7 +1835,7 @@
               "J": 0.303620871999056,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.00361125491405066,
+            "weighted_contribution_to_total": 0.0035958713915552427,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -1519,7 +1984,7 @@
               "J": 0.5231183555997179,
               "magnetovolume": 0.42644475424744155
             },
-            "weighted_contribution_to_total": 0.004528416936986674,
+            "weighted_contribution_to_total": 0.004512466816318572,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -1853,7 +2318,7 @@
               "J": 0.3750000040147579,
               "magnetovolume": 0.1000000000069501
             },
-            "weighted_contribution_to_total": 0.0035193673434633895,
+            "weighted_contribution_to_total": 0.0035075674109961152,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -1908,7 +2373,7 @@
               "J": 0.5606581977641136,
               "magnetovolume": 0.3774558000406458
             },
-            "weighted_contribution_to_total": 0.004978198942379988,
+            "weighted_contribution_to_total": 0.0049624005880583456,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -2107,7 +2572,7 @@
               "J": 0.43910423804504517,
               "magnetovolume": 0.2785464721724271
             },
-            "weighted_contribution_to_total": 0.0037679779970358333,
+            "weighted_contribution_to_total": 0.0037525296852517136,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -2162,7 +2627,7 @@
               "J": 0.3138996823915331,
               "magnetovolume": 0.5001019884948733
             },
-            "weighted_contribution_to_total": 0.004821903133738304,
+            "weighted_contribution_to_total": 0.004805837018583153,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -2384,7 +2849,7 @@
               "J": 0.5471998326092151,
               "magnetovolume": 0.21390131918934988
             },
-            "weighted_contribution_to_total": 0.00400651583980732,
+            "weighted_contribution_to_total": 0.003990357947962515,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -2455,7 +2920,7 @@
               "J": 0.35036728259861294,
               "magnetovolume": 0.5560227882531774
             },
-            "weighted_contribution_to_total": 0.004406449159817655,
+            "weighted_contribution_to_total": 0.004391166289326532,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -2636,7 +3101,7 @@
               "J": 0.4380230830896323,
               "magnetovolume": 0.4394250574604992
             },
-            "weighted_contribution_to_total": 0.004934273073147139,
+            "weighted_contribution_to_total": 0.004918601111796763,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -2691,7 +3156,7 @@
               "J": 0.5524098607568194,
               "magnetovolume": 0.20258148844276969
             },
-            "weighted_contribution_to_total": 0.004713090195791964,
+            "weighted_contribution_to_total": 0.004697419427810594,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -2746,7 +3211,7 @@
               "J": 0.5850019209661594,
               "magnetovolume": 0.6783764291058145
             },
-            "weighted_contribution_to_total": 0.004953404141509595,
+            "weighted_contribution_to_total": 0.00493754787715486,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -2801,7 +3266,7 @@
               "J": 0.5620031406098857,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004110158824477167,
+            "weighted_contribution_to_total": 0.004094736789021146,
             "details": {
               "ground_state": {
                 "seed_index": 21,
@@ -2863,7 +3328,7 @@
               "J": 0.6324473803003274,
               "magnetovolume": 0.5422904587099275
             },
-            "weighted_contribution_to_total": 0.004821400665566006,
+            "weighted_contribution_to_total": 0.004805516330356689,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -3092,7 +3557,7 @@
               "J": 0.5684386221444886,
               "magnetovolume": 0.21649976195508222
             },
-            "weighted_contribution_to_total": 0.004004376232712784,
+            "weighted_contribution_to_total": 0.00398872203877124,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -3147,7 +3612,7 @@
               "J": 0.8605859748978112,
               "magnetovolume": 0.758637022126784
             },
-            "weighted_contribution_to_total": 0.005903380243779146,
+            "weighted_contribution_to_total": 0.005887410999377915,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -3241,7 +3706,7 @@
               "J": 0.5143678838337963,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0044701448019547315,
+            "weighted_contribution_to_total": 0.004454090114672403,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -3287,7 +3752,7 @@
               "J": 0.6082331889427163,
               "magnetovolume": 0.1044570034831746
             },
-            "weighted_contribution_to_total": 0.004721485463272684,
+            "weighted_contribution_to_total": 0.004705536934852915,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -3342,7 +3807,7 @@
               "J": 0.5936218003322506,
               "magnetovolume": 0.2138541320217297
             },
-            "weighted_contribution_to_total": 0.004877647474291218,
+            "weighted_contribution_to_total": 0.004861588667568633,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -3397,7 +3862,7 @@
               "J": 0.3910804937060177,
               "magnetovolume": 0.41823110211568143
             },
-            "weighted_contribution_to_total": 0.004711179235196458,
+            "weighted_contribution_to_total": 0.004695069111976203,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -3523,7 +3988,7 @@
               "J": 0.5575880079829523,
               "magnetovolume": 0.3171072315967099
             },
-            "weighted_contribution_to_total": 0.0048304968140262415,
+            "weighted_contribution_to_total": 0.004814402736529823,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -3578,7 +4043,7 @@
               "J": 0.8621702837269685,
               "magnetovolume": 0.775596365683154
             },
-            "weighted_contribution_to_total": 0.005913286805723393,
+            "weighted_contribution_to_total": 0.005897278944660008,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -3759,7 +4224,7 @@
               "J": 0.29876075159442966,
               "magnetovolume": 0.21893946170106557
             },
-            "weighted_contribution_to_total": 0.0044069710427896945,
+            "weighted_contribution_to_total": 0.004390787800292704,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -3814,7 +4279,7 @@
               "J": 0.4974637706103255,
               "magnetovolume": 0.424943552377508
             },
-            "weighted_contribution_to_total": 0.00480665843017982,
+            "weighted_contribution_to_total": 0.004790465661226963,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -3869,7 +4334,7 @@
               "J": 0.56537090740497,
               "magnetovolume": 0.20035121607650508
             },
-            "weighted_contribution_to_total": 0.0038245482701071854,
+            "weighted_contribution_to_total": 0.0038093141441971866,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -3956,7 +4421,7 @@
               "J": 0.3181385923240916,
               "magnetovolume": 0.8140126191549091
             },
-            "weighted_contribution_to_total": 0.005489121414737992,
+            "weighted_contribution_to_total": 0.0054728703011258295,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -4011,7 +4476,7 @@
               "J": 0.5770599472590582,
               "magnetovolume": 0.15031254411951253
             },
-            "weighted_contribution_to_total": 0.004033468016373756,
+            "weighted_contribution_to_total": 0.004017491729798204,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -4082,7 +4547,7 @@
               "J": 0.45037578973268316,
               "magnetovolume": 0.20000000001306137
             },
-            "weighted_contribution_to_total": 0.004648491385427263,
+            "weighted_contribution_to_total": 0.004632621679919015,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -4279,7 +4744,7 @@
               "J": 0.5914888350134958,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.00437350958549124,
+            "weighted_contribution_to_total": 0.004357641437582618,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -4380,7 +4845,7 @@
               "J": 0.48705721585379513,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004029208221501139,
+            "weighted_contribution_to_total": 0.004013491050990823,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -4426,7 +4891,7 @@
               "J": 0.5699609535864354,
               "magnetovolume": 0.2000106906437192
             },
-            "weighted_contribution_to_total": 0.0042856554306513975,
+            "weighted_contribution_to_total": 0.004270206072048818,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -4511,7 +4976,7 @@
               "J": 0.8044782543097357,
               "magnetovolume": 0.8196418000921103
             },
-            "weighted_contribution_to_total": 0.00605059562171726,
+            "weighted_contribution_to_total": 0.0060344048774650895,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -4662,7 +5127,7 @@
               "J": 0.4905883135121165,
               "magnetovolume": 0.37962667408029827
             },
-            "weighted_contribution_to_total": 0.004946820163479567,
+            "weighted_contribution_to_total": 0.004931074460129053,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -4765,7 +5230,7 @@
               "J": 0.3648349198937156,
               "magnetovolume": 0.21170669870291114
             },
-            "weighted_contribution_to_total": 0.004360837667930435,
+            "weighted_contribution_to_total": 0.004345022189532507,
             "details": {
               "ground_state": {
                 "seed_index": 31,
@@ -4868,7 +5333,7 @@
               "J": 0.5387205579734713,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004221767970603496,
+            "weighted_contribution_to_total": 0.004206137774606028,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -4914,7 +5379,7 @@
               "J": 0.5031355296165985,
               "magnetovolume": 0.25525401970761924
             },
-            "weighted_contribution_to_total": 0.004487444552562415,
+            "weighted_contribution_to_total": 0.004471493081048072,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -4969,7 +5434,7 @@
               "J": 0.27725560470455424,
               "magnetovolume": 0.22194973678547192
             },
-            "weighted_contribution_to_total": 0.004075484663504071,
+            "weighted_contribution_to_total": 0.004060518721840487,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -5024,7 +5489,7 @@
               "J": 0.5325058320779595,
               "magnetovolume": 0.3038957952953198
             },
-            "weighted_contribution_to_total": 0.004647776186072871,
+            "weighted_contribution_to_total": 0.004632015660432733,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -5095,7 +5560,7 @@
               "J": 0.4592835958652448,
               "magnetovolume": 0.6671329059272559
             },
-            "weighted_contribution_to_total": 0.004788968867335113,
+            "weighted_contribution_to_total": 0.004773050745461705,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -5150,7 +5615,7 @@
               "J": 0.5159713606017023,
               "magnetovolume": 0.6036575778752793
             },
-            "weighted_contribution_to_total": 0.004819847272866968,
+            "weighted_contribution_to_total": 0.0048038642851675846,
             "details": {
               "ground_state": {
                 "seed_index": 7,
@@ -5205,7 +5670,7 @@
               "J": 0.36676410917301394,
               "magnetovolume": 0.4043474854992258
             },
-            "weighted_contribution_to_total": 0.0041013381459591765,
+            "weighted_contribution_to_total": 0.00408569817773537,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -5308,7 +5773,7 @@
               "J": 0.5072033155226999,
               "magnetovolume": 0.6822981704692181
             },
-            "weighted_contribution_to_total": 0.004770714794246058,
+            "weighted_contribution_to_total": 0.0047548484561402765,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -5443,7 +5908,7 @@
               "J": 0.7652868264121113,
               "magnetovolume": 0.6592656766164141
             },
-            "weighted_contribution_to_total": 0.005763735211174879,
+            "weighted_contribution_to_total": 0.005747594390607834,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -5498,7 +5963,7 @@
               "J": 0.5729157600952888,
               "magnetovolume": 0.16057211976347668
             },
-            "weighted_contribution_to_total": 0.00472068990897223,
+            "weighted_contribution_to_total": 0.004704742276809367,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -5553,7 +6018,7 @@
               "J": 0.5821989622018109,
               "magnetovolume": 0.3147257149428706
             },
-            "weighted_contribution_to_total": 0.004966156427780517,
+            "weighted_contribution_to_total": 0.004950062557921507,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -5608,7 +6073,7 @@
               "J": 0.46946689540972497,
               "magnetovolume": 0.16892861886467794
             },
-            "weighted_contribution_to_total": 0.004494089368952146,
+            "weighted_contribution_to_total": 0.004478136611847211,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -5663,7 +6128,7 @@
               "J": 0.3893723781147297,
               "magnetovolume": 0.40023034519626594
             },
-            "weighted_contribution_to_total": 0.004742880682507177,
+            "weighted_contribution_to_total": 0.004726763845526612,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -5766,7 +6231,7 @@
               "J": 0.7972632644335176,
               "magnetovolume": 0.6758943538983133
             },
-            "weighted_contribution_to_total": 0.005841282686907186,
+            "weighted_contribution_to_total": 0.005825008967160514,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -5821,7 +6286,7 @@
               "J": 0.27905167729293456,
               "magnetovolume": 0.16682697221854192
             },
-            "weighted_contribution_to_total": 0.004090954446674682,
+            "weighted_contribution_to_total": 0.004075601968053713,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -5924,7 +6389,7 @@
               "J": 0.5219765229868816,
               "magnetovolume": 0.3433629688879374
             },
-            "weighted_contribution_to_total": 0.004966883555042297,
+            "weighted_contribution_to_total": 0.004950735444395036,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -5979,7 +6444,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003715988897585912,
+            "weighted_contribution_to_total": 0.00370026225388391,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -6055,7 +6520,7 @@
               "J": 0.5708458690468564,
               "magnetovolume": 0.2015433930179786
             },
-            "weighted_contribution_to_total": 0.004767481644409332,
+            "weighted_contribution_to_total": 0.004751487179063677,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -6282,7 +6747,7 @@
               "J": 0.3492443772480819,
               "magnetovolume": 0.7725513462087796
             },
-            "weighted_contribution_to_total": 0.004912280965406475,
+            "weighted_contribution_to_total": 0.004896095417816039,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -6481,7 +6946,7 @@
               "J": 0.39106804465972955,
               "magnetovolume": 0.7634682815346066
             },
-            "weighted_contribution_to_total": 0.005491780945007506,
+            "weighted_contribution_to_total": 0.005475591096110063,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -6584,7 +7049,7 @@
               "J": 0.3457272221137018,
               "magnetovolume": 0.10572220609093251
             },
-            "weighted_contribution_to_total": 0.0035849755920826345,
+            "weighted_contribution_to_total": 0.003569744322621409,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -6639,7 +7104,7 @@
               "J": 0.6684082597315675,
               "magnetovolume": 0.30430550218687696
             },
-            "weighted_contribution_to_total": 0.005106345568620554,
+            "weighted_contribution_to_total": 0.005090287645847566,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -6742,7 +7207,7 @@
               "J": 0.3716724292458864,
               "magnetovolume": 0.2413655604532602
             },
-            "weighted_contribution_to_total": 0.004670182866201598,
+            "weighted_contribution_to_total": 0.004654081454040924,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -6932,7 +7397,7 @@
               "J": 0.6168053817053871,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003617674463267247,
+            "weighted_contribution_to_total": 0.003603272665154985,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -7106,7 +7571,7 @@
               "J": 0.6857148466002467,
               "magnetovolume": 0.37513455728406364
             },
-            "weighted_contribution_to_total": 0.0050468254979861285,
+            "weighted_contribution_to_total": 0.005030829981130843,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -7161,7 +7626,7 @@
               "J": 0.635633901485247,
               "magnetovolume": 0.300002860600925
             },
-            "weighted_contribution_to_total": 0.004860125761882147,
+            "weighted_contribution_to_total": 0.004844348812902157,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -7216,7 +7681,7 @@
               "J": 0.5444663057356651,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004482490885997139,
+            "weighted_contribution_to_total": 0.0044665688048679784,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -7541,7 +8006,7 @@
               "J": 0.4086896738637611,
               "magnetovolume": 0.41001104845299
             },
-            "weighted_contribution_to_total": 0.004885965841972178,
+            "weighted_contribution_to_total": 0.004869833116599984,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -7596,7 +8061,7 @@
               "J": 0.5653005165327636,
               "magnetovolume": 0.5752378854310531
             },
-            "weighted_contribution_to_total": 0.0053892899557301055,
+            "weighted_contribution_to_total": 0.005373288737538502,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -7770,7 +8235,7 @@
               "J": 0.5166451740986667,
               "magnetovolume": 0.42257497281809614
             },
-            "weighted_contribution_to_total": 0.004935007455050718,
+            "weighted_contribution_to_total": 0.004919114134799345,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -7825,7 +8290,7 @@
               "J": 0.5695524680405577,
               "magnetovolume": 0.5616151521073803
             },
-            "weighted_contribution_to_total": 0.004829552842741175,
+            "weighted_contribution_to_total": 0.004814557999272092,
             "details": {
               "ground_state": {
                 "seed_index": 6,
@@ -7944,7 +8409,7 @@
               "J": 0.5936782852246595,
               "magnetovolume": 0.42835461681760384
             },
-            "weighted_contribution_to_total": 0.0051990333170191865,
+            "weighted_contribution_to_total": 0.005183032174120944,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -7999,7 +8464,7 @@
               "J": 0.35908315988462625,
               "magnetovolume": 0.7653553753402618
             },
-            "weighted_contribution_to_total": 0.005358409663015009,
+            "weighted_contribution_to_total": 0.005342214428460012,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -8054,7 +8519,7 @@
               "J": 0.5700732015072679,
               "magnetovolume": 0.5794357554336543
             },
-            "weighted_contribution_to_total": 0.005311027556232207,
+            "weighted_contribution_to_total": 0.005294873005214682,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -8109,7 +8574,7 @@
               "J": 0.7520299257407708,
               "magnetovolume": 0.5446781268076715
             },
-            "weighted_contribution_to_total": 0.00503405706245872,
+            "weighted_contribution_to_total": 0.005017969311730829,
             "details": {
               "ground_state": {
                 "seed_index": 20,
@@ -8164,7 +8629,7 @@
               "J": 0.6406977885225182,
               "magnetovolume": 0.6937684603866102
             },
-            "weighted_contribution_to_total": 0.00565860318510092,
+            "weighted_contribution_to_total": 0.0056423232206683285,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -8219,7 +8684,7 @@
               "J": 0.6343815108839568,
               "magnetovolume": 0.5650150789709218
             },
-            "weighted_contribution_to_total": 0.005417296607852996,
+            "weighted_contribution_to_total": 0.005401338974358787,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -8274,7 +8739,7 @@
               "J": 0.6028247082219917,
               "magnetovolume": 0.712219225183819
             },
-            "weighted_contribution_to_total": 0.005093614112599518,
+            "weighted_contribution_to_total": 0.005077344363590948,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -8329,7 +8794,7 @@
               "J": 0.6339035121963941,
               "magnetovolume": 0.5522230085881515
             },
-            "weighted_contribution_to_total": 0.005410383335361743,
+            "weighted_contribution_to_total": 0.005394377660219659,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -8380,11 +8845,11 @@
             "scores": {
               "ground_state": 1.0,
               "hull": 0.2815870746786095,
-              "phonons": null,
+              "phonons": 0.9748303419297815,
               "J": 0.2750017881232105,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.001661745515501364,
+            "weighted_contribution_to_total": 0.0034181965820415106,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -8409,6 +8874,13 @@
                 "weighted_sign_accuracy": 0.55,
                 "sign_contribution": 0.275,
                 "accuracy_contribution": 1.7881232105269377e-06
+              },
+              "phonons": {
+                "stable": true,
+                "minimum_frequency_THz": -1.6784712117460303e-07,
+                "W1_THz": 0.07451596792565515,
+                "stability_contribution": 0.5,
+                "spectrum_contribution": 0.4748303419297814
               }
             }
           },
@@ -8423,7 +8895,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0037106467729649227,
+            "weighted_contribution_to_total": 0.003695485338905597,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -8460,7 +8932,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003675366371699587,
+            "weighted_contribution_to_total": 0.0036609951865001645,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -8552,7 +9024,7 @@
           "seed_amplitudes": "model",
           "exchange_route": "exchange_readout",
           "protocol_version": "0.2.1",
-          "data_version": "0.2.2",
+          "data_version": "0.2.3",
           "runner_version": "0.6.0"
         },
         "inference": {
@@ -8571,20 +9043,470 @@
           ]
         },
         "predictions": {
-          "url": "to be provided",
-          "sha256": "cebf5fa32166798c502ce8cf688639172505fdce39caf88fb6383979a558edcd",
-          "size": 2079983,
+          "url": "https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_ex/predictions.json",
+          "sha256": "77b0c292d7aab8a0ae08aecaf7d76d2d428825254888d805dff8fdf3247a1c85",
+          "size": 2080874,
           "phonons": {
-            "url": "to be provided",
-            "sha256": "to be provided",
-            "size": "to be provided"
+            "url": "https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_ex/phonons/",
+            "files": [
+              {
+                "path": "phonons/002.npz",
+                "sha256": "9890e11e22e308a0e7e0400447bf7b08158db393fdd4ee8b9d077727aad58ab8",
+                "size": 71041
+              },
+              {
+                "path": "phonons/004.npz",
+                "sha256": "c1c3373d848f674b64636d8d4511ce8bd283f9aadee9ea21d67e838e146e5dd6",
+                "size": 67190
+              },
+              {
+                "path": "phonons/005.npz",
+                "sha256": "f7dd44e2a400d2d787a9194f91d6cd960b27811648177bdecc0b6a5d441cfb84",
+                "size": 138309
+              },
+              {
+                "path": "phonons/006.npz",
+                "sha256": "9114b4c1732d77083e4f2b9d97b3ab4768136b4446de8b039e5471ee37f8c040",
+                "size": 66671
+              },
+              {
+                "path": "phonons/007.npz",
+                "sha256": "f9dfd8d24fe2214172cb1affe9993fd441758a2006629c586476a36ed1b7c0ef",
+                "size": 63075
+              },
+              {
+                "path": "phonons/010.npz",
+                "sha256": "19ffc2b39fcec0603b0ba8dbc37d108f72fba329bb0cc542ec761c7aa1f5c078",
+                "size": 63093
+              },
+              {
+                "path": "phonons/011.npz",
+                "sha256": "3187a886e6ce032b54dbc0a53681a95a672d7ab0f0ee8dc36090747a36dc7b2b",
+                "size": 261230
+              },
+              {
+                "path": "phonons/018.npz",
+                "sha256": "85cbe6c9b4ab490f471963dbc8dac6a1cd71e8fd6e50130cb084feb75630c771",
+                "size": 148698
+              },
+              {
+                "path": "phonons/021.npz",
+                "sha256": "6fd20fbb33fa88e529dba94d4d3311eea09d77c45cb0318a067b03ee42044bb9",
+                "size": 286899
+              },
+              {
+                "path": "phonons/022.npz",
+                "sha256": "c14372bde6851b99608afe5d30f2b7f9865f64657b0f6dcea19392bb8d500108",
+                "size": 505109
+              },
+              {
+                "path": "phonons/024.npz",
+                "sha256": "c1e40b06b592375faaf101e520bc7ff6bce8a235b2b41df7d6737150d7675131",
+                "size": 70040
+              },
+              {
+                "path": "phonons/025.npz",
+                "sha256": "51477babb4efc5ab4df4f45359be1d0891f96adfc173345380c768daf4dbbf21",
+                "size": 69095
+              },
+              {
+                "path": "phonons/027.npz",
+                "sha256": "a0b75fd445fd3b6442f64338eec1c61638cf48e95a029b6dfafc8a71b981a2fa",
+                "size": 171398
+              },
+              {
+                "path": "phonons/028.npz",
+                "sha256": "a2186c41a98a8476daa9b92ec8356586dc5f216df604a19e669c09bb2a5d1531",
+                "size": 178880
+              },
+              {
+                "path": "phonons/032.npz",
+                "sha256": "a35d0c53139e7b5739936c37a8951219367a04c9df98d43cce86e2152a9561cd",
+                "size": 87608
+              },
+              {
+                "path": "phonons/037.npz",
+                "sha256": "b187b27d112ff2e18caba9f51f00a7d479f260228c264e970ac0844021e83053",
+                "size": 257656
+              },
+              {
+                "path": "phonons/038.npz",
+                "sha256": "81fba665338a3d7b7f801ee74632661bdb5b231c02b0192cbb093b758560dcea",
+                "size": 163571
+              },
+              {
+                "path": "phonons/041.npz",
+                "sha256": "11d49481b4a389692c41d93e2f3f71a234c1a5626a319d94672f63f45ddd2253",
+                "size": 112836
+              },
+              {
+                "path": "phonons/046.npz",
+                "sha256": "efeefb6ef57e80e229cd5e7546990a19ac1d13f09bf8ec7fc2269305e5f07c1f",
+                "size": 137323
+              },
+              {
+                "path": "phonons/054.npz",
+                "sha256": "076931ca03b9b927054cdf5cf56443f740806c1dfbadf71db320401f9b5a0446",
+                "size": 136275
+              },
+              {
+                "path": "phonons/061.npz",
+                "sha256": "40faf734f961000419f2c5db2094f1a81d5cbe92d52f65dcafbd5ae567850d89",
+                "size": 20895
+              },
+              {
+                "path": "phonons/064.npz",
+                "sha256": "796c2b7160fbe08a56217dd17a43bc627a62be63690fa756e0b8d97b54164733",
+                "size": 139008
+              },
+              {
+                "path": "phonons/068.npz",
+                "sha256": "a05ee69d6ebe1a9928e1f3d70c3ec1d0db2e887856a44d03056b0fed0999c878",
+                "size": 212206
+              },
+              {
+                "path": "phonons/069.npz",
+                "sha256": "b3584f0782aea18c743f3c596d472f43b545fa70e821832965f7d5137c960518",
+                "size": 94695
+              },
+              {
+                "path": "phonons/070.npz",
+                "sha256": "6639aa34c8a42f34db980e1b887b3098a7220173f36abcf5b3bbb7054362952d",
+                "size": 84073
+              },
+              {
+                "path": "phonons/071.npz",
+                "sha256": "43d2f3dd527df0ce595c23e37a1ea9d1133c5fb8335b1894c79801711d9ac842",
+                "size": 164627
+              },
+              {
+                "path": "phonons/072.npz",
+                "sha256": "445b10adc93d2962a006f964b687f2a4841e7c00c8037419fc235737e9b5050d",
+                "size": 137309
+              },
+              {
+                "path": "phonons/073.npz",
+                "sha256": "1665a419b73a7e902117cc22170547e010d5f651dfd58381310b80331ef44c07",
+                "size": 251309
+              },
+              {
+                "path": "phonons/078.npz",
+                "sha256": "faed276dbe839c839672accd6bafba9389938f889403cc3a6d97f224eb8400bf",
+                "size": 127212
+              },
+              {
+                "path": "phonons/079.npz",
+                "sha256": "08239384833825d06e55a11aeb495f7b862a30cad7a04a9d978a6289acf00959",
+                "size": 197399
+              },
+              {
+                "path": "phonons/082.npz",
+                "sha256": "ac141c3e2b9041e3a17e2af592d635167eb323da0ffe63bc5c1f16cf456dabf3",
+                "size": 79110
+              },
+              {
+                "path": "phonons/083.npz",
+                "sha256": "9d076b3bbdc34dac35baf132cea7cfedc4815cfaf3f83234cd3fbdd2dfa44ab4",
+                "size": 123416
+              },
+              {
+                "path": "phonons/084.npz",
+                "sha256": "4d360a8d34fc0585fc7db006d16273564f05ea519ba706fe652eacd9e9bd65f7",
+                "size": 65685
+              },
+              {
+                "path": "phonons/085.npz",
+                "sha256": "cec0cbb1f3ad07c500f5ca928a1e06c8bce4d441c7e496ab2e4ebb0a51f0060f",
+                "size": 226614
+              },
+              {
+                "path": "phonons/087.npz",
+                "sha256": "0a59e671e02959595f9ff8e596dbe0a0b53f2ce7c5f12ed76a95b3f02b9a03e5",
+                "size": 65877
+              },
+              {
+                "path": "phonons/088.npz",
+                "sha256": "ab7f3933b5a97f3fed74920d5fa1d35d8d72da17861a1cd8e9b721991d289d33",
+                "size": 154482
+              },
+              {
+                "path": "phonons/093.npz",
+                "sha256": "348b4aafadbc877b1e7f40d088c41d6621ccf3f841c4a8a2d6207518f0436f1f",
+                "size": 88942
+              },
+              {
+                "path": "phonons/094.npz",
+                "sha256": "a6a6e5fa55b8d56474c23a700a524d04a1086d7bc9e542395d446c9158ead6ef",
+                "size": 89447
+              },
+              {
+                "path": "phonons/101.npz",
+                "sha256": "52fd74b061a81a8fc7405678cb327bb04a2e4d0f72a19448f8e1e02e0b554937",
+                "size": 377395
+              },
+              {
+                "path": "phonons/102.npz",
+                "sha256": "026da5183a2e198966ca2ee195d4e7781faf9933d2f98af3c799e32e78730824",
+                "size": 108495
+              },
+              {
+                "path": "phonons/104.npz",
+                "sha256": "8c0fdc06d4951cfd4d064b1b880899cfa16f77532a661c79df294f1d2940b261",
+                "size": 123964
+              },
+              {
+                "path": "phonons/108.npz",
+                "sha256": "a2e75de7c2cc1ebbe1d48f675fe9240b2adfe84806be298bc8b4d4d291691274",
+                "size": 65349
+              },
+              {
+                "path": "phonons/109.npz",
+                "sha256": "d7d67cf25d0793da6f6d81229f0bfde0c2184ed523db60d1c442ee0bb8c313fd",
+                "size": 70393
+              },
+              {
+                "path": "phonons/120.npz",
+                "sha256": "4a9c1802201ea060e9d4f71283fd34edf3176570efa9187aaa31caed1287dc53",
+                "size": 74094
+              },
+              {
+                "path": "phonons/124.npz",
+                "sha256": "371775e5183b761c1eba6a89b15e9373e8b14b9e43a06ece375055a6c49a06ed",
+                "size": 125312
+              },
+              {
+                "path": "phonons/126.npz",
+                "sha256": "c516f3273630e997105b84446bc0ad9595cf30bb39a79782c180d94bfd0ec3a2",
+                "size": 245734
+              },
+              {
+                "path": "phonons/129.npz",
+                "sha256": "14446c31b2f4712b60210d93849da373b4a53e105635aeed8cfeb91133685811",
+                "size": 69770
+              },
+              {
+                "path": "phonons/130.npz",
+                "sha256": "4733b806202eb686a773e19d4bb9e7b8293575066a8a0480018390a7d125f3e8",
+                "size": 68278
+              },
+              {
+                "path": "phonons/131.npz",
+                "sha256": "d2c0c29ee0d748c7cdef9f9159b567a2913886fd73a80aeb837648075a048335",
+                "size": 70186
+              },
+              {
+                "path": "phonons/132.npz",
+                "sha256": "e9606b6dc47e06416006496fb1dd6bb2ca4f60f726f09d093e25c7b2fc724b86",
+                "size": 69953
+              },
+              {
+                "path": "phonons/133.npz",
+                "sha256": "45b3cd9bdd62aa6401459654c9669d78bdbaf1061e5d1e6fba4728e63e297437",
+                "size": 244541
+              },
+              {
+                "path": "phonons/134.npz",
+                "sha256": "4a9a66724640cd701848bf9417a0db53b4e9eb757af2c5fde7b47b6f2fbe237f",
+                "size": 224715
+              },
+              {
+                "path": "phonons/135.npz",
+                "sha256": "a58f723bb55d9cc740192ed19c6a6a2e7a748f64706c9fb6217ba1f565615543",
+                "size": 274832
+              },
+              {
+                "path": "phonons/136.npz",
+                "sha256": "f90cb42a0343c2333b2a634925659d363d915adb66758bc35383cd09a39cfd82",
+                "size": 89772
+              },
+              {
+                "path": "phonons/138.npz",
+                "sha256": "c917e883f8ef9c6c979cf23f1fb7c913bf7efce68641c5477c3116544902c8d2",
+                "size": 102560
+              },
+              {
+                "path": "phonons/140.npz",
+                "sha256": "700ddb71189e999f17464bf9d31e1b0380179329bcdd0fc2ae8abb92343ca24a",
+                "size": 330509
+              },
+              {
+                "path": "phonons/142.npz",
+                "sha256": "1d675f5ef602e56ccb7d6d66a2bbb37485f2d54c7ebaa15b0c1753c84e2ba7de",
+                "size": 181637
+              },
+              {
+                "path": "phonons/144.npz",
+                "sha256": "8194ef7fc852f9a766cb17b5da51e388fe9648c62dc8ecff43c730497efdc3d1",
+                "size": 79611
+              },
+              {
+                "path": "phonons/145.npz",
+                "sha256": "b3cc6820d417c1485bb7bea7c8dcca1a519fa5702d5b9d1282d848520606a2d2",
+                "size": 77331
+              },
+              {
+                "path": "phonons/146.npz",
+                "sha256": "f977e88b18d824d53299f16783d7f46a405f916cff51672ddaae553740e77a22",
+                "size": 122074
+              },
+              {
+                "path": "phonons/147.npz",
+                "sha256": "e19e3ee8d07c366ec074b6108521b81f9b362aca34d2aee4f4ad55b24588b4cb",
+                "size": 141242
+              },
+              {
+                "path": "phonons/149.npz",
+                "sha256": "ec2dd3d17efb54f6ac64c131af8c8d194a50aca50fa348f60b9851b59fd11394",
+                "size": 103275
+              },
+              {
+                "path": "phonons/150.npz",
+                "sha256": "2e23183901211db637d12703dedd9eb9429e7bcde14e5f52c3d523ecd3d7b355",
+                "size": 167800
+              },
+              {
+                "path": "phonons/153.npz",
+                "sha256": "ca7daa64baba27cd053e53e0a4cc723d285e5b9f3ba7390d57802372307a27e2",
+                "size": 169498
+              },
+              {
+                "path": "phonons/155.npz",
+                "sha256": "fb2a4456f29e69bb82e521e33c10e9331d711be1022ef131bcc9143bc844549c",
+                "size": 76193
+              },
+              {
+                "path": "phonons/161.npz",
+                "sha256": "7ffa523e977ca8bae747188bb6ee140bdc04652afe449cae22aa90806cc5b19d",
+                "size": 218140
+              },
+              {
+                "path": "phonons/165.npz",
+                "sha256": "c9ce7cd8122354bf07a914c6bd611d980509f821091a90b143c9973a0731afc0",
+                "size": 139796
+              },
+              {
+                "path": "phonons/167.npz",
+                "sha256": "07383b42bbc134cf6d9eb2fc7df9a61ae8b04613a60161682af3d0cd42eb9af2",
+                "size": 244618
+              },
+              {
+                "path": "phonons/168.npz",
+                "sha256": "f558fc86e75b692578e8292ded61eae7843bb977e856b8cbea9d3ec1ee8f8c32",
+                "size": 185392
+              },
+              {
+                "path": "phonons/176.npz",
+                "sha256": "3b6a97a8de8b6ee635390b3ce64c3d3b00cec9a24841858aed15e6c2cb33693b",
+                "size": 117611
+              },
+              {
+                "path": "phonons/177.npz",
+                "sha256": "dd9c80a91b0820a8d4da8a8673d5b080eb4642b4e8bff0f6aa8c1f5e25000180",
+                "size": 116043
+              },
+              {
+                "path": "phonons/182.npz",
+                "sha256": "05f096e63a46310f4a30795d02bccd3db3fdb04b042e70b70005eee84d5c9681",
+                "size": 156930
+              },
+              {
+                "path": "phonons/183.npz",
+                "sha256": "dc75b82641de03865d37379f635595d4bbd2ed4d04abdc304308ec5550382607",
+                "size": 56407
+              },
+              {
+                "path": "phonons/184.npz",
+                "sha256": "3602bb9595f95427124a82389ea9149512b8ae75f950fe388fd7b03e50cc482a",
+                "size": 288135
+              },
+              {
+                "path": "phonons/187.npz",
+                "sha256": "ca5b081d5521635f40a1a37710e8a43b91788cd88de36bcf745dce1fbd8c45a8",
+                "size": 541917
+              },
+              {
+                "path": "phonons/191.npz",
+                "sha256": "fe7018fe0a5ef18c93f756c1a3fb54202bf5455572afa127782694aea2dcb9fc",
+                "size": 168800
+              },
+              {
+                "path": "phonons/195.npz",
+                "sha256": "7320a7288fd450c2edfda5a25b50b4a845938e880887806c14b04c032a94f26c",
+                "size": 167696
+              },
+              {
+                "path": "phonons/197.npz",
+                "sha256": "8ebfb83d041e4e6a4f8883e3dfc2b944a982ad57a0a6fcfaab7732c0b27d6113",
+                "size": 265654
+              },
+              {
+                "path": "phonons/204.npz",
+                "sha256": "e39cbdd996c36dfd896aa5bdc612285a14a566ba4b60c3c91a304862663298c7",
+                "size": 172475
+              },
+              {
+                "path": "phonons/206.npz",
+                "sha256": "8abc16f2828e2761dbb5e30f456250a8a8a4525b1e9c44ea8e5b66615e6db398",
+                "size": 234663
+              },
+              {
+                "path": "phonons/210.npz",
+                "sha256": "6a2316213a462cf11d508f88f44a77875d765ad492093a3c40c457b0a577a782",
+                "size": 265301
+              },
+              {
+                "path": "phonons/211.npz",
+                "sha256": "536c565546709f7d0e2c696dc05090a0dbb6bfcc77c01787f3f4bf4edc9677b3",
+                "size": 87726
+              },
+              {
+                "path": "phonons/214.npz",
+                "sha256": "dadfb8d7cf55c882b7e508ee6b5277628597178eedeadb2a2821c077f8cdac6f",
+                "size": 195084
+              },
+              {
+                "path": "phonons/216.npz",
+                "sha256": "72c032366c8602590ed1ce219e96e8d22a132e7b720cdc94cde568c43d6b18f2",
+                "size": 264784
+              },
+              {
+                "path": "phonons/217.npz",
+                "sha256": "d38b8f4c1cf6b1be1e07b4231c5fa741fb0b7dc0bd59acd88b958ddc4b790da8",
+                "size": 264792
+              },
+              {
+                "path": "phonons/218.npz",
+                "sha256": "a6fa14cb1d2bf4b757f1a3449d392c7ebb6e31bf8ec4403154fb52f034306de0",
+                "size": 263932
+              },
+              {
+                "path": "phonons/219.npz",
+                "sha256": "a33c39d5f0941d440b7426886fe4acdfbd73f0045387c81959d6072100a801d5",
+                "size": 264777
+              },
+              {
+                "path": "phonons/221.npz",
+                "sha256": "dcaea6e2bbb57bab25f5b70caa36bf9c81f4b2a5d94bb59d9af4768af1f21f2a",
+                "size": 753026
+              },
+              {
+                "path": "phonons/222.npz",
+                "sha256": "df6aa047fa9434950b07552f516cbac1534c90bbd389c068cf53d909b0ea4534",
+                "size": 33943
+              },
+              {
+                "path": "phonons/223.npz",
+                "sha256": "65a1959358aaf761cda035e1b63fecc3edf9cf275a6fec4924814756f32d8244",
+                "size": 32055
+              }
+            ]
           }
         },
         "metrics": {
-          "total": 0.546331416358473,
+          "total": 0.5467798064153615,
           "ground_state": 0.16230366492146597,
           "hull": 0.12345164372773759,
-          "phonons": 0.14825494831878025,
+          "phonons": 0.14870333837566863,
           "J": 0.06359435353172398,
           "magnetovolume": 0.04872680585876527,
           "ground_state_passes": 155
@@ -8598,7 +9520,7 @@
         "publication_status": "awaiting_artifacts"
       },
       "scores": {
-        "total_score": 0.546331416358473,
+        "total_score": 0.5467798064153615,
         "maximum_score": 1.0,
         "dimensions": {
           "ground_state": {
@@ -8616,12 +9538,12 @@
             "accuracy_weighted_score": 0.061671539015695706
           },
           "phonons": {
-            "materials": 110,
-            "mean_material_score": 0.7412747415939013,
+            "materials": 111,
+            "mean_material_score": 0.7435166918783431,
             "weight": 0.2,
-            "weighted_score": 0.14825494831878025,
-            "stability_weighted_score": 0.07727272727272727,
-            "spectrum_weighted_score": 0.07098222104605297
+            "weighted_score": 0.14870333837566863,
+            "stability_weighted_score": 0.07747747747747748,
+            "spectrum_weighted_score": 0.07122586089819112
           },
           "J": {
             "materials": 172,
@@ -8668,7 +9590,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0037688084937172266,
+            "weighted_contribution_to_total": 0.003752975779049793,
             "details": {
               "ground_state": {
                 "seed_index": 6,
@@ -8705,7 +9627,7 @@
               "J": 0.4131149877252161,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004282931578862006,
+            "weighted_contribution_to_total": 0.004267227608045286,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -8751,7 +9673,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0033665498429486535,
+            "weighted_contribution_to_total": 0.003353300212491846,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -8788,7 +9710,7 @@
               "J": 0.2833417936896008,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003869687515513222,
+            "weighted_contribution_to_total": 0.003853834789228626,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -8834,7 +9756,7 @@
               "J": 0.32224516151029825,
               "magnetovolume": 0.10254384490034589
             },
-            "weighted_contribution_to_total": 0.004089035303131609,
+            "weighted_contribution_to_total": 0.004073027944550068,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -8985,7 +9907,7 @@
               "J": 0.3154048038815545,
               "magnetovolume": 0.11994184809648187
             },
-            "weighted_contribution_to_total": 0.00419138225836051,
+            "weighted_contribution_to_total": 0.004175461075244341,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -9040,7 +9962,7 @@
               "J": 0.08792496285907733,
               "magnetovolume": 0.17659877081333214
             },
-            "weighted_contribution_to_total": 0.003711751607600878,
+            "weighted_contribution_to_total": 0.00369550387349518,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -9388,7 +10310,7 @@
               "J": 0.3547292744946165,
               "magnetovolume": 0.36813376434388373
             },
-            "weighted_contribution_to_total": 0.004746781250130224,
+            "weighted_contribution_to_total": 0.0047307363101319775,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -9443,7 +10365,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0034555531663460985,
+            "weighted_contribution_to_total": 0.003440781025325592,
             "details": {
               "ground_state": {
                 "seed_index": 31,
@@ -9528,7 +10450,7 @@
               "J": 0.41494843066245435,
               "magnetovolume": 0.22063095920040796
             },
-            "weighted_contribution_to_total": 0.004505467589891305,
+            "weighted_contribution_to_total": 0.004489406646583144,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -9583,7 +10505,7 @@
               "J": 0.46409097478535416,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004388984782535394,
+            "weighted_contribution_to_total": 0.0043731191018274084,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -9629,7 +10551,7 @@
               "J": 0.5346052740534123,
               "magnetovolume": 0.691675361130829
             },
-            "weighted_contribution_to_total": 0.004715780408452578,
+            "weighted_contribution_to_total": 0.0047003546489029204,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -9684,7 +10606,7 @@
               "J": 0.5020794770989632,
               "magnetovolume": 0.3151045371899819
             },
-            "weighted_contribution_to_total": 0.004914632969323124,
+            "weighted_contribution_to_total": 0.004898608035947257,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -9865,7 +10787,7 @@
               "J": 0.30008294816478875,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003559694305659792,
+            "weighted_contribution_to_total": 0.003544440497690378,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -10053,7 +10975,7 @@
               "J": 0.4522249359574096,
               "magnetovolume": 0.30416550238376183
             },
-            "weighted_contribution_to_total": 0.0042415662277726675,
+            "weighted_contribution_to_total": 0.004225655619192612,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -10419,7 +11341,7 @@
               "J": 0.3750000000000012,
               "magnetovolume": 0.2000000000001831
             },
-            "weighted_contribution_to_total": 0.0035673084362948977,
+            "weighted_contribution_to_total": 0.0035566523175592215,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -10618,7 +11540,7 @@
               "J": 0.3110511304119099,
               "magnetovolume": 0.2163620310633591
             },
-            "weighted_contribution_to_total": 0.004289126508944994,
+            "weighted_contribution_to_total": 0.004273069491041402,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -10840,7 +11762,7 @@
               "J": 0.5706780575979554,
               "magnetovolume": 0.42834076865519694
             },
-            "weighted_contribution_to_total": 0.004453440322433304,
+            "weighted_contribution_to_total": 0.00443721373325868,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -10925,7 +11847,7 @@
               "J": 0.22515424539125942,
               "magnetovolume": 0.3025846553941913
             },
-            "weighted_contribution_to_total": 0.003912299920979263,
+            "weighted_contribution_to_total": 0.0038969715011115793,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -11106,7 +12028,7 @@
               "J": 0.144414554662704,
               "magnetovolume": 0.1536214494467992
             },
-            "weighted_contribution_to_total": 0.004236952686306382,
+            "weighted_contribution_to_total": 0.004220981915351961,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -11161,7 +12083,7 @@
               "J": 0.15018263833081305,
               "magnetovolume": 0.001464244558993793
             },
-            "weighted_contribution_to_total": 0.003938787905599976,
+            "weighted_contribution_to_total": 0.003923181898648111,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -11216,7 +12138,7 @@
               "J": 0.5153181220159827,
               "magnetovolume": 0.02343873575296622
             },
-            "weighted_contribution_to_total": 0.0039390371626881,
+            "weighted_contribution_to_total": 0.003923173283401489,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -11271,7 +12193,7 @@
               "J": 0.42930290909251323,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.00393234777248805,
+            "weighted_contribution_to_total": 0.00391728676340687,
             "details": {
               "ground_state": {
                 "seed_index": 21,
@@ -11317,7 +12239,7 @@
               "J": 0.37839131369007317,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004110766053391242,
+            "weighted_contribution_to_total": 0.004095231421995195,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -11363,7 +12285,7 @@
               "J": 0.3564021182996419,
               "magnetovolume": 0.3122678267519627
             },
-            "weighted_contribution_to_total": 0.004074460990670201,
+            "weighted_contribution_to_total": 0.004058546648761813,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -11514,7 +12436,7 @@
               "J": 0.4061194118908052,
               "magnetovolume": 0.21478931012591826
             },
-            "weighted_contribution_to_total": 0.004352647127035166,
+            "weighted_contribution_to_total": 0.004337224409534128,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -11569,7 +12491,7 @@
               "J": 0.809674050863169,
               "magnetovolume": 0.6579008317590888
             },
-            "weighted_contribution_to_total": 0.005697301116711547,
+            "weighted_contribution_to_total": 0.005681337486098486,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -11679,7 +12601,7 @@
               "J": 0.17642858484991406,
               "magnetovolume": 0.008510647175818922
             },
-            "weighted_contribution_to_total": 0.004074252048038598,
+            "weighted_contribution_to_total": 0.004058361443465902,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -11734,7 +12656,7 @@
               "J": 0.3236796045509473,
               "magnetovolume": 0.11500062922136711
             },
-            "weighted_contribution_to_total": 0.0043523129712263135,
+            "weighted_contribution_to_total": 0.004336343887038734,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -11789,7 +12711,7 @@
               "J": 0.3092769986617227,
               "magnetovolume": 0.11921227496119274
             },
-            "weighted_contribution_to_total": 0.004160387939223648,
+            "weighted_contribution_to_total": 0.004144221594720755,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -11915,7 +12837,7 @@
               "J": 0.31669494854298363,
               "magnetovolume": 0.11516990985981992
             },
-            "weighted_contribution_to_total": 0.0042528671684235395,
+            "weighted_contribution_to_total": 0.004236780706268987,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -11970,7 +12892,7 @@
               "J": 0.8843345698785681,
               "magnetovolume": 0.6837699742479584
             },
-            "weighted_contribution_to_total": 0.005791843133721841,
+            "weighted_contribution_to_total": 0.00577599736050724,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -12151,7 +13073,7 @@
               "J": 0.3628619605876523,
               "magnetovolume": 0.22499965824056684
             },
-            "weighted_contribution_to_total": 0.004525711923215029,
+            "weighted_contribution_to_total": 0.004509509444265991,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -12206,7 +13128,7 @@
               "J": 0.31712605136449823,
               "magnetovolume": 0.2923637771546723
             },
-            "weighted_contribution_to_total": 0.004358587832934723,
+            "weighted_contribution_to_total": 0.004342411685539888,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -12309,7 +13231,7 @@
               "J": 0.15281631024013992,
               "magnetovolume": 0.318940884481959
             },
-            "weighted_contribution_to_total": 0.004022040731206928,
+            "weighted_contribution_to_total": 0.0040058041421243236,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -12364,7 +13286,7 @@
               "J": 0.43997775746070633,
               "magnetovolume": 0.009660767955454539
             },
-            "weighted_contribution_to_total": 0.0035633840198143535,
+            "weighted_contribution_to_total": 0.003547576638102826,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -12435,7 +13357,7 @@
               "J": 0.3185062030467725,
               "magnetovolume": 0.10000000408066785
             },
-            "weighted_contribution_to_total": 0.004368908150252754,
+            "weighted_contribution_to_total": 0.004352943881201724,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -12577,7 +13499,7 @@
               "J": 0.3558491554210513,
               "magnetovolume": 0.3009781534488868
             },
-            "weighted_contribution_to_total": 0.0036344370586329396,
+            "weighted_contribution_to_total": 0.003619341110234232,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -12632,7 +13554,7 @@
               "J": 0.43439168537542483,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.004176500248272812,
+            "weighted_contribution_to_total": 0.004161069154212106,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -12781,7 +13703,7 @@
               "J": 0.7292698595636791,
               "magnetovolume": 0.2509693755273154
             },
-            "weighted_contribution_to_total": 0.005098231952882668,
+            "weighted_contribution_to_total": 0.005082092748376547,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -12932,7 +13854,7 @@
               "J": 0.2364416214711028,
               "magnetovolume": 0.20340487735950413
             },
-            "weighted_contribution_to_total": 0.004398496992733906,
+            "weighted_contribution_to_total": 0.004382558370770475,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13035,7 +13957,7 @@
               "J": 0.20688600460185072,
               "magnetovolume": 0.11383768102638055
             },
-            "weighted_contribution_to_total": 0.003987630371562536,
+            "weighted_contribution_to_total": 0.0039719656001611725,
             "details": {
               "ground_state": {
                 "seed_index": 31,
@@ -13106,7 +14028,7 @@
               "J": 0.28345907101019646,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0039230445415586075,
+            "weighted_contribution_to_total": 0.003907185564674807,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13152,7 +14074,7 @@
               "J": 0.3124949346363014,
               "magnetovolume": 0.15337615260610313
             },
-            "weighted_contribution_to_total": 0.004148670381737293,
+            "weighted_contribution_to_total": 0.004132554406395198,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13207,7 +14129,7 @@
               "J": 0.25020768736642324,
               "magnetovolume": 0.11956166394215614
             },
-            "weighted_contribution_to_total": 0.0038826568200203844,
+            "weighted_contribution_to_total": 0.003867904786508131,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13262,7 +14184,7 @@
               "J": 0.30538715515274734,
               "magnetovolume": 0.10351006796876525
             },
-            "weighted_contribution_to_total": 0.004145378403433046,
+            "weighted_contribution_to_total": 0.004129280199771228,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13317,7 +14239,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0035384851320009398,
+            "weighted_contribution_to_total": 0.003523988303282625,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -13354,7 +14276,7 @@
               "J": 0.1105904453826812,
               "magnetovolume": 0.04453000327781922
             },
-            "weighted_contribution_to_total": 0.003376424827579313,
+            "weighted_contribution_to_total": 0.0033607103724040224,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13409,7 +14331,7 @@
               "J": 0.502974554943734,
               "magnetovolume": 0.5653032146617746
             },
-            "weighted_contribution_to_total": 0.004699254579571984,
+            "weighted_contribution_to_total": 0.0046832379421036475,
             "details": {
               "ground_state": {
                 "seed_index": 7,
@@ -13464,7 +14386,7 @@
               "J": 0.24757987909748744,
               "magnetovolume": 0.01993496744081197
             },
-            "weighted_contribution_to_total": 0.0040559209897829,
+            "weighted_contribution_to_total": 0.004040912568077062,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13567,7 +14489,7 @@
               "J": 0.5973585378536546,
               "magnetovolume": 0.7142076167297766
             },
-            "weighted_contribution_to_total": 0.005649788952751031,
+            "weighted_contribution_to_total": 0.0056336040738625155,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13638,7 +14560,7 @@
               "J": 0.574063997368127,
               "magnetovolume": 0.5094394734938781
             },
-            "weighted_contribution_to_total": 0.004728964253835679,
+            "weighted_contribution_to_total": 0.004712900203226886,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -13741,7 +14663,7 @@
               "J": 0.726168219032985,
               "magnetovolume": 0.10359444056952813
             },
-            "weighted_contribution_to_total": 0.004884149131202534,
+            "weighted_contribution_to_total": 0.004867975749540012,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13796,7 +14718,7 @@
               "J": 0.14874653944796928,
               "magnetovolume": 0.013414603268489462
             },
-            "weighted_contribution_to_total": 0.004027122955735079,
+            "weighted_contribution_to_total": 0.004011179140620807,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13851,7 +14773,7 @@
               "J": 0.17647268326432844,
               "magnetovolume": 0.10986209455762616
             },
-            "weighted_contribution_to_total": 0.0042133319739777325,
+            "weighted_contribution_to_total": 0.0041972736833204675,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -13906,7 +14828,7 @@
               "J": 0.2919742408280563,
               "magnetovolume": 0.0904273310674647
             },
-            "weighted_contribution_to_total": 0.00431336845666778,
+            "weighted_contribution_to_total": 0.00429726711520865,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -13961,7 +14883,7 @@
               "J": 0.31187730979093353,
               "magnetovolume": 0.22761386839740966
             },
-            "weighted_contribution_to_total": 0.0043412472316964636,
+            "weighted_contribution_to_total": 0.0043250502195722,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -14064,7 +14986,7 @@
               "J": 0.8187806066346979,
               "magnetovolume": 0.6105967887759398
             },
-            "weighted_contribution_to_total": 0.005731767812063486,
+            "weighted_contribution_to_total": 0.005715493959308535,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -14119,7 +15041,7 @@
               "J": 0.18323516549618482,
               "magnetovolume": 0.012227870106273913
             },
-            "weighted_contribution_to_total": 0.003742214074505972,
+            "weighted_contribution_to_total": 0.003727309680650146,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -14238,7 +15160,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0036771435341181255,
+            "weighted_contribution_to_total": 0.003660930544442443,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -14314,7 +15236,7 @@
               "J": 0.3047519005673093,
               "magnetovolume": 0.0035494560199970946
             },
-            "weighted_contribution_to_total": 0.0042146637942200235,
+            "weighted_contribution_to_total": 0.004198598875760555,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -14502,7 +15424,7 @@
               "J": 0.35279638471129804,
               "magnetovolume": 0.8828277634540738
             },
-            "weighted_contribution_to_total": 0.005592927730813667,
+            "weighted_contribution_to_total": 0.005576741779840829,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -14701,7 +15623,7 @@
               "J": 0.5122584808114157,
               "magnetovolume": 0.26344181473849104
             },
-            "weighted_contribution_to_total": 0.004886410743110089,
+            "weighted_contribution_to_total": 0.004870145096300884,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -14804,7 +15726,7 @@
               "J": 0.3091639459928534,
               "magnetovolume": 0.11090012948379845
             },
-            "weighted_contribution_to_total": 0.003502935020419251,
+            "weighted_contribution_to_total": 0.0034875242303381397,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -14859,7 +15781,7 @@
               "J": 0.7010900985236836,
               "magnetovolume": 0.5834939493718269
             },
-            "weighted_contribution_to_total": 0.005055058131487964,
+            "weighted_contribution_to_total": 0.005038841079776108,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -15127,7 +16049,7 @@
               "J": 0.376536455084504,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0033318442628104965,
+            "weighted_contribution_to_total": 0.003316901874470258,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -15173,7 +16095,7 @@
               "J": 0.44290992934474416,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003507593620405594,
+            "weighted_contribution_to_total": 0.0034929599257231474,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -15354,7 +16276,7 @@
               "J": 0.44636736970066127,
               "magnetovolume": 0.3760099799770357
             },
-            "weighted_contribution_to_total": 0.004575183311002045,
+            "weighted_contribution_to_total": 0.004559591429892805,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -15409,7 +16331,7 @@
               "J": 0.2872898291106988,
               "magnetovolume": 0.10063557411094466
             },
-            "weighted_contribution_to_total": 0.00424246725164356,
+            "weighted_contribution_to_total": 0.004226434031585884,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -15464,7 +16386,7 @@
               "J": 0.5122125371541305,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003637140615704382,
+            "weighted_contribution_to_total": 0.0036219969725539646,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -15558,7 +16480,7 @@
               "J": 0.18627600139021333,
               "magnetovolume": 0.28524372194179143
             },
-            "weighted_contribution_to_total": 0.003975684631552055,
+            "weighted_contribution_to_total": 0.003959455973903834,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -15709,7 +16631,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0038393925440846767,
+            "weighted_contribution_to_total": 0.0038235462778460393,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -15849,7 +16771,7 @@
               "J": 0.020100354934388623,
               "magnetovolume": 0.022269459756974693
             },
-            "weighted_contribution_to_total": 0.0036665906693825515,
+            "weighted_contribution_to_total": 0.0036504849624185943,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -15904,7 +16826,7 @@
               "J": 0.6531392823933495,
               "magnetovolume": 0.38250593352684703
             },
-            "weighted_contribution_to_total": 0.005228585809530414,
+            "weighted_contribution_to_total": 0.005212331871847113,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -16110,7 +17032,7 @@
               "J": 0.44947809411462475,
               "magnetovolume": 0.2068937915031427
             },
-            "weighted_contribution_to_total": 0.0045467019218574335,
+            "weighted_contribution_to_total": 0.004530871292161389,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -16165,7 +17087,7 @@
               "J": 0.4469426972441256,
               "magnetovolume": 0.5177286099809701
             },
-            "weighted_contribution_to_total": 0.004763172198945305,
+            "weighted_contribution_to_total": 0.004747472040851325,
             "details": {
               "ground_state": {
                 "seed_index": 6,
@@ -16284,7 +17206,7 @@
               "J": 0.7380848662031602,
               "magnetovolume": 0.3906324354250319
             },
-            "weighted_contribution_to_total": 0.005333650900415027,
+            "weighted_contribution_to_total": 0.005317460204066156,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -16339,7 +17261,7 @@
               "J": 0.30019638253792547,
               "magnetovolume": 0.0017918898629985984
             },
-            "weighted_contribution_to_total": 0.004202605570164908,
+            "weighted_contribution_to_total": 0.004186530865483585,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -16394,7 +17316,7 @@
               "J": 0.03217865032954273,
               "magnetovolume": 0.03620298846556108
             },
-            "weighted_contribution_to_total": 0.003170094580222399,
+            "weighted_contribution_to_total": 0.003154048613056217,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -16465,7 +17387,7 @@
               "J": 0.6451936602535211,
               "magnetovolume": 0.4148029606577144
             },
-            "weighted_contribution_to_total": 0.005245104401470605,
+            "weighted_contribution_to_total": 0.005228821957207567,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -16520,7 +17442,7 @@
               "J": 0.5388348958396205,
               "magnetovolume": 0.5158030711919176
             },
-            "weighted_contribution_to_total": 0.005285271870940336,
+            "weighted_contribution_to_total": 0.005269061835532074,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -16575,7 +17497,7 @@
               "J": 0.5529767759068593,
               "magnetovolume": 0.40642405342213084
             },
-            "weighted_contribution_to_total": 0.004568140548866561,
+            "weighted_contribution_to_total": 0.004551848684645707,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -16630,7 +17552,7 @@
               "J": 0.5405618682976036,
               "magnetovolume": 0.5271126703713944
             },
-            "weighted_contribution_to_total": 0.005313579410253228,
+            "weighted_contribution_to_total": 0.005297355643673757,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -16681,11 +17603,11 @@
             "scores": {
               "ground_state": 1.0,
               "hull": 0.24676407097923983,
-              "phonons": null,
+              "phonons": 0.990131223166945,
               "J": 0.2000000001060792,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.00153807025586686,
+            "weighted_contribution_to_total": 0.003322090477789283,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -16710,6 +17632,13 @@
                 "weighted_sign_accuracy": 0.4,
                 "sign_contribution": 0.2,
                 "accuracy_contribution": 1.0607919764975624e-10
+              },
+              "phonons": {
+                "stable": true,
+                "minimum_frequency_THz": 2.0755071186988705e-07,
+                "W1_THz": 0.028760040216208906,
+                "stability_contribution": 0.5,
+                "spectrum_contribution": 0.4901312231669451
               }
             }
           },
@@ -16724,7 +17653,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0037107091073363824,
+            "weighted_contribution_to_total": 0.0036956568787524175,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -16761,7 +17690,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003623162027988366,
+            "weighted_contribution_to_total": 0.0036089276922386107,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -16812,8 +17741,7 @@
         "model_name": "Prophet-Spin v1",
         "model_key": "prophet-spin-v1",
         "model_version": "v1",
-        "lifecycle": "reference",
-        "replay_exemption": "packaged_reference_missing_artifacts",
+        "lifecycle": "pending",
         "dates": {
           "benchmark_added": "2026-11-20"
         },
@@ -16826,14 +17754,20 @@
         ],
         "repo": "https://github.com/kairosmaterial/Magbench",
         "checkpoint": {
+          "filename": "prophet-v2-mag.pt",
           "url": "to be provided",
-          "sha256": "to be provided"
+          "sha256": "3e06937a3d38346f91399ccf7b56880d8c83cbd7493ab7fd03202c157d550252",
+          "head": {
+            "filename": "prophet-v2-mag-head.pt",
+            "url": "to be provided",
+            "sha256": "8a2293f131ff95f42e7b011c0d9667a5ca2bf5a76d071b268c0648aa0578bb92"
+          }
         },
         "license": {
           "code": "MIT",
           "checkpoint": "to be provided"
         },
-        "architecture": "Bilinear spin model",
+        "architecture": "Bilinear spin model, 10 layers",
         "model_params": "to be provided",
         "targets": [
           "energy",
@@ -16854,13 +17788,13 @@
           "seed_amplitudes": "uniform_3muB",
           "exchange_route": "exchange_readout",
           "protocol_version": "0.2.1",
-          "data_version": "0.2.2",
+          "data_version": "0.2.3",
           "runner_version": "0.6.0"
         },
         "inference": {
           "script": "inference.py",
           "adapter": "Model",
-          "command": "python models/prophet-spin-v1/inference.py run --inputs data/inputs --checkpoint model.pt --moment-head head.pt --output run --stages ground_state",
+          "command": "PYTHONPATH=benchmark_runner/vendor python models/prophet-spin-v1/inference.py run --inputs data/inputs --checkpoint prophet-v2-mag.pt --moment-head prophet-v2-mag-head.pt --output run --stages ground_state && PYTHONPATH=benchmark_runner/vendor python models/prophet-spin-v1/inference.py select --inputs data/inputs --targets data/targets --run run --output run/selection.json && PYTHONPATH=benchmark_runner/vendor python models/prophet-spin-v1/inference.py run --inputs data/inputs --checkpoint prophet-v2-mag.pt --moment-head prophet-v2-mag-head.pt --output run --stages J magnetovolume phonons --ground-state-barrier run/selection.json",
           "python_version": "3.11.15",
           "dependencies": [
             "torch==2.5.1+cu121",
@@ -16872,33 +17806,460 @@
           ]
         },
         "predictions": {
-          "url": "to be provided",
-          "sha256": "to be provided",
-          "size": "to be provided",
+          "url": "https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1/predictions.json",
+          "sha256": "90b25d5ec62cd33c3c862a5b1579e4d85c9e94242794b2d294b09f84acf34d85",
+          "size": 2063662,
           "phonons": {
-            "url": "to be provided",
-            "sha256": "to be provided",
-            "size": "to be provided"
+            "url": "https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1/phonons/",
+            "files": [
+              {
+                "path": "phonons/001.npz",
+                "sha256": "c809aedd78277b4fdbd5f8737eab3fa8eea6f68685d753ed2bab0c302f2bee07",
+                "size": 115912
+              },
+              {
+                "path": "phonons/004.npz",
+                "sha256": "06aaa53ea9871196345642ebb6514cc5443a73bddc444669eb2ab4793fe26a65",
+                "size": 67802
+              },
+              {
+                "path": "phonons/006.npz",
+                "sha256": "6ee26d2c66badfbffcc0a3d5dfbb907192a138f6ddf2f3a68765a829bfcd953d",
+                "size": 67180
+              },
+              {
+                "path": "phonons/007.npz",
+                "sha256": "e2fb654285aa1a9e8a9f0636f96763029ac3f1de39bd1b5d9c137cac87d78d27",
+                "size": 63333
+              },
+              {
+                "path": "phonons/010.npz",
+                "sha256": "41760247a30a15ab2fd138e70a99b319e4e706f5fddf79e69e1f80f75300e0e8",
+                "size": 63435
+              },
+              {
+                "path": "phonons/011.npz",
+                "sha256": "3b74b399380f9ec7536b3d0bc9c4c17983287cba621d49c83a9cbd3b59d5531f",
+                "size": 263876
+              },
+              {
+                "path": "phonons/021.npz",
+                "sha256": "4a91424eb6762109ffdd67aa3b81c7766979b1d160c52f9245b8ac5675134cd7",
+                "size": 289225
+              },
+              {
+                "path": "phonons/022.npz",
+                "sha256": "0ea55f25439737bfee62e94cc6503b0907a64d54eb2c4be83359455a663fc6f5",
+                "size": 500906
+              },
+              {
+                "path": "phonons/024.npz",
+                "sha256": "ef8d2ff070d4721b28439b29589bea81f5d15d3c8965e628efb651f5fccf0032",
+                "size": 75067
+              },
+              {
+                "path": "phonons/025.npz",
+                "sha256": "5919d863edc89e4cb2c8776e68d133a621fc2ccd79c59ee93edd89ff3c18c9d9",
+                "size": 69848
+              },
+              {
+                "path": "phonons/027.npz",
+                "sha256": "4e77e59407fa3567d0004e601ece7d35055c29526706eb17e07b3bf245e0d15c",
+                "size": 175444
+              },
+              {
+                "path": "phonons/028.npz",
+                "sha256": "735d84b2946561f3512b66d48a2e353f553486b82bc0d794ac9615d7a8bf125f",
+                "size": 180623
+              },
+              {
+                "path": "phonons/032.npz",
+                "sha256": "95689dde770b6e85f97387966d0838e63c77a7a7edd3e746a2ddf6096ddac116",
+                "size": 87788
+              },
+              {
+                "path": "phonons/037.npz",
+                "sha256": "4c842164aed8be713297ef9ce67266a9958d277e4591c59c0d8fba5986d90e37",
+                "size": 277177
+              },
+              {
+                "path": "phonons/038.npz",
+                "sha256": "14e0ca671b62d4b07acb3358aeac055f43cdcaba9f4976a121e40dba52cb1b4c",
+                "size": 163608
+              },
+              {
+                "path": "phonons/041.npz",
+                "sha256": "f1ef5e0cb55cf6f4ab8d50ed8437d60a12dabc984222ab15d14507458a808ce2",
+                "size": 105395
+              },
+              {
+                "path": "phonons/054.npz",
+                "sha256": "0325218a1cc30875f96b43790261541d68052d4191f477bc2e1a266526b80421",
+                "size": 135458
+              },
+              {
+                "path": "phonons/061.npz",
+                "sha256": "05e9e988570783c03d529eeffe66e17d942f34c0c8e565e0e89d87d69af733ac",
+                "size": 21724
+              },
+              {
+                "path": "phonons/064.npz",
+                "sha256": "71144b398dce8abe8bf1ef2a77177ea5a01207ed7b19523a98bcd4d323ab39f8",
+                "size": 139077
+              },
+              {
+                "path": "phonons/069.npz",
+                "sha256": "a14fa5d0cf3598e469639563e4c59e78ed4157ddb39d70b3c6b8c959904d95f8",
+                "size": 96314
+              },
+              {
+                "path": "phonons/070.npz",
+                "sha256": "bd382861b860fb1273df0fed4d3638c5442da317f17ec5a9ce4198a55d0d8d67",
+                "size": 84774
+              },
+              {
+                "path": "phonons/073.npz",
+                "sha256": "ce41315c09ee50f1fe5a50d3c5d571e082d2c49432d0ebc17e76570cfd31f4c7",
+                "size": 251302
+              },
+              {
+                "path": "phonons/079.npz",
+                "sha256": "94446a5261f95015a89d1ec434db27e99da1bdde55da8fddb160ff87e582489b",
+                "size": 198597
+              },
+              {
+                "path": "phonons/082.npz",
+                "sha256": "a50dac7c358adc2ae66dc51631c7f86753098bf5a0e1b52572f1e9eaf227983a",
+                "size": 79573
+              },
+              {
+                "path": "phonons/083.npz",
+                "sha256": "0a7bd6850f3d533e1bb628465e3cd70fb97bc570ce7836db6117a8b88b71b3af",
+                "size": 140651
+              },
+              {
+                "path": "phonons/084.npz",
+                "sha256": "7e0181ebb316a7eff95f5c7c36c0b948229076df4be4212169f3e0c2831a9343",
+                "size": 68062
+              },
+              {
+                "path": "phonons/085.npz",
+                "sha256": "84a637c2df2d6e7557b70918025fd29d0072f1a4f441e846477a76dd52b860c4",
+                "size": 251914
+              },
+              {
+                "path": "phonons/086.npz",
+                "sha256": "d3b63d93015b07b5fb56b99650b5f68b74af6f8a17b8354196b94ebe9440d1a1",
+                "size": 136819
+              },
+              {
+                "path": "phonons/087.npz",
+                "sha256": "846172c64e4cfb2f19554d91ab2c3eba0f86532e204f272f47e781fcf656bf00",
+                "size": 65628
+              },
+              {
+                "path": "phonons/088.npz",
+                "sha256": "972b8bffaffaa268dd00c6d6d96cb3571b27d631641db09732d411b20445d6a7",
+                "size": 156539
+              },
+              {
+                "path": "phonons/093.npz",
+                "sha256": "575884f459a1d9edb75dc1fe500546b34829d1faf92c19cc743855482a864e6c",
+                "size": 95594
+              },
+              {
+                "path": "phonons/094.npz",
+                "sha256": "18118adb067040f03133a5a5eca384739bb83a353d095d06301c30c3fe9d9a68",
+                "size": 89609
+              },
+              {
+                "path": "phonons/096.npz",
+                "sha256": "abd1fc4007ed3cc2d07ca536fa52477745952ad806bb41e046315cc70d8a1920",
+                "size": 190435
+              },
+              {
+                "path": "phonons/099.npz",
+                "sha256": "9ed48b4209f5f9204ec96381ab7ddf0c0bf0bc0216cf8fda0272678da70c95dd",
+                "size": 170227
+              },
+              {
+                "path": "phonons/101.npz",
+                "sha256": "d2c84c7b762cf66ed3169009e83f6bff5c87af29afd92aee753d6f814858250b",
+                "size": 379252
+              },
+              {
+                "path": "phonons/104.npz",
+                "sha256": "42a3341f497175966042a0cfef6a93668ce7d124b6c0b070f27d9870f72fab25",
+                "size": 141143
+              },
+              {
+                "path": "phonons/108.npz",
+                "sha256": "b9a4fe65eaac3b38aae0d1f71efa249f81700c5a121c9a75e8421645c9339df3",
+                "size": 65502
+              },
+              {
+                "path": "phonons/109.npz",
+                "sha256": "a9509892b73bc77593973d572877329568bb8204937ed935cc001145af0d4b3e",
+                "size": 70332
+              },
+              {
+                "path": "phonons/115.npz",
+                "sha256": "95b07ae8fd53a9f5f2727612315e0916e3f1eb56b80f86a8e72de0414f10c17b",
+                "size": 228799
+              },
+              {
+                "path": "phonons/116.npz",
+                "sha256": "7c1e48b02ccf04b7574112ae260cba7b430d1c5f9ea21d801d897cd40e60b7ec",
+                "size": 67104
+              },
+              {
+                "path": "phonons/120.npz",
+                "sha256": "6a15e092511a31eae4812d9978f56b9697c6069faf52d13b6a5cd7ac7b044c81",
+                "size": 74058
+              },
+              {
+                "path": "phonons/124.npz",
+                "sha256": "382063c897f87f09be70ce2e973faa97a7b75d169b7a50ac566cd69a0327c752",
+                "size": 127149
+              },
+              {
+                "path": "phonons/126.npz",
+                "sha256": "57537ccbcd91e6dba96722a3f75f959ed3d6116fabe70bad5aa18c687aa6f319",
+                "size": 249556
+              },
+              {
+                "path": "phonons/129.npz",
+                "sha256": "fc7544c5482addbbce3bd94e10a7a8b22468d22637cfc855e17a12be24472a32",
+                "size": 69802
+              },
+              {
+                "path": "phonons/130.npz",
+                "sha256": "fed2bbb9d0295712a6bdf7ee2be92a6a45d06106163a69b633dc08c8a56314f8",
+                "size": 68066
+              },
+              {
+                "path": "phonons/131.npz",
+                "sha256": "f97e1ae008f6194558ad716c735ca2f712afdaee3d5bf38a3cc18aaad91fb806",
+                "size": 71178
+              },
+              {
+                "path": "phonons/132.npz",
+                "sha256": "a19cc28454d07c7f47dd448682545c93257b79cbff9c79322a87abecb44f6766",
+                "size": 70498
+              },
+              {
+                "path": "phonons/133.npz",
+                "sha256": "b1145876e92c8a1290fae077ee483c1c3bee43b8e47f399599ac84cc2f743721",
+                "size": 254758
+              },
+              {
+                "path": "phonons/134.npz",
+                "sha256": "9a720ac217568f20c993412fc9676215fd1e2f033bdfbd8f98a7bd13231cd22c",
+                "size": 224066
+              },
+              {
+                "path": "phonons/135.npz",
+                "sha256": "c177ae3aeaef120b15270e7d0991b691a31c2980f4f3f341b2d6c9a12bab2526",
+                "size": 276053
+              },
+              {
+                "path": "phonons/136.npz",
+                "sha256": "52f577526d7c743ec45ae1faa9396720a47698bef9c758a585555445b23bbc92",
+                "size": 90178
+              },
+              {
+                "path": "phonons/138.npz",
+                "sha256": "c96a1b362415921d428990d55b1be148f6ac1daa02bb33fa01cb36a708cfb7f8",
+                "size": 103199
+              },
+              {
+                "path": "phonons/142.npz",
+                "sha256": "9ee351ec649a2a5114c884a42c599a39e65d36834fc312e01a240df966c99cd3",
+                "size": 181002
+              },
+              {
+                "path": "phonons/144.npz",
+                "sha256": "62d38dcc0d16495dae11b7a95a0e2265ba390fb732604e8e9a80de8a09fbfa51",
+                "size": 81320
+              },
+              {
+                "path": "phonons/145.npz",
+                "sha256": "587be71355abee31e37cb37b7f3018da761bcd6b53f47f2b67dd544939363f78",
+                "size": 77340
+              },
+              {
+                "path": "phonons/146.npz",
+                "sha256": "e8a627dc6cf5cbdfc64f2fd528f74699654cb22ba45d07371e5a8c3ff907b216",
+                "size": 133308
+              },
+              {
+                "path": "phonons/147.npz",
+                "sha256": "1882a9d1a22219a5117599b458de55f95ffba2db7f78dc7d4699e03b3d04179b",
+                "size": 141562
+              },
+              {
+                "path": "phonons/149.npz",
+                "sha256": "140a5a7fc445b637eb14ff4b5240e4eefd96ac9e17468bedfbccd095a202ce6c",
+                "size": 104468
+              },
+              {
+                "path": "phonons/150.npz",
+                "sha256": "30d17e7948d7a94bff319334d775fadd0e8b0fea805bf227902b315308f17cf7",
+                "size": 175209
+              },
+              {
+                "path": "phonons/152.npz",
+                "sha256": "25f05afe1606ab7f5f16817ddf1f303f7e4cb0b687e384ba0724715f1bb4ec7f",
+                "size": 274829
+              },
+              {
+                "path": "phonons/153.npz",
+                "sha256": "2fd680b27d3cb6d2785a566402c1dbe3df903520493d1921e4b01b2d8e838c2c",
+                "size": 178875
+              },
+              {
+                "path": "phonons/155.npz",
+                "sha256": "7b8d782be6bb276bddc15a2ca153b756c2e44f00ea85ac2e7a9ff35bfdf47446",
+                "size": 76427
+              },
+              {
+                "path": "phonons/161.npz",
+                "sha256": "c8bca8b45eb0181c72b1b6b9f9767559c656ac72bb8e6359599aa672a5e4c2b4",
+                "size": 218732
+              },
+              {
+                "path": "phonons/165.npz",
+                "sha256": "d6ac9f611c77b44aea5ea85cd37d2a6460e30f8b095f533603949b8fee227ffa",
+                "size": 158565
+              },
+              {
+                "path": "phonons/167.npz",
+                "sha256": "9ac3322b263f0237d3dba1fd0a59c7b3254dac4c7febb864d578f2ee0b909c13",
+                "size": 245596
+              },
+              {
+                "path": "phonons/168.npz",
+                "sha256": "7850397e7b97c9beb2462e53bad688cf33dec94192154f6329c25d1fc4d8bbe3",
+                "size": 185443
+              },
+              {
+                "path": "phonons/170.npz",
+                "sha256": "5aa6a04bbcf7e10cd3dc5ab4bac9caa150ed17d189de45525f6cbec70799b5ef",
+                "size": 246747
+              },
+              {
+                "path": "phonons/182.npz",
+                "sha256": "536fa4d1bdcb0ccd8dac623e2ea8e03407aa08259bd8901197cfc560ccb80605",
+                "size": 158120
+              },
+              {
+                "path": "phonons/183.npz",
+                "sha256": "dd6b7ea4b965becbc83a0a369f32493d86745dd8de6d0debae00e027347c8c08",
+                "size": 61755
+              },
+              {
+                "path": "phonons/184.npz",
+                "sha256": "a85ca20bb7565d3b59b83741df525c7400931d2e8ef0ccfc15e94d39aca27531",
+                "size": 291383
+              },
+              {
+                "path": "phonons/187.npz",
+                "sha256": "3b8180ad923e48b8af6c1bf8c4c8eca2f44d1a08289921e4bfccaad3427e9726",
+                "size": 545469
+              },
+              {
+                "path": "phonons/195.npz",
+                "sha256": "ca49643f8d906f6362d481c16ec79fbaae3c7726d1644b419dd7aaddc8b7f929",
+                "size": 168045
+              },
+              {
+                "path": "phonons/197.npz",
+                "sha256": "ad104d7a02203a14d87024024ea4b334b324bd51bb88edc7ab7fd1c5e5968c7c",
+                "size": 267182
+              },
+              {
+                "path": "phonons/203.npz",
+                "sha256": "bfc24ffe5c1728593a4a8008dda2563dad3a106f7bf6e915e35e49531f2f13b2",
+                "size": 184354
+              },
+              {
+                "path": "phonons/206.npz",
+                "sha256": "43cc558a2a70c77e00a4b703b0abbcf8e696ee088ad36332319ff087ab9952cd",
+                "size": 235905
+              },
+              {
+                "path": "phonons/210.npz",
+                "sha256": "b563aa96fd98a6aa100b1cd7026a6f5fe7b8c16ab84068d601498a5ba1e913e8",
+                "size": 275399
+              },
+              {
+                "path": "phonons/211.npz",
+                "sha256": "99424995004211d099007bc6e7b02210e103c172c9677753f2332d3b41e9ac05",
+                "size": 88268
+              },
+              {
+                "path": "phonons/214.npz",
+                "sha256": "952d9e71aecf294b7e55b3038902573afe58baf61f654be5d3afd235c7205f69",
+                "size": 196770
+              },
+              {
+                "path": "phonons/216.npz",
+                "sha256": "293af83748ed062d78c0774cef050da179ca9e7f8dd9842c52668149d7298e9b",
+                "size": 277015
+              },
+              {
+                "path": "phonons/217.npz",
+                "sha256": "43c1bcd8297b30465341e961e7bca28314f8f50b9006d05ac82a859062db7eaa",
+                "size": 275910
+              },
+              {
+                "path": "phonons/218.npz",
+                "sha256": "ee1b5b435418bf7d1d2308ddfde9c8b1bb54fc327640128caa0f3739d8d326d3",
+                "size": 274818
+              },
+              {
+                "path": "phonons/219.npz",
+                "sha256": "84fdd57b1ef54e13badf5170c959416c85de002b8d4063e4d4c92e16044a29f8",
+                "size": 273207
+              },
+              {
+                "path": "phonons/221.npz",
+                "sha256": "ff3c48fd1df50801b5f902ee7a34243c9b525ba40c468196580f2539a60db0cc",
+                "size": 751847
+              },
+              {
+                "path": "phonons/222.npz",
+                "sha256": "4dcabd4bc1f782881d3be981f3d568edcfb92fd706ee1635e8774234bca53654",
+                "size": 33761
+              },
+              {
+                "path": "phonons/223.npz",
+                "sha256": "92f6a3f2f86e018b392696286050d82128a79941f8cd41219981e00aaad7d30a",
+                "size": 32023
+              }
+            ]
           }
         },
         "metrics": {
-          "total": 0.43730758998721636,
+          "total": 0.4377564772834376,
           "ground_state": 0.15287958115183248,
           "hull": 0.09849995163439723,
-          "phonons": 0.05783524812770831,
+          "phonons": 0.05828413542392951,
           "J": 0.06150187271703618,
           "magnetovolume": 0.06659093635624218,
           "ground_state_passes": 146
         },
         "notes": {
           "disclosure": "to be provided: Confirm training and selection exposure to the benchmark materials.",
-          "reference": "Packaged reference scores; original predictions and phonon artifacts were not delivered.",
-          "weights": "to be provided: Supply the public checkpoint URL and digest.",
-          "organisation": "Kairos Materials"
-        }
+          "weights": "to be provided: Supply public addresses and checkpoint licence for the evaluated weights and moment head.",
+          "organisation": "Kairos Materials",
+          "training": "trained on a subset of the v5 dataset",
+          "inference_code": "The inference runtime is vendored in benchmark_runner/vendor/prophet_spin under the MIT licence."
+        },
+        "publication_status": "awaiting_artifacts"
       },
       "scores": {
-        "total_score": 0.43730758998721636,
+        "total_score": 0.4377564772834376,
         "maximum_score": 1.0,
         "dimensions": {
           "ground_state": {
@@ -16916,12 +18277,12 @@
             "accuracy_weighted_score": 0.041431888807172065
           },
           "phonons": {
-            "materials": 110,
-            "mean_material_score": 0.2891762406385415,
+            "materials": 111,
+            "mean_material_score": 0.29142067711964753,
             "weight": 0.2,
-            "weighted_score": 0.05783524812770831,
-            "stability_weighted_score": 0.042727272727272725,
-            "spectrum_weighted_score": 0.015107975400435555
+            "weighted_score": 0.05828413542392951,
+            "stability_weighted_score": 0.043243243243243246,
+            "spectrum_weighted_score": 0.015040892180686246
           },
           "J": {
             "materials": 172,
@@ -16952,7 +18313,7 @@
               "J": 0.5226522662766193,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.002947577592344766,
+            "weighted_contribution_to_total": 0.00293912955751973,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -16981,9 +18342,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -9.92439320496451e-08,
-                "W1_THz": 4.988272992640589,
+                "W1_THz": 4.98827299264059,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.01575252606845534
+                "spectrum_contribution": 0.01575252606845532
               }
             }
           },
@@ -17014,7 +18375,7 @@
               "J": 0.2189412702325255,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0035676251335375474,
+            "weighted_contribution_to_total": 0.0035563301162245516,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -17076,7 +18437,7 @@
               "J": 0.33617535674151816,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003112269974619028,
+            "weighted_contribution_to_total": 0.003101036579227328,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -17122,7 +18483,7 @@
               "J": 0.36562025038853047,
               "magnetovolume": 0.4200260962704171
             },
-            "weighted_contribution_to_total": 0.004317111430388299,
+            "weighted_contribution_to_total": 0.0043043721203726865,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -17273,7 +18634,7 @@
               "J": 0.3672233819730326,
               "magnetovolume": 0.32075204426392256
             },
-            "weighted_contribution_to_total": 0.004136655548412154,
+            "weighted_contribution_to_total": 0.004125128203712958,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -17665,11 +19026,11 @@
             "scores": {
               "ground_state": 1.0,
               "hull": 0.7990739765313586,
-              "phonons": 0.5320952600283891,
+              "phonons": 0.532095260028389,
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0028512930231686987,
+            "weighted_contribution_to_total": 0.0028425772940937045,
             "details": {
               "ground_state": {
                 "seed_index": 31,
@@ -17689,9 +19050,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -0.01543063423225947,
-                "W1_THz": 3.9614959403545607,
+                "W1_THz": 3.961495940354561,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.03209526002838909
+                "spectrum_contribution": 0.03209526002838908
               }
             }
           },
@@ -17754,7 +19115,7 @@
               "J": 0.25848536391355764,
               "magnetovolume": 0.41248966987701624
             },
-            "weighted_contribution_to_total": 0.0037833805626650142,
+            "weighted_contribution_to_total": 0.0037724215735256447,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -17809,7 +19170,7 @@
               "J": 0.3017877214494457,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003604746799802997,
+            "weighted_contribution_to_total": 0.003594050588187458,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -18091,7 +19452,7 @@
               "J": 0.30846879022551926,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0026207773232761805,
+            "weighted_contribution_to_total": 0.002611796727593722,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -18279,7 +19640,7 @@
               "J": 0.3931077033180713,
               "magnetovolume": 0.5981638461690965
             },
-            "weighted_contribution_to_total": 0.004117749703981634,
+            "weighted_contribution_to_total": 0.004109095069076701,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -18317,9 +19678,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -1.323572874244793e-07,
-                "W1_THz": 4.139720881404102,
+                "W1_THz": 4.139720881404103,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.028365460946150542
+                "spectrum_contribution": 0.028365460946150525
               }
             }
           },
@@ -18805,7 +20166,7 @@
               "J": 0.34881296182865423,
               "magnetovolume": 0.5568147045738036
             },
-            "weighted_contribution_to_total": 0.004804243190073055,
+            "weighted_contribution_to_total": 0.004790704016259387,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -19309,7 +20670,7 @@
               "J": 0.20027061125979118,
               "magnetovolume": 0.409975878255168
             },
-            "weighted_contribution_to_total": 0.0034662758163573806,
+            "weighted_contribution_to_total": 0.003457126301768798,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -19364,7 +20725,7 @@
               "J": 0.5688611446883101,
               "magnetovolume": 0.06870782779841124
             },
-            "weighted_contribution_to_total": 0.0031842944405504688,
+            "weighted_contribution_to_total": 0.0031745964311916705,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -19402,9 +20763,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -1.1364568476897583e-06,
-                "W1_THz": 2.4412273477808677,
+                "W1_THz": 2.4412273477808673,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.09206347135464707
+                "spectrum_contribution": 0.0920634713546471
               }
             }
           },
@@ -19451,7 +20812,7 @@
               "J": 0.3723661938371684,
               "magnetovolume": 0.31971197671384854
             },
-            "weighted_contribution_to_total": 0.003545491460192109,
+            "weighted_contribution_to_total": 0.003537222842549376,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -19489,9 +20850,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -4.3413812336464034e-07,
-                "W1_THz": 6.703018278480319,
+                "W1_THz": 6.703018278480317,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.004799107088843466
+                "spectrum_contribution": 0.004799107088843472
               }
             }
           },
@@ -19806,7 +21167,7 @@
               "J": 0.1691572325170489,
               "magnetovolume": 0.31201058930996406
             },
-            "weighted_contribution_to_total": 0.0037224193489912454,
+            "weighted_contribution_to_total": 0.0037121485705504677,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -19861,7 +21222,7 @@
               "J": 0.3542456157976643,
               "magnetovolume": 0.3181190488659143
             },
-            "weighted_contribution_to_total": 0.004271588904041692,
+            "weighted_contribution_to_total": 0.004258183563796874,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -19916,7 +21277,7 @@
               "J": 0.30638343880162,
               "magnetovolume": 0.3230475666666463
             },
-            "weighted_contribution_to_total": 0.00420099291711147,
+            "weighted_contribution_to_total": 0.004187920601888761,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -20026,7 +21387,7 @@
               "J": 0.2835909242944428,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003172504036906026,
+            "weighted_contribution_to_total": 0.003162101274849425,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -20072,7 +21433,7 @@
               "J": 0.3651165384242722,
               "magnetovolume": 0.5333026764048261
             },
-            "weighted_contribution_to_total": 0.004695143037282395,
+            "weighted_contribution_to_total": 0.004681913394290521,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -20363,7 +21724,7 @@
               "J": 0.29526317787422796,
               "magnetovolume": 0.2879378578992538
             },
-            "weighted_contribution_to_total": 0.0036883637296789107,
+            "weighted_contribution_to_total": 0.003677374390080965,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -20489,7 +21850,7 @@
               "J": 0.600058747658853,
               "magnetovolume": 0.4611793745181152
             },
-            "weighted_contribution_to_total": 0.003509277463206128,
+            "weighted_contribution_to_total": 0.0035008210733864743,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -20663,7 +22024,7 @@
               "J": 0.3930611556747312,
               "magnetovolume": 0.10000106334873005
             },
-            "weighted_contribution_to_total": 0.0036125072158505614,
+            "weighted_contribution_to_total": 0.0036020108834421243,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -20773,7 +22134,7 @@
               "J": 0.2989972648964758,
               "magnetovolume": 0.3000000000072349
             },
-            "weighted_contribution_to_total": 0.003300554265550544,
+            "weighted_contribution_to_total": 0.0032874679690522443,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -20828,7 +22189,7 @@
               "J": 0.31357844133858176,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003627151297424579,
+            "weighted_contribution_to_total": 0.0036138931517056623,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -20929,7 +22290,7 @@
               "J": 0.4226724825824624,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003133899199017871,
+            "weighted_contribution_to_total": 0.0031242649929177414,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -20958,9 +22319,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -8.552782208476462e-08,
-                "W1_THz": 2.5035964346181654,
+                "W1_THz": 2.5035964346181645,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.08816828241291058
+                "spectrum_contribution": 0.08816828241291064
               }
             }
           },
@@ -21211,7 +22572,7 @@
               "J": 0.23326956321593273,
               "magnetovolume": 0.5591631367125204
             },
-            "weighted_contribution_to_total": 0.004063480294760217,
+            "weighted_contribution_to_total": 0.004053458146488211,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -21249,9 +22610,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -0.027458791355836433,
-                "W1_THz": 2.1603350811504343,
+                "W1_THz": 2.1603350811504347,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.11185215200596543
+                "spectrum_contribution": 0.11185215200596539
               }
             }
           },
@@ -21310,11 +22671,11 @@
             "scores": {
               "ground_state": 1.0,
               "hull": 0.9169127594182265,
-              "phonons": 0.5603752896034838,
+              "phonons": 0.5603752896034839,
               "J": 0.370388274439098,
               "magnetovolume": 0.36328025393471114
             },
-            "weighted_contribution_to_total": 0.00400307279064072,
+            "weighted_contribution_to_total": 0.003993893834218059,
             "details": {
               "ground_state": {
                 "seed_index": 31,
@@ -21352,9 +22713,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -6.182450581180999e-08,
-                "W1_THz": 3.04989798560258,
+                "W1_THz": 3.0498979856025796,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.06037528960348386
+                "spectrum_contribution": 0.06037528960348388
               }
             }
           },
@@ -21385,7 +22746,7 @@
               "J": 0.28588373336616096,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0038991376212367465,
+            "weighted_contribution_to_total": 0.003885288104261641,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -21431,7 +22792,7 @@
               "J": 0.27690349287973387,
               "magnetovolume": 0.4053472572314526
             },
-            "weighted_contribution_to_total": 0.004171316346009297,
+            "weighted_contribution_to_total": 0.0041581307208672395,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -21486,7 +22847,7 @@
               "J": 0.2507174841917321,
               "magnetovolume": 0.11550125838834281
             },
-            "weighted_contribution_to_total": 0.004016158463493753,
+            "weighted_contribution_to_total": 0.00400220155443172,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -21541,7 +22902,7 @@
               "J": 0.28328171019984383,
               "magnetovolume": 0.41954615390971
             },
-            "weighted_contribution_to_total": 0.004268610664495338,
+            "weighted_contribution_to_total": 0.004255492960837467,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -21633,7 +22994,7 @@
               "J": 0.5378914364658094,
               "magnetovolume": 0.028468618049727404
             },
-            "weighted_contribution_to_total": 0.002940013950532238,
+            "weighted_contribution_to_total": 0.002929926310992095,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -21743,7 +23104,7 @@
               "J": 0.3793791869152643,
               "magnetovolume": 0.41774864046816323
             },
-            "weighted_contribution_to_total": 0.004417528491257661,
+            "weighted_contribution_to_total": 0.004404680546457627,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -21981,7 +23342,7 @@
               "J": 0.5892483400819728,
               "magnetovolume": 0.6397848846641184
             },
-            "weighted_contribution_to_total": 0.004780315465346416,
+            "weighted_contribution_to_total": 0.004770250411231481,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -22036,7 +23397,7 @@
               "J": 0.18335723371857676,
               "magnetovolume": 0.3783711690546879
             },
-            "weighted_contribution_to_total": 0.003873047117067996,
+            "weighted_contribution_to_total": 0.003862554442699771,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -22091,7 +23452,7 @@
               "J": 0.16829436353834015,
               "magnetovolume": 0.30140531823965944
             },
-            "weighted_contribution_to_total": 0.0038965988947149755,
+            "weighted_contribution_to_total": 0.0038850759983098224,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -22146,7 +23507,7 @@
               "J": 0.2737031168616937,
               "magnetovolume": 0.3535054416940678
             },
-            "weighted_contribution_to_total": 0.00425435456881648,
+            "weighted_contribution_to_total": 0.00423977686702638,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -22201,7 +23562,7 @@
               "J": 0.3586508521282682,
               "magnetovolume": 0.4330749498556897
             },
-            "weighted_contribution_to_total": 0.004530078744170942,
+            "weighted_contribution_to_total": 0.004516626499957976,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -22359,7 +23720,7 @@
               "J": 0.15087681056259186,
               "magnetovolume": 0.16584599859407043
             },
-            "weighted_contribution_to_total": 0.0035780176787538784,
+            "weighted_contribution_to_total": 0.003566819901358568,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -22561,7 +23922,7 @@
               "J": 0.36794409858404736,
               "magnetovolume": 0.3043017634115483
             },
-            "weighted_contribution_to_total": 0.004242769891281732,
+            "weighted_contribution_to_total": 0.004230589148626674,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -22735,7 +24096,7 @@
               "J": 0.284815293980218,
               "magnetovolume": 0.8339263416572495
             },
-            "weighted_contribution_to_total": 0.004480116754385659,
+            "weighted_contribution_to_total": 0.004471557012721165,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -22773,9 +24134,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -9.394870207371256e-08,
-                "W1_THz": 4.469307323017341,
+                "W1_THz": 4.4693073230173415,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.02257222861736908
+                "spectrum_contribution": 0.022572228617369065
               }
             }
           },
@@ -22934,7 +24295,7 @@
               "J": 0.5905990817559659,
               "magnetovolume": 0.13216046682118857
             },
-            "weighted_contribution_to_total": 0.003838464821212806,
+            "weighted_contribution_to_total": 0.0038291432651428245,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -23916,7 +25277,7 @@
               "J": 0.4096485558629123,
               "magnetovolume": 0.4069354087532587
             },
-            "weighted_contribution_to_total": 0.004764099306633566,
+            "weighted_contribution_to_total": 0.004749077196065252,
             "details": {
               "ground_state": {
                 "seed_index": 1,
@@ -23971,7 +25332,7 @@
               "J": 0.5314864342501182,
               "magnetovolume": 0.41270351525357307
             },
-            "weighted_contribution_to_total": 0.003455092200459126,
+            "weighted_contribution_to_total": 0.0034463114991877893,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -24157,11 +25518,11 @@
             "scores": {
               "ground_state": 1.0,
               "hull": 0.1476507135193371,
-              "phonons": 0.585584896605839,
+              "phonons": 0.5855848966058389,
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.002266428307842383,
+            "weighted_contribution_to_total": 0.0022568364176440894,
             "details": {
               "ground_state": {
                 "seed_index": 3,
@@ -24181,9 +25542,9 @@
               "phonons": {
                 "stable": true,
                 "minimum_frequency_THz": -1.959175259617251e-07,
-                "W1_THz": 2.546499966914391,
+                "W1_THz": 2.546499966914392,
                 "stability_contribution": 0.5,
-                "spectrum_contribution": 0.08558489660583898
+                "spectrum_contribution": 0.08558489660583894
               }
             }
           },
@@ -24333,7 +25694,7 @@
               "J": 0.5993416147117644,
               "magnetovolume": 0.5710245883336273
             },
-            "weighted_contribution_to_total": 0.004282204276442421,
+            "weighted_contribution_to_total": 0.00427363705352992,
             "details": {
               "ground_state": {
                 "seed_index": 5,
@@ -24730,11 +26091,11 @@
             "scores": {
               "ground_state": 1.0,
               "hull": 0.1754239430762681,
-              "phonons": null,
+              "phonons": 0.53830869004131,
               "J": 0.32504686490770646,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.0016087718824211012,
+            "weighted_contribution_to_total": 0.0025786974500631014,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -24759,6 +26120,13 @@
                 "weighted_sign_accuracy": 0.65,
                 "sign_contribution": 0.325,
                 "accuracy_contribution": 4.686490770645105e-05
+              },
+              "phonons": {
+                "stable": true,
+                "minimum_frequency_THz": -3.2272639301035094e-08,
+                "W1_THz": 3.7061844958640786,
+                "stability_contribution": 0.5,
+                "spectrum_contribution": 0.03830869004130995
               }
             }
           },
@@ -24773,7 +26141,7 @@
               "J": null,
               "magnetovolume": null
             },
-            "weighted_contribution_to_total": 0.003193709505763924,
+            "weighted_contribution_to_total": 0.0031824561190074868,
             "details": {
               "ground_state": {
                 "seed_index": 0,
@@ -24853,12 +26221,7 @@
             }
           }
         ],
-        "protocol_version": "0.2.1",
-        "provisional": false,
-        "model": "Prophet-Spin v1",
-        "moment_head": true,
-        "exchange_method": "exchange-head",
-        "phase": "complete"
+        "protocol_version": "0.2.1"
       }
     }
   ]
