@@ -11,8 +11,8 @@ Install the runner in a Linux CUDA environment. The reference run used Python 3.
 ```bash
 python -m pip install ./benchmark_runner
 export PYTHONPATH="$PWD/benchmark_runner/vendor${PYTHONPATH:+:$PYTHONPATH}"
-checkpoint=/path/to/prophet-v2-mag.pt
-moment_head=/path/to/prophet-v2-mag-head.pt
+checkpoint=/path/to/checkpoint.pt
+moment_head=/path/to/moment-head.pt
 
 magbench run --inputs inputs --checkpoint "$checkpoint" --moment-head "$moment_head" \
   --output run --stages ground_state
