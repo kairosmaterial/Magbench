@@ -1,6 +1,5 @@
 name: Prophet pretrain
 dataset_key: prophet-pretrain
-open: false
 description: 'The merged corpus used for non-magnetic force-field pretraining, from
   which all listed Prophet-Spin models start, combines [ELEMENTA](https://huggingface.co/datasets/kairosmaterial/ELEMENTA)
   (CC-BY-NC-4.0), [OMat24](https://huggingface.co/datasets/facebook/OMAT24) (CC-BY-4.0),

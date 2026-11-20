@@ -130,14 +130,23 @@ required:
 - name
 - dataset_key
 - description
-- open
 - magnetic
 allOf:
 - if:
     properties:
       open:
         const: true
+    required:
+    - open
   then:
     required:
     - url
     - license
+- if:
+    not:
+      properties:
+        dataset_key:
+          const: prophet-pretrain
+  then:
+    required:
+    - open

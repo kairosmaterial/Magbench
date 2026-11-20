@@ -170,3 +170,13 @@ def test_description_links_escape_markup_and_reject_script_urls(checkout,tmp_pat
     text=(tmp_path/'output/datasets.html').read_text()
     assert '<a href="https://example.org/data">Public source</a>' in text
     assert '<script>bad()' not in text and 'href="javascript:' not in text
+
+
+def test_unknown_merged_release_is_not_treated_as_closed_or_open(checkout,tmp_path):
+    record=load_datasets(checkout)['prophet-pretrain']
+    assert 'open' not in record and 'url' not in record and 'license' not in record
+    build(root=checkout,output=tmp_path/'output')
+    block=(tmp_path/'output/datasets.html').read_text().split('id="prophet-pretrain"')[1].split('</section>')[0]
+    assert '<dt>Open</dt>' not in block
+    record['dataset_key']='new-corpus';write_record(checkout,record)
+    with pytest.raises(Exception,match='open'):load_datasets(checkout)

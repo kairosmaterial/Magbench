@@ -140,3 +140,5 @@ Earlier plain builds remain in the branch history.
 ## Listed identities
 
 `benchmark.json:model_names` is the single display-name catalogue for the four owner entries. Their source cards omit `model_name`; the card loader resolves it before schema validation, replay and site building. External submissions continue to supply `model_name` in their own cards. `dataset_order` sets the order of the three training-stage records; other submitted records follow alphabetically. Public component release sizes are not counts of frames used for pretraining.
+
+The owner pretraining-stage record omits release availability because no merged release status was supplied. Its public component links do not establish availability of the merged corpus. New dataset submissions still require an explicit `open` declaration.
