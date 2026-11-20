@@ -12,13 +12,17 @@ properties:
     enum:
     - pending
     - active
+    - draft
   dates:
     type: object
     additionalProperties: false
     properties:
       benchmark_added:
-        type: string
-        format: date
+        anyOf:
+        - &id010
+          type: string
+          format: date
+        - const: to be provided
     required:
     - benchmark_added
   authors:
@@ -65,13 +69,13 @@ properties:
         - const: to be provided
       sha256:
         anyOf:
-        - &id004
+        - &id003
           type: string
           pattern: ^[0-9a-f]{64}$
         - const: to be provided
       size:
         anyOf:
-        - &id003
+        - &id004
           type: integer
           minimum: 1
         - const: to be provided
@@ -117,10 +121,6 @@ properties:
     - code
     - checkpoint
   architecture: *id001
-  model_params:
-    anyOf:
-    - *id003
-    - const: to be provided
   targets:
     type: array
     minItems: 1
@@ -225,11 +225,11 @@ properties:
         - const: to be provided
       sha256: &id006
         anyOf:
-        - *id004
+        - *id003
         - const: to be provided
       size: &id007
         anyOf:
-        - *id003
+        - *id004
         - const: to be provided
       phonons:
         type: object
@@ -333,6 +333,40 @@ properties:
     additionalProperties: true
   publication_status:
     const: awaiting_artifacts
+  hyperparams:
+    type: object
+    additionalProperties: false
+    properties:
+      architecture:
+        type: object
+        additionalProperties: false
+        properties:
+          cutoff_A:
+            oneOf:
+            - &id009
+              type: number
+              exclusiveMinimum: 0
+            - type: array
+              minItems: 1
+              uniqueItems: true
+              items: *id009
+          exchange_range_A:
+            anyOf:
+            - *id009
+            - type: 'null'
+          n_layers:
+            type: integer
+            minimum: 1
+          model_params:
+            type: integer
+            minimum: 1
+        required:
+        - cutoff_A
+        - exchange_range_A
+        - n_layers
+        - model_params
+    required:
+    - architecture
 required:
 - model_name
 - model_key
@@ -344,14 +378,13 @@ required:
 - checkpoint
 - license
 - architecture
-- model_params
 - targets
 - training_sets
 - test_set_informed
 - evaluation
 - inference
 - predictions
-- metrics
+- hyperparams
 $schema: https://json-schema.org/draft/2020-12/schema
 title: MagBench model card
 allOf:
@@ -427,7 +460,6 @@ allOf:
         required:
         - url
         - sha256
-      model_params: *id003
       test_set_informed:
         type: boolean
       predictions:
@@ -557,7 +589,26 @@ allOf:
         - prophet-spin-v1
         - prophet-spin-ex
         - prophet-spin-v2
+        - prophet-spin-v1-6a
       lifecycle:
         const: pending
     required:
     - publication_status
+- if:
+    properties:
+      lifecycle:
+        const: draft
+  then:
+    properties:
+      model_key:
+        const: prophet-spin-v1-6a
+    not:
+      required:
+      - publication_status
+  else:
+    required:
+    - metrics
+    properties:
+      dates:
+        properties:
+          benchmark_added: *id010

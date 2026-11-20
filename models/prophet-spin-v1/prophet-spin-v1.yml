@@ -21,7 +21,6 @@ license:
   code: MIT
   checkpoint: to be provided
 architecture: Bilinear spin model, 10 layers
-model_params: to be provided
 targets:
 - energy
 - forces
@@ -331,10 +330,20 @@ metrics:
 notes:
   disclosure: 'to be provided: Confirm training and selection exposure to the benchmark
     materials.'
-  weights: 'to be provided: Supply public addresses and checkpoint licence for the evaluated
-    weights and moment head.'
+  weights: 'to be provided: Supply public addresses and checkpoint licence for the
+    evaluated weights and moment head.'
   organisation: Kairos Materials
   training: trained on a subset of the v5 dataset
   inference_code: The inference runtime is vendored in benchmark_runner/vendor/prophet_spin
     under the MIT licence.
+  parameter_count: Energy-model parameters, including frozen parameters; deterministic
+    buffers and the separate moment-initialisation head are excluded.
 publication_status: awaiting_artifacts
+hyperparams:
+  architecture:
+    cutoff_A:
+    - 3.0
+    - 7.0
+    exchange_range_A: 10.0
+    n_layers: 10
+    model_params: 66916259

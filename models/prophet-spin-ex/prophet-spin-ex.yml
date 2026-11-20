@@ -16,7 +16,6 @@ license:
   code: to be provided
   checkpoint: to be provided
 architecture: Bilinear EFS
-model_params: to be provided
 targets:
 - energy
 - forces
@@ -337,4 +336,15 @@ notes:
   publication: weights and inference code to be released
   organisation: Kairos Materials
   exchange_readout: Bilinear exchange readout.
+  parameter_count: Energy-model parameters, including frozen parameters; deterministic
+    buffers and the separate moment-initialisation head are excluded.
+  architecture: The direct exchange envelope uses the largest graph cutoff, 6 A.
 publication_status: awaiting_artifacts
+hyperparams:
+  architecture:
+    cutoff_A:
+    - 3.0
+    - 6.0
+    exchange_range_A: 6.0
+    n_layers: 6
+    model_params: 35746946

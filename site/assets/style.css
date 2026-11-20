@@ -6,3 +6,5 @@
 
 /* Column headings and cells share the same insets. */
 #leaderboard .columns th,#leaderboard tbody td{padding:18px 17px}#leaderboard th.num .sort-arrow{order:-1}#leaderboard th.num button{text-align:right}#leaderboard .groups th{text-align:right}#leaderboard .groups th:first-child{text-align:left}@media(max-width:480px){#leaderboard .columns th:first-child,#leaderboard tbody td:first-child{padding:17px 11px}}
+
+#leaderboard .columns th.hyperparam,#leaderboard tbody td.hyperparam{padding-left:12px;padding-right:12px;min-width:72px}

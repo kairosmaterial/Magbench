@@ -25,7 +25,8 @@ The inference filename may differ if the card names it. The script defines the a
 | `repo` | Public HTTPS repository containing open-source inference code |
 | `checkpoint` | Evaluated public weights `url`, `sha256`, optionally `size` in bytes |
 | `license` | `code` and `checkpoint`, both stated |
-| `architecture`, `model_params`, `targets` | Architecture, positive integer parameter count, predicted quantities |
+| `architecture`, `targets` | Architecture description and predicted quantities |
+| `hyperparams.architecture` | `cutoff_A` (positive number or ordered list), `exchange_range_A` (positive number or null), `n_layers` (positive integer), `model_params` (positive integer) |
 | `training_sets` | Each dataset's `name`, `url`, `size` and `open` boolean |
 | `test_set_informed` | Boolean; see disclosure rule below |
 | `evaluation` | `moment_initialisation`, `seed_amplitudes`, `exchange_route`, `protocol_version`, `data_version`, `runner_version`; optional hardware and wall time |
@@ -102,3 +103,21 @@ bash scripts/publish_pages.sh
 ```
 
 This builds the site and prepares a local commit on the orphan `gh-pages` branch in a separate sibling worktree. It never pushes. Running it again refreshes a clean Pages worktree. The maintainer decides when to push this branch and configure branch-based Pages publishing; the Actions workflow remains available for deployment from `main` later.
+
+## Architecture hyperparameters
+
+Every card has a strict `hyperparams.architecture` block. Place `model_params` there; the previous top-level field is rejected. `cutoff_A` records the architecture's graph cutoffs in angstroms, preserving the model's list when it has several scales. The neighbour list may additionally expand to cover an explicit exchange term. `exchange_range_A` records the explicit exchange envelope or the longest representable spin-spin pair coupling. Use null only when the model has no such coupling, rather than when a separate range option is unset. State the direct envelope and density radius in `notes.architecture` for density-mediated models; pair couplings can extend to twice that radius. State the parameter-count convention in `notes.parameter_count`, including whether a separate moment head is counted.
+
+The leaderboard places these values immediately after the model column in every view. Cutoff lists retain their written order and sort by the largest cutoff. Hyperparameter values are not accuracy scores and receive no best-value emphasis.
+
+## Prepared owner draft
+
+The owner-prepared `prophet-spin-v1-6a` card has `lifecycle: draft` while its evaluation is incomplete. Schema and adapter syntax remain checked; score checks and the site exclude it. A draft cannot pass submission validation. This state is restricted to the prepared key and does not bypass public validation for new submissions.
+
+After the complete external result folder contains prediction JSON, phonons and scores, run:
+
+```sh
+python scripts/ingest_model.py prophet-spin-v1-6a --predictions completed-run --data data
+```
+
+This command checks the trusted draft/card identity, file bounds and hashes, pinned local targets and exchange route, repeats scoring and compares the full score record within 1e-9. It stamps the actual benchmark-added date, prepares a pending owner record and rebuilds the payload. It keeps raw predictions external and preserves missing metadata as “to be provided”. The draft is neither listed nor scored before this command succeeds. Public activation still uses strict public ingest with `--cache`; the local draft path makes no public-download claim. A failed replay leaves tracked cards, scores and policy unchanged.

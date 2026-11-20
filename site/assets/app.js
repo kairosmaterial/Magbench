@@ -13,7 +13,7 @@
   if (!table) return;
   const data = JSON.parse(document.getElementById('page-data').textContent);
   const models = data.models;
-  const groups = {total:'Overall',ground_state:'Ground state',hull:'MP hull',phonons:'Phonons',J:'Exchange J',magnetovolume:'dJ/dlnV',model:'Model'};
+  const groups = {total:'Overall',ground_state:'Ground state',hull:'MP hull',phonons:'Phonons',J:'Exchange J',magnetovolume:'dJ/dlnV',model:'Model',identity:'Model',hyperparams:'Hyperparameters'};
   const metric = (id, label, group=id, max=.2) => ({id,label,group,max,numeric:true,score:true,get:e=>e.scores.dimensions[id]?.weighted_score ?? e.scores.total_score});
   const component = (dim,part) => ({id:`${dim}.${part}`,label:part[0].toUpperCase()+part.slice(1),group:dim,max:.1,numeric:true,score:true,get:e=>e.scores.dimensions[dim][`${part}_weighted_score`]});
   const prop = (id,label,get,group='model',numeric=false) => ({id,label,get,group,numeric});
@@ -24,10 +24,16 @@
   const moment=prop('moment','Moments',e=>e.card.evaluation.moment_initialisation.replaceAll('_',' '));
   const route=prop('route','Exchange route',e=>e.card.evaluation.exchange_route.replaceAll('_',' '));
   const openness=prop('openness','Code / weights licence',e=>`${e.card.license.code} / ${e.card.license.checkpoint}`);
+  const architecture=e=>e.card.hyperparams.architecture;
+  const cutoff={...prop('cutoff','Cutoff (Å)',e=>{const v=architecture(e).cutoff_A;return Array.isArray(v)?Math.max(...v):v;},'hyperparams',true),format:e=>{const v=architecture(e).cutoff_A;return Array.isArray(v)?v.join(' / '):String(v);}};
+  const exchangeRange=prop('exchange_range','Exchange range (Å)',e=>architecture(e).exchange_range_A,'hyperparams',true);
+  const layers=prop('layers','Layers',e=>architecture(e).n_layers,'hyperparams',true);
+  const params={...prop('params','Parameters',e=>architecture(e).model_params,'hyperparams',true),format:e=>architecture(e).model_params.toLocaleString('en-US')};
+  const hyperparams=[cutoff,exchangeRange,layers];
   const sets={
-    scores:[identity,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,route,openness],
-    components:[identity,total,metric('ground_state','Score'),passes,component('hull','sign'),component('hull','accuracy'),component('phonons','stability'),component('phonons','spectrum'),component('J','sign'),component('J','accuracy'),component('magnetovolume','sign'),component('magnetovolume','accuracy')],
-    details:[identity,total,passes,prop('params','Parameters',e=>typeof e.card.model_params==='number'?e.card.model_params:null,'model',true),moment,prop('seeds','Seed amplitudes',e=>e.card.evaluation.seed_amplitudes.replaceAll('_',' ')),route,openness,prop('status','Status',e=>e.card.lifecycle),prop('added','Added',e=>e.card.dates.benchmark_added)]
+    scores:[identity,...hyperparams,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,route,openness],
+    components:[identity,...hyperparams,total,metric('ground_state','Score'),passes,component('hull','sign'),component('hull','accuracy'),component('phonons','stability'),component('phonons','spectrum'),component('J','sign'),component('J','accuracy'),component('magnetovolume','sign'),component('magnetovolume','accuracy')],
+    details:[identity,...hyperparams,params,total,passes,moment,prop('seeds','Seed amplitudes',e=>e.card.evaluation.seed_amplitudes.replaceAll('_',' ')),route,openness,prop('status','Status',e=>e.card.lifecycle),prop('added','Added',e=>e.card.dates.benchmark_added)]
   };
   let columnSet='scores',sortKey='total',direction=-1;
   const filterOptions={
@@ -64,6 +70,7 @@
     for(const col of columns){
       const th=document.createElement('th');th.scope='col';th.setAttribute('aria-sort',sortKey===col.id?(direction===-1?'descending':'ascending'):'none');
       if(col.numeric)th.classList.add('num');
+      if(col.group==='hyperparams')th.classList.add('hyperparam');
       const button=textNode('button',col.label);button.type='button';button.dataset.column=col.id;
       const arrow=textNode('span',sortKey===col.id?(direction===-1?'↓':'↑'):'↕','sort-arrow');arrow.setAttribute('aria-hidden','true');button.append(arrow);
       button.addEventListener('click',()=>{direction=sortKey===col.id?-direction:(col.numeric?-1:1);sortKey=col.id;render();table.querySelector(`[data-column="${col.id}"]`).focus();});
@@ -95,8 +102,10 @@
         }else{
           td.textContent=value==null?(col.id==='params'?'to be provided':'—'):col.score?value.toFixed(3):String(value);
           if(col.numeric)td.classList.add('num');
+          if(col.group==='hyperparams')td.classList.add('hyperparam');
+          if(col.format)td.textContent=col.format(entry);
           if(col.score)td.classList.add('score');
-          if(col.numeric&&value===best[col.id])td.classList.add('best');
+          if((col.score||col.id==='passes')&&value===best[col.id])td.classList.add('best');
           if(col.id==='passes')td.textContent=`${value} / ${entry.scores.dimensions.ground_state.materials}`;
         }
       }
