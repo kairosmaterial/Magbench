@@ -24,21 +24,18 @@
   const moment=prop('moment','Moments',e=>e.card.evaluation.moment_initialisation.replaceAll('_',' '));
   const route=prop('route','Exchange route',e=>e.card.evaluation.exchange_route.replaceAll('_',' '));
   const openness=prop('openness','Code / weights licence',e=>`${e.card.license.code} / ${e.card.license.checkpoint}`);
-  const informed=prop('informed','Test-set-informed',e=>e.card.test_set_informed===true?'Yes':e.card.test_set_informed===false?'No':'Unknown');
-  const version=prop('protocol','Protocol / data',e=>`${e.card.evaluation.protocol_version} / ${e.card.evaluation.data_version}`);
   const sets={
-    scores:[identity,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,route,openness,informed,version],
+    scores:[identity,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,route,openness],
     components:[identity,total,metric('ground_state','Score'),passes,component('hull','sign'),component('hull','accuracy'),component('phonons','stability'),component('phonons','spectrum'),component('J','sign'),component('J','accuracy'),component('magnetovolume','sign'),component('magnetovolume','accuracy')],
-    details:[identity,total,passes,prop('params','Parameters',e=>typeof e.card.model_params==='number'?e.card.model_params:null,'model',true),moment,prop('seeds','Seed amplitudes',e=>e.card.evaluation.seed_amplitudes.replaceAll('_',' ')),route,openness,informed,version,prop('status','Status',e=>e.card.publication_status?'Awaiting artefacts':e.card.lifecycle),prop('added','Added',e=>e.card.dates.benchmark_added)]
+    details:[identity,total,passes,prop('params','Parameters',e=>typeof e.card.model_params==='number'?e.card.model_params:null,'model',true),moment,prop('seeds','Seed amplitudes',e=>e.card.evaluation.seed_amplitudes.replaceAll('_',' ')),route,openness,prop('status','Status',e=>e.card.lifecycle),prop('added','Added',e=>e.card.dates.benchmark_added)]
   };
   let columnSet='scores',sortKey='total',direction=-1;
   const filterOptions={
     moment:[['all','Moments: all'],['moment_head','Moments: head'],['energy_gradient','Moments: energy gradient']],
     exchange:[['all','Exchange: all'],['exchange_readout','Exchange: readout'],['energy_mapping','Exchange: mapping']],
-    openness:[['all','Openness: all'],['public','Openness: public artefacts'],['awaiting','Openness: awaiting artefacts'],['MIT','Licence: MIT code']],
-    informed:[['all','Test set: all'],['true','Test set: informed'],['false','Test set: not informed'],['unknown','Test set: unknown']]
+    openness:[['all','Openness: all'],['public','Openness: public artefacts'],['awaiting','Openness: awaiting artefacts'],['MIT','Licence: MIT code']]
   };
-  const filterState={moment:0,exchange:0,openness:0,informed:0};
+  const filterState={moment:0,exchange:0,openness:0};
   const textNode=(tag,text,cls)=>{const el=document.createElement(tag);el.textContent=text;if(cls)el.className=cls;return el;};
   const columnByKey = id => Object.values(sets).flat().find(c=>c.id===id);
   function matches(entry) {
@@ -48,7 +45,6 @@
       const value=filterOptions[name][index][0]; if(value==='all')continue;
       if(name==='moment'&&c.evaluation.moment_initialisation!==value)return false;
       if(name==='exchange'&&c.evaluation.exchange_route!==value)return false;
-      if(name==='informed'&&(typeof c.test_set_informed==='boolean'?String(c.test_set_informed):'unknown')!==value)return false;
       if(name==='openness'){
         const isPublic=c.repo.startsWith('https://')&&c.checkpoint.url.startsWith('https://')&&c.predictions.url.startsWith('https://');
         if(value==='public'&&!isPublic)return false;
@@ -94,16 +90,12 @@
         if(col===identity){
           td.append(textNode('span',String(models.indexOf(entry)+1).padStart(2,'0'),'rank'));
           const anchor=textNode('a',c.model_name,'model-name');anchor.href=target;td.append(anchor);
-          if(c.test_set_informed===true){const m=textNode('span','†','marker');m.title='Test-set-informed';td.append(m);}
-          if(c.lifecycle==='reference'){const m=textNode('span','◇','marker');m.title='Reference: replay unavailable';td.append(m);}
-          if(c.publication_status){const m=textNode('span','○','marker');m.title='Awaiting artefacts';td.append(m);}
-          td.append(textNode('span',c.notes?.organisation||'TODO(owner)','organisation'));
-          if(c.publication_status)td.append(textNode('span','weights and inference code to be released','row-status'));
-          if(c.lifecycle==='reference')td.append(textNode('span','Reference · replay unavailable','row-status'));
+          td.append(textNode('span',c.notes?.organisation||'to be provided','organisation'));
+          if(c.model_key==='prophet-spin-v1')td.append(textNode('span','trained on a subset of the v5 dataset','row-status'));
         }else{
           td.textContent=value==null?'—':col.score?value.toFixed(3):String(value);
           if(col.numeric)td.classList.add('num');
-          if(col.score){td.classList.add('score');td.style.setProperty('--fill',String(Math.max(0,Math.min(1,value/col.max))));}
+          if(col.score)td.classList.add('score');
           if(col.numeric&&value===best[col.id])td.classList.add('best');
           if(col.id==='passes')td.textContent=`${value} / ${entry.scores.dimensions.ground_state.materials}`;
         }

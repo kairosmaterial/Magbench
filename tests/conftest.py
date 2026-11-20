@@ -25,6 +25,7 @@ def public_model(checkout):
     shutil.copytree(checkout/'models/prophet-spin-ex',folder)
     card=yaml.safe_load((folder/'prophet-spin-ex.yml').read_text());(folder/'prophet-spin-ex.yml').unlink()
     card.update(model_key=key,model_name='Example model',model_params=123,repo='https://example.org/code')
+    card['test_set_informed']=False
     card.pop('publication_status');card['authors']=[dict(name='Example researcher',affiliation='Example institute',corresponding=True)]
     card['checkpoint']={'url':'https://example.org/weights','sha256':'a'*64,'size':16}
     card['license']={'code':'MIT','checkpoint':'MIT'}

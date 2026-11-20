@@ -6,7 +6,7 @@ dates:
   benchmark_added: '2026-11-20'
 authors:
 - name: TODO(owner)
-  affiliation: TODO(owner)
+  affiliation: Kairos Materials
   corresponding: true
 repo: TODO(owner)
 checkpoint:
@@ -26,7 +26,7 @@ training_sets:
   url: TODO(owner)
   size: TODO(owner)
   open: TODO(owner)
-test_set_informed: true
+test_set_informed: TODO(owner)
 evaluation:
   moment_initialisation: moment_head
   seed_amplitudes: model
@@ -64,9 +64,8 @@ metrics:
   magnetovolume: 0.07336365398947985
   ground_state_passes: 159
 notes:
-  disclosure: The benchmark materials and scores informed evaluation and seed-table
-    selection.
+  disclosure: TODO(owner)
   publication: weights and inference code to be released
-  organisation: TODO(owner)
+  organisation: Kairos Materials
   exchange_readout: Analytic effective pair coupling from the model energy.
 publication_status: awaiting_artifacts

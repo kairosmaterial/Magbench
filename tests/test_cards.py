@@ -92,8 +92,11 @@ def test_site_payload_and_pages(tmp_path):
         assert entry['card']['model_name'] in text
         assert text.count('<tr>')>=len(entry['scores']['materials'])
     assert all((tmp_path/name).is_file() for name in ('index.html','protocol.html','submit.html','assets/style.css','assets/app.js','assets/kairos-mark.png'))
-    assert 'weights and inference code to be released' in (tmp_path/'models/prophet-spin-v2.html').read_text()
-    assert 'replay exemption' in (tmp_path/'models/prophet-spin-v1.html').read_text()
+    assert 'weights and inference code to be released' not in (tmp_path/'models/prophet-spin-v2.html').read_text()
+    assert 'trained on a subset of the v5 dataset' in (tmp_path/'models/prophet-spin-v1.html').read_text()
+    for path in tmp_path.rglob('*.html'):
+        assert 'TODO(owner)' not in path.read_text()
+        assert '<footer' not in path.read_text()
 
 
 def test_path_guard():

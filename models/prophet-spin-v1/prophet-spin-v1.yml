@@ -7,7 +7,7 @@ dates:
   benchmark_added: '2026-11-20'
 authors:
 - name: TODO(owner)
-  affiliation: TODO(owner)
+  affiliation: Kairos Materials
   corresponding: true
 repo: https://github.com/kairosmaterial/Magbench
 checkpoint:
@@ -70,4 +70,4 @@ notes:
   reference: Packaged reference scores; original predictions and phonon artifacts
     were not delivered.
   weights: 'TODO(owner): Supply the public checkpoint URL and digest.'
-  organisation: TODO(owner)
+  organisation: Kairos Materials
