@@ -110,7 +110,6 @@
           td.append(textNode('span',String(models.indexOf(entry)+1).padStart(2,'0'),'rank'));
           const anchor=textNode('a',c.model_name,'model-name');anchor.href=target;td.append(anchor);
           td.append(textNode('span',c.notes?.organisation||'pending','organisation'));
-          if(c.model_key==='prophet-spin-v1')td.append(textNode('span','trained on a subset of the v5 dataset','row-status'));
         }else{
           td.textContent=value==null?(col.id==='params'?'pending':'—'):col.score?value.toFixed(3):String(value);
           if(col.numeric)td.classList.add('num');
@@ -119,7 +118,7 @@
           if(col===training){
             td.replaceChildren();
             entry.training_data.forEach((item,index)=>{
-              if(index)td.append(document.createTextNode(', '));
+              if(index)td.append(document.createTextNode(' + '));
               const link=textNode('a',item.name);link.href=`datasets.html#${item.dataset_key}`;td.append(link);
               if('subset' in item)td.append(document.createTextNode(' (subset)'));
             });
