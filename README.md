@@ -69,6 +69,8 @@ The code in this repository is released under the MIT License (see [LICENSE](LIC
 
 ## Leaderboard
 
+Site address: [kairosmaterial.github.io/Magbench/](https://kairosmaterial.github.io/Magbench/).
+
 The static site compares three owner-approved result records. The two pending release entries are marked **weights and inference code to be released**; Prophet-Spin v1 is a scores-only reference with an explicit replay exemption. Test-set-informed models stay listed with a disclosure marker.
 
 <!-- leaderboard:start -->
