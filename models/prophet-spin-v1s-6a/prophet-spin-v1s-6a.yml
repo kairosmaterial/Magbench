@@ -286,8 +286,6 @@ notes:
   parameter_count: Trainable energy-model parameters from one saved state; buffers,
     duplicate EMA copies and the separate moment-initialisation head are excluded.
   code_revision: 62bc2769fa83214fd564c7df263ee254e73fc6e9
-  training: Pretraining datasets follow the public model documentation at the pinned
-    code revision. The spin-training corpus is not specified there.
   runtime: Production elapsed time; concurrent worker spans overlap. Rehearsal costs
     are excluded.
 hyperparams:

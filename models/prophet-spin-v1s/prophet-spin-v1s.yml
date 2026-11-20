@@ -336,7 +336,6 @@ notes:
     under the MIT licence.
   parameter_count: Trainable energy-model parameters from one saved state; buffers,
     duplicate EMA copies and the separate moment-initialisation head are excluded.
-  pretraining: Pretraining datasets are to be provided.
 publication_status: awaiting_artifacts
 hyperparams:
   architecture:
