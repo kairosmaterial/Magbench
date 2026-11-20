@@ -121,3 +121,14 @@ python scripts/ingest_model.py prophet-spin-v1-6a --predictions completed-run --
 ```
 
 This command checks the trusted draft/card identity, file bounds and hashes, pinned local targets and exchange route, repeats scoring and compares the full score record within 1e-9. It stamps the actual benchmark-added date, prepares a pending owner record and rebuilds the payload. It keeps raw predictions external and preserves missing metadata as “to be provided”. The draft is neither listed nor scored before this command succeeds. Public activation still uses strict public ingest with `--cache`; the local draft path makes no public-download claim. A failed replay leaves tracked cards, scores and policy unchanged.
+
+## Site checks
+
+The static build uses Python only. JavaScript geometry unit checks use Node.js 22 or later, without dependencies or a build step:
+
+```sh
+node tests/scatter_unit.js
+python -m pytest -q
+```
+
+The comparison plot uses the same listed entries and search/filter state as the table. Its axis choices are stored in the URL fragment; parameter values on the plot are in millions, and cutoff axes use the largest configured graph cutoff. Entries missing either selected value are named below the plot.
