@@ -32,12 +32,12 @@
   const cutoff={...prop('cutoff','Cutoff (Å)',e=>{const v=architecture(e).cutoff_A;return Array.isArray(v)?Math.max(...v):v;},'hyperparams',true),format:e=>{const v=architecture(e).cutoff_A;return Array.isArray(v)?v.join(' / '):String(v);}};
   const exchangeRange=prop('exchange_range','Exchange range (Å)',e=>architecture(e).exchange_range_A,'hyperparams',true);
   const layers=prop('layers','Layers',e=>architecture(e).n_layers,'hyperparams',true);
-  const params={...prop('params','Parameters',e=>architecture(e).model_params,'hyperparams',true),format:e=>architecture(e).model_params.toLocaleString('en-US')};
-  const hyperparams=[cutoff,exchangeRange,layers];
+  const params={...prop('params','Parameters',e=>architecture(e).model_params,'hyperparams',true),format:e=>`${(architecture(e).model_params/1e6).toFixed(1)}M`};
+  const hyperparams=[cutoff,exchangeRange,layers,params];
   const sets={
-    scores:[identity,...hyperparams,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,route,openness],
-    components:[identity,...hyperparams,total,metric('ground_state','Score'),passes,component('hull','sign'),component('hull','accuracy'),component('phonons','stability'),component('phonons','spectrum'),component('J','sign'),component('J','accuracy'),component('magnetovolume','sign'),component('magnetovolume','accuracy')],
-    details:[identity,...hyperparams,params,total,passes,moment,prop('seeds','Seed amplitudes',e=>e.card.evaluation.seed_amplitudes.replaceAll('_',' ')),route,openness,prop('status','Status',e=>e.card.lifecycle),prop('added','Added',e=>e.card.dates.benchmark_added)]
+    scores:[identity,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,route,openness,...hyperparams],
+    components:[identity,total,metric('ground_state','Score'),passes,component('hull','sign'),component('hull','accuracy'),component('phonons','stability'),component('phonons','spectrum'),component('J','sign'),component('J','accuracy'),component('magnetovolume','sign'),component('magnetovolume','accuracy'),moment,route,openness,...hyperparams],
+    details:[identity,total,metric('ground_state','Score'),passes,...dimensions.slice(1).map(k=>metric(k,'Score')),moment,prop('seeds','Seed amplitudes',e=>e.card.evaluation.seed_amplitudes.replaceAll('_',' ')),route,openness,prop('status','Status',e=>e.card.lifecycle),prop('added','Added',e=>e.card.dates.benchmark_added),...hyperparams]
   };
   const scatter=window.MagbenchScatter(document.getElementById('comparison'),models,table);
   let columnSet='scores',sortKey='total',direction=-1;

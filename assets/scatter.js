@@ -45,7 +45,7 @@ window.MagbenchScatter = (container, models, table) => {
     const name=document.createElement('strong');name.textContent=entry.card.model_name;
     const org=document.createElement('div');org.className='muted';org.textContent=entry.card.notes?.organisation||'to be provided';
     const values=document.createElement('dl');
-    for(const field of fields){const value=field.get(entry),label=document.createElement('dt'),number=document.createElement('dd');label.textContent=field.label;number.textContent=math.finite(value)?(field.key==='cutoff'&&Array.isArray(hp(entry).cutoff_A)?hp(entry).cutoff_A.join(' / '):format(field,value)):'to be provided';values.append(label,number);}
+    for(const field of fields){const value=field.get(entry),label=document.createElement('dt'),number=document.createElement('dd');label.textContent=field.label;number.textContent=math.finite(value)?(field.key==='params'?`${value.toFixed(1)}M`:field.key==='cutoff'&&Array.isArray(hp(entry).cutoff_A)?hp(entry).cutoff_A.join(' / '):format(field,value)):'to be provided';values.append(label,number);}
     tooltip.replaceChildren(name,org,values);tooltip.hidden=false;
     const box=container.getBoundingClientRect(),plot=svg.getBoundingClientRect(),tip=tooltip.getBoundingClientRect();
     tooltip.style.left=`${Math.max(0,Math.min(box.width-tip.width,plot.left-box.left+x+16))}px`;
