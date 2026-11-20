@@ -4,16 +4,21 @@ set -euo pipefail
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 page_worktree="${1:-$(dirname "$repo_dir")/Magbench_pages}"
 python "$repo_dir/scripts/build_site.py"
-if git -C "$repo_dir" show-ref --verify --quiet refs/heads/gh-pages; then
-  printf '%s\n' 'Local gh-pages already exists. Review or remove that local branch and its worktree before preparing another build.' >&2
-  exit 1
-fi
 if [ -e "$page_worktree" ]; then
-  printf '%s\n' 'The Pages worktree destination already exists. Choose an empty destination.' >&2
-  exit 1
+  if [ "$(git -C "$page_worktree" rev-parse --show-toplevel 2>/dev/null)" != "$page_worktree" ] || [ "$(git -C "$page_worktree" branch --show-current)" != gh-pages ]; then
+    printf '%s\n' 'Destination must be the separate gh-pages worktree.' >&2
+    exit 1
+  fi
+  if [ -n "$(git -C "$page_worktree" status --porcelain)" ]; then
+    printf '%s\n' 'The Pages worktree has uncommitted changes; review them before rebuilding.' >&2
+    exit 1
+  fi
+elif git -C "$repo_dir" show-ref --verify --quiet refs/heads/gh-pages; then
+  git -C "$repo_dir" worktree add "$page_worktree" gh-pages
+else
+  git -C "$repo_dir" worktree add --detach "$page_worktree" HEAD
+  git -C "$page_worktree" checkout --orphan gh-pages
 fi
-git -C "$repo_dir" worktree add --detach "$page_worktree" HEAD
-git -C "$page_worktree" checkout --orphan gh-pages
 git -C "$page_worktree" rm -rf -- .
 python - "$repo_dir/site/dist" "$page_worktree" <<'PY'
 from pathlib import Path
@@ -29,5 +34,7 @@ initial_commit="$(git -C "$repo_dir" rev-list --max-parents=0 HEAD | tail -n 1)"
 commit_name="$(git -C "$repo_dir" show -s --format=%an "$initial_commit")"
 commit_email="$(git -C "$repo_dir" show -s --format=%ae "$initial_commit")"
 git -C "$page_worktree" add --all
-git -C "$page_worktree" -c user.name="$commit_name" -c user.email="$commit_email" commit -m 'Build MagBench Pages site'
+if ! git -C "$page_worktree" diff --cached --quiet; then
+  git -C "$page_worktree" -c user.name="$commit_name" -c user.email="$commit_email" commit -m 'Build MagBench Pages site'
+fi
 printf 'Prepared local gh-pages commit in %s. No remote update was made.\n' "$page_worktree"

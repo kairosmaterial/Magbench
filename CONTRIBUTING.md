@@ -37,7 +37,7 @@ Optional fields are `paper`, `doi`, `docs`, `pr_url`, `training_cost` and free-f
 
 Evaluation choices are `moment_head` or `energy_gradient`; `uniform_3muB` or `model` seed amplitudes; `energy_mapping` or `exchange_readout`. Protocol, data and runner versions must match `benchmark.json` (currently 0.2.1, 0.2.2 and 0.6.0). The installable package version, 0.1.0, is a separate identifier.
 
-Any use of the 191 benchmark materials or benchmark scores in training, validation, model or checkpoint selection requires `test_set_informed: true` and a one-sentence `notes.disclosure`. This includes benchmark-informed seed-table selection. The site marks these entries and keeps them listed.
+Any use of the benchmark materials or benchmark scores in training, validation, model or checkpoint selection requires `test_set_informed: true` and a one-sentence `notes.disclosure`. This includes benchmark-informed seed-table selection. The site marks these entries and keeps them listed.
 
 Ordinary submissions cannot contain `TODO(owner)` in required metadata. The three existing owner-approved records have explicitly bounded exceptions: the scores-only reference has a schema-level replay exemption, and the two pending release entries show “weights and inference code to be released”. These exceptions are pinned in trusted policy and are unavailable to other submissions. They do not establish public reproducibility.
 
@@ -92,3 +92,13 @@ python scripts/ingest_model.py <model_key> --cache <large-storage-cache>
 Ingest repeats strict public validation, sets `lifecycle: active`, and rebuilds the site payload. Owner-approved pending release records cannot be activated while artefacts or inference scripts are awaiting release. The reference is a reference record, not an activation candidate.
 
 Preview the static build with `python -m http.server` from `site/dist/`. The Pages workflow deploys only on a push to `main`; pull requests receive a site build artefact for review. No publication occurs during a local build.
+
+## Prepare the GitHub Pages branch
+
+The intended site address is https://kairosmaterial.github.io/Magbench/. All internal references are relative, including links from model pages. The build includes `.nojekyll` and works from a local file, a local HTTP server or the repository sub-path.
+
+```sh
+bash scripts/publish_pages.sh
+```
+
+This builds the site and prepares a local commit on the orphan `gh-pages` branch in a separate sibling worktree. It never pushes. Running it again refreshes a clean Pages worktree. The maintainer decides when to push this branch and configure branch-based Pages publishing; the Actions workflow remains available for deployment from `main` later.

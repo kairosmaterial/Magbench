@@ -2,19 +2,21 @@
 
 MagBench measures magnetic ground-state search, energy relative to the Materials Project hull, phonon spectra, exchange parameters J, and volume–exchange derivatives dJ/dlnV. Each dimension contributes at most 0.20 to a total of 1.00. Larger totals rank first. Within each dimension, score each material first and average over its fixed cohort, including failures as zero. The delivered scorer and reference arrays define the numerical protocol.
 
+<!-- cohorts:start -->
 | Dimension | Fixed cohort | Total weight |
 |---|---:|---:|
 | Ground state | 191 | 0.20 |
-| Hull | 191 | 0.20 |
+| MP hull | 191 | 0.20 |
 | Phonons | 110 | 0.20 |
-| J | 172 | 0.20 |
+| Exchange J | 172 | 0.20 |
 | dJ/dlnV | 133 | 0.20 |
+<!-- cohorts:end -->
 
 Exact memberships, parameter ordering, thresholds and weights are in `targets/scoring.json`; material IDs and names are in `targets/materials.json`. Sources: delivered component 01 `targets/scoring.json`, runner `physics.py`, `scoring.py`, `selection.py`, and component 06 README. The scorer and runner stay in `benchmark_runner/magbench/`; `docs/source_integrity.json` records their SHA-256 values. Inputs and targets are hosted in the separate Hugging Face dataset, not in this code repository.
 
 ## What the model receives
 
-The merged `inputs/` contains the 191 starting DFT cells, species, fractional coordinates, designated magnetic-site indices, fixed cohort lists, screening reference signs and their symmetry permutations, prescribed exchange geometries/sign patterns/features, periodic bond catalogs, volume strains, phonon supercell and primitive matrices, masses, displacement distances, and reference q-point sampling. The screening sign reference intentionally includes experimental sign information. Targets contain DFT moments, hull labels and corrections, J and slope reference arrays, and phonon reference frequencies; they are used for selection/scoring outside the inference phase. The post-search selection receipt supplies signed DFT moments for J and volume coupling. Thus the delivered procedure is not blind to all reference information.
+The merged `inputs/` contains the starting DFT cells, species, fractional coordinates, designated magnetic-site indices, fixed cohort lists, screening reference signs and their symmetry permutations, prescribed exchange geometries/sign patterns/features, periodic bond catalogs, volume strains, phonon supercell and primitive matrices, masses, displacement distances, and reference q-point sampling. The screening sign reference intentionally includes experimental sign information. Targets contain DFT moments, hull labels and corrections, J and slope reference arrays, and phonon reference frequencies; they are used for selection/scoring outside the inference phase. The post-search selection receipt supplies signed DFT moments for J and volume coupling. Thus the delivered procedure is not blind to all reference information.
 
 Ground-state search keeps the supplied composition, cell periodicity and atom order; structural relaxation is allowed but supercell expansion for search is not. Map final moments to the original atomic order. Phonon displacements and energy-mapping geometries use the supplied supercells for their respective property calculations.
 
@@ -36,7 +38,7 @@ Find the minimum energy over converged candidates. In increasing energy and seed
 
 Ground-state score is 1 for a passing candidate and 0 otherwise. The ground-state gate sets all dimensions for that material to zero if it fails. Fixed cohort denominators never shrink to the successful subset. The selected candidate is the lowest-energy experimental match within the window, which can differ from the absolute model minimum.
 
-The `select` command requires all 191 ground-state records to be terminal (converged or recorded failure) before any property phase. Its receipt records selected seed indices and signed DFT moments. Materials without a selected candidate skip all properties. Hull uses the selected candidate's final model energy; it requires no extra model evaluation.
+The `select` command requires all ground-state cohort records to be terminal (converged or recorded failure) before any property phase. Its receipt records selected seed indices and signed DFT moments. Materials without a selected candidate skip all properties. Hull uses the selected candidate's final model energy; it requires no extra model evaluation.
 
 ## Hull score
 
@@ -122,7 +124,7 @@ TODO(owner): Protocol releases must identify changes in rules, reference arrays 
 
 ## Benchmark-informed model disclosure
 
-Every submission declares `test_set_informed`. Any use of the 191 benchmark materials or of benchmark scores in training, validation, model or checkpoint selection requires `true` and a one-sentence `notes.disclosure`. Seed-table selection informed by benchmark materials must also be disclosed. Such entries remain on the leaderboard with a visible marker. The scores-only reference retains visibly unknown exposure pending owner confirmation.
+Every submission declares `test_set_informed`. Any use of the benchmark materials or of benchmark scores in training, validation, model or checkpoint selection requires `true` and a one-sentence `notes.disclosure`. Seed-table selection informed by benchmark materials must also be disclosed. Such entries remain on the leaderboard with a visible marker. The scores-only reference retains visibly unknown exposure pending owner confirmation.
 
 ## Data version v0.2.2
 
