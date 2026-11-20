@@ -65,7 +65,7 @@ class Browser:
     def __enter__(self):
         binary=find_browser()
         if not binary:raise RuntimeError('Set MAGBENCH_BROWSER to a local Chromium executable')
-        self.profile=tempfile.TemporaryDirectory(prefix='magbench-browser-',dir=os.environ.get('MAGBENCH_BROWSER_TMP'))
+        self.profile=tempfile.TemporaryDirectory(prefix='magbench-browser-',dir=os.environ.get('MAGBENCH_BROWSER_TMP'),ignore_cleanup_errors=True)
         self.process=None;self.client=None
         try:
             self.process=subprocess.Popen([binary,'--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--incognito','--no-first-run','--disable-background-networking','--disable-sync','--disable-extensions','--disable-component-update','--remote-allow-origins=*','--remote-debugging-port=0',f'--user-data-dir={self.profile.name}','about:blank'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
