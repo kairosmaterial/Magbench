@@ -1,15 +1,23 @@
 """Bounded, verified public artefact and target retrieval."""
 import hashlib
+from http.client import HTTPException
 import json
 import os
 from pathlib import Path
 import re
 import tarfile
 import tempfile
+import time
+from urllib.error import HTTPError
 from urllib.parse import urlsplit, quote
 from urllib.request import Request, urlopen
 import zipfile
 from .cards import inside
+
+
+ATTEMPTS=5
+RETRY_DELAY=2.0
+RETRY_STATUS=(408,429,500,502,503,504)
 
 
 def public_url(url):
@@ -56,24 +64,29 @@ def download(ref, destination, limit):
         raise ValueError('Declared artefact size exceeds the download limit')
     destination=Path(destination);destination.parent.mkdir(parents=True,exist_ok=True)
     if destination.exists():return verify(destination,ref['sha256'],ref['size'])
-    fd, temporary=tempfile.mkstemp(prefix='.download-',dir=destination.parent)
-    try:
-        count=0
-        with os.fdopen(fd,'wb') as output, request(ref['url']) as response:
-            header=response.headers.get('Content-Length')
-            if header and int(header)>min(limit,ref['size']): raise ValueError('Response exceeds declared size')
-            while True:
-                block=response.read(min(1024*1024,limit-count+1))
-                if not block:break
-                count+=len(block)
-                if count>min(limit,ref['size']):raise ValueError('Download exceeds the size limit')
-                output.write(block)
-            output.flush();os.fsync(output.fileno())
-        verify(temporary,ref['sha256'],ref['size'])
-        os.replace(temporary,destination)
-        return destination
-    finally:
-        if Path(temporary).exists():Path(temporary).unlink()
+    for attempt in range(ATTEMPTS):
+        fd, temporary=tempfile.mkstemp(prefix='.download-',dir=destination.parent)
+        try:
+            count=0
+            with os.fdopen(fd,'wb') as output, request(ref['url']) as response:
+                header=response.headers.get('Content-Length')
+                if header and int(header)>min(limit,ref['size']): raise ValueError('Response exceeds declared size')
+                while True:
+                    block=response.read(min(1024*1024,limit-count+1))
+                    if not block:break
+                    count+=len(block)
+                    if count>min(limit,ref['size']):raise ValueError('Download exceeds the size limit')
+                    output.write(block)
+                output.flush();os.fsync(output.fileno())
+            verify(temporary,ref['sha256'],ref['size'])
+            os.replace(temporary,destination)
+            return destination
+        except (OSError,HTTPException) as error:
+            # Interrupted connections and overloaded servers are retried; a definite answer such as 404 is not.
+            if attempt==ATTEMPTS-1 or (isinstance(error,HTTPError) and error.code not in RETRY_STATUS):raise
+            time.sleep(RETRY_DELAY*2**attempt)
+        finally:
+            if Path(temporary).exists():Path(temporary).unlink()
 
 
 def extract_phonons(archive, destination, limits):

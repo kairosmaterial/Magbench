@@ -112,3 +112,27 @@ def test_unresolved_release_revision_requires_verified_local_data(tmp_path):
     assert artifacts.targets(settings,data=tmp_path,offline=True)==tmp_path/'targets'
     with pytest.raises(ValueError,match='immutable commit SHA'):
         artifacts.targets(settings,cache=tmp_path)
+
+
+def test_download_retries_interrupted_connections(tmp_path,monkeypatch):
+    import io
+    from urllib.error import HTTPError, URLError
+    from leaderboard import artifacts
+    body=b'{}';ref={'url':'https://example.org/a.json','size':len(body),'sha256':hashlib.sha256(body).hexdigest()}
+    class Stream(io.BytesIO):
+        headers={}
+    calls=[]
+    def flaky(url,**kwargs):
+        calls.append(url)
+        if len(calls)<3:raise URLError('connection closed')
+        return Stream(body)
+    monkeypatch.setattr(artifacts,'RETRY_DELAY',0);monkeypatch.setattr(artifacts,'request',flaky)
+    assert artifacts.download(ref,tmp_path/'a.json',10).read_bytes()==body and len(calls)==3
+    missing=[]
+    def absent(url,**kwargs):
+        missing.append(url);raise HTTPError(url,404,'Not Found',None,None)
+    monkeypatch.setattr(artifacts,'request',absent)
+    try:artifacts.download(ref,tmp_path/'b.json',10)
+    except HTTPError:pass
+    else:raise AssertionError('a missing file must fail')
+    assert len(missing)==1 and not list(tmp_path.glob('.download-*'))
