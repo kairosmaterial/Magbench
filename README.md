@@ -9,7 +9,7 @@ This repository contains the evaluation code. The benchmark data (inputs, DFT re
 | Path | Content |
 |---|---|
 | `benchmark_runner/magbench/` | Runner and scorer: magnetic-state search, joint relaxation, hull, phonons, J, volume-exchange coupling and the five scores; command-line tool `magbench` |
-| `benchmark_runner/vendor/` | Prophet-Spin v2 inference source used for the reference evaluation |
+| `benchmark_runner/vendor/` | Prophet-Spin v1 inference source used for the reference evaluation |
 | `benchmark_runner/operations/` | Environment patch for the reference software stack |
 | `tools/fix_magnetovolume_designs.py` | Script that produced the corrected volume-exchange designs of data version v0.2.2 |
 
@@ -55,13 +55,13 @@ magbench score --targets data/targets --predictions /path/to/predictions.json --
 
 ## Reference result
 
-Prophet-Spin v2, with moment-head initialisation and exchange-head readout, scores **0.43731 / 1** under protocol v0.2.1.
+Prophet-Spin v1, with moment-head initialisation and exchange-head readout, scores **0.43731 / 1** under protocol v0.2.1.
 
 | Magnetic ground state | MP hull | Phonon spectrum | J | Volume-exchange coupling |
 |---:|---:|---:|---:|---:|
 | 0.15288 | 0.09850 | 0.05784 | 0.06150 | 0.06659 |
 
-The complete per-material scores are in `results/prophet_spin_v2/scores.json` of the dataset.
+The complete per-material scores are in `results/prophet_spin_v1/scores.json` of the dataset.
 
 ## License
 

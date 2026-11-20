@@ -25,7 +25,7 @@ def main():
  if a.command=='score':
   from .scoring import evaluate
   result=evaluate(a.targets,load(a.predictions),a.predictions.resolve().parent);save(a.output,result);print(json.dumps({k:v for k,v in result.items() if k!='materials'},indent=2));return
- from .adapters import ProphetSpinV2
+ from .adapters import ProphetSpinV1
  cfg=DEFAULTS.copy()
  if a.config:cfg.update(load(a.config))
  manifest=load(a.inputs/'manifest.json');ids=a.materials or manifest['cohorts']['ground_state'];ids=[f'{int(k):03d}' for k in ids]
@@ -88,7 +88,7 @@ def main():
   if not phonon_stamp.exists() and any((a.output/'completed').glob('*/phonons.json')):
    raise ValueError('Existing phonons predate the model-moment refinement protocol')
   save(phonon_stamp,phonon_protocol)
- model=ProphetSpinV2(a.checkpoint,a.device,head_checkpoint=head_path)
+ model=ProphetSpinV1(a.checkpoint,a.device,head_checkpoint=head_path)
 
  for stage in stages:
   for key in ids:

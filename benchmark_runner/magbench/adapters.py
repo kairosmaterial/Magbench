@@ -1,7 +1,7 @@
 """Trusted model adapters. Energies eV/cell, forces eV/Å, stress eV/Å³."""
 import numpy as np
 
-class ProphetSpinV2:
+class ProphetSpinV1:
     def __init__(self, checkpoint, device='cuda', head_checkpoint=None):
         import torch
         from prophet_spin import SpinRuntime
