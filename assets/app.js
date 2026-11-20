@@ -39,6 +39,7 @@
     components:[identity,...hyperparams,total,metric('ground_state','Score'),passes,component('hull','sign'),component('hull','accuracy'),component('phonons','stability'),component('phonons','spectrum'),component('J','sign'),component('J','accuracy'),component('magnetovolume','sign'),component('magnetovolume','accuracy')],
     details:[identity,...hyperparams,params,total,passes,moment,prop('seeds','Seed amplitudes',e=>e.card.evaluation.seed_amplitudes.replaceAll('_',' ')),route,openness,prop('status','Status',e=>e.card.lifecycle),prop('added','Added',e=>e.card.dates.benchmark_added)]
   };
+  const scatter=window.MagbenchScatter(document.getElementById('comparison'),models,table);
   let columnSet='scores',sortKey='total',direction=-1;
   const filterOptions={
     moment:[['all','Moments: all'],['moment_head','Moments: head'],['energy_gradient','Moments: energy gradient']],
@@ -121,6 +122,7 @@
       }
     }
     if(!visible.length){const cell=body.insertRow().insertCell();cell.colSpan=columns.length;cell.textContent='No models match these filters.';cell.style.position='static';}
+    scatter.update(visible);
     document.getElementById('model-count').textContent=`${visible.length} of ${models.length} models`;
   }
   document.querySelectorAll('[data-set]').forEach(button=>button.addEventListener('click',()=>{
