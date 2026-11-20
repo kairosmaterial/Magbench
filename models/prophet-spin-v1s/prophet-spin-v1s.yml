@@ -1,5 +1,4 @@
-model_name: Prophet-Spin v1
-model_key: prophet-spin-v1
+model_key: prophet-spin-v1s
 model_version: v1
 lifecycle: pending
 dates:
@@ -26,9 +25,10 @@ targets:
 - forces
 - stress
 training_sets:
-- dataset_key: v5
+- dataset_key: prophet-pretrain
+  usage: pretraining
+- dataset_key: elementa-spin-v1
   usage: training
-  subset: to be provided
 test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
@@ -40,12 +40,12 @@ evaluation:
 inference:
   script: inference.py
   adapter: Model
-  command: PYTHONPATH=benchmark_runner/vendor python models/prophet-spin-v1/inference.py
+  command: PYTHONPATH=benchmark_runner/vendor python models/prophet-spin-v1s/inference.py
     run --inputs data/inputs --checkpoint prophet-v2-mag.pt --moment-head prophet-v2-mag-head.pt
     --output run --stages ground_state && PYTHONPATH=benchmark_runner/vendor python
-    models/prophet-spin-v1/inference.py select --inputs data/inputs --targets data/targets
+    models/prophet-spin-v1s/inference.py select --inputs data/inputs --targets data/targets
     --run run --output run/selection.json && PYTHONPATH=benchmark_runner/vendor python
-    models/prophet-spin-v1/inference.py run --inputs data/inputs --checkpoint prophet-v2-mag.pt
+    models/prophet-spin-v1s/inference.py run --inputs data/inputs --checkpoint prophet-v2-mag.pt
     --moment-head prophet-v2-mag-head.pt --output run --stages J magnetovolume phonons
     --ground-state-barrier run/selection.json
   python_version: 3.11.15
@@ -57,11 +57,11 @@ inference:
   - ase==3.28.0
   - phonopy==4.1.0
 predictions:
-  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1/predictions.json
+  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1s/predictions.json
   sha256: 90b25d5ec62cd33c3c862a5b1579e4d85c9e94242794b2d294b09f84acf34d85
   size: 2063662
   phonons:
-    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1/phonons/
+    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1s/phonons/
     files:
     - path: phonons/001.npz
       sha256: c809aedd78277b4fdbd5f8737eab3fa8eea6f68685d753ed2bab0c302f2bee07
@@ -332,7 +332,6 @@ notes:
   weights: 'to be provided: Supply public addresses and checkpoint licence for the
     evaluated weights and moment head.'
   organisation: Kairos Materials
-  training: trained on a subset of the v5 dataset
   inference_code: The inference runtime is vendored in benchmark_runner/vendor/prophet_spin
     under the MIT licence.
   parameter_count: Trainable energy-model parameters from one saved state; buffers,

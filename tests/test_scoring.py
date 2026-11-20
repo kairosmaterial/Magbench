@@ -31,7 +31,7 @@ def test_error_constants_and_saturation():
     assert parameter_error([.2,2.4],[0,2],.2,.2)==pytest.approx(1.)
 
 
-@pytest.mark.parametrize('key',['prophet-spin-v1','prophet-spin-ex','prophet-spin-v2','prophet-spin-v1-6a'])
+@pytest.mark.parametrize('key',['prophet-spin-v1s','prophet-spin-v1l','prophet-spin-v2l','prophet-spin-v1s-6a'])
 def test_full_local_replay_when_inputs_supplied(key):
     mapping=os.environ.get('MAGBENCH_LOCAL_PREDICTIONS')
     data=os.environ.get('MAGBENCH_DATA_DIR')

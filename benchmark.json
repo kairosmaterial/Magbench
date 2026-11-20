@@ -2677,20 +2677,17 @@
     "archive_members": 2048
   },
   "awaiting_publication": {
-    "prophet-spin-ex": {
-      "model_name": "Prophet-Spin v1 ex",
+    "prophet-spin-v1l": {
       "score_sha256": "8433024ce7446820e24e78eba6840bc9c270c734fd7001d8cd0a4c765052b991",
       "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
       "inference_available": false
     },
-    "prophet-spin-v2": {
-      "model_name": "Prophet-Spin v2",
+    "prophet-spin-v2l": {
       "score_sha256": "3eb46af0f3c7fe69632112ec5f1d2b8301c9a9257f6465b9fdc4a9759926aaf5",
       "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
       "inference_available": false
     },
-    "prophet-spin-v1": {
-      "model_name": "Prophet-Spin v1",
+    "prophet-spin-v1s": {
       "score_sha256": "02180c93bff3cd219ee26ddbe6c94141f9f043f67f28313254ba0e6d95436adb",
       "inference_sha256": "b48076e299454ba70d16d899ca2b9bd59aa77701521494cdfe0434f983194298",
       "inference_available": true
@@ -2705,11 +2702,22 @@
   },
   "draft_entries": {},
   "metadata_pending": {
-    "prophet-spin-v1-6a": {
-      "model_name": "Prophet-Spin v1 (6 \u00c5)",
+    "prophet-spin-v1s-6a": {
       "score_sha256": "13c16e1a989fc06e26176debff73aeb146b1e877d899bc8507b525e2012fb684",
       "inference_sha256": "a81bd05524a9e042a494ce9f144a149377eb46efed7455fee05368200931f7dd",
       "inference_available": true
     }
-  }
+  },
+  "model_names": {
+    "prophet-spin-v1s": "Prophet-Spin v1s",
+    "prophet-spin-v1s-6a": "Prophet-Spin v1s (6 Å)",
+    "prophet-spin-v1l": "Prophet-Spin v1L",
+    "prophet-spin-v2l": "Prophet-Spin v2L"
+  },
+  "dataset_order": [
+    "prophet-pretrain",
+    "elementa-spin-v1",
+    "elementa-spin-v2"
+  ],
+  "reference_model": "prophet-spin-v1s"
 }

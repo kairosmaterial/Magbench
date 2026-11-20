@@ -56,12 +56,13 @@ def complete_draft(key, predictions, data, root):
     compare(scored,{k:supplied[k] for k in scored},'delivered scores')
     score_bytes=(json.dumps(scored,indent=2,allow_nan=False)+'\n').encode()
     card['metrics']=metrics_from(scored);card['dates']['benchmark_added']=datetime.now(timezone.utc).date().isoformat();card['lifecycle']='pending';card['publication_status']='awaiting_artifacts'
-    settings['awaiting_publication'][key]={'model_name':card['model_name'],'score_sha256':hashlib.sha256(score_bytes).hexdigest(),
+    settings['awaiting_publication'][key]={'score_sha256':hashlib.sha256(score_bytes).hexdigest(),
                                          'inference_sha256':digest(script),'inference_available':True}
     settings['draft_entries'].pop(key)
     if trusted.get('completed_lifecycle')=='active':
         card['lifecycle']='active';card['publication_status']='metadata_incomplete'
         settings.setdefault('metadata_pending',{})[key]=settings['awaiting_publication'].pop(key)
+    if key in settings.get('model_names',{}):card.pop('model_name',None)
     card_bytes=yaml.safe_dump(card,sort_keys=False,allow_unicode=True).encode()
     settings_bytes=(json.dumps(settings,indent=2)+'\n').encode()
     # Validate the prospective record before modifying any tracked file.
@@ -96,6 +97,7 @@ def ingest(key,*,data=None,cache=None,predictions=None,root=ROOT):
     card,folder=load_card(key,root,root)
     if card['lifecycle']!='pending':raise ValueError('Only a pending submission can be activated')
     card['lifecycle']='active'
+    if key in config(root).get('model_names',{}):card.pop('model_name',None)
     (folder/f'{key}.yml').write_text(yaml.safe_dump(card,sort_keys=False))
     build(root=root)
 

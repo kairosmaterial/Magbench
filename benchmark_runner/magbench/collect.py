@@ -30,7 +30,7 @@ def collect(root,targets):
  save(destination/'predictions.json',pred)
  scores=evaluate(targets,pred,destination,ground_only=ground_only)
  scores['provisional']=phase!='complete' if phase else any(w['running'] for w in workers)
- scores['model']='Prophet-Spin v1'
+ scores['model']='Reference model'
  scores['moment_head']=True
  scores['exchange_method']=launch['exchange_method']
  if phase:

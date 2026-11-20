@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import shutil
 import markdown
+import re
 from .cards import ROOT, config, load_card, read, metrics_from, compare
 from .datasets import load_datasets, training_data, training_frames
 
@@ -64,7 +65,7 @@ def value_link(value, label):
 
 
 def training_links(references, prefix=''):
-    return ', '.join(f'<a href="{prefix}datasets.html#{esc(item["dataset_key"])}">{esc(item["name"])}</a>'+(' (subset)' if 'subset' in item else '') for item in references)
+    return ' + '.join(f'<a href="{prefix}datasets.html#{esc(item["dataset_key"])}">{esc(item["name"])}</a>'+(' (subset)' if 'subset' in item else '') for item in references)
 
 
 def dataset_body(data):
@@ -73,7 +74,16 @@ def dataset_body(data):
     def number(value):
         return f'{value:,}' if isinstance(value, int) and not isinstance(value, bool) else value
     def paragraphs(text):
-        return ''.join(f'<p>{esc(part)}</p>' for part in text.split('\n\n') if part.strip())
+        parts = []
+        pattern = re.compile(r'\[([^\]\n]+)\]\((https://[^\s()<>"]+)\)')
+        for paragraph in text.split('\n\n'):
+            if not paragraph.strip():continue
+            cursor = 0;content = ''
+            for match in pattern.finditer(paragraph):
+                content += esc(paragraph[cursor:match.start()])+f'<a href="{esc(match[2])}">{esc(match[1])}</a>'
+                cursor = match.end()
+            parts.append('<p>'+content+esc(paragraph[cursor:])+'</p>')
+        return ''.join(parts)
     for key, record in data['datasets'].items():
         users = [entry for entry in data['models'] if any(item['dataset_key']==key for item in entry['card']['training_sets'])]
         model_links = ', '.join(f'<a href="models/{esc(entry["card"]["model_key"])}.html">{esc(entry["card"]["model_name"])}</a>' for entry in users) or '—'
@@ -104,7 +114,6 @@ def dataset_body(data):
 
 def model_body(entry):
     c, s = entry['card'], entry['scores']
-    notice = '<p class="muted">trained on a subset of the v5 dataset</p>' if c['model_key']=='prophet-spin-v1' else ''
     dimensions = ''
     for key, value in s['dimensions'].items():
         components = ' · '.join(f"{name.replace('_weighted_score','').title()}: {score:.6f}" for name,score in value.items() if name.endswith('_weighted_score')) or 'Pass / fail'
@@ -121,7 +130,7 @@ def model_body(entry):
     meta=''.join(f'<dt>{esc(k)}</dt><dd>{v if k in linked else esc(v)}</dd>' for k,v in fields)
     authors='; '.join(f'{a["name"]} ({a["affiliation"]})'+(' · corresponding' if a.get('corresponding') else '') for a in c.get('authors',[]) if a.get('name')) or c.get('notes',{}).get('organisation','')
     rows=''.join('<tr>'+f'<th scope="row">{esc(r["id"])} · {esc(r["name"])}</th>'+''.join(f'<td class="num">{r["scores"][k]:.3f}</td>' if r['scores'][k] is not None else '<td class="num muted">—</td>' for k in LABELS)+f'<td>{"Pass" if r["ground_state_pass"] else "Fail"}</td></tr>' for r in s['materials'])
-    return f'''<section class="hero model-hero"><a class="back" href="../index.html">← Leaderboard</a><p class="eyebrow">MODEL CARD</p><h1>{esc(c['model_name'])}</h1><p class="lede">{esc(c['architecture'])}</p><div class="model-score"><strong>{s['total_score']:.3f}</strong><span>total / 1.000<br>{c['metrics']['ground_state_passes']} / {cohort} ground-state passes</span></div></section>{notice}<section class="section"><h2>Hyperparameters</h2><dl>{hypermeta}</dl><p class="muted">{esc(hypernote)}</p></section><section class="section metadata"><h2>Model &amp; reproducibility</h2><p>{esc(authors)}</p><dl>{meta}</dl><details><summary>Environment, training sets and inference command</summary><pre>{esc(json.dumps(public_fields({k:c[k] for k in ('training_sets','inference','checkpoint','predictions') if k in c}),indent=2))}</pre></details></section><section class="section"><div class="section-title"><h2>Dimensions</h2><p>Each dimension contributes up to 0.200.</p></div><div class="table-frame"><table class="simple"><thead><tr><th>Dimension</th><th class="num">Contribution</th><th>Materials</th><th>Components</th></tr></thead><tbody>{dimensions}</tbody></table></div></section><section class="section"><h2>Ground-state outcomes</h2><div class="outcomes"><div><strong>{c['metrics']['ground_state_passes']}</strong><span>Accepted experimental match</span></div><div><strong>{failures}</strong><span>Incorrect or missing ground state</span></div></div><p class="muted">The scorer records these failures under a single ground-state gate. A finer search or convergence breakdown is not available in the score record. Failed materials receive zero in all five dimensions.</p></section><section class="section"><div class="section-title"><h2>Per-material scores</h2><label class="search">Search materials<input id="material-search" type="search" placeholder="Material ID or formula" autocomplete="off"></label></div><p class="muted">Values below are unweighted material scores. A dash means the material is outside that dimension's cohort.</p><p id="material-count" aria-live="polite">{cohort} materials</p><div class="table-frame"><table id="materials" class="simple"><thead><tr><th>Material</th>{''.join(f'<th class="num">{v}</th>' for v in LABELS.values())}<th>Ground state</th></tr></thead><tbody>{rows}</tbody></table></div></section>'''
+    return f'''<section class="hero model-hero"><a class="back" href="../index.html">← Leaderboard</a><p class="eyebrow">MODEL CARD</p><h1>{esc(c['model_name'])}</h1><p class="lede">{esc(c['architecture'])}</p><div class="model-score"><strong>{s['total_score']:.3f}</strong><span>total / 1.000<br>{c['metrics']['ground_state_passes']} / {cohort} ground-state passes</span></div></section><section class="section"><h2>Hyperparameters</h2><dl>{hypermeta}</dl><p class="muted">{esc(hypernote)}</p></section><section class="section metadata"><h2>Model &amp; reproducibility</h2><p>{esc(authors)}</p><dl>{meta}</dl><details><summary>Environment, training sets and inference command</summary><pre>{esc(json.dumps(public_fields({k:c[k] for k in ('training_sets','inference','checkpoint','predictions') if k in c}),indent=2))}</pre></details></section><section class="section"><div class="section-title"><h2>Dimensions</h2><p>Each dimension contributes up to 0.200.</p></div><div class="table-frame"><table class="simple"><thead><tr><th>Dimension</th><th class="num">Contribution</th><th>Materials</th><th>Components</th></tr></thead><tbody>{dimensions}</tbody></table></div></section><section class="section"><h2>Ground-state outcomes</h2><div class="outcomes"><div><strong>{c['metrics']['ground_state_passes']}</strong><span>Accepted experimental match</span></div><div><strong>{failures}</strong><span>Incorrect or missing ground state</span></div></div><p class="muted">The scorer records these failures under a single ground-state gate. A finer search or convergence breakdown is not available in the score record. Failed materials receive zero in all five dimensions.</p></section><section class="section"><div class="section-title"><h2>Per-material scores</h2><label class="search">Search materials<input id="material-search" type="search" placeholder="Material ID or formula" autocomplete="off"></label></div><p class="muted">Values below are unweighted material scores. A dash means the material is outside that dimension's cohort.</p><p id="material-count" aria-live="polite">{cohort} materials</p><div class="table-frame"><table id="materials" class="simple"><thead><tr><th>Material</th>{''.join(f'<th class="num">{v}</th>' for v in LABELS.values())}<th>Ground state</th></tr></thead><tbody>{rows}</tbody></table></div></section>'''
 
 
 def update_readme(root, data):
@@ -137,12 +146,12 @@ def update_readme(root, data):
         table+=f"| [{card['model_name']}](models/{card['model_key']}/{card['model_key']}.yml) | {card['metrics']['total']:.9f} | {card['metrics']['ground_state_passes']}/{entry['scores']['dimensions']['ground_state']['materials']} | {status} |\n"
     before=text.split(start)[0];after=text.split(end)[1]
     text=before+start+'\n'+table+end+after
-    reference=next((entry for entry in data['models'] if entry['card']['model_key']=='prophet-spin-v1'),None)
+    reference=next((entry for entry in data['models'] if entry['card']['model_key']==config(root)['reference_model']),None)
     if reference and '## Reference result\n' in text and '\n## License' in text:
         card=reference['card'];scores=reference['scores'];settings=config(root)
         result=f"{card['model_name']}, with moment-head initialisation and exchange-head readout, scores **{scores['total_score']:.9f} / 1** under protocol v{settings['protocol_version']} and data v{settings['dataset']['data_version']}.\n\n"
         result+='| '+' | '.join(LABELS.values())+' |\n|'+ '|'.join('---:' for _ in LABELS)+'|\n| '+' | '.join(f"{scores['dimensions'][key]['weighted_score']:.9f}" for key in LABELS)+' |\n\n'
-        result+='The complete per-material scores are in `results/prophet_spin_v1/scores.json` of the dataset.\n'
+        result+=f"The complete per-material scores are in `results/{card['model_key'].replace('-', '_')}/scores.json` of the dataset.\n"
         text=text.split('## Reference result\n')[0]+'## Reference result\n\n'+result+'\n## License'+text.split('\n## License',1)[1]
     path.write_text(text)
 

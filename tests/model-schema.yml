@@ -365,7 +365,6 @@ properties:
     required:
     - architecture
 required:
-- model_name
 - model_key
 - model_version
 - lifecycle
@@ -583,10 +582,10 @@ allOf:
     properties:
       model_key:
         enum:
-        - prophet-spin-v1
-        - prophet-spin-ex
-        - prophet-spin-v2
-        - prophet-spin-v1-6a
+        - prophet-spin-v1s
+        - prophet-spin-v1l
+        - prophet-spin-v2l
+        - prophet-spin-v1s-6a
     required:
     - publication_status
 - if:
@@ -596,7 +595,7 @@ allOf:
   then:
     properties:
       model_key:
-        const: prophet-spin-v1-6a
+        const: prophet-spin-v1s-6a
     not:
       required:
       - publication_status
@@ -618,7 +617,7 @@ allOf:
       lifecycle:
         const: active
       model_key:
-        const: prophet-spin-v1-6a
+        const: prophet-spin-v1s-6a
 - if:
     properties:
       publication_status:
@@ -629,3 +628,15 @@ allOf:
     properties:
       lifecycle:
         const: pending
+- if:
+    not:
+      properties:
+        model_key:
+          enum:
+          - prophet-spin-v1s
+          - prophet-spin-v1s-6a
+          - prophet-spin-v1l
+          - prophet-spin-v2l
+  then:
+    required:
+    - model_name

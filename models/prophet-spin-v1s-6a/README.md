@@ -1,6 +1,6 @@
-# Prophet-Spin v1 (6 Å)
+# Public six-layer entry
 
-This entry evaluates the public six-layer checkpoint, separately from the ten-layer Prophet-Spin v1 entry. The card records the evaluated environment, public source revision, weight hashes and prediction manifest.
+This entry evaluates the public six-layer checkpoint, separately from the ten-layer reference entry. The card records the evaluated environment, public source revision, weight hashes and prediction manifest.
 
 ```sh
 git clone https://github.com/kairosmaterial/prophet prophet
@@ -14,7 +14,7 @@ Verify file sizes and SHA-256 values against the card before inference. Download
 Re-score the downloaded predictions locally:
 
 ```sh
-python scripts/validate_submission.py prophet-spin-v1-6a --offline --data data --predictions completed-run/predictions.json
+python scripts/validate_submission.py prophet-spin-v1s-6a --offline --data data --predictions completed-run/predictions.json
 ```
 
 The numerical evaluation is complete. The corresponding author and benchmark-exposure declaration remain unconfirmed. Offline validation checks the predictions and replay; it does not establish remote availability.

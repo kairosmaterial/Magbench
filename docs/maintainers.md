@@ -41,7 +41,7 @@ Evaluation choices are `moment_head` or `energy_gradient`; `uniform_3muB` or `mo
 
 Any use of the benchmark materials or benchmark scores in training, validation, model or checkpoint selection requires `test_set_informed: true` and a one-sentence `notes.disclosure`. This includes benchmark-informed seed-table selection. The declaration remains part of the model card; entries remain listed.
 
-Ordinary submissions cannot contain `to be provided` in required metadata. The existing owner-approved listed records have bounded metadata exceptions pinned in trusted policy while weights or inference code await public release. These exceptions cannot be claimed by other submissions. The listed records have delivered predictions and must replay; there is no replay exemption. Prophet-Spin v1 was trained on a subset of the v5 dataset.
+Ordinary submissions cannot contain `to be provided` in required metadata. The existing owner-approved listed records have bounded metadata exceptions pinned in trusted policy while weights or inference code await public release. These exceptions cannot be claimed by other submissions. The listed records have delivered predictions and must replay; there is no replay exemption.
 
 ## Run and score
 
@@ -91,7 +91,7 @@ After reviewing the submission and after all public artefacts are available, act
 python scripts/ingest_model.py <model_key> --cache <large-storage-cache>
 ```
 
-Ingest repeats strict public validation, sets `lifecycle: active`, and rebuilds the site payload. Owner-approved pending release records cannot be activated while artefacts or inference scripts are awaiting release. Prophet-Spin v1 has a usable wrapper around the vendored adapter; the other two inference scripts are explicit release placeholders. Listed entries can be activated only after strict public validation passes and their bounded metadata exceptions are removed.
+Ingest repeats strict public validation, sets `lifecycle: active`, and rebuilds the site payload. Owner-approved pending release records cannot be activated while artefacts or inference scripts are awaiting release. The reference model has a usable wrapper around the vendored adapter; the other two inference scripts are explicit release placeholders. Listed entries can be activated only after strict public validation passes and their bounded metadata exceptions are removed.
 
 Preview the static build with `python -m http.server` from `site/dist/`. The Pages workflow deploys only on a push to `main`; pull requests receive a site build artefact for review. No publication occurs during a local build.
 
@@ -121,7 +121,7 @@ The trusted draft ingest path remains available for a prepared owner record: `py
 
 Run `python scripts/check_datasets.py` before model-card validation. Model submissions may add ordinary `datasets/<dataset_key>.yml` records, but may not edit records present in the trusted base commit. Other models remain protected; other changed paths require maintainer review. Dataset keys, parent references and model references must resolve, and parent cycles are rejected. Unknown subsets and unknown pretraining populations leave the total training-frame value unavailable. A full-dataset count is never assigned to a subset.
 
-Dataset records omit unknown optional facts. Public release sizes describe the publisher release, not the amount consumed during model pretraining, so they do not produce a training-frame total. Magnetic metadata is required for new records. The existing OMat24, sAlex and ELEMENTA publisher records omit magnetic details that their checked documentation does not establish; only these three existing keys have that schema exception.
+Dataset records omit unknown optional facts. Public release sizes describe the publisher release, not the amount consumed during model pretraining, so they do not produce a training-frame total. Magnetic metadata is required for new records. The pretraining-stage record states that moments were not used; the two spin-training records describe collinear site moments.
 
 ## Temporary site protection
 
@@ -136,3 +136,7 @@ Earlier plain builds remain in the branch history.
 - Ratify the long-term versioning and archival process while retaining earlier rules and score records.
 - Supply benchmark authors, affiliations and citation metadata.
 - Confirm remaining model artefact addresses, metadata and the immutable data revision after the uploads are complete.
+
+## Listed identities
+
+`benchmark.json:model_names` is the single display-name catalogue for the four owner entries. Their source cards omit `model_name`; the card loader resolves it before schema validation, replay and site building. External submissions continue to supply `model_name` in their own cards. `dataset_order` sets the order of the three training-stage records; other submitted records follow alphabetically. Public component release sizes are not counts of frames used for pretraining.

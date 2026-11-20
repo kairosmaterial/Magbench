@@ -83,6 +83,7 @@ properties:
         enum:
         - collinear
         - non-collinear
+        - not applicable
       states_per_geometry:
         oneOf:
         - type: number
@@ -130,6 +131,7 @@ required:
 - dataset_key
 - description
 - open
+- magnetic
 allOf:
 - if:
     properties:
@@ -139,14 +141,3 @@ allOf:
     required:
     - url
     - license
-- if:
-    not:
-      properties:
-        dataset_key:
-          enum:
-          - omat
-          - salex
-          - elementa
-  then:
-    required:
-    - magnetic

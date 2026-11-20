@@ -72,7 +72,7 @@ def test_public_build_has_no_undeclared_placeholders(tmp_path):
     for path in tmp_path.rglob('*'):
         if path.is_file() and path.suffix in ('.html','.json','.js','.css'):
             assert 'to be provided' not in path.read_text().casefold(),path
-    pending=(tmp_path/'models/prophet-spin-v2.html').read_text()
+    pending=(tmp_path/'models/prophet-spin-v2l.html').read_text()
     assert '<p>Kairos Materials</p>' in pending
     assert '<dt>Code licence</dt><dd>pending</dd>' in pending
     assert '<dt>Weights licence</dt><dd>pending</dd>' in pending

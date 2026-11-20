@@ -66,7 +66,7 @@ def check_gate(site, password, output=None):
                     assert browser.js('!!localStorage.getItem("magbench-site-key")')
                     navigate('protocol.html');wait('!!document.querySelector("article.document")');assert browser.js('!document.querySelector("#gate")');no_overflow();screenshot(f'protocol-{width}.png',width)
                     navigate('datasets.html');wait('!!document.querySelector("#datasets")');assert browser.js('!document.querySelector("#gate")');no_overflow()
-                    clear();navigate('models/prophet-spin-v2.html');wait('document.querySelector("#gate")?.hidden===false');assert browser.js('!document.querySelector("main")');no_overflow()
+                    clear();navigate('models/prophet-spin-v2l.html');wait('document.querySelector("#gate")?.hidden===false');assert browser.js('!document.querySelector("main")');no_overflow()
                     submit(password);wait('!!document.querySelector("#materials")');no_overflow();screenshot(f'pending-model-{width}.png',width)
                     clear();navigate('datasets.html');wait('document.querySelector("#gate")?.hidden===false');assert browser.js('!document.querySelector("#datasets")');no_overflow()
                     result['widths'].append({'width':width,'wrong_password_rejected':True,'right_password_unlocks':True,'rows':expected,'scatter_marks':expected,'second_page_without_prompt':True,'direct_model_gated':True,'direct_datasets_gated':True,'horizontal_overflow':False})

@@ -9,7 +9,7 @@ This repository contains the evaluation code. The benchmark data (inputs, DFT re
 | Path | Content |
 |---|---|
 | `benchmark_runner/magbench/` | Runner and scorer: magnetic-state search, joint relaxation, hull, phonons, J, volume-exchange coupling and the five scores; command-line tool `magbench` |
-| `benchmark_runner/vendor/` | Prophet-Spin v1 inference source used for the reference evaluation |
+| `benchmark_runner/vendor/` | Reference-model inference source used for the reference evaluation |
 | `benchmark_runner/operations/` | Environment patch for the reference software stack |
 | `tools/fix_magnetovolume_designs.py` | Script that produced the corrected volume-exchange designs of data version v0.2.2 |
 
@@ -55,13 +55,13 @@ magbench score --targets data/targets --predictions /path/to/predictions.json --
 
 ## Reference result
 
-Prophet-Spin v1, with moment-head initialisation and exchange-head readout, scores **0.437756477 / 1** under protocol v0.2.1 and data v0.2.3.
+Prophet-Spin v1s, with moment-head initialisation and exchange-head readout, scores **0.437756477 / 1** under protocol v0.2.1 and data v0.2.3.
 
 | Ground state | MP hull with spin | Phonons with spin | Exchange J | dJ/dlnV |
 |---:|---:|---:|---:|---:|
 | 0.152879581 | 0.098499952 | 0.058284135 | 0.061501873 | 0.066590936 |
 
-The complete per-material scores are in `results/prophet_spin_v1/scores.json` of the dataset.
+The complete per-material scores are in `results/prophet_spin_v1s/scores.json` of the dataset.
 
 ## License
 
@@ -71,15 +71,15 @@ The code in this repository is released under the MIT License (see [LICENSE](LIC
 
 Site address: [kairosmaterial.github.io/Magbench/](https://kairosmaterial.github.io/Magbench/).
 
-The static site compares owner-approved result records using data v0.2.3. Listed records have prediction artefacts for scorer replay; public weights and some inference code await release. Prophet-Spin v1 was trained on a subset of the v5 dataset.
+The static site compares owner-approved result records using data v0.2.3. Listed records have prediction artefacts for scorer replay; public weights and some inference code await release.
 
 <!-- leaderboard:start -->
 | Model | Total | Ground-state passes | Availability |
 |---|---:|---:|---|
-| [Prophet-Spin v2](models/prophet-spin-v2/prophet-spin-v2.yml) | 0.605398474 | 159/191 | Weights awaiting public release |
-| [Prophet-Spin v1 ex](models/prophet-spin-ex/prophet-spin-ex.yml) | 0.546779806 | 155/191 | Weights awaiting public release |
-| [Prophet-Spin v1](models/prophet-spin-v1/prophet-spin-v1.yml) | 0.437756477 | 146/191 | Weights awaiting public release |
-| [Prophet-Spin v1 (6 Å)](models/prophet-spin-v1-6a/prophet-spin-v1-6a.yml) | 0.342340461 | 116/191 | Complete |
+| [Prophet-Spin v2L](models/prophet-spin-v2l/prophet-spin-v2l.yml) | 0.605398474 | 159/191 | Weights awaiting public release |
+| [Prophet-Spin v1L](models/prophet-spin-v1l/prophet-spin-v1l.yml) | 0.546779806 | 155/191 | Weights awaiting public release |
+| [Prophet-Spin v1s](models/prophet-spin-v1s/prophet-spin-v1s.yml) | 0.437756477 | 146/191 | Weights awaiting public release |
+| [Prophet-Spin v1s (6 Å)](models/prophet-spin-v1s-6a/prophet-spin-v1s-6a.yml) | 0.342340461 | 116/191 | Complete |
 <!-- leaderboard:end -->
 
 Build and preview locally:

@@ -1,5 +1,4 @@
-model_name: Prophet-Spin v1 ex
-model_key: prophet-spin-ex
+model_key: prophet-spin-v1l
 model_version: ex
 lifecycle: pending
 dates:
@@ -21,12 +20,10 @@ targets:
 - forces
 - stress
 training_sets:
-- dataset_key: v5
+- dataset_key: prophet-pretrain
+  usage: pretraining
+- dataset_key: elementa-spin-v2
   usage: training
-- dataset_key: mptrj
-  usage: pretraining
-- dataset_key: salex
-  usage: pretraining
 test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
@@ -38,7 +35,7 @@ evaluation:
 inference:
   script: inference.py
   adapter: Model
-  command: python models/prophet-spin-ex/inference.py --help
+  command: python models/prophet-spin-v1l/inference.py --help
   python_version: to be provided
   dependencies:
   - torch==2.7.1+cu128
@@ -49,11 +46,11 @@ inference:
   - spglib==2.7.0
   - openequivariance==0.6.8
 predictions:
-  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_ex/predictions.json
+  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1l/predictions.json
   sha256: 77b0c292d7aab8a0ae08aecaf7d76d2d428825254888d805dff8fdf3247a1c85
   size: 2080874
   phonons:
-    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_ex/phonons/
+    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1l/phonons/
     files:
     - path: phonons/002.npz
       sha256: 9890e11e22e308a0e7e0400447bf7b08158db393fdd4ee8b9d077727aad58ab8
@@ -338,8 +335,8 @@ notes:
   publication: weights and inference code to be released
   organisation: Kairos Materials
   exchange_readout: Bilinear exchange readout.
-  parameter_count: Trainable energy-model parameters from one saved state; buffers, duplicate EMA copies
-    and the separate moment-initialisation head are excluded.
+  parameter_count: Trainable energy-model parameters from one saved state; buffers,
+    duplicate EMA copies and the separate moment-initialisation head are excluded.
   architecture: The direct exchange envelope uses the largest graph cutoff, 6 A.
 publication_status: awaiting_artifacts
 hyperparams:

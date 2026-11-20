@@ -39,7 +39,8 @@ def load_datasets(root, policy_root=None):
             visit(parent, ancestors | {key})
     for key in records:
         visit(key, set())
-    return records
+    order = json.loads((policy_root/'benchmark.json').read_text()).get('dataset_order', [])
+    return {key:records[key] for key in [*order, *sorted(records.keys()-set(order))] if key in records}
 
 
 def training_data(card, records):

@@ -37,6 +37,11 @@ def load_card(key, root=ROOT, policy_root=ROOT):
     for path in (Path(root)/'models',folder,folder/f'{key}.yml'):
         if path.is_symlink():raise ValueError('Model directories and cards must not be symlinks')
     card = yaml.safe_load((folder / f'{key}.yml').read_text())
+    display_name = config(policy_root).get('model_names', {}).get(key)
+    if display_name is not None:
+        if 'model_name' in card and card['model_name'] != display_name:
+            raise ValueError('Listed model names belong in the central catalogue')
+        card['model_name'] = display_name
     schema = yaml.safe_load((Path(policy_root) / 'tests/model-schema.yml').read_text())
     Draft202012Validator(schema, format_checker=FormatChecker()).validate(card)
     training_data(card, load_datasets(root, policy_root))
@@ -49,7 +54,7 @@ def load_card(key, root=ROOT, policy_root=ROOT):
     if card.get('publication_status'):
         registry = 'metadata_pending' if card['publication_status']=='metadata_incomplete' else 'awaiting_publication'
         trusted = config(policy_root).get(registry,{}).get(key)
-        if not trusted or card['model_name'] != trusted['model_name']:
+        if not trusted:
             raise ValueError('This publication exception requires owner approval')
         if hashlib.sha256((folder/'scores.json').read_bytes()).hexdigest() != trusted['score_sha256']:
             raise ValueError('Pending score record differs from the owner-approved result')

@@ -22,15 +22,15 @@ def checkout(tmp_path):
 @pytest.fixture
 def public_model(checkout):
     key='example-model';folder=checkout/'models'/key
-    shutil.copytree(checkout/'models/prophet-spin-ex',folder)
-    card=yaml.safe_load((folder/'prophet-spin-ex.yml').read_text());(folder/'prophet-spin-ex.yml').unlink()
+    shutil.copytree(checkout/'models/prophet-spin-v1l',folder)
+    card=yaml.safe_load((folder/'prophet-spin-v1l.yml').read_text());(folder/'prophet-spin-v1l.yml').unlink()
     card.update(model_key=key,model_name='Example model',repo='https://example.org/code')
     card['hyperparams']['architecture']['model_params']=123
     card['test_set_informed']=False
     card.pop('publication_status');card['authors']=[dict(name='Example researcher',affiliation='Example institute',corresponding=True)]
     card['checkpoint']={'url':'https://example.org/weights','sha256':'a'*64,'size':16}
     card['license']={'code':'MIT','checkpoint':'MIT'}
-    card['training_sets']=[dict(dataset_key='v5',usage='training')]
+    card['training_sets']=[dict(dataset_key='elementa-spin-v2',usage='training')]
     card['inference']['python_version']='3.11';card['inference']['command']='python inference.py run'
     card['predictions']={'url':'https://example.org/predictions.json','sha256':'b'*64,'size':10,'phonons':{'url':'https://example.org/phonons.zip','sha256':'c'*64,'size':10}}
     (folder/f'{key}.yml').write_text(yaml.safe_dump(card))

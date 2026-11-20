@@ -9,7 +9,7 @@ from leaderboard.site import build
 from leaderboard.validation import validate
 from scripts.ingest_model import ingest
 
-DRAFT='prophet-spin-v1-6a'
+DRAFT='prophet-spin-v1s-6a'
 
 
 @pytest.fixture
@@ -28,22 +28,22 @@ def owner_draft(checkout):
 
 @pytest.mark.parametrize('path',[('hyperparams',),('hyperparams','architecture')])
 def test_hyperparameter_unknown_keys_rejected(checkout,path):
-    p=checkout/'models/prophet-spin-v1/prophet-spin-v1.yml';c=yaml.safe_load(p.read_text());v=c
+    p=checkout/'models/prophet-spin-v1s/prophet-spin-v1s.yml';c=yaml.safe_load(p.read_text());v=c
     for key in path:v=v[key]
     v['unexpected']=1;p.write_text(yaml.safe_dump(c))
-    with pytest.raises(Exception,match='unexpected'):load_card('prophet-spin-v1',checkout,checkout)
+    with pytest.raises(Exception,match='unexpected'):load_card('prophet-spin-v1s',checkout,checkout)
 
 
 @pytest.mark.parametrize('field,value',[('cutoff_A',[]),('cutoff_A',[-1]),('cutoff_A',[3,3]),('exchange_range_A',0),('n_layers',1.5),('model_params',0)])
 def test_invalid_architecture_values_rejected(checkout,field,value):
-    p=checkout/'models/prophet-spin-v1/prophet-spin-v1.yml';c=yaml.safe_load(p.read_text());c['hyperparams']['architecture'][field]=value;p.write_text(yaml.safe_dump(c))
-    with pytest.raises(Exception):load_card('prophet-spin-v1',checkout,checkout)
+    p=checkout/'models/prophet-spin-v1s/prophet-spin-v1s.yml';c=yaml.safe_load(p.read_text());c['hyperparams']['architecture'][field]=value;p.write_text(yaml.safe_dump(c))
+    with pytest.raises(Exception):load_card('prophet-spin-v1s',checkout,checkout)
 
 
 def test_hyperparameter_block_required_and_null_exchange_accepted(checkout):
-    p=checkout/'models/prophet-spin-v1/prophet-spin-v1.yml';c=yaml.safe_load(p.read_text());c['hyperparams']['architecture']['exchange_range_A']=None;p.write_text(yaml.safe_dump(c));load_card('prophet-spin-v1',checkout,checkout)
+    p=checkout/'models/prophet-spin-v1s/prophet-spin-v1s.yml';c=yaml.safe_load(p.read_text());c['hyperparams']['architecture']['exchange_range_A']=None;p.write_text(yaml.safe_dump(c));load_card('prophet-spin-v1s',checkout,checkout)
     c.pop('hyperparams');p.write_text(yaml.safe_dump(c))
-    with pytest.raises(Exception,match='hyperparams'):load_card('prophet-spin-v1',checkout,checkout)
+    with pytest.raises(Exception,match='hyperparams'):load_card('prophet-spin-v1s',checkout,checkout)
 
 
 def test_draft_has_no_page_or_payload_and_is_not_submission(owner_draft,tmp_path):
@@ -65,7 +65,7 @@ def test_unknown_entry_cannot_claim_owner_draft(public_model):
 def prepare_run(root,source):
     source.mkdir();(source/'phonons').mkdir();p=source/'phonons/001.npz';p.write_bytes(b'fixture')
     (source/'predictions.json').write_text(json.dumps({'001':{'J_meV':[1.],'exchange_method':'exchange-head','phonon_file':'phonons/001.npz'}}))
-    score=read(root/'models/prophet-spin-v1/scores.json');(source/'scores.json').write_text(json.dumps(score));return score
+    score=read(root/'models/prophet-spin-v1s/scores.json');(source/'scores.json').write_text(json.dumps(score));return score
 
 
 def test_completed_draft_ingest_replays_before_listing(owner_draft,tmp_path,monkeypatch):
@@ -95,7 +95,7 @@ def test_failed_draft_replay_changes_no_tracked_record(owner_draft,tmp_path,monk
 
 
 def test_completed_owner_entry_has_public_artifacts_and_restricted_metadata(checkout):
-    key='prophet-spin-v1-6a';card,folder=load_card(key,checkout,checkout)
+    key='prophet-spin-v1s-6a';card,folder=load_card(key,checkout,checkout)
     assert card['lifecycle']=='active' and card['metrics']['ground_state_passes']==116
     assert card['checkpoint']['url'].startswith('https://') and card['predictions']['url'].startswith('https://')
     card['checkpoint']['url']='to be provided';(folder/f'{key}.yml').write_text(yaml.safe_dump(card))

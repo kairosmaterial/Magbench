@@ -1,5 +1,4 @@
-model_name: Prophet-Spin v1 (6 Å)
-model_key: prophet-spin-v1-6a
+model_key: prophet-spin-v1s-6a
 model_version: v1
 lifecycle: active
 dates:
@@ -28,10 +27,10 @@ targets:
 - forces
 - stress
 training_sets:
-- dataset_key: omat
+- dataset_key: prophet-pretrain
   usage: pretraining
-- dataset_key: elementa
-  usage: pretraining
+- dataset_key: elementa-spin-v1
+  usage: training
 test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
@@ -45,11 +44,11 @@ evaluation:
 inference:
   script: inference.py
   adapter: Model
-  command: python models/prophet-spin-v1-6a/inference.py --public-source prophet run
-    --inputs data/inputs --checkpoint prophet-v1-mag.pt --moment-head prophet-v1-mag-head.pt
-    --output run --stages ground_state && python models/prophet-spin-v1-6a/inference.py
+  command: python models/prophet-spin-v1s-6a/inference.py --public-source prophet
+    run --inputs data/inputs --checkpoint prophet-v1-mag.pt --moment-head prophet-v1-mag-head.pt
+    --output run --stages ground_state && python models/prophet-spin-v1s-6a/inference.py
     --public-source prophet select --inputs data/inputs --targets data/targets --run
-    run --output run/selection.json && python models/prophet-spin-v1-6a/inference.py
+    run --output run/selection.json && python models/prophet-spin-v1s-6a/inference.py
     --public-source prophet run --inputs data/inputs --checkpoint prophet-v1-mag.pt
     --moment-head prophet-v1-mag-head.pt --output run --stages J magnetovolume phonons
     --ground-state-barrier run/selection.json
@@ -63,11 +62,11 @@ inference:
   - openequivariance==0.6.8
   - e3nn==0.6.0
 predictions:
-  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1_6a/predictions.json
+  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1s_6a/predictions.json
   sha256: aa348310b0f35b35acd0266e7db63055e2ab3ac1da6eba08b923a210e7a1f295
   size: 1906650
   phonons:
-    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1_6a/phonons/
+    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v1s_6a/phonons/
     files:
     - path: phonons/001.npz
       sha256: 3dbea71a2852e80bf37cafe8d8c3441db7b5b4242ff84823cfce5512a3e4c188

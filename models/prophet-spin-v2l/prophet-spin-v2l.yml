@@ -1,5 +1,4 @@
-model_name: Prophet-Spin v2
-model_key: prophet-spin-v2
+model_key: prophet-spin-v2l
 model_version: v2
 lifecycle: pending
 dates:
@@ -21,12 +20,10 @@ targets:
 - forces
 - stress
 training_sets:
-- dataset_key: v5
+- dataset_key: prophet-pretrain
+  usage: pretraining
+- dataset_key: elementa-spin-v2
   usage: training
-- dataset_key: mptrj
-  usage: pretraining
-- dataset_key: salex
-  usage: pretraining
 test_set_informed: to be provided
 evaluation:
   moment_initialisation: moment_head
@@ -38,7 +35,7 @@ evaluation:
 inference:
   script: inference.py
   adapter: Model
-  command: python models/prophet-spin-v2/inference.py --help
+  command: python models/prophet-spin-v2l/inference.py --help
   python_version: to be provided
   dependencies:
   - torch==2.7.1+cu128
@@ -49,11 +46,11 @@ inference:
   - spglib==2.7.0
   - openequivariance==0.6.8
 predictions:
-  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v2/predictions.json
+  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v2l/predictions.json
   sha256: d8be03c237d2576043bf9c15dc11c3fd47639442241e2767bbe0aa9402ce185a
   size: 2117251
   phonons:
-    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v2/phonons/
+    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v2l/phonons/
     files:
     - path: phonons/001.npz
       sha256: 8585ccac489eb3852a0edac91cb923780cc7ef77c91186c639f065658e1bbbc3
@@ -347,10 +344,10 @@ notes:
   publication: weights and inference code to be released
   organisation: Kairos Materials
   exchange_readout: Analytic effective pair coupling from the model energy.
-  parameter_count: Trainable energy-model parameters from one saved state; buffers, duplicate EMA copies
-    and the separate moment-initialisation head are excluded.
-  architecture: 'Direct exchange envelope: 6 A. Density radius: 6 A. Density-mediated pair couplings reach
-    12 A, twice the density radius.'
+  parameter_count: Trainable energy-model parameters from one saved state; buffers,
+    duplicate EMA copies and the separate moment-initialisation head are excluded.
+  architecture: 'Direct exchange envelope: 6 A. Density radius: 6 A. Density-mediated
+    pair couplings reach 12 A, twice the density radius.'
 publication_status: awaiting_artifacts
 hyperparams:
   architecture:
