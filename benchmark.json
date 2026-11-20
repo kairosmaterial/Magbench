@@ -1,7 +1,7 @@
 {
   "dataset": {
     "repo_id": "kairosmaterial/Magbench",
-    "revision": "to be provided",
+    "revision": "6e75f45b1eff7d7eab6790517303d2ecb9b7ee6d",
     "data_version": "0.2.3",
     "license": "CC-BY-2.0",
     "targets": [

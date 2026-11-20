@@ -81,7 +81,7 @@ Every push and pull request runs unit tests, all card/schema checks and the stat
 
 The job checks the card, files and path guard; unauthenticated code and weight availability; both licences; bounded prediction downloads and SHA-256; pinned targets; the current versions and recorded exchange route; and a replay with the unchanged packaged scorer. All numerical fields of `scores.json` and all declared metrics must match the replay within 1e-9, and the integer ground-state pass count must match. Every check appears in a Markdown job summary. Any failed check fails the job; changes outside the model folder require maintainer review.
 
-The initial data upload is in progress. The v0.2.3 remote revision is `to be provided` until the complete upload is verified. Online validation rejects this placeholder; local `--data` validation still checks every target size and SHA-256. The immutable remote revision must contain all target files matching the tracked manifest before online replay can pass. A maintainer must verify the complete v0.2.3 upload and update the revision in `benchmark.json`; partial uploads are rejected. Local validation uses the pinned target hashes in the meantime.
+Data version v0.2.3 is published at revision `6e75f45b1eff7d7eab6790517303d2ecb9b7ee6d` of the dataset repository, and `benchmark.json` pins it. Online validation downloads every target from that revision and checks its size and SHA-256; local `--data` validation applies the same checks to a local copy. A new data version needs a new revision and updated target hashes in `benchmark.json`.
 
 ## Maintainer review
 
@@ -135,7 +135,7 @@ Earlier plain builds remain in the branch history.
 - Record the approval history and detailed documentation of analytic effective pair readout, including density-mediated coefficients.
 - Ratify the long-term versioning and archival process while retaining earlier rules and score records.
 - Supply benchmark authors, affiliations and citation metadata.
-- Confirm remaining model artefact addresses, metadata and the immutable data revision after the uploads are complete.
+- Confirm the remaining model artefact addresses and metadata.
 
 ## Listed identities
 
