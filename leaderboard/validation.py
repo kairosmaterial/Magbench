@@ -60,7 +60,11 @@ def replay(target_dir,prediction):
 def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,predictions=None,cache=None,base_ref=None,require_public=False):
     review=Review();loaded=review.check('Model card schema',lambda:load_card(key,root,policy_root))
     if loaded is None:return review
-    card,folder=loaded;settings=config(policy_root);score_path=folder/'scores.json'
+    card,folder=loaded
+    if card['lifecycle']=='draft':
+        review.record('Submission lifecycle','FAIL','Draft entries are not scored submissions; complete local ingest first')
+        return review
+    settings=config(policy_root);score_path=folder/'scores.json'
     def files():
         for path in (folder/f'{key}.yml',score_path,inside(folder,card['inference']['script'])):
             if not path.is_file() or path.is_symlink():raise ValueError('Required ordinary file missing: '+path.name)

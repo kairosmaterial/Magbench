@@ -1,0 +1,89 @@
+model_name: Prophet-Spin v1 (6 Å)
+model_key: prophet-spin-v1-6a
+model_version: v1
+lifecycle: draft
+dates:
+  benchmark_added: to be provided
+authors:
+- name: to be provided
+  affiliation: to be provided
+  corresponding: true
+repo: https://github.com/kairosmaterial/prophet
+checkpoint:
+  filename: prophet-v1-mag.pt
+  url: https://huggingface.co/kairosmaterial/prophet/resolve/main/prophet-v1-mag.pt
+  sha256: 7ae07701e8f6b07ca47044fbf95d2182e1f1d3c088d13a5ca6071880440d79c1
+  size: 143440640
+  head:
+    filename: prophet-v1-mag-head.pt
+    url: https://huggingface.co/kairosmaterial/prophet/resolve/main/prophet-v1-mag-head.pt
+    sha256: 4cac5ebc2d42e1ad5fbfe358a8f03c4a4a540b27c66f4616b462912b176191f3
+    size: 143656420
+license:
+  code: MIT
+  checkpoint: CC-BY-4.0
+architecture: Bilinear spin model
+targets:
+- energy
+- forces
+- stress
+training_sets:
+- name: to be provided
+  url: to be provided
+  size: to be provided
+  open: to be provided
+test_set_informed: to be provided
+evaluation:
+  moment_initialisation: moment_head
+  seed_amplitudes: uniform_3muB
+  exchange_route: exchange_readout
+  protocol_version: 0.2.1
+  data_version: 0.2.3
+  runner_version: 0.6.0
+inference:
+  script: inference.py
+  adapter: Model
+  command: python models/prophet-spin-v1-6a/inference.py --public-source prophet run
+    --inputs data/inputs --checkpoint prophet-v1-mag.pt --moment-head prophet-v1-mag-head.pt
+    --output run --stages ground_state && python models/prophet-spin-v1-6a/inference.py
+    --public-source prophet select --inputs data/inputs --targets data/targets --run
+    run --output run/selection.json && python models/prophet-spin-v1-6a/inference.py
+    --public-source prophet run --inputs data/inputs --checkpoint prophet-v1-mag.pt
+    --moment-head prophet-v1-mag-head.pt --output run --stages J magnetovolume phonons
+    --ground-state-barrier run/selection.json
+  python_version: to be provided
+  dependencies:
+  - torch==2.7.1+cu128
+  - numpy==2.2.6
+  - scipy==1.16.1
+  - ase==3.29.0
+  - e3nn==0.6.0
+  - phonopy==3.5.0
+  - openequivariance==0.6.8
+predictions:
+  url: to be provided
+  sha256: to be provided
+  size: to be provided
+  phonons:
+    url: to be provided
+    sha256: to be provided
+    size: to be provided
+notes:
+  organisation: Kairos Materials
+  disclosure: to be provided
+  architecture: The header has no separate exchange range; the public code sets its
+    exchange envelope to the largest graph cutoff, 6 A.
+  parameter_count: Energy-model parameters, including frozen parameters; deterministic
+    buffers and the separate moment-initialisation head are excluded.
+  code_revision: 62bc2769fa83214fd564c7df263ee254e73fc6e9
+  environment: Listed dependencies describe the available preparation environment.
+    Confirm the evaluation Python version and dependency pins against the completed
+    evaluation receipt before release.
+hyperparams:
+  architecture:
+    cutoff_A:
+    - 3.0
+    - 6.0
+    exchange_range_A: 6.0
+    n_layers: 6
+    model_params: 35746945

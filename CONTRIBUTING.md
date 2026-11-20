@@ -40,7 +40,7 @@ Evaluation choices are `moment_head` or `energy_gradient`; `uniform_3muB` or `mo
 
 Any use of the benchmark materials or benchmark scores in training, validation, model or checkpoint selection requires `test_set_informed: true` and a one-sentence `notes.disclosure`. This includes benchmark-informed seed-table selection. The declaration remains part of the model card; entries remain listed.
 
-Ordinary submissions cannot contain `to be provided` in required metadata. The three existing owner-approved records have bounded metadata exceptions pinned in trusted policy while weights or inference code await public release. These exceptions cannot be claimed by other submissions. All three records have delivered predictions and must replay; there is no replay exemption. Prophet-Spin v1 was trained on a subset of the v5 dataset.
+Ordinary submissions cannot contain `to be provided` in required metadata. The existing owner-approved listed records have bounded metadata exceptions pinned in trusted policy while weights or inference code await public release. These exceptions cannot be claimed by other submissions. The listed records have delivered predictions and must replay; there is no replay exemption. Prophet-Spin v1 was trained on a subset of the v5 dataset.
 
 ## Run and score
 
@@ -72,7 +72,7 @@ Online validation uses the exact dataset repository and immutable revision in `b
 python scripts/validate_submission.py <model_key> --offline --data <dataset-root> --predictions <run/predictions.json> --summary review.md
 ```
 
-Offline mode never claims public availability. For ordinary new submissions the public repository, checkpoint and artefact-download checks fail offline. For the three owner-approved pending release entries, missing code or weights explicitly report `AWAITING ARTEFACTS`; known public addresses report `NOT RUN` when offline. Public prediction downloads also report `NOT RUN` when verified local predictions are supplied offline. Local validation checks the prediction JSON and every manifest-listed phonon file, target hashes, exchange route and the complete scorer replay. Missing local predictions fail replay for every entry.
+Offline mode never claims public availability. For ordinary new submissions the public repository, checkpoint and artefact-download checks fail offline. For the owner-approved pending release entries, missing code or weights explicitly report `AWAITING ARTEFACTS`; known public addresses report `NOT RUN` when offline. Public prediction downloads also report `NOT RUN` when verified local predictions are supplied offline. Local validation checks the prediction JSON and every manifest-listed phonon file, target hashes, exchange route and the complete scorer replay. Missing local predictions fail replay for every entry.
 
 ## Pull request checks
 
@@ -90,7 +90,7 @@ After reviewing the submission and after all public artefacts are available, act
 python scripts/ingest_model.py <model_key> --cache <large-storage-cache>
 ```
 
-Ingest repeats strict public validation, sets `lifecycle: active`, and rebuilds the site payload. Owner-approved pending release records cannot be activated while artefacts or inference scripts are awaiting release. Prophet-Spin v1 has a usable wrapper around the vendored adapter; the other two inference scripts are explicit release placeholders. All three can be activated only after strict public validation passes and their bounded metadata exceptions are removed.
+Ingest repeats strict public validation, sets `lifecycle: active`, and rebuilds the site payload. Owner-approved pending release records cannot be activated while artefacts or inference scripts are awaiting release. Prophet-Spin v1 has a usable wrapper around the vendored adapter; the other two inference scripts are explicit release placeholders. Listed entries can be activated only after strict public validation passes and their bounded metadata exceptions are removed.
 
 Preview the static build with `python -m http.server` from `site/dist/`. The Pages workflow deploys only on a push to `main`; pull requests receive a site build artefact for review. No publication occurs during a local build.
 

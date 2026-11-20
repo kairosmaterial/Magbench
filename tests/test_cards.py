@@ -85,7 +85,8 @@ def test_reference_aggregates_exactly():
 
 def test_site_payload_and_pages(tmp_path):
     data=build(output=tmp_path)
-    expected=sorted(KEYS,key=lambda key:(-read(ROOT/f'models/{key}/scores.json')['total_score'],key))
+    listed=[p.parent.name for p in (ROOT/'models').glob('*/*.yml') if load_card(p.parent.name)[0]['lifecycle']!='draft']
+    expected=sorted(listed,key=lambda key:(-read(ROOT/f'models/{key}/scores.json')['total_score'],key))
     assert [e['card']['model_key'] for e in data['models']]==expected
     assert read(tmp_path/'data.json')==payload()
     for entry in data['models']:

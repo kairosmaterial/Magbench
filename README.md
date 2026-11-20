@@ -71,7 +71,7 @@ The code in this repository is released under the MIT License (see [LICENSE](LIC
 
 Site address: [kairosmaterial.github.io/Magbench/](https://kairosmaterial.github.io/Magbench/).
 
-The static site compares three owner-approved result records using data v0.2.3. All three have prediction artefacts for scorer replay; public weights and some inference code await release. Prophet-Spin v1 was trained on a subset of the v5 dataset.
+The static site compares owner-approved result records using data v0.2.3. Listed records have prediction artefacts for scorer replay; public weights and some inference code await release. Prophet-Spin v1 was trained on a subset of the v5 dataset.
 
 <!-- leaderboard:start -->
 | Model | Total | Ground-state passes | Availability |

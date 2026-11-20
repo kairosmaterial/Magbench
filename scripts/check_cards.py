@@ -10,6 +10,8 @@ def main():
     count=0
     for path in sorted((ROOT/'models').glob('*/*.yml')):
         card,folder=load_card(path.parent.name)
+        if card['lifecycle']=='draft':
+            check_adapter(card,folder);print(card['model_key']+': draft, score checks deferred');continue
         compare(metrics_from(read(folder/'scores.json')),card['metrics'])
         check_adapter(card,folder)
         print(card['model_key']+': valid');count+=1
