@@ -33,6 +33,8 @@ def load_card(key, root=ROOT, policy_root=ROOT):
     if re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', key) is None:
         raise ValueError('Invalid model key')
     folder = Path(root) / 'models' / key
+    for path in (Path(root)/'models',folder,folder/f'{key}.yml'):
+        if path.is_symlink():raise ValueError('Model directories and cards must not be symlinks')
     card = yaml.safe_load((folder / f'{key}.yml').read_text())
     schema = yaml.safe_load((Path(policy_root) / 'tests/model-schema.yml').read_text())
     Draft202012Validator(schema, format_checker=FormatChecker()).validate(card)

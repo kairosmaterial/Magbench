@@ -2681,5 +2681,12 @@
       "score_sha256": "cbcebebae2989056d71471ade3b43ffda76c7b84e9dcada00195b63807efa6df",
       "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256"
     }
+  },
+  "cohorts": {
+    "ground_state": 191,
+    "hull": 191,
+    "phonons": 110,
+    "J": 172,
+    "magnetovolume": 133
   }
 }

@@ -240,7 +240,6 @@ properties:
       ground_state_passes:
         type: integer
         minimum: 0
-        maximum: 191
     required:
     - total
     - ground_state
@@ -408,7 +407,6 @@ allOf:
           ground_state_passes:
             type: integer
             minimum: 0
-            maximum: 191
         required:
         - total
         - ground_state
