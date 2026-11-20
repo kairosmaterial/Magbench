@@ -1,0 +1,72 @@
+model_name: Prophet-Spin-ex
+model_key: prophet-spin-ex
+model_version: ex
+lifecycle: pending
+dates:
+  benchmark_added: '2026-11-20'
+authors:
+- name: TODO(owner)
+  affiliation: TODO(owner)
+  corresponding: true
+repo: TODO(owner)
+checkpoint:
+  url: TODO(owner)
+  sha256: TODO(owner)
+license:
+  code: TODO(owner)
+  checkpoint: TODO(owner)
+architecture: Bilinear EFS
+model_params: TODO(owner)
+targets:
+- energy
+- forces
+- stress
+training_sets:
+- name: TODO(owner)
+  url: TODO(owner)
+  size: TODO(owner)
+  open: TODO(owner)
+test_set_informed: true
+evaluation:
+  moment_initialisation: moment_head
+  seed_amplitudes: model
+  exchange_route: exchange_readout
+  protocol_version: 0.2.1
+  data_version: 0.2.2
+  runner_version: 0.6.0
+inference:
+  script: inference.py
+  adapter: Model
+  command: python models/prophet-spin-ex/inference.py --help
+  python_version: TODO(owner)
+  dependencies:
+  - torch==2.7.1+cu128
+  - numpy==2.2.6
+  - scipy==1.16.1
+  - ase==3.29.0
+  - phonopy==3.5.0
+  - spglib==2.7.0
+  - openequivariance==0.6.8
+predictions:
+  url: TODO(owner)
+  sha256: cebf5fa32166798c502ce8cf688639172505fdce39caf88fb6383979a558edcd
+  size: 2079983
+  phonons:
+    url: TODO(owner)
+    sha256: TODO(owner)
+    size: TODO(owner)
+metrics:
+  total: 0.546331416358473
+  ground_state: 0.16230366492146597
+  hull: 0.12345164372773759
+  phonons: 0.14825494831878025
+  J: 0.06359435353172398
+  magnetovolume: 0.04872680585876527
+  ground_state_passes: 155
+notes:
+  disclosure: The benchmark materials and scores informed evaluation and seed-table
+    selection.
+  publication: weights and inference code to be released
+  organisation: TODO(owner)
+  exchange_readout: Bilinear exchange readout.
+publication_status: awaiting_artifacts

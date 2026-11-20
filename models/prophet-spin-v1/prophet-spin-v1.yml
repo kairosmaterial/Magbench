@@ -1,0 +1,73 @@
+model_name: Prophet-Spin v1
+model_key: prophet-spin-v1
+model_version: v1
+lifecycle: reference
+replay_exemption: packaged_reference_missing_artifacts
+dates:
+  benchmark_added: '2026-11-20'
+authors:
+- name: TODO(owner)
+  affiliation: TODO(owner)
+  corresponding: true
+repo: https://github.com/kairosmaterial/Magbench
+checkpoint:
+  url: TODO(owner)
+  sha256: TODO(owner)
+license:
+  code: MIT
+  checkpoint: TODO(owner)
+architecture: Bilinear spin model
+model_params: TODO(owner)
+targets:
+- energy
+- forces
+- stress
+training_sets:
+- name: TODO(owner)
+  url: TODO(owner)
+  size: TODO(owner)
+  open: TODO(owner)
+test_set_informed: TODO(owner)
+evaluation:
+  moment_initialisation: moment_head
+  seed_amplitudes: uniform_3muB
+  exchange_route: exchange_readout
+  protocol_version: 0.2.1
+  data_version: 0.2.2
+  runner_version: 0.6.0
+inference:
+  script: inference.py
+  adapter: Model
+  command: python models/prophet-spin-v1/inference.py run --inputs data/inputs --checkpoint
+    model.pt --moment-head head.pt --output run --stages ground_state
+  python_version: 3.11.15
+  dependencies:
+  - torch==2.5.1+cu121
+  - e3nn==0.5.8
+  - torch-scatter==2.1.2+pt25cu121
+  - openequivariance==0.5.4
+  - ase==3.28.0
+  - phonopy==4.1.0
+predictions:
+  url: TODO(owner)
+  sha256: TODO(owner)
+  size: TODO(owner)
+  phonons:
+    url: TODO(owner)
+    sha256: TODO(owner)
+    size: TODO(owner)
+metrics:
+  total: 0.43730758998721636
+  ground_state: 0.15287958115183248
+  hull: 0.09849995163439723
+  phonons: 0.05783524812770831
+  J: 0.06150187271703618
+  magnetovolume: 0.06659093635624218
+  ground_state_passes: 146
+notes:
+  disclosure: 'TODO(owner): Confirm training and selection exposure to the benchmark
+    materials.'
+  reference: Packaged reference scores; original predictions and phonon artifacts
+    were not delivered.
+  weights: 'TODO(owner): Supply the public checkpoint URL and digest.'
+  organisation: TODO(owner)
