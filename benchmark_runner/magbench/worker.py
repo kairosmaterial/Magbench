@@ -28,7 +28,7 @@ class Client:
   if n!=job['bytes']:raise ValueError('Incomplete checkpoint download')
 
 def execute(client,job,cfg):
- # Validate server-generated ID before using it as a path or container name.
+ # Validate supplied ID before using it as a path or container name.
  uuid.UUID(job['id']);root=Path(cfg['workdir'])/job['id'];root.mkdir(parents=True,exist_ok=True);checkpoint=root/'checkpoint.pt';output=root/'predictions';output.mkdir(exist_ok=True);output.chmod(0o777)
  stop=threading.Event();lease_lost=threading.Event();process=None
  def heartbeat():

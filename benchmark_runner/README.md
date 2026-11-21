@@ -1,10 +1,10 @@
 # MagBench model evaluation
 
-Five material-level scores, each weighted 0.2: magnetic ground state (191), MP hull (191), phonons (110), exchange J (172), and volume–exchange coupling (133). Wrong or missing ground-state order zeros all scores for that material. Fixed cohort denominators include failed predictions. Phonon minimum frequency below −0.1 THz gives zero phonon score.
+Five material-level scores, each weighted 0.2: magnetic ground state (191), MP hull (191), phonons (current data cohort), exchange J (172), and volume–exchange coupling (133). Wrong or missing ground-state order zeros all scores for that material. Fixed cohort denominators include failed predictions. Phonon minimum frequency below −0.1 THz gives zero phonon score.
 
 ## Run a model
 
-Download the benchmark data as described in the repository README and place `inputs/` and `targets/` next to `benchmark_runner/`. Run the following commands from that directory. The `benchmark_runner/vendor/` directory contains the exact Prophet-Spin v1 runtime source used for the reference evaluation.
+Download the benchmark data as described in the repository README and place `inputs/` and `targets/` next to `benchmark_runner/`. Run the following commands from that directory. The `benchmark_runner/vendor/` directory contains the exact reference-model runtime source used for the reference evaluation.
 
 Install the runner in a Linux CUDA environment. The reference run used Python 3.11.15, PyTorch 2.5.1+cu121, e3nn 0.5.8, torch-scatter 2.1.2+pt25cu121, OpenEquivariance 0.5.4, ASE 3.28.0, and Phonopy 4.1.0. The runtime also needs Ninja and a CUDA development toolchain for first-use kernel compilation. Set `CUDA_HOME` to the toolkit location. For the reference PyTorch 2.5 and OpenEquivariance 0.5.4 combination, run `python benchmark_runner/operations/patch_oeq_fp32_portable.py` once in the dedicated evaluation environment.
 

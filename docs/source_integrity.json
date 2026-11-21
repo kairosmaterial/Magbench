@@ -1,0 +1,10 @@
+{
+  "benchmark_runner/magbench/__init__.py": "ef8ae8e14589b6e5e22dca9323583ca85b48de9138718dbe2d1c41b647a02dc2",
+  "benchmark_runner/magbench/adapters.py": "a209fdca1f5ba61c83994b404e89ecc6349c0fe9d54b0d0c34eaabacea6a903c",
+  "benchmark_runner/magbench/cli.py": "28537215118fd93644f416aa617664a9766489bf7c76b724a15c74b44cc9bdb1",
+  "benchmark_runner/magbench/collect.py": "7ecb9d8ad283b1f7f9c428d3ec0e317596880a5bfd024cee1f5ae037ebbf9955",
+  "benchmark_runner/magbench/physics.py": "176f60e300c082d39231a178938956b8b255dbe124889108b62f7abb26324305",
+  "benchmark_runner/magbench/scoring.py": "598da3406c29a1922cde9b191c815262e1f7571fdf47fa9990c3daf189739c54",
+  "benchmark_runner/magbench/selection.py": "03468ffd0d21354efa4ec22b5c266e6c1c6d4ece87649f1ea1d7e0c88e8877e5",
+  "benchmark_runner/magbench/worker.py": "b45d1dbb36ea51e95b3ff2b412a0f55b2f9a99f55c6594f6e2fc7e62fe548158"
+}

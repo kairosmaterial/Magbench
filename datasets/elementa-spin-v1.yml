@@ -1,0 +1,13 @@
+name: ELEMENTA-Spin v1
+dataset_key: elementa-spin-v1
+description: The complete ELEMENTA-Spin public release contains 4.7 million frames,
+  as stated on the publisher's dataset card. It provides magnetic initialisations
+  and DFT-resolved magnetic energy landscapes, and supplies the magnetic training
+  data for the two earlier Prophet-Spin models.
+url: https://huggingface.co/datasets/kairosmaterial/ELEMENTA
+license: CC-BY-NC-4.0
+open: true
+magnetic:
+  site_moments: true
+  spin_mode: collinear
+size_scope: 'Public spin release: 4.7 million frames (publisher-rounded count)'
