@@ -87,9 +87,9 @@ elements:
 - U
 - Np
 - Pu
-name: ELEMENTA-spin v2
+name: ELEMENTA-Spin v2
 open: false
-description: 'ELEMENTA-spin v2 contains 8,674,525 training frames across 85 elements:
+description: 'ELEMENTA-Spin v2 contains 8,674,525 training frames across 85 elements:
   4,126,042 from ELEMENTA, 459,884 Materials Project static calculations, and 4,088,599
   Materials Project trajectory and vibrational configurations. Two separate test sources
   are held out. It is to be released as the training dataset of MagBench.
@@ -101,7 +101,7 @@ description: 'ELEMENTA-spin v2 contains 8,674,525 training frames across 85 elem
   Bohr magnetons.
 
 
-  It extends ELEMENTA-spin v1.'
+  It extends ELEMENTA-Spin v1.'
 magnetic:
   site_moments: true
   spin_mode: collinear
