@@ -7,13 +7,20 @@ authors:
 - name: to be provided
   affiliation: Kairos Materials
   corresponding: true
-repo: to be provided
+repo: https://github.com/kairosmaterial/prophet-spin-v2-demo
 checkpoint:
-  url: to be provided
-  sha256: to be provided
+  filename: prophet-spin-v1l.pt
+  url: https://github.com/kairosmaterial/prophet-spin-v2-demo/raw/refs/tags/v0.1.0/ckpts/prophet-spin-v1l.pt
+  sha256: 8ae45e8e1f925709b6cc152ec11d8c72e575d9664bfd28e03da856a17eaa1fc4
+  size: 143440899
+  head:
+    filename: prophet-spin-v1l-head.pt
+    url: https://github.com/kairosmaterial/prophet-spin-v2-demo/raw/refs/tags/v0.1.0/ckpts/prophet-spin-v1l-head.pt
+    sha256: fd650f86c9b8da18786bf6290c3455dc6b6d20f7e56bd6a6f8c61694664bc9bf
+    size: 217656
 license:
-  code: to be provided
-  checkpoint: to be provided
+  code: MIT
+  checkpoint: CC-BY-4.0
 architecture: Bilinear EFS
 targets:
 - energy
@@ -332,12 +339,13 @@ metrics:
   ground_state_passes: 155
 notes:
   disclosure: to be provided
-  publication: weights and inference code to be released
+  publication: The release repository is private until the owner enables public access.
   organisation: Kairos Materials
   exchange_readout: Bilinear exchange readout.
   parameter_count: Trainable energy-model parameters from one saved state; buffers,
     duplicate EMA copies and the separate moment-initialisation head are excluded.
   architecture: The direct exchange envelope uses the largest graph cutoff, 6 A.
+  code_revision: v0.1.0
 publication_status: awaiting_artifacts
 hyperparams:
   architecture:

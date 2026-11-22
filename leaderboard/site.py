@@ -142,7 +142,7 @@ def update_readme(root, data):
     for entry in data['models']:
         card=entry['card'];status='Complete' if card['lifecycle']=='active' else card['lifecycle'].title()
         if card.get('publication_status')=='awaiting_artifacts':
-            status='Weights awaiting public release' if not card.get('checkpoint',{}).get('url','').startswith('https://') else 'Public prediction URLs to be provided'
+            status='Awaiting public release'
         table+=f"| [{card['model_name']}](models/{card['model_key']}/{card['model_key']}.yml) | {card['metrics']['total']:.9f} | {card['metrics']['ground_state_passes']}/{entry['scores']['dimensions']['ground_state']['materials']} | {status} |\n"
     before=text.split(start)[0];after=text.split(end)[1]
     text=before+start+'\n'+table+end+after

@@ -125,10 +125,10 @@ Dataset records omit unknown optional facts. Public release sizes describe the p
 
 ## Temporary site protection
 
-With `MAGBENCH_SITE_PASSWORD` set, `scripts/publish_pages.sh` and the Pages workflow publish encrypted HTML and omit JSON; without it they publish the plain build.
-The workflow reads this value from the repository secret of the same name, and the local command reads it only from its environment.
-To remove protection, unset the local variable and remove the repository secret, then rebuild and publish.
-Earlier plain builds remain in the branch history.
+With `MAGBENCH_SITE_PASSWORD` set, the local Pages command and workflow prepare encrypted HTML and omit JSON; local preparation without it remains available for plain builds.
+The workflow reads the repository secret of the same name and refuses a `main` push deployment when it is missing; pull-request review artefacts are plain when secrets are unavailable, and never deploy.
+To deploy from `main`, set that secret first, allow `main` in the `github-pages` environment deployment policy, select GitHub Actions as the Pages source, and run the workflow with its existing Pages write and identity-token permissions.
+Removing protection requires an explicit change to the workflow guard as well as removing the secret and rebuilding; earlier plain builds remain in branch history.
 
 ## Open decisions
 

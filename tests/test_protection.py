@@ -74,8 +74,8 @@ def test_public_build_has_no_undeclared_placeholders(tmp_path):
             assert 'to be provided' not in path.read_text().casefold(),path
     pending=(tmp_path/'models/prophet-spin-v2l.html').read_text()
     assert '<p>Kairos Materials</p>' in pending
-    assert '<dt>Code licence</dt><dd>pending</dd>' in pending
-    assert '<dt>Weights licence</dt><dd>pending</dd>' in pending
+    assert '<dt>Code licence</dt><dd>MIT</dd>' in pending
+    assert '<dt>Weights licence</dt><dd>CC-BY-4.0</dd>' in pending
     assert 'corresponding</p>' not in pending
     preview=public_fields({'name':'to be provided','valid':1,'nested':{'url':None}})
     assert preview=={'valid':1}
@@ -106,3 +106,43 @@ def test_publication_scan_rejects_credentials_and_placeholder_text(tmp_path):
     with pytest.raises(ValueError,match='content is not logged'):check_publication(tmp_path,credential)
     page.write_text('to be provided')
     with pytest.raises(ValueError):check_publication(tmp_path)
+
+
+def test_publication_scan_authenticates_payload_instead_of_scanning_ciphertext(tmp_path,monkeypatch):
+    from scripts import check_publication as scan
+    plain=tmp_path/'plain';plain.mkdir();(plain/'index.html').write_text('<p>Ready</p>')
+    password=secrets.token_urlsafe(24);out=tmp_path/'protected';protect(plain,out,password)
+    # A long base64 run occurs in encrypted pages, but is not publication text.
+    monkeypatch.setattr(scan,'TRACE',rb'[A-Za-z0-9+/]{80}')
+    assert scan.check_publication(out,password)['trace_matches']==0
+    with pytest.raises(ValueError):scan.check_publication(out)
+    with pytest.raises(ValueError):scan.check_publication(out,'incorrect')
+    p=out/'index.html';p.write_text(p.read_text().replace('<title>MagBench</title>','<title>Changed</title>'))
+    with pytest.raises(ValueError):scan.check_publication(out,password)
+
+
+def test_protected_scan_still_rejects_forbidden_clear_content(tmp_path):
+    from scripts.check_publication import check_publication
+    plain=tmp_path/'plain';plain.mkdir()
+    (plain/'index.html').write_bytes(b'<p>'+bytes.fromhex('617373697374616e74')+b'</p>')
+    password=secrets.token_urlsafe(24);out=tmp_path/'out';protect(plain,out,password)
+    with pytest.raises(ValueError,match='content is not logged'):check_publication(out,password)
+    result=subprocess.run([sys.executable,str(ROOT/'scripts/prepare_pages.py'),str(plain),str(tmp_path/'prepared')],
+                          env=dict(os.environ,MAGBENCH_SITE_PASSWORD=password),capture_output=True)
+    assert result.returncode!=0 and not (tmp_path/'prepared').exists()
+    assert password.encode() not in result.stdout+result.stderr
+
+
+def test_main_pages_workflow_requires_password_before_preparation():
+    import yaml
+    workflow=yaml.safe_load((ROOT/'.github/workflows/pages.yml').read_text())
+    steps=workflow['jobs']['build']['steps'];names=[step.get('name') for step in steps]
+    gate=next(step for step in steps if step.get('name')=='Require protected main publication')
+    assert gate['if']=="github.event_name == 'push'"
+    assert 'exit 1' in gate['run'] and '-z "$MAGBENCH_SITE_PASSWORD"' in gate['run']
+    assert gate['env']['MAGBENCH_SITE_PASSWORD']=='${{ secrets.MAGBENCH_SITE_PASSWORD }}'
+    assert names.index(gate['name'])<names.index('Prepare publication tree')
+    env=dict(os.environ);env.pop('MAGBENCH_SITE_PASSWORD',None)
+    assert subprocess.run(['bash','-c',gate['run']],env=env,capture_output=True).returncode!=0
+    env['MAGBENCH_SITE_PASSWORD']='example'
+    assert subprocess.run(['bash','-c',gate['run']],env=env,capture_output=True).returncode==0
