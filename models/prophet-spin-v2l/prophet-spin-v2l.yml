@@ -7,13 +7,20 @@ authors:
 - name: to be provided
   affiliation: Kairos Materials
   corresponding: true
-repo: to be provided
+repo: https://github.com/kairosmaterial/prophet-spin-v2-demo
 checkpoint:
-  url: to be provided
-  sha256: to be provided
+  filename: prophet-spin-v2l.pt
+  url: https://github.com/kairosmaterial/prophet-spin-v2-demo/raw/refs/tags/v0.1.0/ckpts/prophet-spin-v2l.pt
+  sha256: d62dd578ed5a42f4bf5f603a40021e2b4a6ab7b3943a3fc408947c85220e9110
+  size: 143804778
+  head:
+    filename: prophet-spin-v2l-head.pt
+    url: https://github.com/kairosmaterial/prophet-spin-v2-demo/raw/refs/tags/v0.1.0/ckpts/prophet-spin-v2l-head.pt
+    sha256: 4a011cba2a35860ce51bac5a0333972a6e5cf2890a5a2dfb1ef5ccc85f1c4921
+    size: 217655
 license:
-  code: to be provided
-  checkpoint: to be provided
+  code: MIT
+  checkpoint: CC-BY-4.0
 architecture: HD-MLP EFS + Delta-E20
 targets:
 - energy
@@ -341,13 +348,14 @@ metrics:
   ground_state_passes: 159
 notes:
   disclosure: to be provided
-  publication: weights and inference code to be released
+  publication: The release repository is private until the owner enables public access.
   organisation: Kairos Materials
   exchange_readout: Analytic effective pair coupling from the model energy.
   parameter_count: Trainable energy-model parameters from one saved state; buffers,
     duplicate EMA copies and the separate moment-initialisation head are excluded.
   architecture: 'Direct exchange envelope: 6 A. Density radius: 6 A. Density-mediated
     pair couplings reach 12 A, twice the density radius.'
+  code_revision: v0.1.0
 publication_status: awaiting_artifacts
 hyperparams:
   architecture:

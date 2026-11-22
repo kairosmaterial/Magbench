@@ -70,9 +70,9 @@ def test_tracked_binary_assets_contain_pixel_data_only():
 def test_public_content_has_no_internal_terms_or_private_paths(tmp_path):
     import re
     output=tmp_path/'site';build(output=output)
-    obsolete=re.compile(bytes.fromhex('5c6276355c627c70726f706865742d7370696e2d283f3a65787c7631283f3a2d3661293f7c763229283f215b612d7a302d395d297c50726f706865742d5370696e2076283f3a31283f3a2065787c205c283620c3855c29293f7c3229283f215b612d7a302d395d29').decode(),re.I)
+    obsolete=re.compile(bytes.fromhex('5c6276355c627c70726f706865742d7370696e2d283f3a65787c7631283f3a2d3661293f7c763229283f215b612d7a302d392d5d297c50726f706865742d5370696e2076283f3a31283f3a2065787c205c283620c3855c29293f7c3229283f215b612d7a302d395d29').decode(),re.I)
     forbidden=('host initialisation asset','receipt','input labels','retained copy')
-    public_weights=r'(?:prophet-v[12]-mag(?:-head)?|checkpoint|moment-head)\.pt'
+    public_weights=r'(?:prophet-v[12]-mag(?:-head)?|prophet-spin-(?:v1l|v1s|v2l)(?:-head)?|checkpoint|moment-head)\.pt'
     working_files=re.compile(rf'(?<![\w.-])(?!{public_weights})[\w.-]+\.pt\b|[\w.-]*lmdb\b|[\w.-]+/train\b',re.I)
     sources=list((ROOT/'datasets').glob('*.yml'))+list((ROOT/'models').glob('*/*.yml'))
     sources+=list(ROOT.glob('*.md'))+list((ROOT/'docs').rglob('*.md'))+list((ROOT/'models').glob('*/*.md'))+list(output.rglob('*.html'))+[output/'data.json']

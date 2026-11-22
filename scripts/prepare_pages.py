@@ -12,6 +12,7 @@ def main():
     parser.add_argument('source',type=Path);parser.add_argument('output',type=Path)
     args=parser.parse_args()
     password=os.environ.get('MAGBENCH_SITE_PASSWORD') or None
+    check_publication(args.source,password)
     counts=write_site(args.source,args.output,password)
     print({'preparation':counts,'scan':check_publication(args.output,password)})
 

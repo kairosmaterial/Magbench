@@ -17,7 +17,10 @@ def test_card_and_review_round_trip(key):
     compare(metrics_from(read(folder/'scores.json')),card['metrics'])
     review=validate(key,offline=True)
     assert not review.passed
-    assert any(r['status']=='AWAITING ARTEFACTS' for r in review.rows)
+    checks={row['check']:row['status'] for row in review.rows}
+    assert checks['Public inference repository']==checks['Public checkpoint (range request)']=='NOT RUN'
+    assert checks['Licences']=='PASS'
+    assert checks['Inference script']==('PASS' if config()['awaiting_publication'][key]['inference_available'] else 'AWAITING ARTEFACTS')
     assert next(r['status'] for r in review.rows if r['check']=='Scorer replay')=='FAIL'
     assert not any(r['status']=='EXEMPT' for r in review.rows)
 
@@ -248,3 +251,28 @@ def test_source_cards_validate_without_resolving_display_names():
     validator=Draft202012Validator(yaml.safe_load((ROOT/'tests/model-schema.yml').read_text()),format_checker=FormatChecker())
     for path in (ROOT/'models').glob('*/*.yml'):
         validator.validate(yaml.safe_load(path.read_text()))
+
+
+@pytest.mark.parametrize('key',KEYS)
+def test_declared_release_has_pinned_model_and_head(key):
+    card,_=load_card(key)
+    assert card['repo']=='https://github.com/kairosmaterial/prophet-spin-v2-demo'
+    assert card['notes']['code_revision']=='v0.1.0'
+    assert card['license']=={'code':'MIT','checkpoint':'CC-BY-4.0'}
+    for record in (card['checkpoint'],card['checkpoint']['head']):
+        assert '/refs/tags/v0.1.0/ckpts/' in record['url']
+        assert record['url'].endswith(record['filename']) and record['size']>0
+        assert len(record['sha256'])==64
+
+
+@pytest.mark.parametrize('key',KEYS)
+def test_private_release_links_fail_public_validation(key,monkeypatch):
+    from urllib.error import HTTPError
+    from leaderboard import artifacts
+    def private(url,**kwargs):raise HTTPError(url,404,'Not Found',None,None)
+    monkeypatch.setattr(artifacts,'probe',private)
+    review=validate(key,require_public=True)
+    checks={row['check']:row['status'] for row in review.rows}
+    assert not review.passed
+    assert checks['Public inference repository']==checks['Public checkpoint (range request)']=='FAIL'
+    assert checks['Licences']=='PASS'

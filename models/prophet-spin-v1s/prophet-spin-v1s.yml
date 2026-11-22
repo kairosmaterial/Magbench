@@ -7,18 +7,20 @@ authors:
 - name: to be provided
   affiliation: Kairos Materials
   corresponding: true
-repo: https://github.com/kairosmaterial/Magbench
+repo: https://github.com/kairosmaterial/prophet-spin-v2-demo
 checkpoint:
-  filename: prophet-v2-mag.pt
-  url: to be provided
-  sha256: 3e06937a3d38346f91399ccf7b56880d8c83cbd7493ab7fd03202c157d550252
+  filename: prophet-spin-v1s.pt
+  url: https://github.com/kairosmaterial/prophet-spin-v2-demo/raw/refs/tags/v0.1.0/ckpts/prophet-spin-v1s.pt
+  sha256: f5349b55bcdd6e7886b58fdf98243621e34d3abbd017171978a0b50dfcf0db49
+  size: 268691979
   head:
-    filename: prophet-v2-mag-head.pt
-    url: to be provided
-    sha256: 8a2293f131ff95f42e7b011c0d9667a5ca2bf5a76d071b268c0648aa0578bb92
+    filename: prophet-spin-v1s-head.pt
+    url: https://github.com/kairosmaterial/prophet-spin-v2-demo/raw/refs/tags/v0.1.0/ckpts/prophet-spin-v1s-head.pt
+    sha256: 351cdaaaa2af762fa23b0a99717e2e18d917e1d860410f49ca594a96128c2c43
+    size: 217551
 license:
   code: MIT
-  checkpoint: to be provided
+  checkpoint: CC-BY-4.0
 architecture: Bilinear spin model, 10 layers
 targets:
 - energy
@@ -41,12 +43,12 @@ inference:
   script: inference.py
   adapter: Model
   command: PYTHONPATH=benchmark_runner/vendor python models/prophet-spin-v1s/inference.py
-    run --inputs data/inputs --checkpoint prophet-v2-mag.pt --moment-head prophet-v2-mag-head.pt
+    run --inputs data/inputs --checkpoint prophet-spin-v1s.pt --moment-head prophet-spin-v1s-head.pt
     --output run --stages ground_state && PYTHONPATH=benchmark_runner/vendor python
     models/prophet-spin-v1s/inference.py select --inputs data/inputs --targets data/targets
     --run run --output run/selection.json && PYTHONPATH=benchmark_runner/vendor python
-    models/prophet-spin-v1s/inference.py run --inputs data/inputs --checkpoint prophet-v2-mag.pt
-    --moment-head prophet-v2-mag-head.pt --output run --stages J magnetovolume phonons
+    models/prophet-spin-v1s/inference.py run --inputs data/inputs --checkpoint prophet-spin-v1s.pt
+    --moment-head prophet-spin-v1s-head.pt --output run --stages J magnetovolume phonons
     --ground-state-barrier run/selection.json
   python_version: 3.11.15
   dependencies:
@@ -329,13 +331,13 @@ metrics:
 notes:
   disclosure: 'to be provided: Confirm training and selection exposure to the benchmark
     materials.'
-  weights: 'to be provided: Supply public addresses and checkpoint licence for the
-    evaluated weights and moment head.'
   organisation: Kairos Materials
   inference_code: The inference runtime is vendored in benchmark_runner/vendor/prophet_spin
     under the MIT licence.
   parameter_count: Trainable energy-model parameters from one saved state; buffers,
     duplicate EMA copies and the separate moment-initialisation head are excluded.
+  code_revision: v0.1.0
+  publication: The release repository is private until the owner enables public access.
 publication_status: awaiting_artifacts
 hyperparams:
   architecture:
