@@ -1,0 +1,18 @@
+name: Prophet pretrain
+dataset_key: prophet-pretrain
+description: 'The merged corpus used for non-magnetic force-field pretraining, from
+  which all listed Prophet-Spin models start, combines [ELEMENTA](https://huggingface.co/datasets/kairosmaterial/ELEMENTA)
+  (CC-BY-NC-4.0), [OMat24](https://huggingface.co/datasets/facebook/OMAT24) (CC-BY-4.0),
+  [MPtrj](https://figshare.com/articles/dataset/Materials_Project_Trjectory_MPtrj_Dataset/23713842)
+  (MIT), and [sAlex](https://huggingface.co/datasets/facebook/OMAT24#salex-dataset)
+  (CC-BY-4.0).
+
+
+  Public release sizes, rather than counts of frames used in this merged corpus, are
+  nearly 39 million core ELEMENTA frames; 100,824,585 OMat24 training structures and
+  1,025,361 validation structures; 1,580,395 MPtrj structures; and 10,447,765 sAlex
+  training structures and 553,218 validation structures. Site magnetic moments are
+  not used in this non-magnetic pretraining stage.'
+magnetic:
+  site_moments: false
+  spin_mode: not applicable

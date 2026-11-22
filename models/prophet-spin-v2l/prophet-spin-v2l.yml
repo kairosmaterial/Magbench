@@ -1,0 +1,359 @@
+model_key: prophet-spin-v2l
+model_version: v2
+lifecycle: pending
+dates:
+  benchmark_added: '2026-11-20'
+authors:
+- name: to be provided
+  affiliation: Kairos Materials
+  corresponding: true
+repo: to be provided
+checkpoint:
+  url: to be provided
+  sha256: to be provided
+license:
+  code: to be provided
+  checkpoint: to be provided
+architecture: HD-MLP EFS + Delta-E20
+targets:
+- energy
+- forces
+- stress
+training_sets:
+- dataset_key: prophet-pretrain
+  usage: pretraining
+- dataset_key: elementa-spin-v2
+  usage: training
+test_set_informed: to be provided
+evaluation:
+  moment_initialisation: moment_head
+  seed_amplitudes: model
+  exchange_route: exchange_readout
+  protocol_version: 0.2.1
+  data_version: 0.2.3
+  runner_version: 0.6.0
+inference:
+  script: inference.py
+  adapter: Model
+  command: python models/prophet-spin-v2l/inference.py --help
+  python_version: to be provided
+  dependencies:
+  - torch==2.7.1+cu128
+  - numpy==2.2.6
+  - scipy==1.16.1
+  - ase==3.29.0
+  - phonopy==3.5.0
+  - spglib==2.7.0
+  - openequivariance==0.6.8
+predictions:
+  url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v2l/predictions.json
+  sha256: d8be03c237d2576043bf9c15dc11c3fd47639442241e2767bbe0aa9402ce185a
+  size: 2117251
+  phonons:
+    url: https://huggingface.co/datasets/kairosmaterial/Magbench/resolve/main/results/prophet_spin_v2l/phonons/
+    files:
+    - path: phonons/001.npz
+      sha256: 8585ccac489eb3852a0edac91cb923780cc7ef77c91186c639f065658e1bbbc3
+      size: 115621
+    - path: phonons/002.npz
+      sha256: 0b2704e173ef042c95c84fa1a32769ce6a5a6450c63724b5c186100165a61adf
+      size: 71401
+    - path: phonons/004.npz
+      sha256: 1654cf7c313cd557cc5a3bd641ffc460796725e0389e06deeb467217e4bffb4c
+      size: 67259
+    - path: phonons/006.npz
+      sha256: de69bc7e0b236865f9aac02803098a13e98c8ec8bbe7808c639317c658c6bbff
+      size: 66657
+    - path: phonons/007.npz
+      sha256: fcb5ce6249cfa84fec40ab122d0b28397deaccf00bf6287505d62d8ad315b35c
+      size: 62960
+    - path: phonons/010.npz
+      sha256: ea5e09220d66255e0bc92569da4310bfe7baa9baf83786f3324a39530fbac6ef
+      size: 63103
+    - path: phonons/011.npz
+      sha256: 3def4e221e3eacd41edae28133e83fedc140e05317afc5a19c5ca06bb877a595
+      size: 261091
+    - path: phonons/018.npz
+      sha256: df1410c87d65f62a6fdd4917635bf67fea6e140a20da82c341856215e20c3b8b
+      size: 147439
+    - path: phonons/021.npz
+      sha256: f41df25a506f548469cb3eceefa8e874e2dc1fa19aa75e5c849e80f5895ec88a
+      size: 286853
+    - path: phonons/022.npz
+      sha256: a3cc2c076493c5138e2118415f4cc63527575819d1c75cd22ff168168b697026
+      size: 502274
+    - path: phonons/024.npz
+      sha256: 8f2d6b6e6346289012c0d4b7e1f9680dc4547e6638bf531a4ebfba796ad52f98
+      size: 70112
+    - path: phonons/025.npz
+      sha256: 1f75b6305ef6d91f1fa6ade1626a131c13a75b9ed6d8e50e73c272c9685721fa
+      size: 69114
+    - path: phonons/027.npz
+      sha256: 7f8636f68d298ca17cbbcb2737fa100e1c4402fc28a6a0289b01e02d7e7f89d7
+      size: 171423
+    - path: phonons/028.npz
+      sha256: a83701678268c5edf61b84fc7611e83a997bb6f5d3bb4ffb3a099a3cd494aeea
+      size: 179007
+    - path: phonons/032.npz
+      sha256: 4f0c96c485d64674447b52f419a3a0cb4807a4b57f6119333262414692ab9c17
+      size: 87708
+    - path: phonons/038.npz
+      sha256: d4f37ea4e6b68cd299fed9c489c28948518f91e1451fb4caef101d1e5aa234d4
+      size: 163640
+    - path: phonons/041.npz
+      sha256: e1f85e522275f5cc0a1d8c168152054d7900d2eb5a78675aebdf5955758d2e96
+      size: 104313
+    - path: phonons/046.npz
+      sha256: 9ee4df8682f386895df04448b6047c094596f823430e52a68d8b45b473f119e7
+      size: 137506
+    - path: phonons/047.npz
+      sha256: c8771c8238a0d6015900cb3c22a132c882b0099c738e99dc90e7ee7523dda733
+      size: 266789
+    - path: phonons/051.npz
+      sha256: 583a264d5fb4cb5d6de2d255bb2cbfd8ac7969df7bed8c96995b98913f7a055e
+      size: 234040
+    - path: phonons/054.npz
+      sha256: bb48e126a91125ffd016c2ee6aa0de9413c5b57554a5843f1e1c44716028947d
+      size: 134112
+    - path: phonons/061.npz
+      sha256: 0524d162d31ee75fd02324814fb07a10ba0fd76483c5a32be25084d42546f7af
+      size: 20975
+    - path: phonons/064.npz
+      sha256: 8a2a5c9f0a2714cadff006644de0b2fdc682e533fd3168250549bd8c79db3051
+      size: 138853
+    - path: phonons/068.npz
+      sha256: 368ed9efd09ad2f7cd183e4fbc78a67874d7877732429aa9481e70788245e12f
+      size: 212308
+    - path: phonons/069.npz
+      sha256: 7746a8645e8ea6a097419aad461b0e130805e468d8d736b89ddad3d5fc6ef11f
+      size: 94812
+    - path: phonons/070.npz
+      sha256: f1fc9baa5a472bde6180d8e5462539db71419a8ac8f975a0799b5b97277c115b
+      size: 84116
+    - path: phonons/071.npz
+      sha256: de59dee3acd57b40c550fe83047d8d15f4fd567ff961de67156e887c817c90fe
+      size: 174683
+    - path: phonons/073.npz
+      sha256: 5db2bab6d501706382b8b316d16c6d1ca37e780b09b3e4266d4e5a8abdc7f526
+      size: 251326
+    - path: phonons/078.npz
+      sha256: e39f3e3215c9b7ec207d207dae51edaced8a750355634e14d92822d96b99bb1e
+      size: 122535
+    - path: phonons/079.npz
+      sha256: ab1ad74188d632ba133081736e453af283d079c94176a8624769b44ab60e6894
+      size: 197432
+    - path: phonons/081.npz
+      sha256: dccc13156c4ac1e970279f863f5b2eae1ae07ce5b304d04810eea37621eb40e6
+      size: 235968
+    - path: phonons/082.npz
+      sha256: 90111e3344d490e76ce0cca3d9881730d63d996816f15c7ecee85aedb0cb6991
+      size: 79014
+    - path: phonons/083.npz
+      sha256: 8900b36d5330ceba245bf3a73ebeb5ec0472ec4044c7b4c844fb4e8b8d59b1e0
+      size: 122986
+    - path: phonons/084.npz
+      sha256: 68d704e9b4ebef9302bbb9f511d8f86fddd42fdee87e509c0e5fc159f2ca88b7
+      size: 65362
+    - path: phonons/085.npz
+      sha256: 84348d38cd6177f8e3e645a55414bcd227e52f8f80d99d28031d0a97d53aae4f
+      size: 227501
+    - path: phonons/087.npz
+      sha256: 5822758a0698ddb891218e44755cb384c7c007db2ba448a2150027c097a84461
+      size: 65568
+    - path: phonons/088.npz
+      sha256: 008c500e9ec2f25a752bbd2b5c1816af605a762d0a150035cfa76fa321ed0ef1
+      size: 154551
+    - path: phonons/093.npz
+      sha256: b21a33c885b872ff505ca4500b9f42a6893d80416920dc2cac4b7609091891b4
+      size: 88993
+    - path: phonons/094.npz
+      sha256: 67b974a16ffeaf365d51cd5a9d17a914a00ce014e355124dec7633e5364529c6
+      size: 89789
+    - path: phonons/096.npz
+      sha256: 4f4146f8cf36a75ae4c5c75ff67ea6e9fda83827c700040c5bdee32f5954e4a6
+      size: 184177
+    - path: phonons/101.npz
+      sha256: 738894d55ddb62c3bfb7c28ca3a4e7f4c27c99478a42e9f8676b1c4c3ef1ff7f
+      size: 377391
+    - path: phonons/102.npz
+      sha256: be7715a158c4e944d5110947d725de8e0947809d91e114833f694d5ccda10472
+      size: 108877
+    - path: phonons/104.npz
+      sha256: dfc9e818ec08c772fd1cd6b6cbe7fe74456d660239e4f9b484501ca3084cec5c
+      size: 123528
+    - path: phonons/108.npz
+      sha256: 0f249dd82f22e9662d928d81620fe0fff78b2008e9b3eaae9cb1f9de17f36437
+      size: 65325
+    - path: phonons/109.npz
+      sha256: 76578993a414e71f736164899632a189d30eab3dacaf721ca2979fff3ecdfa80
+      size: 70597
+    - path: phonons/115.npz
+      sha256: 8153e23c49151f09fc7d587699d0ccef067691b8f7ea76636f0821eb09e3d32c
+      size: 209732
+    - path: phonons/116.npz
+      sha256: c88d9f49266ccac2185b1be2a4dfc95cda3a603d31f62fe3f4202bab2f373089
+      size: 61839
+    - path: phonons/120.npz
+      sha256: 280522648d81a362223e48e3ec24141257cc42ee8e50308036457c6d90b9254b
+      size: 74001
+    - path: phonons/124.npz
+      sha256: ceeca29b2d30ecde4eec1a05a1e7888727ee1f59a401cb745bd4bed57ccb3656
+      size: 125721
+    - path: phonons/126.npz
+      sha256: dd720eb35c10b89664024ea4232812db93cb5b630bed4671a90384d68b4680c7
+      size: 246195
+    - path: phonons/129.npz
+      sha256: 80c484fe13859808a9cbaaa6e8ddc5181bd177d242e8f9d63e35ba22310880aa
+      size: 69560
+    - path: phonons/130.npz
+      sha256: d4c20920f5d9786f12a964565879b44866774291a8e83840b9d67b0d2d8ca783
+      size: 68122
+    - path: phonons/131.npz
+      sha256: d83206b8bed2dd67f9fe91ed96e10d99df9ab5670a81bbaf2afb71290119135e
+      size: 70240
+    - path: phonons/132.npz
+      sha256: 7c1b75d642412ca3ffb24bdee1cd7d592bb06ae578663704f2926eb7d61f8be3
+      size: 69806
+    - path: phonons/134.npz
+      sha256: 89fe2002cfd34614ff2d3d956670b9f7695cade4faaf61419b4f943a633987bc
+      size: 224054
+    - path: phonons/135.npz
+      sha256: 9662effcc153152a8b2c4892c31bdd53874a24e529a87687703d61515c0a4f82
+      size: 274843
+    - path: phonons/136.npz
+      sha256: 1536e89b2f766e4753aca9f93efe07a7df361e532d0980ada3fee7092a463dd1
+      size: 89616
+    - path: phonons/138.npz
+      sha256: 23ef762e4adcf9215b72c28a186cdfec6a371170ed18489bc38292ba24b6da86
+      size: 102534
+    - path: phonons/142.npz
+      sha256: a1d119a1c1c2cb04b8f8747a9b43f765ce4ca8dc33b49d4e0e0e1251a72647bf
+      size: 179036
+    - path: phonons/144.npz
+      sha256: f81a63d89e635207ee76610d204f355d3bf729147738b59a378524844e6285a7
+      size: 79548
+    - path: phonons/145.npz
+      sha256: 05a5e7a468bd5d2b1793b387b749e1bd8b86586befc98c60b0640b1de811518c
+      size: 77235
+    - path: phonons/146.npz
+      sha256: 908077cdb59a0c5a99bcbee991913a46c47c228456e8a22f5cc47edbd80a90fb
+      size: 119621
+    - path: phonons/147.npz
+      sha256: a5cebb57b4dfc58d359d39425349c73b7d18992ac6333a0742b26a1a8cdbb01e
+      size: 141887
+    - path: phonons/149.npz
+      sha256: d7a7f29ba7881d3e3174f1534e5ef5fe37162af4261b2cba78d7ec72e935e3d4
+      size: 103241
+    - path: phonons/150.npz
+      sha256: ca261bf5e2b3440ddd3a5d55eeb30ea46c7fa15f67c5115c16b5bd7550ce7053
+      size: 152305
+    - path: phonons/152.npz
+      sha256: 87cb5f5c58e28263d17dea561c926341c8f0e2d2ede84aee6c4bab801d012e39
+      size: 264244
+    - path: phonons/153.npz
+      sha256: 6b48bfc01cd035dc4958d4e3dfa9c3e150c38cb23b3f7cbcf30fcf43e31573fe
+      size: 168704
+    - path: phonons/155.npz
+      sha256: a6a31fb0ed3dfe11fd434c254eb1a6f76f3dca83c1f5a9a4a5c735aa283059fe
+      size: 76044
+    - path: phonons/160.npz
+      sha256: 97b88d812a9eefe637c5080a006d2a93051e6b9c35a724af16a2fbdcd9790908
+      size: 209714
+    - path: phonons/161.npz
+      sha256: 390719c85ac1094b07cc98e3fa0bfb2d46ea48672f0f8d906b994161c5f91b40
+      size: 218095
+    - path: phonons/165.npz
+      sha256: 99bb3fc8c00ddf3df6f223e0be7008ab3a2614676d2b4c66aaebd1792dc73cf9
+      size: 138867
+    - path: phonons/167.npz
+      sha256: 3fd71abfb2756c8d7078628694696924cfdcc36bf28a3befe28c550d4c32da56
+      size: 244569
+    - path: phonons/168.npz
+      sha256: 5cc795e82ba4e762ef89339671c8cec101e1e38ada11bfe736bad6d5e81f01ca
+      size: 185416
+    - path: phonons/170.npz
+      sha256: 8f0af8ab511fbd5a1943954be067a3c1967a04087b9233683143c19b2852edf0
+      size: 244299
+    - path: phonons/176.npz
+      sha256: b8a1c2d8a69bd9f3563b9ae14f655483e0e8e2c6d24f592fbc2a63679b52747a
+      size: 117136
+    - path: phonons/182.npz
+      sha256: b5c08f220ff71952d3e5dae32e0443a2c59db267fa3e458e4f94ec8ae01ceb90
+      size: 156889
+    - path: phonons/183.npz
+      sha256: d9f6e1479faea0599f2f3953031c149c13b1b2dc1a63b584519e6f0d2b579004
+      size: 56914
+    - path: phonons/184.npz
+      sha256: 03fe28b484fba671507d16949043111a3256ccc10f813ea22a2212713939c5c5
+      size: 287870
+    - path: phonons/195.npz
+      sha256: 900c6f4ad2a925bf70dbe1cd792f771da69888b5c30926eafbf494591ba605f9
+      size: 167596
+    - path: phonons/197.npz
+      sha256: 3b3a2354659c0d9ef04827d5280d63e085ccd39c1a083bfae79f171ec21fb6b2
+      size: 265721
+    - path: phonons/204.npz
+      sha256: 83811bc547cd47c103afbdf8aed44cf31785dd6ecf1e2c033ecf02f5d0f0512a
+      size: 180511
+    - path: phonons/206.npz
+      sha256: 3d22cc6b334686dd5a5fec57770f9d2786f3bf57d6dde4b6ee68103f25f30580
+      size: 234949
+    - path: phonons/210.npz
+      sha256: 140c6b06f64fd33f67e1e44fa93d6a663a39ef7e21f90cc55013e5d626d7b651
+      size: 265498
+    - path: phonons/211.npz
+      sha256: aecef92ad196af7a93b1d03432679ff6068a7ff8ca35cc11599561cc33881792
+      size: 87602
+    - path: phonons/214.npz
+      sha256: 107d3d227d53340efa1e608b54aa70e1c7376fcaabf05a60178d070b8f85b19c
+      size: 195136
+    - path: phonons/215.npz
+      sha256: b914220cf9767093be769abc66c9c0a512b6e113305f8c650f2451051aeaec21
+      size: 365628
+    - path: phonons/216.npz
+      sha256: 8ec1d1bc62515703d6cf1dafd8d951b95ebbe7662c662fd483e32c4cc81e4a87
+      size: 264766
+    - path: phonons/217.npz
+      sha256: 945b06b4e2cfc70ad12110ff5f73d4b49012a829df94e369fafe992cda653180
+      size: 265578
+    - path: phonons/218.npz
+      sha256: 883b10fbae615e4c323344f3b1fbd03b60117a3d9be63a3e1fde84b7eba195dd
+      size: 263993
+    - path: phonons/219.npz
+      sha256: 6e9bbee83b62024b6f62a070fb3b8ac2e425bc5f0a1cecc2aa5418d1f8c24c8c
+      size: 264557
+    - path: phonons/221.npz
+      sha256: 193d11e3b04f9aa51190278516e6e3251daa0291f5bf6241d70c2f50ee0a2616
+      size: 753098
+    - path: phonons/222.npz
+      sha256: b823bd880abfe3b827f10562d606e7b7f35c53511d9e8cdb029a07cf6a530d60
+      size: 33925
+    - path: phonons/223.npz
+      sha256: ab0c017cf0b7cb344def8ecebea0cf696f75b7bb37f93cf040d672600639e5ab
+      size: 30836
+metrics:
+  total: 0.6053984742150986
+  ground_state: 0.16649214659685865
+  hull: 0.12495019768923675
+  phonons: 0.15429298533525576
+  J: 0.0862994906042676
+  magnetovolume: 0.07336365398947985
+  ground_state_passes: 159
+notes:
+  disclosure: to be provided
+  publication: weights and inference code to be released
+  organisation: Kairos Materials
+  exchange_readout: Analytic effective pair coupling from the model energy.
+  parameter_count: Trainable energy-model parameters from one saved state; buffers,
+    duplicate EMA copies and the separate moment-initialisation head are excluded.
+  architecture: 'Direct exchange envelope: 6 A. Density radius: 6 A. Density-mediated
+    pair couplings reach 12 A, twice the density radius.'
+publication_status: awaiting_artifacts
+hyperparams:
+  architecture:
+    cutoff_A:
+    - 3.0
+    - 6.0
+    exchange_range_A: 12.0
+    n_layers: 6
+    model_params: 35836962

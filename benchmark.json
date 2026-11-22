@@ -1,0 +1,2723 @@
+{
+  "dataset": {
+    "repo_id": "kairosmaterial/Magbench",
+    "revision": "6e75f45b1eff7d7eab6790517303d2ecb9b7ee6d",
+    "data_version": "0.2.3",
+    "license": "CC-BY-2.0",
+    "targets": [
+      {
+        "path": "targets/exchange/001.json",
+        "size": 1512,
+        "sha256": "f045a79a87fb67ea8672391d2f3c8e81465fd6436e16c7d4cd5fd6b07c789a61"
+      },
+      {
+        "path": "targets/exchange/004.json",
+        "size": 1729,
+        "sha256": "efeecac6b3d9a67ca6930fb0f966c6cae572dfbb1d9c23cf704c51a7d7033a85"
+      },
+      {
+        "path": "targets/exchange/006.json",
+        "size": 1704,
+        "sha256": "efb1c1c5eadcc703a722bfe9c93a7b575fc4756fea55a15d3dba19ac8d88c344"
+      },
+      {
+        "path": "targets/exchange/007.json",
+        "size": 1735,
+        "sha256": "e200c3b7f4b73b565d670b3d7f18e6a3376b3978a845ba143050a11750f3bbc4"
+      },
+      {
+        "path": "targets/exchange/008.json",
+        "size": 1686,
+        "sha256": "4bfd0309188f570bb80f5d1f973a32efde1569fc1cd67334495546268ff69b00"
+      },
+      {
+        "path": "targets/exchange/009.json",
+        "size": 1674,
+        "sha256": "c879cb90af34acc31315d0a49f40cc2df92b9b8e22d7510c54fd55fa452cc283"
+      },
+      {
+        "path": "targets/exchange/010.json",
+        "size": 1674,
+        "sha256": "010be3b7f24a6068833f20a1d1193d06dce02460802d7893726c3c67b1701339"
+      },
+      {
+        "path": "targets/exchange/011.json",
+        "size": 3597,
+        "sha256": "c60a3bee30917c5b6ab6aa96114ab19618ee684735142372d51d953511be5704"
+      },
+      {
+        "path": "targets/exchange/013.json",
+        "size": 5238,
+        "sha256": "4a0bc61abb6dc847db14047527083ee2b490bec4e6556338aaf6f55293608c62"
+      },
+      {
+        "path": "targets/exchange/014.json",
+        "size": 2208,
+        "sha256": "ebf21b2c8af6b6218c9366b37cc69e16d6e7930ef1df259b8c76d0a1a9115f3f"
+      },
+      {
+        "path": "targets/exchange/015.json",
+        "size": 3390,
+        "sha256": "a9cbfaadfe851164f7c3433c38cc61f89b14c3226ed260541a8b75415be72f58"
+      },
+      {
+        "path": "targets/exchange/016.json",
+        "size": 2274,
+        "sha256": "90226b524213639d90d1ab5686ab180230eda6537b8412c5a75dab5f6eca4f6d"
+      },
+      {
+        "path": "targets/exchange/018.json",
+        "size": 1957,
+        "sha256": "53b3bead8ab30418e01815bac4b1f9f1627b0fb4eb9e459954190e269fc2a96c"
+      },
+      {
+        "path": "targets/exchange/019.json",
+        "size": 1684,
+        "sha256": "18184710508d9e1f420d3a05c2eedd3a9477670a63c5a9c06f67c3b948d9624e"
+      },
+      {
+        "path": "targets/exchange/021.json",
+        "size": 3537,
+        "sha256": "8a97666138a51a39189699db558b246269e114a8c72ff735e9a84aeeaddb64a3"
+      },
+      {
+        "path": "targets/exchange/023.json",
+        "size": 1733,
+        "sha256": "ad49320f717eedf4c8f4ccc65dbb28dffe3e8c3b4f8de1ed859e5c37696b6c92"
+      },
+      {
+        "path": "targets/exchange/024.json",
+        "size": 1743,
+        "sha256": "1c0dd59096c2bf06649e3b79ffa1d96786e7a1721b6b52d9737151c7c3785656"
+      },
+      {
+        "path": "targets/exchange/025.json",
+        "size": 1657,
+        "sha256": "30235672981b1895aeffc0473a01e41ad822d02ef865647550c47da324fad62a"
+      },
+      {
+        "path": "targets/exchange/027.json",
+        "size": 2747,
+        "sha256": "5c44e8028d667f32486eec8ea444b4bec74f7b21491e1984f9d8d5c59b9e6a07"
+      },
+      {
+        "path": "targets/exchange/028.json",
+        "size": 2805,
+        "sha256": "9a8455ab9f0fe7c91bae030e99edd844a462463c08eaa978b9d514b3972b2135"
+      },
+      {
+        "path": "targets/exchange/029.json",
+        "size": 2133,
+        "sha256": "7dd5f402017c2866e6fcc7e6bcd43a9bdea2d915830df1890a04b54585bc7560"
+      },
+      {
+        "path": "targets/exchange/030.json",
+        "size": 1952,
+        "sha256": "489dd1637cd0df01f423d8020c9a1b52d0fdf08bac80f0eaeaadf2ac51771cfe"
+      },
+      {
+        "path": "targets/exchange/031.json",
+        "size": 1996,
+        "sha256": "6afeb8ddf69979f70524a4bc3cd52d6c2bad81bd27795683680a5b524ad39dfe"
+      },
+      {
+        "path": "targets/exchange/032.json",
+        "size": 1881,
+        "sha256": "36cc975f73cf7878929cc10fa44a6efc095520d75e934e4450edb021e392da12"
+      },
+      {
+        "path": "targets/exchange/033.json",
+        "size": 1948,
+        "sha256": "35f014db7589b7de66fa915f546f4e4d0e91f9d35a20b457b126ea5ef743f690"
+      },
+      {
+        "path": "targets/exchange/034.json",
+        "size": 2553,
+        "sha256": "6c98441fb4d60666783f0177f3a86b3457d844e188d105fb55dbe3f53022d6f8"
+      },
+      {
+        "path": "targets/exchange/036.json",
+        "size": 3416,
+        "sha256": "3e8065e2f11b41e693dec8bdf0c80692a90a28bc10b1e5b353f92b94267a975f"
+      },
+      {
+        "path": "targets/exchange/037.json",
+        "size": 2694,
+        "sha256": "f3e36eff1ad4dc505336c1d91cc6e1f60a9c9fa73e09d78ad564bf66d63ee27a"
+      },
+      {
+        "path": "targets/exchange/038.json",
+        "size": 2151,
+        "sha256": "f0d4779bd02266991d876d2bfa7d140b109ab28b3abdefc24f7bd147ab835d66"
+      },
+      {
+        "path": "targets/exchange/039.json",
+        "size": 2696,
+        "sha256": "480405c5144a26c36cb16127d92ca98870a96a6159df03e8519bde625a0ebf19"
+      },
+      {
+        "path": "targets/exchange/040.json",
+        "size": 2706,
+        "sha256": "afb89f925da7e0c74e1b6b2c08e88828be0a0d5da98bc0e3c808ce8d90c85612"
+      },
+      {
+        "path": "targets/exchange/041.json",
+        "size": 2059,
+        "sha256": "c5ed8545eb40e0b33ab7011db2bd04f0fa98ac5d8ec779e0d6f3df504ef01780"
+      },
+      {
+        "path": "targets/exchange/042.json",
+        "size": 2373,
+        "sha256": "c2e35e96f5c044827eb802bb7afd69aad291f222fe806d4b4642ea4a5b8caaeb"
+      },
+      {
+        "path": "targets/exchange/043.json",
+        "size": 2945,
+        "sha256": "a7e5e031e593028dfd91b883245c07b86ef7a6c181afb8d26ff4a435449fe7b3"
+      },
+      {
+        "path": "targets/exchange/044.json",
+        "size": 3656,
+        "sha256": "79e767b7be33b0a866bf9f7beff6caab24137842bf0521f86f830ede00b138c6"
+      },
+      {
+        "path": "targets/exchange/045.json",
+        "size": 2680,
+        "sha256": "895bdf03c5bf9d643d92ba020014fd46813cda4e25e3974d4ec9a57a3ff52f45"
+      },
+      {
+        "path": "targets/exchange/046.json",
+        "size": 1913,
+        "sha256": "091666de56c07ddaf16d3a4590b2f9f7435e07a3b8390f6ee0e0896e8316c4e0"
+      },
+      {
+        "path": "targets/exchange/047.json",
+        "size": 3002,
+        "sha256": "bc710b298f82c981895641bb74c54beee56f79b09c600ea005099352947231fe"
+      },
+      {
+        "path": "targets/exchange/048.json",
+        "size": 2640,
+        "sha256": "eafd183a8814c3ad4ebb7707fa1b3dbc4228959ac8c7ac741db6478ca60bba17"
+      },
+      {
+        "path": "targets/exchange/049.json",
+        "size": 1819,
+        "sha256": "fd4401627ad94dd702de81cda9c0450804dbb8c79e3eb5f78d83b59f20bb1b77"
+      },
+      {
+        "path": "targets/exchange/050.json",
+        "size": 2598,
+        "sha256": "d8b52196197e04d8bb92a9c75d9e71bd869f51cfa367545f8e89bad69acfe4f8"
+      },
+      {
+        "path": "targets/exchange/051.json",
+        "size": 2689,
+        "sha256": "35f7822c83e3a858de4460acd5d7fd7e7e2997bdefb139261c46d5621618a39f"
+      },
+      {
+        "path": "targets/exchange/054.json",
+        "size": 2236,
+        "sha256": "8fbc96ab08c83c4e3ba244a2b9b4d67275478f6be0dca4cd060cb7d3476920f8"
+      },
+      {
+        "path": "targets/exchange/055.json",
+        "size": 4994,
+        "sha256": "bec6a2b9b254f906d49102f85ac3be26bc1216b8575166fa286f6097ff52ad62"
+      },
+      {
+        "path": "targets/exchange/056.json",
+        "size": 3106,
+        "sha256": "f388662eddadae3bf910b2230cd2629330e6736da0e1cb3ed0802eafe716ddd8"
+      },
+      {
+        "path": "targets/exchange/057.json",
+        "size": 3230,
+        "sha256": "9232b71b5f67db6e9ac8c736fed98487b5a3db4bf0206a2199395a0ff365919c"
+      },
+      {
+        "path": "targets/exchange/060.json",
+        "size": 1901,
+        "sha256": "5276c569ea3399434c01705e02e6a358bb1922c366aa4200577f720583ff3da6"
+      },
+      {
+        "path": "targets/exchange/061.json",
+        "size": 1869,
+        "sha256": "91b518e3b750c0926bb96eec215cbabdd6d7d855730d0c70ed86f37fa7cc9787"
+      },
+      {
+        "path": "targets/exchange/064.json",
+        "size": 2155,
+        "sha256": "023a302f8e82487aaf49fa99c6dcaa05cf2dd021cc64b4dd14bd4b87965d67e1"
+      },
+      {
+        "path": "targets/exchange/065.json",
+        "size": 2682,
+        "sha256": "a98693a7f536ed514b3604ac982d76ef024b1119383a869d6d6fd5df57d0b064"
+      },
+      {
+        "path": "targets/exchange/066.json",
+        "size": 1958,
+        "sha256": "3760fc7cdcc61e051878ad801a693a8971c83909b709c56619163d9c9bb178a3"
+      },
+      {
+        "path": "targets/exchange/067.json",
+        "size": 1960,
+        "sha256": "6df2f8a3ba3aeea06a8b46c3558a2eb3ec1f918a5d304d0d5307e52640d38aa7"
+      },
+      {
+        "path": "targets/exchange/068.json",
+        "size": 4639,
+        "sha256": "fa1766d4cc1533aa1d48a3b640441a708eb17ea01c10b6035233c726366cb717"
+      },
+      {
+        "path": "targets/exchange/069.json",
+        "size": 1875,
+        "sha256": "0c791c1dabf41a29be7911362aee81ad696a5cf4a4f316a26e00b655dd585f3f"
+      },
+      {
+        "path": "targets/exchange/070.json",
+        "size": 1885,
+        "sha256": "5d2cb048090a6f38513278b85f9a40de15243d9572bdfe4274d8838aa28b43e7"
+      },
+      {
+        "path": "targets/exchange/071.json",
+        "size": 2765,
+        "sha256": "e383332bc57becf783a91c0e3330192049e70ff08081aecd0885be74c44f5088"
+      },
+      {
+        "path": "targets/exchange/072.json",
+        "size": 2323,
+        "sha256": "d9bc3021bddc07bff8a1b522fab6808be0b9f5d59099e92fb1d517af6072279f"
+      },
+      {
+        "path": "targets/exchange/073.json",
+        "size": 2410,
+        "sha256": "cd33537304f3c83b93a4d17091a55c0dd6b097f07c6322abf3c5d33871afa170"
+      },
+      {
+        "path": "targets/exchange/074.json",
+        "size": 2326,
+        "sha256": "6a9d256aea7d97b99ecb00a539fe2738c56992235b63adfc59a6c849ef1bedff"
+      },
+      {
+        "path": "targets/exchange/075.json",
+        "size": 2745,
+        "sha256": "181b9a2897196d4ad89c2a526819d193e717ef37c1329695cc65a2f8bd5abbfb"
+      },
+      {
+        "path": "targets/exchange/076.json",
+        "size": 2692,
+        "sha256": "ec7219b5998f863e17391f452c6c1488e3da8348398de56fb96ab811c9b45239"
+      },
+      {
+        "path": "targets/exchange/077.json",
+        "size": 2681,
+        "sha256": "66b699b909c599356e147572a38040b39a24f5ef53c7b34bd7f713110798b777"
+      },
+      {
+        "path": "targets/exchange/078.json",
+        "size": 2796,
+        "sha256": "5b866be7ed2c76e48f9d898acd019a6b9db0a11b538852a43eb32313be2a3ffa"
+      },
+      {
+        "path": "targets/exchange/079.json",
+        "size": 2174,
+        "sha256": "c66eef6550504e3ac6c49ac569e7634df78ccd144650140af7ff74c20360165e"
+      },
+      {
+        "path": "targets/exchange/080.json",
+        "size": 2333,
+        "sha256": "92ce8828819ab76adc9b5090ef264a717345e2a77a56631644ef5cd186a5b60d"
+      },
+      {
+        "path": "targets/exchange/081.json",
+        "size": 2648,
+        "sha256": "adbb6e6e56d9fe43bcec4eaea9f70f287edb5b209f4247c1cd0a5e09c5d91b7c"
+      },
+      {
+        "path": "targets/exchange/082.json",
+        "size": 1863,
+        "sha256": "9192ca2c870048918ac66320756846e5847204e62c0191c21d7f9ee567eee65a"
+      },
+      {
+        "path": "targets/exchange/083.json",
+        "size": 2196,
+        "sha256": "f18f6092f1ec718ba96bdcb4b3d5f405d48dad9a0804a5f03a0d181a7cda2e3e"
+      },
+      {
+        "path": "targets/exchange/084.json",
+        "size": 1652,
+        "sha256": "1a7d0be6e991138f9c0041ae62a18bf220028f38d7c88838ed4a09ae323e024c"
+      },
+      {
+        "path": "targets/exchange/085.json",
+        "size": 4105,
+        "sha256": "b1dd8808745e8138033f78e81924205f2a06719b6ae149064131e571dd4a29b2"
+      },
+      {
+        "path": "targets/exchange/086.json",
+        "size": 2195,
+        "sha256": "6da3c743219c1c31362fef045611c384caebe0bc1fbeca56ce39ce196e1f941c"
+      },
+      {
+        "path": "targets/exchange/087.json",
+        "size": 1739,
+        "sha256": "411629d30d3038f52162134f29e962e015de98a476ab5302fff0c1c897120e75"
+      },
+      {
+        "path": "targets/exchange/088.json",
+        "size": 2318,
+        "sha256": "ccdc08fbf3b78057fe7c6c9e0a834cd200edb4871597287dba4a4cd397664905"
+      },
+      {
+        "path": "targets/exchange/089.json",
+        "size": 2182,
+        "sha256": "c4c84c097360ee3c11aadbb34a1d1755c03a3a18c4a327ad982bea82a7d05586"
+      },
+      {
+        "path": "targets/exchange/090.json",
+        "size": 2821,
+        "sha256": "7b9f037029836d320bf45b4801a91368d4e461adcaba57b8c34bb540d3ddc4f7"
+      },
+      {
+        "path": "targets/exchange/091.json",
+        "size": 4092,
+        "sha256": "ff34ec392756aba818fcf1ae489416372b4e9ec483790321050c8fa676268272"
+      },
+      {
+        "path": "targets/exchange/093.json",
+        "size": 1713,
+        "sha256": "d5bd8e125617cf2c4c58462e46d3d98d6f5d0ea280ffd1b0153de0d37fc7d06a"
+      },
+      {
+        "path": "targets/exchange/094.json",
+        "size": 1843,
+        "sha256": "fcac646654cd3fdc19e5cbdcce6ecca02ba2e7d32a6bf8838faca8238138d335"
+      },
+      {
+        "path": "targets/exchange/096.json",
+        "size": 2816,
+        "sha256": "d443df0a52b9e14d4640003fa34086f59c2aabeefba7fb8afc50f660a9fe50c6"
+      },
+      {
+        "path": "targets/exchange/098.json",
+        "size": 2957,
+        "sha256": "5919eec69fea48a6aaeb815702feb18fd7d582577691a06bf0599ebc3980f607"
+      },
+      {
+        "path": "targets/exchange/099.json",
+        "size": 1697,
+        "sha256": "1d2363ac3b66087366d53961dccb343e494eb29b387903a6119b2d7f57306e27"
+      },
+      {
+        "path": "targets/exchange/101.json",
+        "size": 3979,
+        "sha256": "01c1fd3c753bb2b16a8d190e4a6964183c8291b2c2914d7ef8f4510d7ffd1259"
+      },
+      {
+        "path": "targets/exchange/102.json",
+        "size": 2002,
+        "sha256": "57e86271e3ad9c2e50f17222faa76de50d783e7242b47eab152ec9c278551da4"
+      },
+      {
+        "path": "targets/exchange/103.json",
+        "size": 2706,
+        "sha256": "05648647dcb0c50d34def573499a2208cce32cb1cc6edeb4b4400b53e9c43f13"
+      },
+      {
+        "path": "targets/exchange/104.json",
+        "size": 2177,
+        "sha256": "cd5566fe84e720ccb3f887eac8948f73a5c7c2e36cf7453f68314a3632920329"
+      },
+      {
+        "path": "targets/exchange/105.json",
+        "size": 2903,
+        "sha256": "7c2f749abbe4645511d06ddf7aea8e3493ca96bfbe10871a1eae55d796f620b6"
+      },
+      {
+        "path": "targets/exchange/107.json",
+        "size": 2544,
+        "sha256": "814f8b93cc86d7c4787636b6cca17693c7ec4ab061baefb932171616499e90b4"
+      },
+      {
+        "path": "targets/exchange/108.json",
+        "size": 1568,
+        "sha256": "e2dec8ec0170c4a65472b9423bcd71f973507cdfff450fda2540645d8fad9eba"
+      },
+      {
+        "path": "targets/exchange/109.json",
+        "size": 1856,
+        "sha256": "36f1ecb6eed08b69a2b6c59772f99ff54d4d6e8e62b26a69dd1373f01080b379"
+      },
+      {
+        "path": "targets/exchange/112.json",
+        "size": 2974,
+        "sha256": "ae660d1bf6d43e38f558f6e28998a768f9f48fe8d097e7e6ccc519822ffca455"
+      },
+      {
+        "path": "targets/exchange/115.json",
+        "size": 2947,
+        "sha256": "7cae5f6a98e76e38600318b5267c8bb520211f134fdbe1ca8bdb0a879155cd91"
+      },
+      {
+        "path": "targets/exchange/116.json",
+        "size": 1849,
+        "sha256": "4ec0e8c27618e037000f8b277fa9ca2a2af5c16da4f33320fa3607721ee46332"
+      },
+      {
+        "path": "targets/exchange/120.json",
+        "size": 1908,
+        "sha256": "3017b6f2be29361593e72a6b2d1fef7ca3d30a113cfbdc35fb7f4a0f4357d97e"
+      },
+      {
+        "path": "targets/exchange/122.json",
+        "size": 2004,
+        "sha256": "1901122844f83c95893d86f6be98476a0bceecc43bcaab0472fffb22191d633f"
+      },
+      {
+        "path": "targets/exchange/123.json",
+        "size": 2821,
+        "sha256": "f1945582aafde250f5e85dbc1b035ad31cafe83f7d55f52c9c9ea076771443b9"
+      },
+      {
+        "path": "targets/exchange/124.json",
+        "size": 2070,
+        "sha256": "472e8bdc6267f2355896755960c19c424345ee8a78f8968733aaf2d9ff58b5a1"
+      },
+      {
+        "path": "targets/exchange/125.json",
+        "size": 2719,
+        "sha256": "5a08fc176b2e33ab39e9796666f75b7798bc262f69a6bb51e78737dcbb588bbc"
+      },
+      {
+        "path": "targets/exchange/126.json",
+        "size": 15071,
+        "sha256": "a27560f2aef36f15de46f6eab4a779f0e9e6c1481c7e136cb506098f5f22bfe1"
+      },
+      {
+        "path": "targets/exchange/128.json",
+        "size": 5507,
+        "sha256": "e8adafafe34ab492195139f151cfc462506eb71862ac5aad6ba5e130d08890f1"
+      },
+      {
+        "path": "targets/exchange/129.json",
+        "size": 1650,
+        "sha256": "32d0ecc6e6f429149e3b89ec09bb4c49307f9eae29a0f76c35c5075a9dcd5dd1"
+      },
+      {
+        "path": "targets/exchange/130.json",
+        "size": 1645,
+        "sha256": "e9c48f67c8c3ecef4a479f6ec7bef77aae41a255cf47267f5bb9ca937ca34762"
+      },
+      {
+        "path": "targets/exchange/131.json",
+        "size": 1746,
+        "sha256": "7a4bbbf7e84e29a3043b26e1a10e243ebad5415ed5da025ebfafe38d8c57861d"
+      },
+      {
+        "path": "targets/exchange/132.json",
+        "size": 1650,
+        "sha256": "1276361957628ad4066aef633f25a37ac8f4d92567d49fc7cb1be98a361d2b9c"
+      },
+      {
+        "path": "targets/exchange/134.json",
+        "size": 2924,
+        "sha256": "1074213d375f3c28f5fad3393dc62cee12a37537cdc534825115f3f7123ff1da"
+      },
+      {
+        "path": "targets/exchange/135.json",
+        "size": 2872,
+        "sha256": "298b31eca84902831c23f00360d3c42acdc7d1a36c31468992b06354b31956ad"
+      },
+      {
+        "path": "targets/exchange/136.json",
+        "size": 1946,
+        "sha256": "6b1d55ce60e86e0e6b76d13b1dd93d66699b5b5f71379f028760a6c4e462db47"
+      },
+      {
+        "path": "targets/exchange/137.json",
+        "size": 1979,
+        "sha256": "c48bd4351cb6579c54b743789f43348a0f283b1911323fc77480db53cc6354bf"
+      },
+      {
+        "path": "targets/exchange/138.json",
+        "size": 2730,
+        "sha256": "29f1a38e378b2fccf55ccac56072821f800a942fbca08ea68da779b809c37270"
+      },
+      {
+        "path": "targets/exchange/139.json",
+        "size": 2829,
+        "sha256": "6ff52988b825696c5b29afae56640be8539a32f243d75f514c82980f5b94cc10"
+      },
+      {
+        "path": "targets/exchange/140.json",
+        "size": 2869,
+        "sha256": "135d4c077e6f8d811b44aa80441eefc59909fd875ed34522983a4c7733d90cfe"
+      },
+      {
+        "path": "targets/exchange/141.json",
+        "size": 2963,
+        "sha256": "b4c018b5c24b85def0ce89336be302cba715873490d0a81d24171c0a281e90a3"
+      },
+      {
+        "path": "targets/exchange/142.json",
+        "size": 2204,
+        "sha256": "b88f37da97eced96f8b9970adbd40904e0980b551027b3af86ccc2817c130409"
+      },
+      {
+        "path": "targets/exchange/144.json",
+        "size": 2738,
+        "sha256": "993bff3d0fa97bc367ad308fe736bba1369521605f2dced21f220ded8004ec8c"
+      },
+      {
+        "path": "targets/exchange/145.json",
+        "size": 1861,
+        "sha256": "e7418f4a1f4904fc32673ef01378b7abd219b4f628a20ef87d71e970d0f81c55"
+      },
+      {
+        "path": "targets/exchange/146.json",
+        "size": 2752,
+        "sha256": "3872e92542c6a9716f00a5a26a94ab1022d87ddf302feafeabab861196f550bb"
+      },
+      {
+        "path": "targets/exchange/147.json",
+        "size": 2197,
+        "sha256": "af14a16284f5486f47279a3fa2d399c201ecb7b59d56ef1b5172f2bc87537e86"
+      },
+      {
+        "path": "targets/exchange/148.json",
+        "size": 3678,
+        "sha256": "e1beb92647151ee27e9c4ee672752ba0099656cf0471f788f0fcf790cbcebeec"
+      },
+      {
+        "path": "targets/exchange/149.json",
+        "size": 2366,
+        "sha256": "9e0ed959555e4cb38a82dcc34c0005d5698383018c7c55e0f40b9b45270fc6ea"
+      },
+      {
+        "path": "targets/exchange/150.json",
+        "size": 4486,
+        "sha256": "a3a1fed6034153a06ac83ce05c91f47608db66901740f1df03a9af7972a72c5f"
+      },
+      {
+        "path": "targets/exchange/151.json",
+        "size": 3674,
+        "sha256": "5c2415ea221ee2cd31189cdcafac8f6909c5cb6bf15df64836a5ebf8c3e47406"
+      },
+      {
+        "path": "targets/exchange/152.json",
+        "size": 2822,
+        "sha256": "b6d79f90209518c0d95c3dbe33a041a215a66eeff8607a9fb4ccba26cdf2c3e1"
+      },
+      {
+        "path": "targets/exchange/154.json",
+        "size": 1708,
+        "sha256": "13311f4fea596e84c61e3c0371aac8c91b71c9101db9563b1408c530b2ac5152"
+      },
+      {
+        "path": "targets/exchange/155.json",
+        "size": 1761,
+        "sha256": "92827ad08232306132f8581ec16bcc976649da5d80b9f0b4295daf2639d37a7f"
+      },
+      {
+        "path": "targets/exchange/157.json",
+        "size": 3669,
+        "sha256": "10ef240cac59461b344f3204aab8bcdb5609de5f3df4cc5192002f179fc12b5c"
+      },
+      {
+        "path": "targets/exchange/158.json",
+        "size": 2966,
+        "sha256": "e71997aea97d0ef5eaac512c49207314e33049e76f83d29976c1c9cee6d238f4"
+      },
+      {
+        "path": "targets/exchange/160.json",
+        "size": 3089,
+        "sha256": "4e29323ce137c48f577cd5f00245912b71cd8a657bf1157042a7c0b76913b11f"
+      },
+      {
+        "path": "targets/exchange/161.json",
+        "size": 3273,
+        "sha256": "84e6de5f15d58d4c5e52a956a19d86d647f459d101ba112094d32fed0ae9b3a1"
+      },
+      {
+        "path": "targets/exchange/162.json",
+        "size": 2795,
+        "sha256": "0a1c2f4615ccc247edb6d0b675ab395423900c850282af80896c61fb2baa9c96"
+      },
+      {
+        "path": "targets/exchange/163.json",
+        "size": 2798,
+        "sha256": "dd79682688545564e814859c5889f7927c49596428ffdf9e3d5c50cf3be8c6ca"
+      },
+      {
+        "path": "targets/exchange/164.json",
+        "size": 3187,
+        "sha256": "fd20b89264ec287b41e6ea538854a85323a54278dcf95d4dec168d4350c96f1f"
+      },
+      {
+        "path": "targets/exchange/165.json",
+        "size": 1775,
+        "sha256": "0fe446fefa7d8858c8cdbed3569454eb956a3ee000f9305fe2fa005001c83ea5"
+      },
+      {
+        "path": "targets/exchange/166.json",
+        "size": 1889,
+        "sha256": "eae18d3ae7ffa999578d57359aca54af66cacd8ee3a8828c3bd615e81c0d8a84"
+      },
+      {
+        "path": "targets/exchange/167.json",
+        "size": 3032,
+        "sha256": "c79e2c3b79f3777fdda4f0b5c178bf780fae090f7c2f4f1e52aa51963096d9a0"
+      },
+      {
+        "path": "targets/exchange/168.json",
+        "size": 2108,
+        "sha256": "dd0b841e76a8f271783dba64d6266b041336aea2d771c94ab8ba342c8415b884"
+      },
+      {
+        "path": "targets/exchange/169.json",
+        "size": 3076,
+        "sha256": "e92a5160880b5af4896df948fb2e3db3a7cb09a501fc94da83254963ef798180"
+      },
+      {
+        "path": "targets/exchange/170.json",
+        "size": 2821,
+        "sha256": "ce9fa6649d10e6ea21521198df00a1a72e2f9ab5f1bc07ca954b1c9a4bf7c223"
+      },
+      {
+        "path": "targets/exchange/171.json",
+        "size": 2461,
+        "sha256": "5e306a3feed811c2046074fe58c3f97e6d2bf7410954de50aa2eaba20d89d61d"
+      },
+      {
+        "path": "targets/exchange/172.json",
+        "size": 2794,
+        "sha256": "12ffcf9d2815b71f497521d85ec825764e7d8cccbb17528adb5b2b91c0a82d27"
+      },
+      {
+        "path": "targets/exchange/173.json",
+        "size": 2737,
+        "sha256": "23f2c45323fdea518cc5072a1f80d4054f7703e2455c1199d72f27116ec95924"
+      },
+      {
+        "path": "targets/exchange/174.json",
+        "size": 5069,
+        "sha256": "3570d2c513f9808b4dda0e7dd0cbb26e67598eed22f3d3942a9eaba4a9c235b6"
+      },
+      {
+        "path": "targets/exchange/176.json",
+        "size": 2145,
+        "sha256": "0e88b70525b5c2b8a16d5759cd50b2c2757dd6980893e47dd7d80a9cfe2c4e61"
+      },
+      {
+        "path": "targets/exchange/177.json",
+        "size": 2105,
+        "sha256": "3ca508fe07e8a00a1c2cd74909d8073d14aaf08081cc8da961e7e26cc0d2e6c4"
+      },
+      {
+        "path": "targets/exchange/179.json",
+        "size": 2722,
+        "sha256": "3480a3801f195ba5b5d0dd7949db62d41443df2d2953a53065e8758a023a3011"
+      },
+      {
+        "path": "targets/exchange/180.json",
+        "size": 1734,
+        "sha256": "87eceaecdff2dc6a0431f7ee8901837ae5161dc32b0871ce540896cadc626be5"
+      },
+      {
+        "path": "targets/exchange/181.json",
+        "size": 1724,
+        "sha256": "8280eb3a6a6052af72930a03835b4ca038427ad606c921a2930f9c9646b44739"
+      },
+      {
+        "path": "targets/exchange/182.json",
+        "size": 2323,
+        "sha256": "bf6f088182bdbcbfd9ad4b9d3093121cb3caf131430f20f785e81263a7cb66b5"
+      },
+      {
+        "path": "targets/exchange/183.json",
+        "size": 1742,
+        "sha256": "4a32bb4a6d7923226a94ae52c5b990d2a06c06f1ea5a5eac77283577b270d62b"
+      },
+      {
+        "path": "targets/exchange/184.json",
+        "size": 3441,
+        "sha256": "22d80df8f12af5aecc28b3c8bbcade8dfacc3ae6b67142fc90713b4d451ff07e"
+      },
+      {
+        "path": "targets/exchange/185.json",
+        "size": 3034,
+        "sha256": "fb09c43bb93fb302f10cc6177fac83b002decb72a88af366347170a27eba95da"
+      },
+      {
+        "path": "targets/exchange/187.json",
+        "size": 3928,
+        "sha256": "8dd07fe3302b58310f9e647abd2c95f7e0d4d33e7f5136ac2c2ef8bb6d66cc5f"
+      },
+      {
+        "path": "targets/exchange/189.json",
+        "size": 3034,
+        "sha256": "ee17afd7ebdfd248a897ed8367ca358e0d847192de830f16e646b3ff53241689"
+      },
+      {
+        "path": "targets/exchange/190.json",
+        "size": 3172,
+        "sha256": "7b521f290aeaee4ae14f36f887b8976d4f9f2a32738420571360ca61cba1a267"
+      },
+      {
+        "path": "targets/exchange/193.json",
+        "size": 2192,
+        "sha256": "422fb23f49c8546f571eff660bbbeb179de78f71968813dae329d12f3a729e49"
+      },
+      {
+        "path": "targets/exchange/194.json",
+        "size": 2340,
+        "sha256": "f9eef0f1fafcab1232337f0f9447495d4097d615ccb41a5fb8a1c9bf506c023e"
+      },
+      {
+        "path": "targets/exchange/195.json",
+        "size": 2516,
+        "sha256": "e57c68d4736a64e5688c773dea817d0838a4f8f14d61e5d14e4ebf970a26d9ba"
+      },
+      {
+        "path": "targets/exchange/197.json",
+        "size": 2812,
+        "sha256": "a71a2a07b682cec028e2fea5c2da294fa959b1d5bb11816982ab06c675519c63"
+      },
+      {
+        "path": "targets/exchange/199.json",
+        "size": 3009,
+        "sha256": "b620fc31382f24803c716184fd1862cc7512581b8aa20e797dcffd97ba7354b9"
+      },
+      {
+        "path": "targets/exchange/200.json",
+        "size": 4058,
+        "sha256": "d6db3289467477cf471869521d96180fb7a109fc8f89ff4c3944780357d2ed62"
+      },
+      {
+        "path": "targets/exchange/201.json",
+        "size": 3195,
+        "sha256": "14ccc0adea277e63708c180d39ba3d28c733b5d3be33d19ec5e08ced5636a609"
+      },
+      {
+        "path": "targets/exchange/204.json",
+        "size": 3125,
+        "sha256": "98bfd79b2bcd833a2dc1ee64ae961f48fd0cd9a51e054c9335bc3520c342574d"
+      },
+      {
+        "path": "targets/exchange/206.json",
+        "size": 2537,
+        "sha256": "391605b607e6d4c671ead0e68cd5a8557dee235fe356af4700687faa63522bfb"
+      },
+      {
+        "path": "targets/exchange/207.json",
+        "size": 2543,
+        "sha256": "9b45bb26d45f0f8f185874f0fafc3559bd535414247275723ad90b9521b67962"
+      },
+      {
+        "path": "targets/exchange/208.json",
+        "size": 3459,
+        "sha256": "b6edacd923d0f72fa2bb05ddb04e530b43f2ef3cf4d030969865d66cfe6f6740"
+      },
+      {
+        "path": "targets/exchange/210.json",
+        "size": 2811,
+        "sha256": "7e020740ca63de10726f097dfd8ba317e1e8fa566d668c5d129bb5fe778029c3"
+      },
+      {
+        "path": "targets/exchange/211.json",
+        "size": 1745,
+        "sha256": "a235ee01a861fc912cefea5463857e196d5a91d2ff583308e2ec644e51302702"
+      },
+      {
+        "path": "targets/exchange/214.json",
+        "size": 3002,
+        "sha256": "f0eed2a0ecea5952a3f4ca9f2d21947b641cdeae059ad79b49bfff2fcb6e7806"
+      },
+      {
+        "path": "targets/exchange/215.json",
+        "size": 3470,
+        "sha256": "e3bba66518615810b98852e51a8f6171f775cb5f6c77e5b44edea09a32a1f286"
+      },
+      {
+        "path": "targets/exchange/216.json",
+        "size": 2764,
+        "sha256": "fb4c948f8f076244f89737094deeac9a001773c53a876b2d42b91b4904dce533"
+      },
+      {
+        "path": "targets/exchange/217.json",
+        "size": 2677,
+        "sha256": "331503133e8c0341ac3b103cb6a2998eed407f78b6f15ca7ad94222038fa8ea7"
+      },
+      {
+        "path": "targets/exchange/218.json",
+        "size": 2706,
+        "sha256": "1a47b549188c9ff8d34b650e3b560fcadb03116ef2cdea36b5f6a3343472976b"
+      },
+      {
+        "path": "targets/exchange/219.json",
+        "size": 2674,
+        "sha256": "620985a6c1bb5250d4a47fd20f12b6e54f188f4a5a32da9d88edddfa26a490cd"
+      },
+      {
+        "path": "targets/exchange/221.json",
+        "size": 2172,
+        "sha256": "10aa6eea5367bf4cc710fd3392d6b2f925a390da7675bb1c563acf9b0b6e965d"
+      },
+      {
+        "path": "targets/ground_state.json",
+        "size": 62626,
+        "sha256": "0ef34fc97a259e86de7fdd8860acf996deea54d73d182a38730c6105ff1f71a8"
+      },
+      {
+        "path": "targets/hull.json",
+        "size": 37104,
+        "sha256": "28079416f417b8b54443779feabd72fdd55e61bbf6d29f43e1cf5178fa76042e"
+      },
+      {
+        "path": "targets/magnetovolume/007.json",
+        "size": 3338,
+        "sha256": "17e69d8cbff6ed7b14227891cfa71279cf4be1ca01d7c0eb51abac2e03717c67"
+      },
+      {
+        "path": "targets/magnetovolume/008.json",
+        "size": 3649,
+        "sha256": "c9cbfc0fdd48f20a33560e8cd40b8a8adf7abe8991ec0f26f9cb546cec416d99"
+      },
+      {
+        "path": "targets/magnetovolume/009.json",
+        "size": 3059,
+        "sha256": "7d2d6237bd05d31ea922e8a11de346118aeec0bf0c4585177edc6260c3b18a31"
+      },
+      {
+        "path": "targets/magnetovolume/010.json",
+        "size": 3114,
+        "sha256": "9e85facc0ba59afd34708ce0eca3dd989afb5e3f47e92c558f17b8b866f9c2c8"
+      },
+      {
+        "path": "targets/magnetovolume/011.json",
+        "size": 10354,
+        "sha256": "d91895b37a6b28ffb6d152537058a1761533f589b6adf4b7f7778610ea4920d4"
+      },
+      {
+        "path": "targets/magnetovolume/013.json",
+        "size": 11920,
+        "sha256": "1cb4ebe7b77e6d98e78aeb2cc52d4381a8008c054549ea11e8ff40c51b14a6bf"
+      },
+      {
+        "path": "targets/magnetovolume/015.json",
+        "size": 5726,
+        "sha256": "75327aa3ac5cffb62cb13f37043cf22c66024738aad3841053d5a2f94da3a984"
+      },
+      {
+        "path": "targets/magnetovolume/016.json",
+        "size": 5598,
+        "sha256": "f40de7b45395d140755733933839f7ada72dc8dc0f64ab367bb42ef9a7a5efbb"
+      },
+      {
+        "path": "targets/magnetovolume/019.json",
+        "size": 3875,
+        "sha256": "6a933720f47677f3a644d53e0b69b84e8d0a93164124c2191680a2a91a680caa"
+      },
+      {
+        "path": "targets/magnetovolume/021.json",
+        "size": 9976,
+        "sha256": "871d4f0174e3e8f714a9492867a68c7cbcb031ed384e3b31dd94f35a6edc2eb9"
+      },
+      {
+        "path": "targets/magnetovolume/023.json",
+        "size": 4326,
+        "sha256": "1316887ec622af161e7114aeb31c3cd355e65bda4e99395dcca0f17262b948ec"
+      },
+      {
+        "path": "targets/magnetovolume/024.json",
+        "size": 6775,
+        "sha256": "b3a0b6ded79f3b16c1a1840b68a0989ca15052c27ae4f24d8ea6c5d101371de7"
+      },
+      {
+        "path": "targets/magnetovolume/027.json",
+        "size": 8847,
+        "sha256": "eed35f5a34141b8fea0c441a0e5a1216a070a8bac84ecd7c569cfc7c02078b72"
+      },
+      {
+        "path": "targets/magnetovolume/028.json",
+        "size": 8760,
+        "sha256": "0ff3da4ce8ef1cbbc415b0990fe68a07cb661fc55ada3a6e939acbab6419bb8b"
+      },
+      {
+        "path": "targets/magnetovolume/029.json",
+        "size": 4510,
+        "sha256": "3fff4570412be2e8231c2381720cc7c925a7ecba9ddfe74ddb961482e6712e7d"
+      },
+      {
+        "path": "targets/magnetovolume/036.json",
+        "size": 3033,
+        "sha256": "9c51c2ab78116a0d04739ddd4c0a65a80c614c66f1b47415080b4cda19b34aea"
+      },
+      {
+        "path": "targets/magnetovolume/037.json",
+        "size": 3645,
+        "sha256": "3bbb1a4c62977c98e189a1c12860ce4e21903792a701ee70cbb45dc65061f417"
+      },
+      {
+        "path": "targets/magnetovolume/038.json",
+        "size": 2441,
+        "sha256": "bbbe32a8fb490ff6224663b3701dd2e2fc0849663f3411e4965a735a26484258"
+      },
+      {
+        "path": "targets/magnetovolume/039.json",
+        "size": 3624,
+        "sha256": "d8bffa2eb4113ce4d0850b68691b4fdd11c0ee57d48d5f34a835057e2dce182d"
+      },
+      {
+        "path": "targets/magnetovolume/040.json",
+        "size": 3699,
+        "sha256": "ea06f5a3266c9e1b4fa9ef87948303fad9cb6ac62bbe1e84dacf49e4cd41a803"
+      },
+      {
+        "path": "targets/magnetovolume/041.json",
+        "size": 3859,
+        "sha256": "89d9c77233b5d5e937d0ba57d313437c9c4e8800bac67914847e22815452b4b1"
+      },
+      {
+        "path": "targets/magnetovolume/042.json",
+        "size": 5296,
+        "sha256": "fb33328981d9bc98c5f43372285ff3c8b6fb47d27f1215f79a872000a7bf415f"
+      },
+      {
+        "path": "targets/magnetovolume/043.json",
+        "size": 3838,
+        "sha256": "5a8190ecb7ddb3c563b3c4ad6a8b236102f37765856759444aa1703cb7603e35"
+      },
+      {
+        "path": "targets/magnetovolume/044.json",
+        "size": 5443,
+        "sha256": "c5ee0348cc8d6347259fc24a8fc85e6498d4fffe1b7613988199555c7597aa0d"
+      },
+      {
+        "path": "targets/magnetovolume/045.json",
+        "size": 7709,
+        "sha256": "65bbe756856204bbb41460eb34711b64eff728f395a997dd931fbc3c6d602e69"
+      },
+      {
+        "path": "targets/magnetovolume/046.json",
+        "size": 3345,
+        "sha256": "61b05351848dd0fadc135236c7b0c9d03b97873b006d1a9f88caf0f512031c0a"
+      },
+      {
+        "path": "targets/magnetovolume/047.json",
+        "size": 10223,
+        "sha256": "cbcd0ac63f309a28d9913bd32af6fdcdaded07a3038527e4bde9b31545d1967b"
+      },
+      {
+        "path": "targets/magnetovolume/048.json",
+        "size": 9617,
+        "sha256": "3248612d0b559b2a7d829ba9554fe587706cf1b7d89297f788e94e61ff3b6374"
+      },
+      {
+        "path": "targets/magnetovolume/049.json",
+        "size": 1720,
+        "sha256": "1f5628e203aa51aa01207230d0c6be0aa29ad54a9ff92d38358c31d2903f31df"
+      },
+      {
+        "path": "targets/magnetovolume/050.json",
+        "size": 12302,
+        "sha256": "18b66552d8578b7dcca645548db71c41f74323f07c8968f87794d899836b7ba8"
+      },
+      {
+        "path": "targets/magnetovolume/051.json",
+        "size": 12974,
+        "sha256": "2c29b1df4f0109c9221df26ec09cf60c483af309a53d949a9dfe624374e13c0b"
+      },
+      {
+        "path": "targets/magnetovolume/054.json",
+        "size": 6312,
+        "sha256": "5db708a66eb2b72cca43bf1495d9a7b82fe5864fe516fca3c1bb74b8eb182e9a"
+      },
+      {
+        "path": "targets/magnetovolume/056.json",
+        "size": 5908,
+        "sha256": "146fafc9f64c66ad8957e8807bc0c8709764ba3878e72ed1cb9bccd5e721d1e6"
+      },
+      {
+        "path": "targets/magnetovolume/057.json",
+        "size": 5853,
+        "sha256": "8ebbc5a83bd24da9c89f93ae9a8187d9afa3123358d1b049cd2e6f9fe3a25812"
+      },
+      {
+        "path": "targets/magnetovolume/060.json",
+        "size": 2769,
+        "sha256": "3dcf800bd7fe4c81e358ae64ef4385c3ba7786282b4301cba3d165f7675316dc"
+      },
+      {
+        "path": "targets/magnetovolume/061.json",
+        "size": 2892,
+        "sha256": "42272f5652df75016a2b1a4df996de3668ff2f42433e857b685cb307d2ccfc95"
+      },
+      {
+        "path": "targets/magnetovolume/064.json",
+        "size": 2449,
+        "sha256": "e3536998e9324159ea909be3bae02b97f91cf89663df3b030734f8766f72dd02"
+      },
+      {
+        "path": "targets/magnetovolume/065.json",
+        "size": 3617,
+        "sha256": "5d362ebe858a2a4e8aa13f8b6b5b950584e35cb6f1c417319e7310664ca3ea0b"
+      },
+      {
+        "path": "targets/magnetovolume/068.json",
+        "size": 19519,
+        "sha256": "43ef9fbae7e918585bafbf0148e66105cdb703b45d7de3a73f77e478aec5d37d"
+      },
+      {
+        "path": "targets/magnetovolume/069.json",
+        "size": 5627,
+        "sha256": "c0d4cc99de71574ddf6cae8eeb033acb06083ba8f9a3e272add4e6ecaccec43b"
+      },
+      {
+        "path": "targets/magnetovolume/070.json",
+        "size": 3845,
+        "sha256": "07ee476fd697363d50d73e5cdeca9403f99df33a1fcf8b25f44580765db1d63c"
+      },
+      {
+        "path": "targets/magnetovolume/073.json",
+        "size": 6656,
+        "sha256": "dca09c938cfa8a905d04488913a60c9002b77ddd7dc25eb6b078ffa5fc05d62d"
+      },
+      {
+        "path": "targets/magnetovolume/076.json",
+        "size": 4695,
+        "sha256": "9a86db9918f9c8cd8caec2208d43df397b98c2d16088e17bfae0569b0b38e923"
+      },
+      {
+        "path": "targets/magnetovolume/077.json",
+        "size": 2236,
+        "sha256": "fe52adddf05edb316cbaa09aa5d96f51731ba5a8469ceeeb6878d1336c63c96e"
+      },
+      {
+        "path": "targets/magnetovolume/078.json",
+        "size": 2318,
+        "sha256": "7923b5f0539d7ed5424e19bbb0dfed5c0993c579e6c9b299641784ad99c404bc"
+      },
+      {
+        "path": "targets/magnetovolume/079.json",
+        "size": 7482,
+        "sha256": "5f5236cb7e3f5d73e0e40929c9e76bf81b67097a74b2a0d87d37cd76d63bf2c1"
+      },
+      {
+        "path": "targets/magnetovolume/082.json",
+        "size": 3811,
+        "sha256": "6f3d4ceba7f2743d88fd8d3ec3576b0bb48076117aec95e2e2caa61a1eb3136d"
+      },
+      {
+        "path": "targets/magnetovolume/083.json",
+        "size": 6158,
+        "sha256": "d1e3a71026f8aca42d087c38120520f7a4acb3932deb5c455de6f70e68e224f9"
+      },
+      {
+        "path": "targets/magnetovolume/084.json",
+        "size": 6193,
+        "sha256": "cb55818bcf306787709c166076efadb8838d5e2631e20c749406ccbd2b383c97"
+      },
+      {
+        "path": "targets/magnetovolume/085.json",
+        "size": 4013,
+        "sha256": "89b73c807706f9f9e06a93006452d1e58e3cc47eca1a86be373ee5611e2d3cc4"
+      },
+      {
+        "path": "targets/magnetovolume/087.json",
+        "size": 6899,
+        "sha256": "255e79d50c7e4fb00a723cc419cb8683e46e6bac1a82b926685bfa43292f5366"
+      },
+      {
+        "path": "targets/magnetovolume/088.json",
+        "size": 5641,
+        "sha256": "eee84705b0a255e4845ecf1d6225576696cb9f9c48dab79bd4bf01c03f9f1787"
+      },
+      {
+        "path": "targets/magnetovolume/091.json",
+        "size": 4184,
+        "sha256": "dec2f99123576938078a3650e599a3c10b475f49521d1c23ef92c84b53971af8"
+      },
+      {
+        "path": "targets/magnetovolume/093.json",
+        "size": 4262,
+        "sha256": "ee43b6c0e9bde4ea71c756caec1354e347eba22732d912bd80afb7eeae772cd3"
+      },
+      {
+        "path": "targets/magnetovolume/094.json",
+        "size": 4572,
+        "sha256": "44f77ad1f839cb1f1fe25445e2c99a0a9244fd52299ded85987fff23c5d30386"
+      },
+      {
+        "path": "targets/magnetovolume/096.json",
+        "size": 2603,
+        "sha256": "c39c1ad9eb2e4f4fea80bf0ca16f81738702c673ed1dc4562ab1e681701ce0df"
+      },
+      {
+        "path": "targets/magnetovolume/098.json",
+        "size": 10804,
+        "sha256": "92e8de7a73126170348923a2ffdebf3e81ad5bf2a447a2250345f10b12e47046"
+      },
+      {
+        "path": "targets/magnetovolume/099.json",
+        "size": 6446,
+        "sha256": "43af7d7cf6449b91d41a8a8e27d8d23a2f9897ec6fd368085430b3b96f336772"
+      },
+      {
+        "path": "targets/magnetovolume/101.json",
+        "size": 8746,
+        "sha256": "a59d0fe9f5219589068a2f4c1956550a12cde5693813d5cd2ce1df872deda488"
+      },
+      {
+        "path": "targets/magnetovolume/102.json",
+        "size": 4862,
+        "sha256": "2354be0fbd60608acb88d8c78bfacdaa3254644f473b4bd0fa4d6dc0118a08b6"
+      },
+      {
+        "path": "targets/magnetovolume/103.json",
+        "size": 3644,
+        "sha256": "5abef9689e75d6aa2a00f5d615980809cda482c4488a2d574ce1ff1af6801a4f"
+      },
+      {
+        "path": "targets/magnetovolume/104.json",
+        "size": 5948,
+        "sha256": "893ea82fd25238c546ba8b3f424d1b764483c988dca7cd3bc06b998e68e2e30b"
+      },
+      {
+        "path": "targets/magnetovolume/105.json",
+        "size": 5364,
+        "sha256": "a3083ea6fdf5a969cbbceb7a672d3b542ec72bd1c57ec0bff1ebc33f207d4728"
+      },
+      {
+        "path": "targets/magnetovolume/108.json",
+        "size": 1626,
+        "sha256": "d825ec41bfab56300225389d067ea09ee26488d7dd7d499a4a98ddc1905e56ee"
+      },
+      {
+        "path": "targets/magnetovolume/116.json",
+        "size": 1935,
+        "sha256": "92d1d0aec597d246d634a4d516f7f082799b6185f4fb7e5007da65e691b53a69"
+      },
+      {
+        "path": "targets/magnetovolume/120.json",
+        "size": 3732,
+        "sha256": "28e4b604089a7db32a9acd03a2f177e9b069013ce0bba03a1c7af2c845261eaa"
+      },
+      {
+        "path": "targets/magnetovolume/122.json",
+        "size": 2855,
+        "sha256": "ed33baab5859780f976b775e30372399190e1a4a5a00255d87e2e114eb34de20"
+      },
+      {
+        "path": "targets/magnetovolume/123.json",
+        "size": 7555,
+        "sha256": "8e046db485864075e9a1e576f713178a81a032af6dd3e8d6cab926cfdd817465"
+      },
+      {
+        "path": "targets/magnetovolume/124.json",
+        "size": 4582,
+        "sha256": "b1fcd46a1172d373fa1dc384641e5b0fff223bdf100775f1ef91d0c9f06edad4"
+      },
+      {
+        "path": "targets/magnetovolume/125.json",
+        "size": 2552,
+        "sha256": "398199336f74ce0f2fd12c27727e10b169ebf76c068a712d9833219c53845bd0"
+      },
+      {
+        "path": "targets/magnetovolume/126.json",
+        "size": 54591,
+        "sha256": "72b7f1bc52514303dd45b5f1b4d8658acd7467a19b1b209ad5ce0fc2929913f7"
+      },
+      {
+        "path": "targets/magnetovolume/128.json",
+        "size": 12387,
+        "sha256": "04656856b7cb808769668cf357efbeae07181ceb4ccc29d3d0de45b5af1aaa91"
+      },
+      {
+        "path": "targets/magnetovolume/130.json",
+        "size": 6449,
+        "sha256": "71360391c9908d0cbd31fac323e9174bf2aee388f39407bbdc18b09aafbab4c2"
+      },
+      {
+        "path": "targets/magnetovolume/131.json",
+        "size": 7062,
+        "sha256": "fcc048a9172cd1266344f69ce19e9e93f5410b3429fbfecc15c1c9d1f6a759b2"
+      },
+      {
+        "path": "targets/magnetovolume/132.json",
+        "size": 6116,
+        "sha256": "e3dfd85d39eebeeaaf17c1423f922ee4e061849f83819dbf658f0283dff058f5"
+      },
+      {
+        "path": "targets/magnetovolume/134.json",
+        "size": 8398,
+        "sha256": "e2f886acb6e8107ae7f6752993eb8717b84ea0b0ae202964e3c23e59dc87c306"
+      },
+      {
+        "path": "targets/magnetovolume/135.json",
+        "size": 2656,
+        "sha256": "c236c6f86643bc899d3fe8dbc2d46501fce3d137a980da65140e9e2d0cb442f4"
+      },
+      {
+        "path": "targets/magnetovolume/136.json",
+        "size": 4006,
+        "sha256": "00b18a3756b45ee031cf4c366ed7a310c02d5331ddb9b40851fb171f629bdc61"
+      },
+      {
+        "path": "targets/magnetovolume/137.json",
+        "size": 4020,
+        "sha256": "90a0927ab7c249bec529d14cf98bea066f303c903a3a8cdfb0c87769bb936670"
+      },
+      {
+        "path": "targets/magnetovolume/138.json",
+        "size": 2510,
+        "sha256": "e5ceed3a50234cb9bf50c5136a4ee4e03cc841469bb84fc64151250b817ddb51"
+      },
+      {
+        "path": "targets/magnetovolume/139.json",
+        "size": 4113,
+        "sha256": "feeaed86d1790a7ad08408fcd8f93463b5623c42577a5a9f307d6bed7a1c8327"
+      },
+      {
+        "path": "targets/magnetovolume/140.json",
+        "size": 4431,
+        "sha256": "9e704f14288ab144ba826ab4c9ca85504860bdc28fbca94e963055c9bc3391ef"
+      },
+      {
+        "path": "targets/magnetovolume/141.json",
+        "size": 9401,
+        "sha256": "29a103fc6219ee03c9fb6bb61dff98ddcb661cf2cf4ae69a142277627ca895df"
+      },
+      {
+        "path": "targets/magnetovolume/142.json",
+        "size": 7945,
+        "sha256": "8a0aa01acbcccb6c424d6d55057095c1fc2332959ed00524eebce846f9aaab18"
+      },
+      {
+        "path": "targets/magnetovolume/144.json",
+        "size": 8182,
+        "sha256": "5d2dff3a899f12730b52d45ad4a66663f2cf84de25aac39dfd12c9d0fccf1635"
+      },
+      {
+        "path": "targets/magnetovolume/145.json",
+        "size": 3858,
+        "sha256": "ef76c54cb85b48c768f061d68b458f801938785b70290ae69e1ae5f95e0d069a"
+      },
+      {
+        "path": "targets/magnetovolume/146.json",
+        "size": 6657,
+        "sha256": "2df507e5dd13ba06050a40ce384fc08fd82c39bf128b8115bde7330e1a4a0986"
+      },
+      {
+        "path": "targets/magnetovolume/147.json",
+        "size": 6128,
+        "sha256": "c253d9625befdd31ddfdd2ea4bdabf5c329c44bfda5bc06e3beb0ed154103a87"
+      },
+      {
+        "path": "targets/magnetovolume/148.json",
+        "size": 6137,
+        "sha256": "a6e9a7b14cbe79cc5367cba6fe93da6007dde902785370c33bd0b4dec4c79c67"
+      },
+      {
+        "path": "targets/magnetovolume/149.json",
+        "size": 5295,
+        "sha256": "b12c6aff97a6283d08f65553d6b1ceb3e5fe97ddd59e3455b03205c9fc92122a"
+      },
+      {
+        "path": "targets/magnetovolume/150.json",
+        "size": 16612,
+        "sha256": "35e85bcbbd13a2cbcf7252909ddd855337d5ec2f5d69fb048b00e29c03fad5a7"
+      },
+      {
+        "path": "targets/magnetovolume/151.json",
+        "size": 6025,
+        "sha256": "bcfaae34e35b075fd5356461a34080d6a9f3660327fbf148d7c0add4306bb05b"
+      },
+      {
+        "path": "targets/magnetovolume/152.json",
+        "size": 7951,
+        "sha256": "209db926c97ccacaa9454b2631dddab4cabf3c023b4fc7167603d383ade45e6b"
+      },
+      {
+        "path": "targets/magnetovolume/155.json",
+        "size": 3516,
+        "sha256": "a17d313777d81b4bea7e00d2b68d1b2b7382e3815d7e91e9a23e34cb0b71d620"
+      },
+      {
+        "path": "targets/magnetovolume/158.json",
+        "size": 12009,
+        "sha256": "cc0a66b0ec87cecf9617cddfdea58a50564e78b463883093dc8b3d01434cfec3"
+      },
+      {
+        "path": "targets/magnetovolume/160.json",
+        "size": 4321,
+        "sha256": "b5c6e7c963cdd6e4d8a1b2e9bed08108e40fea6af73f84c471cb18897598121f"
+      },
+      {
+        "path": "targets/magnetovolume/161.json",
+        "size": 12108,
+        "sha256": "de766482ae1632297d34ad61c91e42e58bfb4e0e1e1cabb2e8178b5b5212a2ae"
+      },
+      {
+        "path": "targets/magnetovolume/162.json",
+        "size": 15291,
+        "sha256": "e13f2329057dfeedfbbfed31d77c09685a004700768c8bc0771f8d6a14f92e74"
+      },
+      {
+        "path": "targets/magnetovolume/163.json",
+        "size": 12175,
+        "sha256": "67108f3b8632cb14824ae4da29b8baeafe17ba0d0099f571de534b2870ea6401"
+      },
+      {
+        "path": "targets/magnetovolume/164.json",
+        "size": 12281,
+        "sha256": "5a13ee55f0e2f343540e3a42e962b3118b02b9621f4d1213034d05e3885b5a01"
+      },
+      {
+        "path": "targets/magnetovolume/165.json",
+        "size": 4427,
+        "sha256": "92f0217fe93df997903f464268fd359c944f8a2d42f7962ba5f0ffc4366ab2b1"
+      },
+      {
+        "path": "targets/magnetovolume/166.json",
+        "size": 4808,
+        "sha256": "47be82d7eb725100dbaee865624b540f2f2d75c8c70ba314a72ece0e42aefbfc"
+      },
+      {
+        "path": "targets/magnetovolume/167.json",
+        "size": 4124,
+        "sha256": "bded64894c2f99cea85164ad7ea07b2a7e2ecef94bd6c716eb54c9ae1d315bed"
+      },
+      {
+        "path": "targets/magnetovolume/168.json",
+        "size": 4698,
+        "sha256": "74ae990e823ed7b02469f58adddb19600c9db9470b6bea949855626abe9b74b0"
+      },
+      {
+        "path": "targets/magnetovolume/169.json",
+        "size": 4720,
+        "sha256": "4bee5ff1f378ca8764badf09f7baeb39d200299ba0ce7341b6619cd460184fda"
+      },
+      {
+        "path": "targets/magnetovolume/170.json",
+        "size": 3979,
+        "sha256": "96b26d6ad089869bed92904cd1d1947715a639d95b2db2724d6d4aec9412b875"
+      },
+      {
+        "path": "targets/magnetovolume/172.json",
+        "size": 4479,
+        "sha256": "876ad56aab605445282661adae85a83bf6fc0ba545fedd0055cdd3c3804ebd10"
+      },
+      {
+        "path": "targets/magnetovolume/173.json",
+        "size": 3729,
+        "sha256": "0c2255b0f8b421b49490ba034ebf8b70f69e7adb90386281606b3f3b70be1418"
+      },
+      {
+        "path": "targets/magnetovolume/180.json",
+        "size": 4745,
+        "sha256": "085b16741a92a104b04ded69dfa4f85e8320a8f5400f1d955188de468369b74f"
+      },
+      {
+        "path": "targets/magnetovolume/181.json",
+        "size": 4198,
+        "sha256": "975b7368839afcf1bb5fd423e12e697d9011cfea2c4c8a4e34af0cf48065ffe0"
+      },
+      {
+        "path": "targets/magnetovolume/182.json",
+        "size": 2727,
+        "sha256": "2c3c64b9db93b5816257e858f0669258b7f86d4e82507621f49f908bf871a513"
+      },
+      {
+        "path": "targets/magnetovolume/183.json",
+        "size": 3278,
+        "sha256": "3bdd349a607bd28212b23d90fed26cb70ff195482b4c193d4c7e3ae2392dae7c"
+      },
+      {
+        "path": "targets/magnetovolume/185.json",
+        "size": 10234,
+        "sha256": "243c13b25e2401a2dde365fbf0f63d85df273cd9c7e1166b37a0eb71df671c22"
+      },
+      {
+        "path": "targets/magnetovolume/187.json",
+        "size": 16137,
+        "sha256": "a8c8fa6577fad916d733497838c9de83ce51a7a0b3434df684d38d97546c48c5"
+      },
+      {
+        "path": "targets/magnetovolume/189.json",
+        "size": 9877,
+        "sha256": "bcc5ff8f4218814c979393d53c474361eb72fae1ea36c9b377450dd1f07e6996"
+      },
+      {
+        "path": "targets/magnetovolume/190.json",
+        "size": 5336,
+        "sha256": "36eae40e3c0b0063a333600c1afea489a085ec1ace79ac7d6c50f87863e13bde"
+      },
+      {
+        "path": "targets/magnetovolume/193.json",
+        "size": 4906,
+        "sha256": "07895d5a9b2a1be84e9b4be9e9530e16c6cf184ab0f7078de53fc98bfb35fa28"
+      },
+      {
+        "path": "targets/magnetovolume/195.json",
+        "size": 14691,
+        "sha256": "d31d1844ea85cce83e1b91444bcbe101c603c5c6cb516285c34005e1ec526240"
+      },
+      {
+        "path": "targets/magnetovolume/197.json",
+        "size": 7359,
+        "sha256": "0aa02d2493efbde087d18fdedc5948264db8e1aba9a2768e06a308daf34fc172"
+      },
+      {
+        "path": "targets/magnetovolume/199.json",
+        "size": 5584,
+        "sha256": "1094dc0e3e5fb578fcb3d97c1bfeaa7b6d59a70fc5c22ca9ca7f7d38330da4ef"
+      },
+      {
+        "path": "targets/magnetovolume/200.json",
+        "size": 8734,
+        "sha256": "afe9cd2a693b049195109937d305b4573130f1920a38da3fe26fb0c9b72e620e"
+      },
+      {
+        "path": "targets/magnetovolume/204.json",
+        "size": 4786,
+        "sha256": "e46df91ea5f89aec92d5d6a195fb062d55fd48590117dabb5a6c5edd83a14d06"
+      },
+      {
+        "path": "targets/magnetovolume/206.json",
+        "size": 7017,
+        "sha256": "8082ac17cc19173a72c719e0787d17e462ecc5f5ed1fa61e98019214b9ce117f"
+      },
+      {
+        "path": "targets/magnetovolume/207.json",
+        "size": 7099,
+        "sha256": "5972042cdf85ce1c41f83b8f11a0761037cb0a25365ca44a7eccf2fb16a57049"
+      },
+      {
+        "path": "targets/magnetovolume/208.json",
+        "size": 3427,
+        "sha256": "c0a8881a13a6bb6171c87fd1c9905ccc204c47893bccc639535148e68ded5b90"
+      },
+      {
+        "path": "targets/magnetovolume/210.json",
+        "size": 7446,
+        "sha256": "c206136d3107621b51041937d99e1167924338b0f8be4b0ff97f8f10c02cfbbf"
+      },
+      {
+        "path": "targets/magnetovolume/211.json",
+        "size": 3308,
+        "sha256": "40c6fd4da30f32f4d094c02d9dd4b6bd91975a83fb74af48eb5c238b216c48aa"
+      },
+      {
+        "path": "targets/magnetovolume/214.json",
+        "size": 8180,
+        "sha256": "14f15e1caef051ee48a6cacef147141713bb05a2fbdba60171049577925a91fc"
+      },
+      {
+        "path": "targets/magnetovolume/215.json",
+        "size": 3468,
+        "sha256": "deb7bd04ca2661b0ef58a45e5dd3a09a03d5dbdd231d39ae41fc0b0af35aa2da"
+      },
+      {
+        "path": "targets/magnetovolume/216.json",
+        "size": 7817,
+        "sha256": "e810fc98c252f4135b7f3802fd15741f92d461ab4db7cbc21f0a3c9ee54e0ac1"
+      },
+      {
+        "path": "targets/magnetovolume/217.json",
+        "size": 7521,
+        "sha256": "8fbe53667ecbc6893630b9bda81b9fbb81ed9c052a933870ab6b9a2841c7e404"
+      },
+      {
+        "path": "targets/magnetovolume/218.json",
+        "size": 7604,
+        "sha256": "dd754e3ff9a750029d6fba71c83f86ed6cf7483f5fdcb62259c2b4cb68e26d04"
+      },
+      {
+        "path": "targets/magnetovolume/219.json",
+        "size": 7355,
+        "sha256": "bc32ce0f6de906ec6416a6fa21c2a66d2bd5fa3ceb79b70bdfad07288018f9d3"
+      },
+      {
+        "path": "targets/materials.json",
+        "size": 5565,
+        "sha256": "358ff683d57095c4269b0489a50d91cb2611d8c46625818785b5759ba398e2df"
+      },
+      {
+        "path": "targets/phonons/001/reference.npz",
+        "size": 59561,
+        "sha256": "02d1a58847e1099184490aca6f10533789c7031f3f6d7058a54f1391a54a2679"
+      },
+      {
+        "path": "targets/phonons/001/structure.json",
+        "size": 834,
+        "sha256": "25fdf1482d43a74d597fb9e2bbfa3f5d060f70572d76a5066c2dff1386784e4a"
+      },
+      {
+        "path": "targets/phonons/002/reference.npz",
+        "size": 17517,
+        "sha256": "98148bcbdb4e501bf88df0b7e67dab7f70ca34362bf5e60dd71186d13593ac0d"
+      },
+      {
+        "path": "targets/phonons/002/structure.json",
+        "size": 905,
+        "sha256": "a415c8c86500e1a1764c4e565cad4b29fb8eb369f742907b84ac9c3fa43794fa"
+      },
+      {
+        "path": "targets/phonons/004/reference.npz",
+        "size": 28068,
+        "sha256": "2ffae8895b26f5a919c0d9b6a625286452c20047dfdf2510831368d54cb69d60"
+      },
+      {
+        "path": "targets/phonons/004/structure.json",
+        "size": 854,
+        "sha256": "5ac5cbce9dd58fe5cd86288c1267aaac238868aba42ed4342567e0397ff6026c"
+      },
+      {
+        "path": "targets/phonons/005/reference.npz",
+        "size": 36444,
+        "sha256": "066346f34b52ea99d83df14c4814e350fab77a25bbb1e667d45728423e0c9246"
+      },
+      {
+        "path": "targets/phonons/005/structure.json",
+        "size": 1193,
+        "sha256": "b4a9a1b67ec8dd852ca6a04039d9bb908df18caeadc4858d1f94de6f844751d2"
+      },
+      {
+        "path": "targets/phonons/006/reference.npz",
+        "size": 27532,
+        "sha256": "d87c4d30c903494230b9ed2103825aa0b20235e0ee028e6f5d0a7ed7a31b0e4f"
+      },
+      {
+        "path": "targets/phonons/006/structure.json",
+        "size": 863,
+        "sha256": "05dd464c79b8dc29f480fcae37440b1a408eec46c65ee65e5a456ac444d611e9"
+      },
+      {
+        "path": "targets/phonons/007/reference.npz",
+        "size": 23903,
+        "sha256": "e4f7d3c8fa392cb3fddf5b80af2d15f19e2cd4027565d000b8f1f1f5db9fbca5"
+      },
+      {
+        "path": "targets/phonons/007/structure.json",
+        "size": 859,
+        "sha256": "2e730bf6de53881d7b22a08035d885d0ee90aab424fca4cc132e83387de2c0ba"
+      },
+      {
+        "path": "targets/phonons/010/reference.npz",
+        "size": 23893,
+        "sha256": "e9df1008184d4fc1df3fff2be08c0c9f8e03ef8b45975c5ed0b7d2a5836ead3f"
+      },
+      {
+        "path": "targets/phonons/010/structure.json",
+        "size": 867,
+        "sha256": "588cd9fda09416c52de50a5b538be49f13ed4d7963375fce31ab0161c2108637"
+      },
+      {
+        "path": "targets/phonons/011/reference.npz",
+        "size": 57535,
+        "sha256": "f90e7130493c86a66c023bead68cb493d3a0cc02266950eac92e943e5fcf47a4"
+      },
+      {
+        "path": "targets/phonons/011/structure.json",
+        "size": 1935,
+        "sha256": "f02ada24b135205431f915012c383cc5c9191c69ae0573b62263ea0c4f1ec5ba"
+      },
+      {
+        "path": "targets/phonons/018/reference.npz",
+        "size": 36162,
+        "sha256": "71d36b79a7f8bcf1dbaf944a1748ada39ec46ac1def861d6cbd74b3e97b9cb29"
+      },
+      {
+        "path": "targets/phonons/018/structure.json",
+        "size": 1199,
+        "sha256": "878d71cb4ad550e51f5f6ad4518f3f3b54f33faa085fbda1ee1a0553a10f3b6c"
+      },
+      {
+        "path": "targets/phonons/021/reference.npz",
+        "size": 62245,
+        "sha256": "f1ad3da7f8479ddd7f347adacdbe54bd706bea9930131b6c018cb31c861fb429"
+      },
+      {
+        "path": "targets/phonons/021/structure.json",
+        "size": 1922,
+        "sha256": "ab40d0b35a22ce7d8f35fc0e0653878c2286762a379777175b04672c50b61dd4"
+      },
+      {
+        "path": "targets/phonons/022/reference.npz",
+        "size": 145860,
+        "sha256": "486aa23c051a30e4ccd0f49a13acc68e465e19138107acb009c9ef6e9371319a"
+      },
+      {
+        "path": "targets/phonons/022/structure.json",
+        "size": 3948,
+        "sha256": "0e2a5fb4b06de2b62f8f0e20f92e22440fb87579fa6af332a0853202ed35fe46"
+      },
+      {
+        "path": "targets/phonons/024/reference.npz",
+        "size": 14376,
+        "sha256": "37861e35804cf9bfb455e439ff0b308329e724490d674100038fb19a8b701181"
+      },
+      {
+        "path": "targets/phonons/024/structure.json",
+        "size": 902,
+        "sha256": "97c35f5a7d44230d1e0a2b25edf7e93b961dbbaf73db40fc7715773ddca60cc8"
+      },
+      {
+        "path": "targets/phonons/025/reference.npz",
+        "size": 13790,
+        "sha256": "962e19ecb5cda92a34359005bac1389456df9dc13d07a0b858b2920c90fb0fbc"
+      },
+      {
+        "path": "targets/phonons/025/structure.json",
+        "size": 916,
+        "sha256": "b8c504cca5af0dd21e6495dd8dddb04eba768b557691c85202f3fd1698bb2756"
+      },
+      {
+        "path": "targets/phonons/027/reference.npz",
+        "size": 29944,
+        "sha256": "367ddc6ffb6a02274bd957a64b24a306ae33449ee4ca9d7f3cd244cde41775eb"
+      },
+      {
+        "path": "targets/phonons/027/structure.json",
+        "size": 1528,
+        "sha256": "c3b1a13737cb5df6b6805c4016a6fcf32b99b134c2c89d1f9eeec7723e3c5aa9"
+      },
+      {
+        "path": "targets/phonons/028/reference.npz",
+        "size": 69357,
+        "sha256": "f33e4d00631599147374bfc6f5fedff96dd3cd4bf213812df34d7dd19dbdf5b1"
+      },
+      {
+        "path": "targets/phonons/028/structure.json",
+        "size": 1530,
+        "sha256": "461b0e3d4e9adca2774cdeab761233063be61ea8efb46b19496bd6c88eb9d5a9"
+      },
+      {
+        "path": "targets/phonons/032/reference.npz",
+        "size": 27447,
+        "sha256": "0a12950d2d042d0f7b60e6b63cdd7e57f0586f0db969ed5353e47dce30dbb936"
+      },
+      {
+        "path": "targets/phonons/032/structure.json",
+        "size": 914,
+        "sha256": "6eecff75a8ff6828de99381677ae3fada593aa0e966f2b8a00557655b2ef9f6d"
+      },
+      {
+        "path": "targets/phonons/035/reference.npz",
+        "size": 42729,
+        "sha256": "65ce30cdfeec69a75d82d38ba70376f35cc9be3dacc38cd6b02ddf889b6f3e8f"
+      },
+      {
+        "path": "targets/phonons/035/structure.json",
+        "size": 1343,
+        "sha256": "07d1ab3be4f1018e76e684434e982c66b021e8821dca98f4cc6b8257c25aabbc"
+      },
+      {
+        "path": "targets/phonons/036/reference.npz",
+        "size": 57368,
+        "sha256": "36190599ff704ccb32214c2cbf9e65a5f7fa84876446174573ec885bb41154e1"
+      },
+      {
+        "path": "targets/phonons/036/structure.json",
+        "size": 1519,
+        "sha256": "cc17a958a6bbd54e632402f7210f6662898a99a93b4400bfe995d00bd3d8898b"
+      },
+      {
+        "path": "targets/phonons/037/reference.npz",
+        "size": 33679,
+        "sha256": "168e82a5977f27c41a65bec7b1384604b593b1f7cc0a19ccc233e51917dce63d"
+      },
+      {
+        "path": "targets/phonons/037/structure.json",
+        "size": 1760,
+        "sha256": "4386d868e471cef9e77ccf8034cc33553a43c1193ba9f1b3c7c5f6c2b1ad52ea"
+      },
+      {
+        "path": "targets/phonons/038/reference.npz",
+        "size": 62284,
+        "sha256": "604f104d5cd81ccccfb6b2e706956b97a66e6833f4ccaa58f196a1911614d605"
+      },
+      {
+        "path": "targets/phonons/038/structure.json",
+        "size": 1232,
+        "sha256": "5508cffa6ab81c66cd722dd98ca806bf5da1b7c93d4651c3041026309eb71801"
+      },
+      {
+        "path": "targets/phonons/041/reference.npz",
+        "size": 50447,
+        "sha256": "aed9ac0c3882c2e0ec71868257456f3a6717f548b0c0d0de53346421eec2360e"
+      },
+      {
+        "path": "targets/phonons/041/structure.json",
+        "size": 1075,
+        "sha256": "6b297005822ed94a7662b73d2476c2a1c523ac89462cec11e3aa45a440d79510"
+      },
+      {
+        "path": "targets/phonons/046/reference.npz",
+        "size": 37333,
+        "sha256": "8ecb2e8d50fca57fea2ea0f3e852d145162bf222be7609fa405bacf8e70be967"
+      },
+      {
+        "path": "targets/phonons/046/structure.json",
+        "size": 1060,
+        "sha256": "751e80b35f1d07b161e909aa47fd9d3ad411947bed47f901a1818e5f88e7a4b7"
+      },
+      {
+        "path": "targets/phonons/047/reference.npz",
+        "size": 37997,
+        "sha256": "abd1117a2c25ab8fdc64b5b8dfe70bc15f9aebfc959c28bdbf18f877d256a205"
+      },
+      {
+        "path": "targets/phonons/047/structure.json",
+        "size": 2224,
+        "sha256": "ee7ba36c4287c3cf4d8a5ca631d5ad8e7d60dacc639cb2d497a6fe1f868583c1"
+      },
+      {
+        "path": "targets/phonons/051/reference.npz",
+        "size": 33688,
+        "sha256": "8850b65ad8c273b5e3d1ad768fd640988497036233c16993e0727ebc5c05987d"
+      },
+      {
+        "path": "targets/phonons/051/structure.json",
+        "size": 1916,
+        "sha256": "54f85e7a3c5d0ff78dc5ffc9cf2edea167f9c7a35c36a45e7be195e6a96ee1c2"
+      },
+      {
+        "path": "targets/phonons/054/reference.npz",
+        "size": 16178,
+        "sha256": "ed881d7edacb5cb7d8c0e3d0b6ffac981a682be4bae378c1d0b75ef6af834b88"
+      },
+      {
+        "path": "targets/phonons/054/structure.json",
+        "size": 1361,
+        "sha256": "1400023819846e7fca04b0c490a187374d8e7bab3da0060d59b4fd06e6ed631a"
+      },
+      {
+        "path": "targets/phonons/057/reference.npz",
+        "size": 20753,
+        "sha256": "8de17e519076cdecb7fbaab7a36f3d1c688f29e4779988b34d17a97e0d7973e1"
+      },
+      {
+        "path": "targets/phonons/057/structure.json",
+        "size": 2517,
+        "sha256": "5809f67db721d173445e95256d76d79af0160a481f363572fe56754763f9ccae"
+      },
+      {
+        "path": "targets/phonons/061/reference.npz",
+        "size": 7864,
+        "sha256": "b4a4247b88cb9952cfac88a7881251bec65d4db4685106739d3fa9a20b40d1ae"
+      },
+      {
+        "path": "targets/phonons/061/structure.json",
+        "size": 628,
+        "sha256": "af117099922c5bd3a3ff71fe5ccf2b86058618cac02fc51e855b4cb61d698420"
+      },
+      {
+        "path": "targets/phonons/064/reference.npz",
+        "size": 59811,
+        "sha256": "f87be4cc80e0ac5d465f7a455cb0026385d284cbceaa8e1ccddff8ca27804bbb"
+      },
+      {
+        "path": "targets/phonons/064/structure.json",
+        "size": 1228,
+        "sha256": "5483cd3b38ec013e113d39d521e349082406dc8f0677727c6256e818fac3128f"
+      },
+      {
+        "path": "targets/phonons/068/reference.npz",
+        "size": 85276,
+        "sha256": "5670e67b065b8002ca933f84dd7ffdb4003b732b37e33ca73eb13707a395e808"
+      },
+      {
+        "path": "targets/phonons/068/structure.json",
+        "size": 1652,
+        "sha256": "25c0b66e9642075e835b028ac5c5d1de3541ae3b3d92d9286ebbe9aea89e0972"
+      },
+      {
+        "path": "targets/phonons/069/reference.npz",
+        "size": 36973,
+        "sha256": "2e704fba82b7781b0f5f0db2f6260d639cf0c73edd360c042c1a5a12a3088af7"
+      },
+      {
+        "path": "targets/phonons/069/structure.json",
+        "size": 1064,
+        "sha256": "fd3fd242c2ce6250088cc2cefcee714aad510c03182134be9939316e50c5886d"
+      },
+      {
+        "path": "targets/phonons/070/reference.npz",
+        "size": 43473,
+        "sha256": "b9af988f2c4703093b06eec906f3627847734cbb67b34b479297a713e71dd52a"
+      },
+      {
+        "path": "targets/phonons/070/structure.json",
+        "size": 913,
+        "sha256": "7ecfb713ca2e712fa494f4618266eb3b757d33768cb395a7cf29aaf0d3752e80"
+      },
+      {
+        "path": "targets/phonons/071/reference.npz",
+        "size": 30338,
+        "sha256": "f11402f613642f59cedf6dd7993bfdfd246e7337550e7faa8f8dfb5ed9538e86"
+      },
+      {
+        "path": "targets/phonons/071/structure.json",
+        "size": 1316,
+        "sha256": "f00f34f49bf26d2e408dc2601cfa932c6f762c7332bc163781d374062d6014c2"
+      },
+      {
+        "path": "targets/phonons/072/reference.npz",
+        "size": 16429,
+        "sha256": "e593b594fc09b42fd8863b96d5d2c2632fa537dd2ce4aec32d2f97e3a8f3551b"
+      },
+      {
+        "path": "targets/phonons/072/structure.json",
+        "size": 1303,
+        "sha256": "c5a63bb2a08c1eede84c6c4dc08db8a6d713ff27c424edddb31fc1223ef42be1"
+      },
+      {
+        "path": "targets/phonons/073/reference.npz",
+        "size": 73135,
+        "sha256": "3f2b9d62667c3d864904a9124644f49f2f729876d676df9740f4f5c782106f77"
+      },
+      {
+        "path": "targets/phonons/073/structure.json",
+        "size": 1620,
+        "sha256": "3eec010603c4bfcdf2d435bcece918bfe961f8111cc6315f955b065fbc6a57b9"
+      },
+      {
+        "path": "targets/phonons/078/reference.npz",
+        "size": 15803,
+        "sha256": "fe07cea08bb1cc89d16fa8cec2639c54b080d36f99f7b1e3890f76e8618fd4cc"
+      },
+      {
+        "path": "targets/phonons/078/structure.json",
+        "size": 1323,
+        "sha256": "1d225ea5296a5487f008a86d4cdc37210647221d981f35a056a1266026e78195"
+      },
+      {
+        "path": "targets/phonons/079/reference.npz",
+        "size": 39876,
+        "sha256": "9d8037cf26045a9c12cba1f3bc4392b2c9120ba27869c33001b4f6d3255f44bc"
+      },
+      {
+        "path": "targets/phonons/079/structure.json",
+        "size": 1479,
+        "sha256": "998d94f6d891e7a05f72a04fd365778dce83bdc789f2f95e504a09b591f9a5f2"
+      },
+      {
+        "path": "targets/phonons/081/reference.npz",
+        "size": 32674,
+        "sha256": "9da2783556982d0c87ba893d4328fde904207c2a5fb79411ffa37e899e4e8a45"
+      },
+      {
+        "path": "targets/phonons/081/structure.json",
+        "size": 1914,
+        "sha256": "00be549ec4fe90cb52d6cbcd5259db21de19dc9e02d91c37c8dee4ef834d821c"
+      },
+      {
+        "path": "targets/phonons/082/reference.npz",
+        "size": 26355,
+        "sha256": "f0617da3f49b4f5ca1226a06275f2f21e80ab8f08133b59c8b9024d5e9b42405"
+      },
+      {
+        "path": "targets/phonons/082/structure.json",
+        "size": 1072,
+        "sha256": "69ac3d09dc69b5e2cfd1b5f109e2f14419201d4be26fd034d70962cf08d76b87"
+      },
+      {
+        "path": "targets/phonons/083/reference.npz",
+        "size": 20042,
+        "sha256": "0418934fca056db4aa738e92175d547973aff4f0148b63f8f0440eac2b0a176d"
+      },
+      {
+        "path": "targets/phonons/083/structure.json",
+        "size": 1329,
+        "sha256": "b4d82a9815b0f9fbe41f1b9d2a7ea6886df8ce0d9fec74489f838e892841490a"
+      },
+      {
+        "path": "targets/phonons/084/reference.npz",
+        "size": 9377,
+        "sha256": "1e244a71b38bfc492da1c82ad2af38e68c728d947521dc41828253e43585a9ae"
+      },
+      {
+        "path": "targets/phonons/084/structure.json",
+        "size": 903,
+        "sha256": "8dd88880af97f49a2b04b7c247b9af6d14197cf8f43af0bed546f1617581b370"
+      },
+      {
+        "path": "targets/phonons/085/reference.npz",
+        "size": 25197,
+        "sha256": "053b429cfef482ab89126efa8ca98aa063ca28b0f4cb0ece1e65a3872141ea47"
+      },
+      {
+        "path": "targets/phonons/085/structure.json",
+        "size": 1934,
+        "sha256": "9282e995ea4c0acf594601149eb0c5ef2b6af37290288bc83a7c00885fd7fc71"
+      },
+      {
+        "path": "targets/phonons/086/reference.npz",
+        "size": 20638,
+        "sha256": "1eb3e21e42d32c87ff01bc1db0019d2695d427e58af074a8cfce72ae77b9e70f"
+      },
+      {
+        "path": "targets/phonons/086/structure.json",
+        "size": 1332,
+        "sha256": "859ee03c1c9c87dee6564d8b3d9f128a1c93ce8d0c02d9a82bcd15c34d2d6f67"
+      },
+      {
+        "path": "targets/phonons/087/reference.npz",
+        "size": 9612,
+        "sha256": "091b7c7089dfad053893fae7014ec041593d13bfa3fc5b1bcac78a9642720dc3"
+      },
+      {
+        "path": "targets/phonons/087/structure.json",
+        "size": 908,
+        "sha256": "33076b0e580a8ef0812a4c9dd1752b4ad6e1bcb5599e1c82144a247e04cf38a9"
+      },
+      {
+        "path": "targets/phonons/088/reference.npz",
+        "size": 52628,
+        "sha256": "77a6f1e508627c38e064a6f959caf6351f7ba20ae2d7caaccaad5504399cde79"
+      },
+      {
+        "path": "targets/phonons/088/structure.json",
+        "size": 1228,
+        "sha256": "b8714c63122e85fd60ffc4d2e3c34b057914ae4a6dc0d60891770470ecebec99"
+      },
+      {
+        "path": "targets/phonons/093/reference.npz",
+        "size": 14491,
+        "sha256": "7c9b78c05c2b2b353c20f732e2b6b0484e6919f03773d7eaa9bab24de58a0c2a"
+      },
+      {
+        "path": "targets/phonons/093/structure.json",
+        "size": 1038,
+        "sha256": "9686147f4ea11ea2f08626ece9b7df3863a8f1449f73e5689fbf7714ac7e7310"
+      },
+      {
+        "path": "targets/phonons/094/reference.npz",
+        "size": 15002,
+        "sha256": "9e785943e3f5d26ec2d5bfbf28c4a536a4f6e34d63754a30ecd6d5ca6aef6b65"
+      },
+      {
+        "path": "targets/phonons/094/structure.json",
+        "size": 1068,
+        "sha256": "b522e6f73fb731563827e88428473c18ff71c7d01666ebbbcaef714c45cd5694"
+      },
+      {
+        "path": "targets/phonons/096/reference.npz",
+        "size": 26713,
+        "sha256": "4be9e075f9c64536506dadd86552b2652b6e1c2072b163e1351e99ee2387e069"
+      },
+      {
+        "path": "targets/phonons/096/structure.json",
+        "size": 1423,
+        "sha256": "69a7235be73c77e1f4ca35bf43373fa2d1a81b18d666ead3649dae5b0655eb9c"
+      },
+      {
+        "path": "targets/phonons/099/reference.npz",
+        "size": 36349,
+        "sha256": "872561d67cb1774a6f44afe73fda763d66a7074e02509cb90595ec18f5160efa"
+      },
+      {
+        "path": "targets/phonons/099/structure.json",
+        "size": 1142,
+        "sha256": "9af413e819279e59092845784f2c67410a350c9d7b5621a61c73c37145814dea"
+      },
+      {
+        "path": "targets/phonons/101/reference.npz",
+        "size": 59922,
+        "sha256": "10f2559e4f24e49f322c18ec641f2fb7e979ebe33427cccdd84b88ee3120e1e4"
+      },
+      {
+        "path": "targets/phonons/101/structure.json",
+        "size": 3349,
+        "sha256": "4f5c0b2e47ef96a895e8fa15772c1010bd5e90eb2b1eef43eed25e4714b5a9d9"
+      },
+      {
+        "path": "targets/phonons/102/reference.npz",
+        "size": 56413,
+        "sha256": "2a4d9867337f0d8135ac72c1b34cc3c46e85fb66e2e04a3536629203c89d7b72"
+      },
+      {
+        "path": "targets/phonons/102/structure.json",
+        "size": 1054,
+        "sha256": "dd76d9c6f899a704bc4365fa4a252097c6bfe79cba03c8845019c47a395407fc"
+      },
+      {
+        "path": "targets/phonons/104/reference.npz",
+        "size": 18971,
+        "sha256": "4c741f518a88091cf44f5e48abcd20cce7a537ccc0fc10e7b90069d3f4c7f9de"
+      },
+      {
+        "path": "targets/phonons/104/structure.json",
+        "size": 1324,
+        "sha256": "f7134d8d0e368c2caf08aaff6e78308c110ae0dc44698d1cf19996e1958f39a6"
+      },
+      {
+        "path": "targets/phonons/108/reference.npz",
+        "size": 41582,
+        "sha256": "f46abfb8f57c181dc0227ea19130896cfd980304da0a893d3f3766746535b98f"
+      },
+      {
+        "path": "targets/phonons/108/structure.json",
+        "size": 722,
+        "sha256": "eef095a8e2c196ee6ceccf2340aeae0f4d08beeb05ddc7b8646f296d1f07c662"
+      },
+      {
+        "path": "targets/phonons/109/reference.npz",
+        "size": 14468,
+        "sha256": "75c4610aabc779990774a57fcfe959b59daec6fd8c17f5842d958cb33a2b1be6"
+      },
+      {
+        "path": "targets/phonons/109/structure.json",
+        "size": 907,
+        "sha256": "03927534803459c833b87721f919cecd621fd7c9faeba105045fc7c9b953bd35"
+      },
+      {
+        "path": "targets/phonons/110/reference.npz",
+        "size": 70271,
+        "sha256": "a159c160dbd284c0c18e35e3634e83fea3c162314ca96f5d67b508958ffa1f0f"
+      },
+      {
+        "path": "targets/phonons/110/structure.json",
+        "size": 1250,
+        "sha256": "7c2b7f44115a0b88a6e749ef9225edff5e33823c345c6b42a43962530e7fccac"
+      },
+      {
+        "path": "targets/phonons/115/reference.npz",
+        "size": 48730,
+        "sha256": "bf97d005bbaeb288c80b4d6a8c97b583eec7113dce53ad054cea8b3e11dbf9da"
+      },
+      {
+        "path": "targets/phonons/115/structure.json",
+        "size": 1661,
+        "sha256": "ed32081dc5e44baec9a85aabdf6e4c97ad9d819ab22ed67ef78b7b0d93577411"
+      },
+      {
+        "path": "targets/phonons/116/reference.npz",
+        "size": 18010,
+        "sha256": "3c4469fc562fabeaac0a86661f9ea9ec42e79aa80f3d3d44533ae53bf519d214"
+      },
+      {
+        "path": "targets/phonons/116/structure.json",
+        "size": 771,
+        "sha256": "7ce0540b8e565dd70b334442659b61adcc7126989ec1a505e9240cc5ce5dc335"
+      },
+      {
+        "path": "targets/phonons/120/reference.npz",
+        "size": 17626,
+        "sha256": "85add09b846c23c91599fe5ca447d87bd69b25dc8fc66426df4d7e3e783e881e"
+      },
+      {
+        "path": "targets/phonons/120/structure.json",
+        "size": 907,
+        "sha256": "c0b3c45d02eb9344e5dd8bb7c6afce704fbac62e9915ca496c2a34ec0af94f68"
+      },
+      {
+        "path": "targets/phonons/124/reference.npz",
+        "size": 47577,
+        "sha256": "b32c788047ce053845e9a584ee1d3f83499e7fb381ff6dc1c655c5fc35faa2dd"
+      },
+      {
+        "path": "targets/phonons/124/structure.json",
+        "size": 1226,
+        "sha256": "0071bd8b50a2ad45a1d884e03ae7780c29e78e0a78574570572ef9d2246cb803"
+      },
+      {
+        "path": "targets/phonons/126/reference.npz",
+        "size": 56476,
+        "sha256": "f47dfcd3ef21ed6ed1e08040e33d125c7b509272f373b834b3da4bc91749a2df"
+      },
+      {
+        "path": "targets/phonons/126/structure.json",
+        "size": 2247,
+        "sha256": "7a226b6634eca6c8e376c8da15c99a476d58d2dc8d3dc37effa84efd3382da13"
+      },
+      {
+        "path": "targets/phonons/129/reference.npz",
+        "size": 14001,
+        "sha256": "1e9b2c1a8ee843c8706d8da8ee1862a3db2b2584bac490b3821c0bcbc35fe902"
+      },
+      {
+        "path": "targets/phonons/129/structure.json",
+        "size": 898,
+        "sha256": "98c8b1de5fb70ea81908c0a0c75af1629cd46d07118b8ac2ca685ec9d54a106e"
+      },
+      {
+        "path": "targets/phonons/130/reference.npz",
+        "size": 12077,
+        "sha256": "59fc43b6ed70953a8740305132f0b3b21eec152f2727569623d04eaa7eb67850"
+      },
+      {
+        "path": "targets/phonons/130/structure.json",
+        "size": 902,
+        "sha256": "effa4ea0521a0cea86b75fa327d55b9ed6698273de92d9c696cfda27b9efa2dc"
+      },
+      {
+        "path": "targets/phonons/131/reference.npz",
+        "size": 14942,
+        "sha256": "74dd4e3078f8ee4c3b781d6e9eb4abe71249642b3c975a7f47ee768d108b5dea"
+      },
+      {
+        "path": "targets/phonons/131/structure.json",
+        "size": 913,
+        "sha256": "f05c777044e1f089bf6ea3e4e761b30e19cd663d841fa5ad84328504537f1db9"
+      },
+      {
+        "path": "targets/phonons/132/reference.npz",
+        "size": 13974,
+        "sha256": "e76286437d610258973558348ec7b2ef83e3329a21f7963cff1b255a53544623"
+      },
+      {
+        "path": "targets/phonons/132/structure.json",
+        "size": 910,
+        "sha256": "b37a489d7e676cf734c7051768825b1b138d205893ccc3ac9f8c32b4b089a072"
+      },
+      {
+        "path": "targets/phonons/133/reference.npz",
+        "size": 91825,
+        "sha256": "ba2962010690b2c5f9437b0ce3a53c1885fe16f141d1ce3f482783797d589d98"
+      },
+      {
+        "path": "targets/phonons/133/structure.json",
+        "size": 1924,
+        "sha256": "acf84ff44a42e3c84ea02479371a97bb3c7feaf09a8c7e4d25c5dc0aa8852cd1"
+      },
+      {
+        "path": "targets/phonons/134/reference.npz",
+        "size": 16856,
+        "sha256": "b1895cf8727649855a6142444cb962b452d42c9151f7c43514181a02da632f75"
+      },
+      {
+        "path": "targets/phonons/134/structure.json",
+        "size": 1903,
+        "sha256": "313d2af08a4f19337a62c0fa2e5264fc44e0bbf734c4942de4039712d30ce695"
+      },
+      {
+        "path": "targets/phonons/135/reference.npz",
+        "size": 116581,
+        "sha256": "91e79f053c6cdab26ad09c91de114c65f88827f9f84a322cd3da501b23dc9368"
+      },
+      {
+        "path": "targets/phonons/135/structure.json",
+        "size": 1938,
+        "sha256": "aced54c9fc7d55817831641741c6910a6f223f3ef6d6a8fa350cbfe81a46be8e"
+      },
+      {
+        "path": "targets/phonons/136/reference.npz",
+        "size": 31223,
+        "sha256": "8015551286784240afb92913a7a124dce158b9f723d35d1177bd7889afd6b399"
+      },
+      {
+        "path": "targets/phonons/136/structure.json",
+        "size": 922,
+        "sha256": "862d8c35c59cdb2dee0edf7a7e75b47cf7c656ecb040b732cab3852d99ee6f2a"
+      },
+      {
+        "path": "targets/phonons/138/reference.npz",
+        "size": 61996,
+        "sha256": "c3b0058d90bc6898f897739383f0f906f5fcd1042f04e1ddb556bfb94a491fdc"
+      },
+      {
+        "path": "targets/phonons/138/structure.json",
+        "size": 788,
+        "sha256": "f7e8bc16e1b062f48e41af83949b2042b64689be12cf141adf8aa7ea9cb3dd53"
+      },
+      {
+        "path": "targets/phonons/140/reference.npz",
+        "size": 63025,
+        "sha256": "09a929faac59be128912a1be8fe4a97b8f144992342f4c903fdf8eb25c69c0f6"
+      },
+      {
+        "path": "targets/phonons/140/structure.json",
+        "size": 2193,
+        "sha256": "8a389016aca88c4c887edffb4bc5cdb47438927c0c9672f5f92f1bcd390cc81a"
+      },
+      {
+        "path": "targets/phonons/142/reference.npz",
+        "size": 36081,
+        "sha256": "87d80200ed281a296bd1d4d11dc00efc75161aee9d7b0985218c55daff0be06b"
+      },
+      {
+        "path": "targets/phonons/142/structure.json",
+        "size": 1493,
+        "sha256": "0874efed89f9b3d0afe649459f06aa8c57cb44b2b6f03118f5ed57e997230d2a"
+      },
+      {
+        "path": "targets/phonons/144/reference.npz",
+        "size": 26725,
+        "sha256": "5a579f0f095a6a4458e935d6b53a901512be3f7ddc5a3fa4b6436f54ebfd393b"
+      },
+      {
+        "path": "targets/phonons/144/structure.json",
+        "size": 1072,
+        "sha256": "0f601d759c889d05c95fca33e25a2b6b2a47258321abe38cd1ed5c3362b37c2e"
+      },
+      {
+        "path": "targets/phonons/145/reference.npz",
+        "size": 24270,
+        "sha256": "25905a7be892f279a48812df1d611d4088799dd4a24df562275c315a854b4ffe"
+      },
+      {
+        "path": "targets/phonons/145/structure.json",
+        "size": 1071,
+        "sha256": "4488540dfecd3c0a9581d1965aa833cdef72c3fcd14d68d178771f66afa07375"
+      },
+      {
+        "path": "targets/phonons/146/reference.npz",
+        "size": 38731,
+        "sha256": "9b57e1e573069419b682d7eb5b6fe20ac3cb60ff79768a2a3fa0667a6292d4f7"
+      },
+      {
+        "path": "targets/phonons/146/structure.json",
+        "size": 1351,
+        "sha256": "970c12750991fb3066ccff7346b53d58e2a20d330a38e5d8ac774b2b443d32b5"
+      },
+      {
+        "path": "targets/phonons/147/reference.npz",
+        "size": 24663,
+        "sha256": "599849d201fe5246f69ac5ff86432e0426da075195382ba7cc875ab337a54760"
+      },
+      {
+        "path": "targets/phonons/147/structure.json",
+        "size": 1335,
+        "sha256": "fe0251ae23e11c364957fccb3e7debd73f64f81cde01d0b4981a2058a70d6e75"
+      },
+      {
+        "path": "targets/phonons/149/reference.npz",
+        "size": 23870,
+        "sha256": "51b7f3e5b74bc32bbee8f5e63265125a242b2488ed8fe917ad8d5a36e05ff74e"
+      },
+      {
+        "path": "targets/phonons/149/structure.json",
+        "size": 1204,
+        "sha256": "a43d42a886afcc945ef43e052bb8767573bc5c1770ea9ebe61b2e67eb995d53d"
+      },
+      {
+        "path": "targets/phonons/150/reference.npz",
+        "size": 21584,
+        "sha256": "e0f6e63a9d83856a303fb86841d8b3017b80d2ba83c984515fc57d44e4c3faeb"
+      },
+      {
+        "path": "targets/phonons/150/structure.json",
+        "size": 1345,
+        "sha256": "3e2210c1477a506cf043e52606a3e15e49d896e9fd371d2dd29ddb95f3a212b1"
+      },
+      {
+        "path": "targets/phonons/152/reference.npz",
+        "size": 47015,
+        "sha256": "762eafe435e047b19a125195c2830c99c1aa78b880b76c8bd78fa5ceab6f3424"
+      },
+      {
+        "path": "targets/phonons/152/structure.json",
+        "size": 1935,
+        "sha256": "56d4d975136b4025c0c78f9d661bcd58555a50c0aed6903b0caaecea891525d3"
+      },
+      {
+        "path": "targets/phonons/153/reference.npz",
+        "size": 30143,
+        "sha256": "dd159fda3ec06d9fa1a4dfefdc159950ebfc16883c53b3500712d51c86611a58"
+      },
+      {
+        "path": "targets/phonons/153/structure.json",
+        "size": 1367,
+        "sha256": "9ed4f6c4476e63da1858c4ee020df3770b331ea5b25358be3036fccb594e5d98"
+      },
+      {
+        "path": "targets/phonons/155/reference.npz",
+        "size": 28312,
+        "sha256": "66e152452b411e35d67bf7f255a1d31effe172933b357c2cac7cfcb98a1200d7"
+      },
+      {
+        "path": "targets/phonons/155/structure.json",
+        "size": 851,
+        "sha256": "db1aaec855c0e93a0ef89c5020f9baee8577788382ee37694e8154fe0cf74680"
+      },
+      {
+        "path": "targets/phonons/160/reference.npz",
+        "size": 27676,
+        "sha256": "c4baedb9fd63c086b270a0177ebb4d663c618568e61c848f23f8aaffdac155eb"
+      },
+      {
+        "path": "targets/phonons/160/structure.json",
+        "size": 1900,
+        "sha256": "688ffbb1627bb836b4b4497fc87012cae0aeefde56f62fda55f7d5566d9c683a"
+      },
+      {
+        "path": "targets/phonons/161/reference.npz",
+        "size": 58735,
+        "sha256": "7769238ad94da4f93068da13ad5178c082f5f2cfa28c72b540246749d86cf1f4"
+      },
+      {
+        "path": "targets/phonons/161/structure.json",
+        "size": 1910,
+        "sha256": "fce9c7451ef5f2c797f8c3b1a67eb047916c04cbafe71f8ddb7b52098678f8a5"
+      },
+      {
+        "path": "targets/phonons/165/reference.npz",
+        "size": 95445,
+        "sha256": "b39c957efe4287cf50955b58a8f11bae98d6950996a21be64b54565922a4ad9b"
+      },
+      {
+        "path": "targets/phonons/165/structure.json",
+        "size": 1065,
+        "sha256": "ca18c164e0659d34bf36aea48d9e722e1b5caef9b13668d43e4ad08b97d55730"
+      },
+      {
+        "path": "targets/phonons/167/reference.npz",
+        "size": 91787,
+        "sha256": "369c15f40a22bd36e0caf0fc1ba9a39da22eefcdf9160e47a305b249fe1a1e76"
+      },
+      {
+        "path": "targets/phonons/167/structure.json",
+        "size": 1926,
+        "sha256": "7d09ac7cfdb749602f8c492a61df9ce42d680f0d023a85acedd800b7e0540e9d"
+      },
+      {
+        "path": "targets/phonons/168/reference.npz",
+        "size": 106021,
+        "sha256": "4ef351a0945a8b98d1bbc4ced0de12b6c1d64d0f634ffcf5e2da47e1c1ee21f2"
+      },
+      {
+        "path": "targets/phonons/168/structure.json",
+        "size": 1224,
+        "sha256": "8b6ccaa6c264e30a9017a43c103f1f6a53ec28c3ee6233afbeb8c22d093b32b6"
+      },
+      {
+        "path": "targets/phonons/170/reference.npz",
+        "size": 91892,
+        "sha256": "670928289d60343e6883a0188e269339336c95635c4e7000f13a82eeaef91628"
+      },
+      {
+        "path": "targets/phonons/170/structure.json",
+        "size": 1938,
+        "sha256": "7b61d7787abbd4a47f7278565ebc016dfcebfab82885df2d709b7ce40df36fe8"
+      },
+      {
+        "path": "targets/phonons/172/reference.npz",
+        "size": 91753,
+        "sha256": "22bedc351df576fd075fa2e655d85801b6b99f05a9030a6865aeb006ac2b64e6"
+      },
+      {
+        "path": "targets/phonons/172/structure.json",
+        "size": 1933,
+        "sha256": "de677bf86e650691434a8c930ca69946e323c62b0e3a86f96873862d650c725a"
+      },
+      {
+        "path": "targets/phonons/176/reference.npz",
+        "size": 17232,
+        "sha256": "a7cc3cbc1e1338a3709ad83a70859c5d9c3057bd54b3fbc05d36ba9064033ac9"
+      },
+      {
+        "path": "targets/phonons/176/structure.json",
+        "size": 1181,
+        "sha256": "3296f7a4353c0d82de4f05f9956defbd3d227454ed93d309faf93e21427bfabd"
+      },
+      {
+        "path": "targets/phonons/177/reference.npz",
+        "size": 17107,
+        "sha256": "2c449b573d2c6789b857d2bc20f273aa4e5a5de180e92fdb0988f2f469e92540"
+      },
+      {
+        "path": "targets/phonons/177/structure.json",
+        "size": 1211,
+        "sha256": "a9ff9889dc1dd78fad7c15a90f46165a7ca70f0a41fa5d5f438ad63021d8124a"
+      },
+      {
+        "path": "targets/phonons/182/reference.npz",
+        "size": 37152,
+        "sha256": "fd1d2be10686b35e8ec398445bdb5446fb2a95f2993a52d10d27c95031c41cf4"
+      },
+      {
+        "path": "targets/phonons/182/structure.json",
+        "size": 1358,
+        "sha256": "407b7e6794269352651fb0d54fe9ee1c55d18f8c839eced6cadb1a97b5aceab1"
+      },
+      {
+        "path": "targets/phonons/183/reference.npz",
+        "size": 20426,
+        "sha256": "92267ac0ecfb1415b342073e1d303bfac526abc3c33e48f85e63f93b5797751b"
+      },
+      {
+        "path": "targets/phonons/183/structure.json",
+        "size": 770,
+        "sha256": "aa9bd02850b61ed42e1fce1f49bb51b3e566f0f1bd5733ce9fa5e4814d4f9cf3"
+      },
+      {
+        "path": "targets/phonons/184/reference.npz",
+        "size": 63304,
+        "sha256": "1df162536d182e6f3aa262a8f42be1f1d0cdf08b7c266c718a1067c30f145bf8"
+      },
+      {
+        "path": "targets/phonons/184/structure.json",
+        "size": 1930,
+        "sha256": "bc78e4911137357c8eaefc1f0761adda148edbfee8bc4bbc8addd78ae25e5e96"
+      },
+      {
+        "path": "targets/phonons/187/reference.npz",
+        "size": 94841,
+        "sha256": "d960b6b77df70122dbcd27c6cfad3577f3b86ee3d2f55d8a588868f30a0d5ea5"
+      },
+      {
+        "path": "targets/phonons/187/structure.json",
+        "size": 3366,
+        "sha256": "a870c1202b11ef369ebaf6598739f4fbdbc12ed0da09cf6be9aad5f482d5278f"
+      },
+      {
+        "path": "targets/phonons/191/reference.npz",
+        "size": 89639,
+        "sha256": "3dc13653e0688363783172fcfdeb8ff8d82b6110279b5572dc02e834faf74751"
+      },
+      {
+        "path": "targets/phonons/191/structure.json",
+        "size": 1200,
+        "sha256": "fbfb7e5a2aba689bc3b5802edf24548d78c51dab8891b044e1823a6c82437563"
+      },
+      {
+        "path": "targets/phonons/192/reference.npz",
+        "size": 82710,
+        "sha256": "0cfbe510ac5e19507af7089e5193ca92e4c57f44afc3b79918a7665205ed65ee"
+      },
+      {
+        "path": "targets/phonons/192/structure.json",
+        "size": 4510,
+        "sha256": "5203c1f47a6468948afe72c50a8279667ba8b7c5493a48ed52690486a71ddba0"
+      },
+      {
+        "path": "targets/phonons/195/reference.npz",
+        "size": 23863,
+        "sha256": "1f96969f1652b3c3debfe71987c0411b4f3c026907a1bbe7f72c5a5f5dd850a0"
+      },
+      {
+        "path": "targets/phonons/195/structure.json",
+        "size": 1803,
+        "sha256": "150568d347288787130de119e917ca23ca3424e3f5985ca1c2b4a5e167027aa4"
+      },
+      {
+        "path": "targets/phonons/197/reference.npz",
+        "size": 47653,
+        "sha256": "d5e4f966342b63da0c80caf3ced2c023fbe4c3e3aac3b018c05b8d943dc163b5"
+      },
+      {
+        "path": "targets/phonons/197/structure.json",
+        "size": 1918,
+        "sha256": "bda309214f92944113d1894342aa1c4c38c904306a551e8fe3a3a3f6e28d1367"
+      },
+      {
+        "path": "targets/phonons/203/reference.npz",
+        "size": 72770,
+        "sha256": "b189ca3c6132190eb93b9aa4c2993ff4debb399dd39af1302bda767a078998a7"
+      },
+      {
+        "path": "targets/phonons/203/structure.json",
+        "size": 1225,
+        "sha256": "c9a47b41c4bfe969578958bba4e943dfd956f5fdc7e158af87051e721ab79286"
+      },
+      {
+        "path": "targets/phonons/204/reference.npz",
+        "size": 33209,
+        "sha256": "ecaa011ae570f3192835018e0968410af7b90d05397aad5d29103fb37677b8b0"
+      },
+      {
+        "path": "targets/phonons/204/structure.json",
+        "size": 2067,
+        "sha256": "23e33446f313df430c1a02f3a4590d87449a72018b6a243c5734d2b5cf8e1930"
+      },
+      {
+        "path": "targets/phonons/206/reference.npz",
+        "size": 56252,
+        "sha256": "e079e1f58c9072bfbb027935f694df19f1565a34ee168228357ccdec39e924cf"
+      },
+      {
+        "path": "targets/phonons/206/structure.json",
+        "size": 1655,
+        "sha256": "6e1d33cc4a1895879ac01b4ae3cd547cd74ee3fb0668d9a5955728400d04aad2"
+      },
+      {
+        "path": "targets/phonons/210/reference.npz",
+        "size": 47551,
+        "sha256": "c1853a024f9015854bbbf78a918aaf0a7b1cf34c4fcd5c3577f366a82850a465"
+      },
+      {
+        "path": "targets/phonons/210/structure.json",
+        "size": 1911,
+        "sha256": "408c3b3201c033a8fa2391c7a0dc0e02cf0c78bbc74bc05651dd626a9c53d266"
+      },
+      {
+        "path": "targets/phonons/211/reference.npz",
+        "size": 27337,
+        "sha256": "26f4f9e6117da1bbf065d3d458a07d7f067f26d81aaeea3e116a812e2a562a07"
+      },
+      {
+        "path": "targets/phonons/211/structure.json",
+        "size": 908,
+        "sha256": "72cb23221ddb91c855a8a46b62fc6ee95abafa0abe3896d567314f97091a7d53"
+      },
+      {
+        "path": "targets/phonons/214/reference.npz",
+        "size": 35550,
+        "sha256": "df6707e4480b90282fe2d496c7954e1240993469b9d9cf107e688dac607b34b5"
+      },
+      {
+        "path": "targets/phonons/214/structure.json",
+        "size": 1904,
+        "sha256": "556c12979232866a633d2aecb768e6cb06be443588051b67a90a58e29aa68a94"
+      },
+      {
+        "path": "targets/phonons/215/reference.npz",
+        "size": 69289,
+        "sha256": "91f35f303b3f47dcaf9ce528e6416a32e0318c42b6dbc21ddba747f6a252f6f6"
+      },
+      {
+        "path": "targets/phonons/215/structure.json",
+        "size": 2674,
+        "sha256": "a10e185a7329866c61c19c88bac1b2c20b302ee9c01c0be3a630bd65a87e103c"
+      },
+      {
+        "path": "targets/phonons/216/reference.npz",
+        "size": 47443,
+        "sha256": "5b568a92c0dcab05b7331c81042a5ea7d9764343c9e3ed954abd70747c0dd888"
+      },
+      {
+        "path": "targets/phonons/216/structure.json",
+        "size": 1918,
+        "sha256": "37c32ca240022e157318b432a5ed611b3146816ec4cce5b095ac3200522624ba"
+      },
+      {
+        "path": "targets/phonons/217/reference.npz",
+        "size": 47573,
+        "sha256": "450ebe4fe94258285cab422f39e2edc3d38e6dc28d0f9c1c9bcc00a44d8181ef"
+      },
+      {
+        "path": "targets/phonons/217/structure.json",
+        "size": 1927,
+        "sha256": "3a3707c4d24cbf75d510cd671e0498681ae94f7e46645e8cffd4d32a1ec2c0f5"
+      },
+      {
+        "path": "targets/phonons/218/reference.npz",
+        "size": 46676,
+        "sha256": "e2a5d21fb22e4fb7b8c51430e53cb798698ea6af6d6ee56b0e8e142701eafa7e"
+      },
+      {
+        "path": "targets/phonons/218/structure.json",
+        "size": 1917,
+        "sha256": "41fa1a0dc2cbcf7be5d57830654e17cd11988f4418d206fea3a3c838199190c5"
+      },
+      {
+        "path": "targets/phonons/219/reference.npz",
+        "size": 46553,
+        "sha256": "80a14b12e95513b32d6320b40c16ee0af032712e800677a07e8121986d85a39b"
+      },
+      {
+        "path": "targets/phonons/219/structure.json",
+        "size": 1900,
+        "sha256": "a4dda60c33ec48f4fedce25ca175b8cb83f4535c079226df9469adc02275074a"
+      },
+      {
+        "path": "targets/phonons/221/reference.npz",
+        "size": 740617,
+        "sha256": "8624298c856a3c80dc91c5b4f7a32c1cae2b4153c22cb5759feb6eeb06b7d9ba"
+      },
+      {
+        "path": "targets/phonons/221/structure.json",
+        "size": 1144,
+        "sha256": "6774186b1a4c72b1eab1865fc6a84e3b002214277d5f6fa6dd3a78be019b3d6b"
+      },
+      {
+        "path": "targets/phonons/222/reference.npz",
+        "size": 15048,
+        "sha256": "5f1bc0e7567b3449eb21344d716d194a2e52764eaf4982b831a28c136f704b02"
+      },
+      {
+        "path": "targets/phonons/222/structure.json",
+        "size": 615,
+        "sha256": "4478241f0e7609329320fdc91ccfecdeceb506e4912ac86c31041fc92534d1c3"
+      },
+      {
+        "path": "targets/phonons/223/reference.npz",
+        "size": 8823,
+        "sha256": "935122a6a60cd0a4fcf84499e0ebfc37c85dcb2b4c973c1206465a87fde141b3"
+      },
+      {
+        "path": "targets/phonons/223/structure.json",
+        "size": 528,
+        "sha256": "744a1741138e3aa214252779993103f8cb49d5f2ab6201fc910127ed9b949e8d"
+      },
+      {
+        "path": "targets/phonons/224/reference.npz",
+        "size": 8803,
+        "sha256": "19787e0c03617005f86e935676933112937f3264741e24ddb4dc63ea03f324f7"
+      },
+      {
+        "path": "targets/phonons/224/structure.json",
+        "size": 523,
+        "sha256": "b4ac53d08648ba8e76feb231504a5f6838dadff6f4876da6de9b73aabe66f780"
+      },
+      {
+        "path": "targets/scoring.json",
+        "size": 15254,
+        "sha256": "c0b4b1ac37c860f1e56efbcc9d118abed530bb2828ae32cf94b8646c1dc9e1fe"
+      },
+      {
+        "path": "targets/structures.extxyz",
+        "size": 124983,
+        "sha256": "a926e56a6a4df3ccea2e2cd385a7a7fb437b13c0e64b44d0e78340b159fc3dae"
+      }
+    ]
+  },
+  "protocol_version": "0.2.1",
+  "runner_version": "0.6.0",
+  "package_version": "0.1.0",
+  "limits": {
+    "predictions_bytes": 33554432,
+    "phonon_archive_bytes": 134217728,
+    "extracted_bytes": 536870912,
+    "archive_members": 2048
+  },
+  "awaiting_publication": {
+    "prophet-spin-v1l": {
+      "score_sha256": "8433024ce7446820e24e78eba6840bc9c270c734fd7001d8cd0a4c765052b991",
+      "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
+      "inference_available": false
+    },
+    "prophet-spin-v2l": {
+      "score_sha256": "3eb46af0f3c7fe69632112ec5f1d2b8301c9a9257f6465b9fdc4a9759926aaf5",
+      "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
+      "inference_available": false
+    },
+    "prophet-spin-v1s": {
+      "score_sha256": "02180c93bff3cd219ee26ddbe6c94141f9f043f67f28313254ba0e6d95436adb",
+      "inference_sha256": "b48076e299454ba70d16d899ca2b9bd59aa77701521494cdfe0434f983194298",
+      "inference_available": true
+    }
+  },
+  "cohorts": {
+    "ground_state": 191,
+    "hull": 191,
+    "phonons": 111,
+    "J": 172,
+    "magnetovolume": 133
+  },
+  "draft_entries": {},
+  "metadata_pending": {
+    "prophet-spin-v1s-6a": {
+      "score_sha256": "13c16e1a989fc06e26176debff73aeb146b1e877d899bc8507b525e2012fb684",
+      "inference_sha256": "a81bd05524a9e042a494ce9f144a149377eb46efed7455fee05368200931f7dd",
+      "inference_available": true
+    }
+  },
+  "model_names": {
+    "prophet-spin-v1s": "Prophet-Spin v1s",
+    "prophet-spin-v1s-6a": "Prophet-Spin v1s (6 Å)",
+    "prophet-spin-v1l": "Prophet-Spin v1L",
+    "prophet-spin-v2l": "Prophet-Spin v2L"
+  },
+  "dataset_order": [
+    "prophet-pretrain",
+    "elementa-spin-v1",
+    "elementa-spin-v2"
+  ],
+  "reference_model": "prophet-spin-v1s"
+}

@@ -1,0 +1,152 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: dataset-schema.yml
+type: object
+additionalProperties: false
+properties:
+  name:
+    type: string
+    minLength: 1
+    not: &id001
+      pattern: (?i)to be provided
+  dataset_key: &id003
+    type: string
+    pattern: ^[a-z0-9]+(?:-[a-z0-9]+)*$
+  version:
+    type: string
+    minLength: 1
+    not: *id001
+  date_added:
+    type: string
+    format: date
+  description:
+    type: string
+    minLength: 1
+    not: *id001
+  authors:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        name: &id002
+          type: string
+          minLength: 1
+        affiliation: *id002
+      required:
+      - name
+      - affiliation
+  organisation:
+    type: string
+    minLength: 1
+    not: *id001
+  url:
+    type: string
+    format: uri
+    pattern: ^https://[^\s]+$
+  doi:
+    type: string
+    minLength: 1
+    not: *id001
+  paper:
+    type: string
+    format: uri
+    pattern: ^https://[^\s]+$
+  license:
+    type: string
+    minLength: 1
+    not: *id001
+  open:
+    type: boolean
+  n_structures:
+    type: integer
+    minimum: 0
+  n_materials:
+    type: integer
+    minimum: 0
+  n_elements:
+    type: integer
+    minimum: 0
+  elements:
+    type: array
+    uniqueItems: true
+    items:
+      type: string
+      pattern: ^[A-Z][a-z]?$
+  magnetic:
+    type: object
+    additionalProperties: false
+    properties:
+      site_moments:
+        type: boolean
+      spin_mode:
+        enum:
+        - collinear
+        - non-collinear
+        - not applicable
+      states_per_geometry:
+        oneOf:
+        - type: number
+          minimum: 0
+        - type: string
+          minLength: 1
+          not: *id001
+      magnetic_frame_fraction:
+        type: number
+        minimum: 0
+        maximum: 1
+    required:
+    - site_moments
+    - spin_mode
+  method:
+    type: object
+    additionalProperties: false
+    properties:
+      code: *id002
+      functional: *id002
+      hubbard_u: *id002
+      pseudopotentials: *id002
+  benchmark_overlap:
+    type: object
+    additionalProperties: false
+    properties:
+      n_materials:
+        type: integer
+        minimum: 0
+      method: *id002
+  parent_datasets:
+    type: array
+    uniqueItems: true
+    items: *id003
+  notes:
+    type: string
+    minLength: 1
+    not: *id001
+  size_scope:
+    type: string
+    minLength: 1
+    not: *id001
+required:
+- name
+- dataset_key
+- description
+- magnetic
+allOf:
+- if:
+    properties:
+      open:
+        const: true
+    required:
+    - open
+  then:
+    required:
+    - url
+    - license
+- if:
+    not:
+      properties:
+        dataset_key:
+          const: prophet-pretrain
+  then:
+    required:
+    - open

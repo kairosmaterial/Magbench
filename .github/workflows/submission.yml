@@ -1,0 +1,32 @@
+name: Submission replay
+on:
+  pull_request:
+    paths:
+      - 'models/**'
+permissions:
+  contents: read
+jobs:
+  submission:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trusted validation policy
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: policy
+          persist-credentials: false
+      - name: Submission contents
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r policy/requirements-dev.txt
+      - name: Validate and replay every submitted model
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python policy/scripts/check_submission_pr.py --root candidate --base-ref "$BASE_SHA" --cache "$RUNNER_TEMP/magbench-replay"

@@ -1,0 +1,642 @@
+type: object
+additionalProperties: false
+properties:
+  model_name: &id001
+    type: string
+    minLength: 1
+  model_key:
+    type: string
+    pattern: ^[a-z0-9]+(?:-[a-z0-9]+)*$
+  model_version: *id001
+  lifecycle:
+    enum:
+    - pending
+    - active
+    - draft
+  dates:
+    type: object
+    additionalProperties: false
+    properties:
+      benchmark_added:
+        anyOf:
+        - &id010
+          type: string
+          format: date
+        - const: to be provided
+    required:
+    - benchmark_added
+  authors:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        name: *id001
+        affiliation: *id001
+        corresponding:
+          type: boolean
+        email:
+          type: string
+          format: email
+        url: &id002
+          type: string
+          format: uri
+          pattern: ^https://[^\s]+$
+      required:
+      - name
+      - affiliation
+      - corresponding
+    contains:
+      properties:
+        corresponding:
+          const: true
+      required:
+      - corresponding
+    minContains: 1
+    maxContains: 1
+  repo:
+    anyOf:
+    - *id002
+    - const: to be provided
+  checkpoint:
+    type: object
+    additionalProperties: false
+    properties:
+      url:
+        anyOf:
+        - *id002
+        - const: to be provided
+      sha256:
+        anyOf:
+        - &id003
+          type: string
+          pattern: ^[0-9a-f]{64}$
+        - const: to be provided
+      size:
+        anyOf:
+        - &id004
+          type: integer
+          minimum: 1
+        - const: to be provided
+      filename:
+        type: string
+        pattern: ^[A-Za-z0-9][A-Za-z0-9_.-]*$
+      head:
+        type: object
+        additionalProperties: false
+        properties:
+          url:
+            anyOf:
+            - type: string
+              format: uri
+              pattern: ^https://[^\s]+$
+            - const: to be provided
+          sha256:
+            anyOf:
+            - type: string
+              pattern: ^[0-9a-f]{64}$
+            - const: to be provided
+          size:
+            anyOf:
+            - type: integer
+              minimum: 1
+            - const: to be provided
+          filename:
+            type: string
+            pattern: ^[A-Za-z0-9][A-Za-z0-9_.-]*$
+        required:
+        - url
+        - sha256
+    required:
+    - url
+    - sha256
+  license:
+    type: object
+    additionalProperties: false
+    properties:
+      code: *id001
+      checkpoint: *id001
+    required:
+    - code
+    - checkpoint
+  architecture: *id001
+  targets:
+    type: array
+    minItems: 1
+    uniqueItems: true
+    items: *id001
+  training_sets:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        dataset_key:
+          type: string
+          pattern: ^[a-z0-9]+(?:-[a-z0-9]+)*$
+        usage:
+          enum:
+          - pretraining
+          - training
+          - fine-tuning
+        subset:
+          type: string
+          minLength: 1
+      required:
+      - dataset_key
+      - usage
+  test_set_informed:
+    anyOf:
+    - type: boolean
+    - const: to be provided
+  evaluation:
+    type: object
+    additionalProperties: false
+    properties:
+      moment_initialisation:
+        enum:
+        - moment_head
+        - energy_gradient
+      seed_amplitudes:
+        enum:
+        - uniform_3muB
+        - model
+      exchange_route:
+        enum:
+        - energy_mapping
+        - exchange_readout
+      protocol_version: *id001
+      data_version: *id001
+      runner_version: *id001
+      hardware: *id001
+      wall_time_seconds:
+        type: number
+        minimum: 0
+    required:
+    - moment_initialisation
+    - seed_amplitudes
+    - exchange_route
+    - protocol_version
+    - data_version
+    - runner_version
+  inference:
+    type: object
+    additionalProperties: false
+    properties:
+      script:
+        type: string
+        pattern: ^[A-Za-z0-9][A-Za-z0-9_./-]*\.py$
+      adapter:
+        type: string
+        pattern: ^[A-Za-z_][A-Za-z0-9_]*$
+      command: *id001
+      python_version:
+        anyOf:
+        - type: string
+          pattern: ^\d+\.\d+(?:\.\d+)?$
+        - const: to be provided
+      dependencies:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items:
+          type: string
+          pattern: ^[A-Za-z0-9_.-]+==[^\s]+$
+    required:
+    - script
+    - adapter
+    - command
+    - python_version
+    - dependencies
+  predictions:
+    type: object
+    additionalProperties: false
+    properties:
+      url: &id005
+        anyOf:
+        - *id002
+        - const: to be provided
+      sha256: &id006
+        anyOf:
+        - *id003
+        - const: to be provided
+      size: &id007
+        anyOf:
+        - *id004
+        - const: to be provided
+      phonons:
+        type: object
+        additionalProperties: false
+        properties:
+          url: *id005
+          sha256: *id006
+          size: *id007
+          files:
+            type: array
+            minItems: 1
+            maxItems: 2048
+            items:
+              type: object
+              additionalProperties: false
+              properties:
+                path:
+                  type: string
+                  pattern: ^phonons/[A-Za-z0-9][A-Za-z0-9_.-]*\.npz$
+                sha256:
+                  type: string
+                  pattern: ^[0-9a-f]{64}$
+                size:
+                  type: integer
+                  minimum: 1
+                  maximum: 67108864
+              required:
+              - path
+              - sha256
+              - size
+        required:
+        - url
+        oneOf:
+        - required:
+          - sha256
+          - size
+          not:
+            required:
+            - files
+        - required:
+          - files
+          not:
+            anyOf:
+            - required:
+              - sha256
+            - required:
+              - size
+    required:
+    - url
+    - sha256
+    - size
+    - phonons
+  metrics:
+    type: object
+    additionalProperties: false
+    properties:
+      total:
+        type: number
+        minimum: 0
+        maximum: 1
+      ground_state: &id008
+        type: number
+        minimum: 0
+        maximum: 0.2
+      hull: *id008
+      phonons: *id008
+      J: *id008
+      magnetovolume: *id008
+      ground_state_passes:
+        type: integer
+        minimum: 0
+    required:
+    - total
+    - ground_state
+    - hull
+    - phonons
+    - J
+    - magnetovolume
+    - ground_state_passes
+  paper: *id002
+  doi: *id001
+  docs: *id002
+  pr_url: *id002
+  training_cost:
+    type: object
+    additionalProperties: false
+    properties:
+      value:
+        type: number
+        minimum: 0
+      unit: *id001
+    required:
+    - value
+    - unit
+  notes:
+    type: object
+    properties:
+      disclosure:
+        type: string
+        minLength: 1
+    additionalProperties: true
+  publication_status:
+    enum:
+    - awaiting_artifacts
+    - metadata_incomplete
+  hyperparams:
+    type: object
+    additionalProperties: false
+    properties:
+      architecture:
+        type: object
+        additionalProperties: false
+        properties:
+          cutoff_A:
+            oneOf:
+            - &id009
+              type: number
+              exclusiveMinimum: 0
+            - type: array
+              minItems: 1
+              uniqueItems: true
+              items: *id009
+          exchange_range_A:
+            anyOf:
+            - *id009
+            - type: 'null'
+          n_layers:
+            type: integer
+            minimum: 1
+          model_params:
+            type: integer
+            minimum: 1
+        required:
+        - cutoff_A
+        - exchange_range_A
+        - n_layers
+        - model_params
+    required:
+    - architecture
+required:
+- model_key
+- model_version
+- lifecycle
+- dates
+- authors
+- repo
+- checkpoint
+- license
+- architecture
+- targets
+- training_sets
+- test_set_informed
+- evaluation
+- inference
+- predictions
+- hyperparams
+$schema: https://json-schema.org/draft/2020-12/schema
+title: MagBench model card
+allOf:
+- if:
+    properties:
+      test_set_informed:
+        const: true
+  then:
+    required:
+    - notes
+    properties:
+      notes:
+        required:
+        - disclosure
+- if:
+    allOf:
+    - properties:
+        lifecycle:
+          enum:
+          - pending
+          - active
+    - not:
+        required:
+        - publication_status
+  then:
+    properties:
+      repo: *id002
+      checkpoint:
+        type: object
+        additionalProperties: false
+        properties:
+          url:
+            type: string
+            format: uri
+            pattern: ^https://[^\s]+$
+          sha256:
+            type: string
+            pattern: ^[0-9a-f]{64}$
+          size:
+            anyOf:
+            - type: integer
+              minimum: 1
+            - const: to be provided
+          filename:
+            type: string
+            pattern: ^[A-Za-z0-9][A-Za-z0-9_.-]*$
+          head:
+            type: object
+            additionalProperties: false
+            properties:
+              url:
+                anyOf:
+                - type: string
+                  format: uri
+                  pattern: ^https://[^\s]+$
+                - const: to be provided
+              sha256:
+                anyOf:
+                - type: string
+                  pattern: ^[0-9a-f]{64}$
+                - const: to be provided
+              size:
+                anyOf:
+                - type: integer
+                  minimum: 1
+                - const: to be provided
+              filename:
+                type: string
+                pattern: ^[A-Za-z0-9][A-Za-z0-9_.-]*$
+            required:
+            - url
+            - sha256
+        required:
+        - url
+        - sha256
+      test_set_informed:
+        type: boolean
+      predictions:
+        type: object
+        additionalProperties: false
+        properties:
+          url:
+            type: string
+            format: uri
+            pattern: ^https://[^\s]+$
+          sha256:
+            type: string
+            pattern: ^[0-9a-f]{64}$
+          size:
+            type: integer
+            minimum: 1
+          phonons:
+            type: object
+            additionalProperties: false
+            properties:
+              url:
+                anyOf:
+                - type: string
+                  format: uri
+                  pattern: ^https://[^\s]+$
+                - const: to be provided
+              sha256:
+                anyOf:
+                - type: string
+                  pattern: ^[0-9a-f]{64}$
+                - const: to be provided
+              size:
+                anyOf:
+                - type: integer
+                  minimum: 1
+                - const: to be provided
+              files:
+                type: array
+                minItems: 1
+                maxItems: 2048
+                items:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    path:
+                      type: string
+                      pattern: ^phonons/[A-Za-z0-9][A-Za-z0-9_.-]*\.npz$
+                    sha256:
+                      type: string
+                      pattern: ^[0-9a-f]{64}$
+                    size:
+                      type: integer
+                      minimum: 1
+                      maximum: 67108864
+                  required:
+                  - path
+                  - sha256
+                  - size
+            required:
+            - url
+            oneOf:
+            - required:
+              - sha256
+              - size
+              not:
+                required:
+                - files
+            - required:
+              - files
+              not:
+                anyOf:
+                - required:
+                  - sha256
+                - required:
+                  - size
+        required:
+        - url
+        - sha256
+        - size
+        - phonons
+      metrics:
+        type: object
+        additionalProperties: false
+        properties:
+          total:
+            type: number
+            minimum: 0
+            maximum: 1
+          ground_state:
+            type: number
+            minimum: 0
+            maximum: 0.2
+          hull:
+            type: number
+            minimum: 0
+            maximum: 0.2
+          phonons:
+            type: number
+            minimum: 0
+            maximum: 0.2
+          J:
+            type: number
+            minimum: 0
+            maximum: 0.2
+          magnetovolume:
+            type: number
+            minimum: 0
+            maximum: 0.2
+          ground_state_passes:
+            type: integer
+            minimum: 0
+        required:
+        - total
+        - ground_state
+        - hull
+        - phonons
+        - J
+        - magnetovolume
+        - ground_state_passes
+- if:
+    required:
+    - publication_status
+  then:
+    properties:
+      model_key:
+        enum:
+        - prophet-spin-v1s
+        - prophet-spin-v1l
+        - prophet-spin-v2l
+        - prophet-spin-v1s-6a
+    required:
+    - publication_status
+- if:
+    properties:
+      lifecycle:
+        const: draft
+  then:
+    properties:
+      model_key:
+        const: prophet-spin-v1s-6a
+    not:
+      required:
+      - publication_status
+  else:
+    required:
+    - metrics
+    properties:
+      dates:
+        properties:
+          benchmark_added: *id010
+- if:
+    properties:
+      publication_status:
+        const: metadata_incomplete
+    required:
+    - publication_status
+  then:
+    properties:
+      lifecycle:
+        const: active
+      model_key:
+        const: prophet-spin-v1s-6a
+- if:
+    properties:
+      publication_status:
+        const: awaiting_artifacts
+    required:
+    - publication_status
+  then:
+    properties:
+      lifecycle:
+        const: pending
+- if:
+    not:
+      properties:
+        model_key:
+          enum:
+          - prophet-spin-v1s
+          - prophet-spin-v1s-6a
+          - prophet-spin-v1l
+          - prophet-spin-v2l
+  then:
+    required:
+    - model_name
