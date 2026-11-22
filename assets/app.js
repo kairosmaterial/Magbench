@@ -58,7 +58,7 @@
       if(name==='moment'&&c.evaluation.moment_initialisation!==value)return false;
       if(name==='exchange'&&c.evaluation.exchange_route!==value)return false;
       if(name==='openness'){
-        const isPublic=c.repo?.startsWith('https://')&&c.checkpoint?.url?.startsWith('https://')&&c.predictions?.url?.startsWith('https://');
+        const isPublic=c.publication_status!=='awaiting_artifacts'&&c.repo?.startsWith('https://')&&c.checkpoint?.url?.startsWith('https://')&&c.predictions?.url?.startsWith('https://');
         if(value==='public'&&!isPublic)return false;
         if(value==='awaiting'&&isPublic)return false;
         if(value==='MIT'&&c.license?.code!=='MIT')return false;
