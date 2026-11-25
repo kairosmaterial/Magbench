@@ -4,7 +4,7 @@
   "benchmark_runner/magbench/cli.py": "1e5498a5d315e742a7b035894b7499e54dc5ff48cc83b7041183d1e2cdc71e86",
   "benchmark_runner/magbench/collect.py": "d957aa9ecf720cf43b12f9c4b952f111fb331d6cbe10d8cd33a165247f8e60ed",
   "benchmark_runner/magbench/physics.py": "176f60e300c082d39231a178938956b8b255dbe124889108b62f7abb26324305",
-  "benchmark_runner/magbench/scoring.py": "002795cdab318e401be83d2bbc4f26a787cc3e1d3acfb10cf7a67fad584f2371",
+  "benchmark_runner/magbench/scoring.py": "db30e9d2e0507c2345ff1ff51f8114d8f67d4d76edfa32df39f88a3ba6d55c45",
   "benchmark_runner/magbench/selection.py": "03468ffd0d21354efa4ec22b5c266e6c1c6d4ece87649f1ea1d7e0c88e8877e5",
   "benchmark_runner/magbench/worker.py": "b45d1dbb36ea51e95b3ff2b412a0f55b2f9a99f55c6594f6e2fc7e62fe548158",
   "benchmark_runner/magbench/dummy.py": "78d8a8ab7560fc84100a176f22d05036922f8a12d277791c404000a42828029c"

@@ -4,7 +4,7 @@ Five material-level scores, each weighted 0.2: magnetic ground state (191), MP h
 
 ## Run a model
 
-Download the benchmark data as described in the repository README and place `inputs/` and `targets/` next to `benchmark_runner/`. Run the following commands from that directory. The `benchmark_runner/vendor/` directory contains the exact reference-model runtime source used for the reference evaluation.
+Download the benchmark data as described in the repository README and place `inputs/` and `targets/` next to `benchmark_runner/`. Run the following commands from that directory. The `benchmark_runner/vendor/` directory contains the released model runtime, including the CPU envelope fix and density-mediated exchange readout.
 
 Install the runner in a Linux CUDA environment. The reference run used Python 3.11.15, PyTorch 2.5.1+cu121, e3nn 0.5.8, torch-scatter 2.1.2+pt25cu121, OpenEquivariance 0.5.4, ASE 3.28.0, and Phonopy 4.1.0. The runtime also needs Ninja and a CUDA development toolchain for first-use kernel compilation. Set `CUDA_HOME` to the toolkit location. For the reference PyTorch 2.5 and OpenEquivariance 0.5.4 combination, run `python benchmark_runner/operations/patch_oeq_fp32_portable.py` once in the dedicated evaluation environment.
 
@@ -46,23 +46,29 @@ A missing required parameter makes that material's entire corresponding dimensio
 
 ## Hosted evaluation
 
-`../platform` contains the authenticated Sites frontend, D1 queue and R2 multipart checkpoint storage. The GPU supervisor is `python -m magbench.worker --config worker.json`; service credentials are passed only through `MAGBENCH_EVALUATOR_TOKEN` and `MAGBENCH_SITE_ACCESS_TOKEN` environment variables. They must never enter the inference container.
+`python -m magbench.worker --config worker.json` implements the evaluator side of
+an authenticated remote queue. The queue frontend and storage service are not
+included in this repository; this checkout supports local evaluation without
+them. See `magbench/worker.py` for the external API and container contract.
 
-The worker requires a tested Docker image with the runner and trusted adapter installed. It runs uploaded checkpoints as a non-root user with no network, read-only root filesystem, dropped capabilities, bounded CPU/RAM and a private temporary directory. Mount `inputs` only; keep `targets` outside inference. Uploads are not executed by the web server. Only the trusted evaluator can finalize scores.
-
-```json
-{"site":"http://127.0.0.1:8793","inputs":"/path/inputs","targets":"/path/targets","workdir":"/path/jobs","image":"magbench-prophet:v0.2.1","gpu":0,"memory":"48g","cpus":8,"timeout_hours":168}
-```
+The worker requires a tested Docker image with the runner and trusted adapter
+installed. It isolates checkpoint inference from scoring targets. Configure
+service credentials through environment variables only.
 
 ## Development tests
 
 Run these from the full development checkout.
 
 ```bash
-python -m unittest discover -s tests -p 'test_*.py' -v
+python -m pytest -q
 ```
 
-The release validation additionally checks all 172 energy-mapping designs against the delivered J labels, all fixed cohort counts, ground-state gating, exact-score self predictions, phonon stability and q-point mismatches. Do not use self predictions as model results.
+`tests/test_scoring.py` covers ground-state gating and parameter errors. Its
+four full-replay tests require `MAGBENCH_DATA_DIR` (the downloaded dataset root)
+and `MAGBENCH_LOCAL_PREDICTIONS` (a JSON mapping from model keys to local
+prediction files). `scripts/validate_submission.py` verifies pinned targets,
+artefact integrity and scorer replay. These checks compare published model
+predictions with stored scores; they do not rerun model inference.
 
 ## Third-party adapter interface
 

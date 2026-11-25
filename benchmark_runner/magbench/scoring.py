@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score predictions: python score.py predictions.json --output scores.json"""
+"""Score predictions: magbench score --targets targets --predictions predictions.json --output scores.json"""
 import argparse,json
 from pathlib import Path
 from collections import Counter
