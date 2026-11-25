@@ -146,8 +146,9 @@ def evaluate(reference,predictions,prediction_root,*,ground_only=False):
                     details['ground_state'] = selection
             else:
                 passed = ground_alignment(p,gs[key],hull[key]['natoms']) is not None
-        except (ValueError,TypeError,KeyError,IndexError):
+        except (ValueError,TypeError,KeyError,IndexError) as e:
             passed = False
+            details['ground_state'] = dict(failed=str(e))
         scores['ground_state']=float(passed)
         if not passed:
             details['gate']='ground_state_incorrect_or_missing'

@@ -41,3 +41,32 @@ def test_full_local_replay_when_inputs_supplied(key):
     assert result.passed,result.markdown()
     checks={r['check']:r['status'] for r in result.rows}
     assert checks['Scorer replay']==checks['Replay equals scores.json']==checks['Replay equals declared metrics']=='PASS'
+
+
+def test_ground_exception_is_recorded_without_changing_gate(tmp_path):
+    from magbench.scoring import evaluate
+    from leaderboard.validation import compare_replay
+    cfg = {'cohorts': {k: ['001'] for k in ('ground_state', 'hull', 'phonons', 'J', 'magnetovolume')},
+           'dimension_weights': {k: .2 for k in ('ground_state', 'hull', 'phonons', 'J', 'magnetovolume')}}
+    # Use the actual public scoring configuration shape, with a one-material cohort.
+    source = json.loads((ROOT / 'models/prophet-spin-v1s/scores.json').read_text())
+    reference = {'magnetic_site_indices': [0], 'reference_signs': [1],
+                 'minimum_abs_moment_muB': [.1], 'symmetry_permutations': [[0]],
+                 'reference_magmoms_muB': [1]}
+    for name, value in [('scoring', cfg), ('ground_state', {'001': reference}),
+                        ('hull', {'001': {'natoms': 1}}),
+                        ('materials', [{'id': '001', 'name': 'Fe'}])]:
+        (tmp_path / (name + '.json')).write_text(json.dumps(value))
+    # The evaluator reads weights from a separate key; match its public contract.
+    cfg['weights'] = cfg.pop('dimension_weights')
+    (tmp_path / 'scoring.json').write_text(json.dumps(cfg))
+    got = evaluate(tmp_path, {'001': {'magmoms_muB': []}}, tmp_path)
+    row = got['materials'][0]
+    assert got['total_score'] == 0
+    assert row['details']['ground_state']['failed']
+    old = json.loads(json.dumps(got))
+    del old['materials'][0]['details']['ground_state']
+    compare_replay(got, old)
+    old['total_score'] = .1
+    with pytest.raises(ValueError):
+        compare_replay(got, old)

@@ -1,4 +1,5 @@
 """Submission review without importing or running submitted inference code."""
+import copy
 import hashlib
 import json
 import re
@@ -70,6 +71,20 @@ def replay(target_dir,prediction):
     return evaluate(target_dir,read(prediction),Path(prediction).resolve().parent)
 
 
+def compare_replay(scored, stored):
+    """Allow the new gate error diagnostic when checking historical scores."""
+    comparable = copy.deepcopy(scored)
+    old_rows = {row['id']: row for row in stored['materials']}
+    for row in comparable['materials']:
+        detail = row['details'].get('ground_state')
+        old = old_rows.get(row['id'], {})
+        if (not row['ground_state_pass'] and detail is not None
+                and set(detail) == {'failed'}
+                and 'ground_state' not in old.get('details', {})):
+            del row['details']['ground_state']
+    compare(comparable, stored, 'scores')
+
+
 def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,predictions=None,cache=None,base_ref=None,require_public=False):
     review=Review();loaded=review.check('Model card schema',lambda:load_card(key,root,policy_root))
     if loaded is None:return review
@@ -122,7 +137,7 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
         return 'Code and checkpoint licences stated'
     if awaiting and any(v=='to be provided' for v in card['license'].values()):unavailable('Licences','awaiting artefacts: licence metadata requires owner confirmation')
     else:review.check('Licences',licenses)
-    script=review.check('Inference syntax and adapter definition',lambda:str(check_adapter(card,folder).relative_to(folder)))
+    script=review.check('Inference syntax and adapter definition',lambda:str(check_adapter(card,folder).resolve().relative_to(folder.resolve())))
     if awaiting and not settings['awaiting_publication'][key].get('inference_available',False):
         expected=settings['awaiting_publication'][key]['inference_sha256']
         actual=hashlib.sha256(inside(folder,card['inference']['script']).read_bytes()).hexdigest() if script else ''
@@ -152,7 +167,7 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
     if target_dir:
         scored=review.check('Scorer replay',lambda:replay(target_dir,prediction))
         if scored is not None:
-            review.check('Replay equals scores.json',lambda:compare(scored,read(score_path)))
+            review.check('Replay equals scores.json',lambda:compare_replay(scored,read(score_path)))
             review.check('Replay equals declared metrics',lambda:compare(metrics_from(scored),card['metrics']))
     else:review.record('Scorer replay','FAIL','Pinned targets are required')
     return review

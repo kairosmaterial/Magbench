@@ -69,11 +69,11 @@ def prepare_run(root,source):
 
 
 def test_completed_draft_ingest_replays_before_listing(owner_draft,tmp_path,monkeypatch):
-    checkout=owner_draft
+    checkout=owner_draft.resolve()
     import scripts.ingest_model as module
     from leaderboard import artifacts,validation
-    source=tmp_path/'external-run';score=prepare_run(checkout,source)
-    monkeypatch.setattr(artifacts,'targets',lambda *a,**kw:tmp_path/'targets')
+    source=(tmp_path/'external-run').resolve();score=prepare_run(checkout,source)
+    monkeypatch.setattr(artifacts,'targets',lambda *a,**kw:(tmp_path/'targets').resolve())
     monkeypatch.setattr(module,'replay',lambda *a:score);monkeypatch.setattr(validation,'replay',lambda *a:score)
     ingest(DRAFT,root=checkout,predictions=source,data=tmp_path)
     c,f=load_card(DRAFT,checkout,checkout);assert c['lifecycle']=='pending';assert c['metrics']['total']==score['total_score']
@@ -83,11 +83,11 @@ def test_completed_draft_ingest_replays_before_listing(owner_draft,tmp_path,monk
 
 
 def test_failed_draft_replay_changes_no_tracked_record(owner_draft,tmp_path,monkeypatch):
-    checkout=owner_draft
+    checkout=owner_draft.resolve()
     import scripts.ingest_model as module
     from leaderboard import artifacts
-    source=tmp_path/'external-run';score=prepare_run(checkout,source);changed=dict(score,total_score=score['total_score']+.01)
-    monkeypatch.setattr(artifacts,'targets',lambda *a,**kw:tmp_path/'targets');monkeypatch.setattr(module,'replay',lambda *a:changed)
+    source=(tmp_path/'external-run').resolve();score=prepare_run(checkout,source);changed=dict(score,total_score=score['total_score']+.01)
+    monkeypatch.setattr(artifacts,'targets',lambda *a,**kw:(tmp_path/'targets').resolve());monkeypatch.setattr(module,'replay',lambda *a:changed)
     before={p:p.read_bytes() for p in (checkout/'benchmark.json',checkout/'models'/DRAFT/f'{DRAFT}.yml')}
     with pytest.raises(ValueError,match='number differs'):ingest(DRAFT,root=checkout,predictions=source,data=tmp_path)
     assert all(p.read_bytes()==v for p,v in before.items())
@@ -107,3 +107,12 @@ def test_completed_metadata_exception_does_not_apply_to_new_submissions(public_m
     card['lifecycle']='active';card['publication_status']='metadata_incomplete'
     (folder/f'{key}.yml').write_text(yaml.safe_dump(card))
     with pytest.raises(Exception):load_card(key,root,root)
+
+
+def test_adapter_path_accepts_symlinked_checkout(public_model, tmp_path):
+    checkout, key, card, folder = public_model
+    alias = tmp_path / 'checkout-link'
+    alias.symlink_to(checkout.resolve(), target_is_directory=True)
+    result = validate(key, root=alias, policy_root=alias, offline=True)
+    checks = {row['check']: row['status'] for row in result.rows}
+    assert checks['Inference syntax and adapter definition'] == 'PASS'
