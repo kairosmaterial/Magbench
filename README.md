@@ -44,7 +44,7 @@ For J and the volume-exchange coupling, `R` is the normalised root-mean-square e
 
 ## Usage
 
-To evaluate a model from a checkpoint, set up the environment as described in [`benchmark_runner/README.md`](benchmark_runner/README.md), then run the magnetic ground-state search with joint relaxation, the candidate check, the downstream properties and the scoring. The model weights are supplied by the evaluator.
+To evaluate a model from a checkpoint, set up the environment as described in [`benchmark_runner/README.md`](benchmark_runner/README.md), then run the restricted sign-pattern screening and joint relaxation, the candidate check, the downstream properties and the scoring. The model weights are supplied by the evaluator.
 
 With existing model predictions, only NumPy and SciPy are needed. Score `predictions.json` together with the phonon prediction files next to it; the field format is given in `targets/scoring.json` of the dataset.
 
