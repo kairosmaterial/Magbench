@@ -55,7 +55,50 @@ def page(title, body, *, depth=0, data=None, settings=None):
     settings=settings or config()
     prefix = '../'*depth
     packed = '' if data is None else '<script id="page-data" type="application/json">'+json.dumps(data, ensure_ascii=True, allow_nan=False).replace('<', '\\u003c')+'</script>'
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="MagBench: a five-dimensional benchmark for magnetic interatomic potentials."><title>{esc(title)} · MagBench</title><link rel="icon" href="{prefix}assets/kairos-mark.png"><link rel="stylesheet" href="{prefix}assets/style.css"><script defer src="{prefix}assets/plot-math.js"></script><script defer src="{prefix}assets/scatter.js"></script><script defer src="{prefix}assets/app.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="brand" href="{prefix}index.html" aria-label="Kairos Materials, MagBench home"><img class="logo" src="{prefix}assets/kairos-mark.png" alt=""><span>KAIROS MATERIALS<br><small>MagBench</small></span></a><nav aria-label="Main navigation"><a href="{prefix}index.html">Leaderboard</a><a href="{prefix}datasets.html">Datasets</a><a href="{prefix}protocol.html">Protocol</a><a href="{prefix}submit.html">Submit a model</a><a href="https://github.com/kairosmaterial/Magbench">Repository ↗</a><a href="https://huggingface.co/datasets/kairosmaterial/Magbench">Dataset ↗</a></nav></header><main id="main">{body}</main>{packed}</body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="MagBench: a five-dimensional benchmark for magnetic interatomic potentials."><title>{esc(title)} · MagBench</title><link rel="icon" href="{prefix}assets/kairos-mark.png"><link rel="stylesheet" href="{prefix}assets/style.css"><script defer src="{prefix}assets/plot-math.js"></script><script defer src="{prefix}assets/scatter.js"></script><script defer src="{prefix}assets/app.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="brand" href="{prefix}index.html" aria-label="Kairos Materials, MagBench home"><img class="logo" src="{prefix}assets/kairos-mark.png" alt=""><span>KAIROS MATERIALS<br><small>MagBench</small></span></a><nav aria-label="Main navigation"><a href="{prefix}index.html">Leaderboard</a><a href="{prefix}datasets.html">Datasets</a><a href="{prefix}protocol.html">Protocol</a><a href="{prefix}references.html">References</a><a href="{prefix}submit.html">Submit a model</a><a href="https://github.com/kairosmaterial/Magbench">Repository ↗</a><a href="https://huggingface.co/datasets/kairosmaterial/Magbench">Dataset ↗</a></nav></header><main id="main">{body}</main>{packed}</body></html>'''
+
+
+def material_references(root):
+    path = Path(root) / 'docs/material_references.json'
+    return read(path) if path.exists() else {'materials': []}
+
+
+def reference_links(material):
+    def links(record):
+        parts = []
+        if record.get('magndata_id'):
+            code = str(record['magndata_id'])
+            parts.append(value_link('https://cryst.ehu.eus/magndata/index.php?index=' + code, 'MAGNDATA ' + code))
+        if record.get('doi'):
+            parts.append(value_link('https://doi.org/' + record['doi'], record['doi']))
+        return ' · '.join(parts)
+    primary = links(material)
+    extra = ''.join('<li>' + esc(r.get('title', 'Magnetic-structure reference')) + ' · '
+                    + links(r) + '</li>' for r in material['references'])
+    return '<p>Selected entry: ' + (primary or 'No selected-entry citation supplied in the source metadata.') + '</p><ul>' + extra + '</ul>'
+
+
+def acknowledgements_body():
+    return '<h2>Acknowledgements</h2><p>We credit the experimental magnetic-structure authors through MAGNDATA and the references below, and the Materials Project for the hull reference.</p><ul><li>Owner to complete: data contributors and their roles.</li><li>Owner to complete: testing and feedback contributors.</li><li>Owner to complete: funding and institutional support.</li></ul>'
+
+
+def build_references(root, output, settings):
+    data = material_references(root)
+    body = '<h1>References</h1><p>' + esc(data.get('scope', '')) + '</p>'
+    compilation = data.get('compilation')
+    if compilation:
+        citation = '; '.join(compilation['authors']) + '. ' + compilation['title']
+        body += '<h2>Experimental exchange compilation</h2><p>' + esc(citation) + '. Scientific Data 12, 1832 (2025). ' + value_link('https://doi.org/' + compilation['doi'], compilation['doi']) + '</p><p>This credits experimental exchange measurements; the scored J references are DFT energy-mapping fits, not neutron measurements.</p>'
+    body += acknowledgements_body() + '<h2>Magnetic-structure references by material</h2>'
+    material_dir = output / 'materials'
+    material_dir.mkdir(exist_ok=True)
+    for material in data['materials']:
+        title = material['id'] + ' · ' + material['formula'] + (' (' + material['phase'] + ')' if material.get('phase') else '')
+        links = reference_links(material)
+        body += '<section id="material-' + esc(material['id']) + '"><h3><a href="materials/' + esc(material['id']) + '.html">' + esc(title) + '</a></h3>' + links + '</section>'
+        content = '<h1>' + esc(title) + '</h1><p><a href="../references.html#material-' + esc(material['id']) + '">All references</a></p>' + links
+        (material_dir / (material['id'] + '.html')).write_text(page(title, content, depth=1, settings=settings))
+    (output / 'references.html').write_text(page('References', '<article class="document">' + body + '</article>', settings=settings))
 
 
 def value_link(value, label):
@@ -191,5 +234,6 @@ def build(root=ROOT, output=None):
         content=markdown.markdown(text,extensions=['tables','fenced_code','toc']).replace('href="benchmark_runner/README.md"','href="runner.html"')
         (output/target).write_text(page(title,'<article class="document">'+content+'</article>',settings=cfg))
     (output/'datasets.html').write_text(page('Datasets',dataset_body(data),settings=cfg))
+    build_references(root, output, cfg)
     check_build(output)
     return data
