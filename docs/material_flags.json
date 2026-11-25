@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "data_version": "0.2.3",
+  "effect": "Metadata only: no cohort, reference, gate, threshold, weight or score changes.",
+  "flags": {
+    "co2plus_orbital_states": {
+      "label": "Co2+ orbital-state caution",
+      "description": "Formal Co2+ compounds may admit competing orbital states in collinear DFT. Charge-balance screening only; not evidence that every listed calculation changed orbital state. Co3O4 is mixed-valence. CoBiO3 and Sr2CoClO3 (formal Co3+), elemental/intermetallic Co compounds are excluded.",
+      "materials": [
+        {
+          "id": "014",
+          "name": "BaNa2V2CoO8",
+          "reason": "Charge balance with Ba2+, Na+, V(V) and O2- gives Co2+."
+        },
+        {
+          "id": "027",
+          "name": "CoRh2O4",
+          "reason": "Normal spinel charge assignment Co2+ with Rh3+."
+        },
+        {
+          "id": "028",
+          "name": "Co3O4",
+          "reason": "Mixed-valence spinel includes tetrahedral Co2+ and octahedral Co3+; geometry may quench the Co2+ orbital response."
+        },
+        {
+          "id": "030",
+          "name": "CoBr2",
+          "reason": "Binary bromide charge balance gives Co2+."
+        },
+        {
+          "id": "031",
+          "name": "CoCl2",
+          "reason": "Binary chloride charge balance gives Co2+."
+        },
+        {
+          "id": "032",
+          "name": "CoF2",
+          "reason": "Binary fluoride charge balance gives Co2+."
+        },
+        {
+          "id": "033",
+          "name": "CoO",
+          "reason": "Monoxide charge balance gives Co2+; high exchange-fit residual."
+        },
+        {
+          "id": "034",
+          "name": "CoPS3",
+          "reason": "Thiophosphate P2S6 charge assignment gives Co2+."
+        },
+        {
+          "id": "080",
+          "name": "KCoF3",
+          "reason": "Perovskite K+ and F- charge balance gives Co2+; high exchange-fit residual."
+        },
+        {
+          "id": "090",
+          "name": "La2CoO4",
+          "reason": "La3+ and O2- charge balance gives Co2+."
+        },
+        {
+          "id": "158",
+          "name": "Sr2CoTeO6",
+          "reason": "Sr2+, Te(VI) and O2- charge balance gives Co2+."
+        },
+        {
+          "id": "171",
+          "name": "V2CoO6",
+          "reason": "V(V) and O2- charge balance gives Co2+."
+        },
+        {
+          "id": "189",
+          "name": "Ba2CoGe2O7",
+          "reason": "Ba2+, Ge4+ and O2- charge balance gives Co2+."
+        },
+        {
+          "id": "199",
+          "name": "LiCoPO4",
+          "reason": "Li+ and phosphate PO4(3-) give Co2+."
+        },
+        {
+          "id": "208",
+          "name": "Nb2Co4O9",
+          "reason": "Nb(V) and O2- give average Co2+; high exchange-fit residual."
+        }
+      ]
+    },
+    "cu_without_u": {
+      "label": "Cu without Hubbard U",
+      "description": "The reference MP recipe applies no Hubbard U on Cu; DFT moments and exchange may differ from experiment.",
+      "materials": [
+        {
+          "id": "057",
+          "name": "CuBi2O4"
+        },
+        {
+          "id": "059",
+          "name": "CuO"
+        },
+        {
+          "id": "068",
+          "name": "FeCuO2"
+        },
+        {
+          "id": "069",
+          "name": "FeCuS2"
+        },
+        {
+          "id": "081",
+          "name": "KCuF3"
+        },
+        {
+          "id": "098",
+          "name": "Li2CuW2O8"
+        },
+        {
+          "id": "099",
+          "name": "Li2CuO2"
+        },
+        {
+          "id": "192",
+          "name": "Cu2SeO4"
+        },
+        {
+          "id": "193",
+          "name": "CuF2"
+        },
+        {
+          "id": "194",
+          "name": "Gd2CuO4"
+        }
+      ]
+    },
+    "moment_collapse_site_change": {
+      "label": "Moment collapse changes magnetic sites",
+      "description": "In Gd2CuO4 the Cu reference moment collapses; the benchmark magnetic sites are Gd. This cautions against interpreting the gate as experimental Cu order.",
+      "materials": [
+        {
+          "id": "194",
+          "name": "Gd2CuO4"
+        }
+      ]
+    },
+    "itinerant_metal": {
+      "label": "Metal / itinerancy caution",
+      "description": "Conservative elemental/intermetallic set: elemental Fe/Co/Ni plus binary or ternary intermetallics of metals with Ge/Si/Sn/Sb/Bi included as metallic partners, and LiMn6Sn6. These compounds are flagged for interpreting moment-dependent collinear exchange fits, not classified by a computed band gap. Ionic arsenides/phosphides, borides, oxides and chalcogenides are not systematically classified here. Not all sites are asserted to be itinerant.",
+      "materials": [
+        {
+          "id": "002",
+          "name": "AlCr2"
+        },
+        {
+          "id": "024",
+          "name": "CaMnGe"
+        },
+        {
+          "id": "025",
+          "name": "CaMnSi"
+        },
+        {
+          "id": "071",
+          "name": "FeGe"
+        },
+        {
+          "id": "072",
+          "name": "FeGe2"
+        },
+        {
+          "id": "077",
+          "name": "FeSn"
+        },
+        {
+          "id": "078",
+          "name": "FeSn2"
+        },
+        {
+          "id": "096",
+          "name": "LiMn6Sn6"
+        },
+        {
+          "id": "108",
+          "name": "Mn2Au"
+        },
+        {
+          "id": "109",
+          "name": "Mn2Sb"
+        },
+        {
+          "id": "115",
+          "name": "Mn5Ge3"
+        },
+        {
+          "id": "116",
+          "name": "MnBi"
+        },
+        {
+          "id": "118",
+          "name": "MnCoGe"
+        },
+        {
+          "id": "153",
+          "name": "ScFe2"
+        },
+        {
+          "id": "176",
+          "name": "YMn2Ge2"
+        },
+        {
+          "id": "177",
+          "name": "YMn2Si2"
+        },
+        {
+          "id": "182",
+          "name": "MnPd2"
+        },
+        {
+          "id": "221",
+          "name": "Fe_bcc"
+        },
+        {
+          "id": "222",
+          "name": "Co_hcp"
+        },
+        {
+          "id": "223",
+          "name": "Co_fcc"
+        },
+        {
+          "id": "224",
+          "name": "Ni_fcc"
+        }
+      ]
+    },
+    "high_residual_exchange_fit": {
+      "label": "Accepted high exchange-fit residual",
+      "description": "Reference fit status passed_user_accepted_high_residual; truncated Heisenberg parameters require caution.",
+      "materials": [
+        {
+          "id": "033",
+          "name": "CoO"
+        },
+        {
+          "id": "080",
+          "name": "KCoF3"
+        },
+        {
+          "id": "108",
+          "name": "Mn2Au"
+        },
+        {
+          "id": "208",
+          "name": "Nb2Co4O9"
+        }
+      ]
+    }
+  }
+}
