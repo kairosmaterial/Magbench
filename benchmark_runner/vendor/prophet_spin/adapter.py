@@ -50,24 +50,24 @@ def read_checkpoint(path):
 
 
 def load_state(model, state):
-    """Only deterministic tensor-product constants may be absent or regenerated."""
+    """Only deterministic tensor-product constants may be absent or reconstructed."""
     state = {k: v for k, v in state.items() if '.tp.' not in k}
-    generated = model.state_dict()
+    expected_state = model.state_dict()
     legacy_scale = 'model.exchange.branch_scales'
-    if legacy_scale in state and legacy_scale not in generated:
+    if legacy_scale in state and legacy_scale not in expected_state:
         if model.config.get('backbone', 'legacy') != 'legacy' or not torch.equal(state[legacy_scale], torch.ones(1)):
             raise ValueError('Unsupported legacy exchange scale')
         state.pop(legacy_scale)
     parameters = dict(model.named_parameters())
-    extra = set(state) - set(generated)
-    missing = [k for k in generated if k not in state and k != 'z2idx' and
+    extra = set(state) - set(expected_state)
+    missing = [k for k in expected_state if k not in state and k != 'z2idx' and
                ('.tp.' not in k or (k in parameters and parameters[k].numel()))]
     if extra or missing:
         raise ValueError(f'Checkpoint mismatch: extra={sorted(extra)}, missing={missing}')
     for k, value in state.items():
-        if not torch.is_tensor(value) or value.shape != generated[k].shape or value.dtype != generated[k].dtype:
+        if not torch.is_tensor(value) or value.shape != expected_state[k].shape or value.dtype != expected_state[k].dtype:
             raise ValueError(f'Checkpoint tensor shape or dtype mismatch: {k}')
-    model.load_state_dict({**generated, **state}, strict=True)
+    model.load_state_dict({**expected_state, **state}, strict=True)
 
 
 class ProphetSpin(nn.Module):
