@@ -16,7 +16,7 @@ MagBench measures stability of the experimental magnetic order within the suppli
 <!-- cohorts:start -->
 | Dimension | Fixed cohort | Total weight |
 |---|---:|---:|
-| Ground state | 191 | 0.20 |
+| Experimental-order stability | 191 | 0.20 |
 | MP hull with spin | 191 | 0.20 |
 | Phonons with spin | 111 | 0.20 |
 | Exchange J | 172 | 0.20 |

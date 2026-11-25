@@ -6,7 +6,7 @@ window.MagbenchScatter = (container, models, table) => {
   const hp = entry => entry.card.hyperparams.architecture;
   const fields = [
     {key:'total', label:'Total (out of 1)', score:true, get:e=>e.card.metrics.total},
-    ...[['ground_state','Ground state'],['hull','MP hull with spin'],['phonons','Phonons with spin'],['J','Exchange J'],['magnetovolume','dJ/dlnV']].map(([key, name])=>({key,label:`${name} (out of 0.2)`,score:true,get:e=>e.card.metrics[key]})),
+    ...[['ground_state','Experimental-order stability'],['hull','MP hull with spin'],['phonons','Phonons with spin'],['J','Exchange J'],['magnetovolume','dJ/dlnV']].map(([key, name])=>({key,label:`${name} (out of 0.2)`,score:true,get:e=>e.card.metrics[key]})),
     {key:'passes',label:`Ground-state passes (out of ${models[0]?.scores.dimensions.ground_state.materials ?? 'pending'})`,get:e=>e.card.metrics.ground_state_passes},
     {key:'cutoff',label:'Cutoff (Å)',get:e=>Array.isArray(hp(e).cutoff_A)?Math.max(...hp(e).cutoff_A):hp(e).cutoff_A},
     {key:'exchange_range',label:'Exchange range (Å)',get:e=>hp(e).exchange_range_A},

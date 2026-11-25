@@ -17,7 +17,7 @@
   if (!table) return;
   const data = JSON.parse(document.getElementById('page-data').textContent);
   const models = data.models;
-  const groups = {total:'Overall',ground_state:'Ground state',hull:'MP hull with spin',phonons:'Phonons with spin',J:'Exchange J',magnetovolume:'dJ/dlnV',model:'Model',identity:'Model',hyperparams:'Hyperparameters'};
+  const groups = {total:'Overall',ground_state:'Experimental-order stability',hull:'MP hull with spin',phonons:'Phonons with spin',J:'Exchange J',magnetovolume:'dJ/dlnV',model:'Model',identity:'Model',hyperparams:'Hyperparameters'};
   const metric = (id, label, group=id, max=.2) => ({id,label,group,max,numeric:true,score:true,get:e=>e.scores.dimensions[id]?.weighted_score ?? e.scores.total_score});
   const component = (dim,part) => ({id:`${dim}.${part}`,label:part[0].toUpperCase()+part.slice(1),group:dim,max:.1,numeric:true,score:true,get:e=>e.scores.dimensions[dim][`${part}_weighted_score`]});
   const prop = (id,label,get,group='model',numeric=false) => ({id,label,get,group,numeric});

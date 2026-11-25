@@ -57,7 +57,7 @@ magbench score --targets data/targets --predictions /path/to/predictions.json --
 
 Prophet-Spin v1s, with moment-head initialisation and exchange-head readout, scores **0.437756477 / 1** under protocol v0.2.1 and data v0.2.3.
 
-| Ground state | MP hull with spin | Phonons with spin | Exchange J | dJ/dlnV |
+| Experimental-order stability | MP hull with spin | Phonons with spin | Exchange J | dJ/dlnV |
 |---:|---:|---:|---:|---:|
 | 0.152879581 | 0.098499952 | 0.058284135 | 0.061501873 | 0.066590936 |
 
