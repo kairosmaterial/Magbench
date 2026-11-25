@@ -63,3 +63,36 @@ python -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 The release validation additionally checks all 172 energy-mapping designs against the delivered J labels, all fixed cohort counts, ground-state gating, exact-score self predictions, phonon stability and q-point mismatches. Do not use self predictions as model results.
+
+## Third-party adapter interface
+
+Use `magbench run --adapter your_package.your_module:YourClass` with a trusted,
+importable Python class. The default is `magbench.adapters:ProphetSpinV1`.
+Adapters run local code: this option is for trusted operator-controlled modules,
+not executable code supplied by checkpoint uploads.
+
+The constructor receives `(checkpoint, device, head_checkpoint=None)`. Implement:
+
+- `energy(atoms, moments)`: scalar total cell energy in eV.
+- `energy_gradient(atoms, moments)`: `(energy, dE_dm)` with an array of shape
+  `(natoms,)`, in eV per muB.
+- `efs(atoms, moments)`: dictionary with `energy` (eV/cell), `forces`
+  (`natoms, 3`, eV/Angstrom), and `stress` (ASE Voigt order xx, yy, zz, yz,
+  xz, xy; eV/Angstrom cubed, positive tensile).
+- `supports_exchange_head()`: boolean. Return false to use energy mapping.
+- For a supported readout, `exchange_bonds(atoms, moments, bonds)` returns one
+  meV coefficient per unique periodic bond `(i, j, lattice_shift, parameter)`
+  in `E = E0 + sum J*s_i*s_j`, normalized signs, positive J favoring AFM.
+
+Optional `prepare_energy_gradient(atoms)` returns a callable over moments;
+`joint_efs(atoms, moments)` adds `moment_gradient` to the EFS dictionary.
+If a `moment_predictor` attribute is present and non-null, implement
+`initial_moments(atoms, seeds, signs=None)` and preserve the supplied signs.
+Inputs are ASE periodic Atoms in their supplied order and collinear moments in
+muB. Outputs must be finite. A `progress(**details)` callback is assigned by the
+runner. The adapter identifier enters `run.json` and each prediction stage,
+preventing resume across adapter changes. Existing runs without this identifier
+must use a fresh output directory.
+
+`magbench.dummy:DummyAdapter` is an analytic test fixture with no physical
+meaning. `tests/test_adapter.py` checks loading, invocation, metadata and resume.
