@@ -122,9 +122,3 @@ Spin Waves to MC Simulations*, Scientific Data **12**, 1832 (2025),
 [doi:10.1038/s41597-025-06099-x](https://doi.org/10.1038/s41597-025-06099-x).
 This compilation credits experimental exchange measurements; MagBench scores
 DFT energy-mapping references.
-
-Acknowledgements for owner completion:
-
-- TODO (owner): data contributors and their roles.
-- TODO (owner): testing and feedback contributors.
-- TODO (owner): funding and institutional support.
