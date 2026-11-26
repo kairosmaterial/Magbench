@@ -1,4 +1,4 @@
-# MagBench protocol v0.2.1
+# MagBench protocol v0.3
 
 The ground-state dimension tests the **stability of the experimental magnetic
 order within the supplied cell**. The experimental sign pattern is always in
@@ -16,14 +16,33 @@ MagBench measures stability of the experimental magnetic order within the suppli
 <!-- cohorts:start -->
 | Dimension | Fixed cohort | Total weight |
 |---|---:|---:|
-| Experimental-order stability | 191 | 0.20 |
-| MP hull with spin | 191 | 0.20 |
+| Experimental-order stability | 190 | 0.20 |
+| MP hull with spin | 190 | 0.20 |
 | Phonons with spin | 111 | 0.20 |
-| Exchange J | 172 | 0.20 |
-| dJ/dlnV | 133 | 0.20 |
+| Exchange J | 167 | 0.20 |
+| dJ/dlnV | 131 | 0.20 |
 <!-- cohorts:end -->
 
-Exact memberships, parameter ordering, thresholds and weights are in `targets/scoring.json`; material IDs and names are in `targets/materials.json`. Sources: delivered component 01 `targets/scoring.json`, runner `physics.py`, `scoring.py`, `selection.py`, and component 06 README. The scorer and runner stay in `benchmark_runner/magbench/`; `docs/source_integrity.json` records their SHA-256 values. Inputs and targets are hosted in the separate Hugging Face dataset, not in this code repository.
+Base memberships, parameter ordering, thresholds and weights are in `targets/scoring.json`; v0.3 overrides and exclusion reasons are in `benchmark_runner/magbench/protocols/0.3.json`; material IDs and names are in `targets/materials.json`. Sources: delivered component 01 `targets/scoring.json`, runner `physics.py`, `scoring.py`, `selection.py`, and component 06 README. The scorer and runner stay in `benchmark_runner/magbench/`; `docs/source_integrity.json` records their SHA-256 values. Inputs and targets are hosted in the separate Hugging Face dataset, not in this code repository.
+
+
+## Protocol v0.3 (2026-11-26)
+
+This release uses unchanged reference data v0.2.3 with four scoring changes:
+
+- Exclude 033 CoO, 080 KCoF3, 108 Mn2Au and 208 Nb2Co4O9 from J (172 to 168), and 108 and 208 from dJ/dlnV (133 to 131), because their truncated Heisenberg fits have high residuals.
+- Credit the hull side term when the original sides agree, or when both absolute hull energies are at most 1 meV/atom. This avoids penalising opposite signs within the hull boundary tolerance; the continuous term and its weight stay unchanged.
+- Use `u = abs(J_model-J_DFT)/max(0.5*abs(J_DFT),0.5 meV)` for J accuracy, restoring useful accuracy range. The shell weights, sign threshold, sign term and 50:50 sign/accuracy balance are unchanged. The slope accuracy scale is unchanged.
+- Exclude 194 Gd2CuO4 from every cohort it belongs to: ground-state, hull and J (it is absent from the phonon and dJ/dlnV base cohorts). Its Cu moment collapse changes the reference magnetic sites to Gd, so the reference does not test the intended Cu order.
+
+Final cohort sizes are 190 ground-state, 190 hull, 111 phonons, 167 J and 131 dJ/dlnV. Exclusions change denominators, without deleting reference materials. Excluded dimension scores are null; physical ground-state pass diagnostics remain available. Pass counts include only the ground-state cohort.
+
+Use `magbench score --protocol-version 0.3` (the default), or `--protocol-version 0.2.3` to reproduce historical scoring on data v0.2.3. Historical data v0.2.3 used scoring metadata `protocol_version: 0.2.1`; the legacy switch preserves that metadata. Original score records are retained verbatim as `models/<model>/scores-v0.2.3.json`. Current `scores.json` and model-card metrics use v0.3. The frozen dataset score files remain historical, not v0.3 results. No new inference is required for rescoring.
+
+## Changelog
+
+- **2026-11-26, v0.3:** adopt high-residual exclusions, 1 meV/atom hull side tolerance, revised J accuracy scale and Gd2CuO4 exclusion. Reference arrays and inference procedures are unchanged.
+- **Historical scoring v0.2.1 / data v0.2.3:** retain strict hull-side classification, J scale 0.2 with floor 0.2 meV, and the original cohorts via the explicit legacy switch.
 
 ## What the model receives
 
@@ -58,7 +77,7 @@ Let N be the supplied atom count, E the selected raw model total energy in eV, C
 With `D = 1000*abs(h_model-h_DFT)` in meV/atom:
 
 ```
-S_hull = 0.5 * I[(h_model > 0) == (h_DFT > 0)] + 0.5 * 2^(-D/10).
+S_hull = 0.5 * I[((h_model > 0) == (h_DFT > 0)) or (1000*abs(h_model) <= 1 and 1000*abs(h_DFT) <= 1)] + 0.5 * 2^(-D/10).
 ```
 
 Zero belongs to the on-or-below-hull class. Missing or nonfinite energy gives zero.
@@ -99,7 +118,7 @@ For volume coupling, use the supplied isotropic volume deltas (−0.01, −0.005
 
 ## J score
 
-For each parameter k, set `u_k=abs(J_model,k-J_DFT,k)/max(0.2*abs(J_DFT,k),0.2 meV)`. Shells 1–5 have weights 3, 2.5, 2, 1.5, 1; every outer shell has weight 1. Divide a shell's weight equally among its parameters to obtain w_k. The accuracy error is `R=sqrt(sum(w_k*u_k²)/sum(w_k))` over all parameters.
+For each parameter k, set `u_k=abs(J_model,k-J_DFT,k)/max(0.5*abs(J_DFT,k),0.5 meV)`. Shells 1–5 have weights 3, 2.5, 2, 1.5, 1; every outer shell has weight 1. Divide a shell's weight equally among its parameters to obtain w_k. The accuracy error is `R=sqrt(sum(w_k*u_k²)/sum(w_k))` over all parameters.
 
 For signs, retain parameters with `abs(J_DFT,k) >= 0.2 meV`, normalize their weights over that subset, and take the weighted fraction A of exactly matching signs. A=0 when no parameter qualifies.
 
@@ -131,7 +150,7 @@ The delivered runner fingerprints checkpoint bytes, moment-head bytes, all infer
 
 The reference inference environment was Python 3.11.15, PyTorch 2.5.1+cu121, e3nn 0.5.8, torch-scatter 2.1.2+pt25cu121, OpenEquivariance 0.5.4, ASE 3.28.0 and Phonopy 4.1.0, with Ninja and a CUDA development toolkit for its kernels. These are reference model dependencies, not requirements for offline scoring. The reference kernel patch is in `benchmark_runner/operations/`.
 
-Protocol releases must identify changes in rules, reference arrays and cohorts and retain old score records; do not silently reinterpret scores across versions. The delivered input manifest retains its historical internal version 0.1.0 and runner resume stage records retain runner_version 0.6.0; the scoring protocol is 0.2.1.
+Protocol releases must identify changes in rules, reference arrays and cohorts and retain old score records; do not silently reinterpret scores across versions. The delivered input manifest retains its historical internal version 0.1.0 and runner resume stage records retain runner_version 0.6.0; the default scoring protocol is 0.3.
 
 ## Benchmark-informed model disclosure
 

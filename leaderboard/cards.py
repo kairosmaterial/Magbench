@@ -89,7 +89,7 @@ def check_adapter(card, folder):
 def metrics_from(scores, *, incomplete=False):
     return dict(total=None if incomplete else scores['total_score'],
                 **{k: None if incomplete and k != 'ground_state' else scores['dimensions'][k]['weighted_score'] for k in DIMENSIONS},
-                ground_state_passes=sum(bool(row['ground_state_pass']) for row in scores['materials']))
+                ground_state_passes=sum(bool(row['ground_state_pass']) for row in scores['materials'] if row['scores']['ground_state'] is not None))
 
 
 def compare(actual, declared, location='scores', tolerance=1e-9):

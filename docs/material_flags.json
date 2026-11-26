@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "data_version": "0.2.3",
-  "effect": "Metadata only: no cohort, reference, gate, threshold, weight or score changes.",
+  "effect": "Flags document reference cautions and protocol v0.3 cohort exclusions; reference data v0.2.3 are unchanged.",
   "flags": {
     "co2plus_orbital_states": {
       "label": "Co2+ orbital-state caution",
@@ -132,7 +132,7 @@
     },
     "moment_collapse_site_change": {
       "label": "Moment collapse changes magnetic sites",
-      "description": "In Gd2CuO4 the Cu reference moment collapses; the benchmark magnetic sites are Gd. This cautions against interpreting the gate as experimental Cu order.",
+      "description": "In Gd2CuO4 the Cu reference moment collapses; the benchmark magnetic sites are Gd. This cautions against interpreting the gate as experimental Cu order. Excluded from ground-state, hull and J cohorts in v0.3; absent from the base phonon and dJ/dlnV cohorts.",
       "materials": [
         {
           "id": "194",
@@ -231,8 +231,8 @@
       ]
     },
     "high_residual_exchange_fit": {
-      "label": "Accepted high exchange-fit residual",
-      "description": "Reference fit status passed_user_accepted_high_residual; truncated Heisenberg parameters require caution.",
+      "label": "High exchange-fit residual",
+      "description": "Excluded from the J cohort in v0.3: 033 CoO, 080 KCoF3, 108 Mn2Au and 208 Nb2Co4O9, due to high truncated Heisenberg fit residuals. 108 Mn2Au and 208 Nb2Co4O9 are also excluded from dJ/dlnV. Historical v0.2.3 cohorts are unchanged.",
       "materials": [
         {
           "id": "033",

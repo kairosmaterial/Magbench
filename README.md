@@ -22,25 +22,27 @@ This repository contains the evaluation code. The benchmark data (inputs, DFT re
 | Phonons with spin | 111 | Displaced supercells, reference sampling points, DFT frequencies and force constants |
 | Magnetic exchange J | 172 | Exchange bonds, shells, energy-mapping designs and DFT J |
 
-In the dataset, `inputs/` is used for model inference and `targets/` for scoring. The current data version is v0.2.3; the scoring protocol is v0.2.1.
+In the dataset, `inputs/` is used for model inference and `targets/` for scoring. The current data version is v0.2.3; the default scoring protocol is v0.3. The reference data remain unchanged; scoring excludes specified materials as documented in [the protocol](PROTOCOL.md).
 
 ```sh
 huggingface-cli download kairosmaterial/Magbench --repo-type dataset --local-dir data
 ```
 
-## Scoring protocol (v0.2.1)
+## Scoring protocol (v0.3)
 
 Each of the five dimensions carries 0.20 of the total score, and models are ranked by total score in descending order. Every dimension is scored per material first and then averaged with equal weights over the fixed list of materials of that dimension. A material that fails the magnetic ground-state check scores zero in every dimension.
 
 | Metric | Scoring rule |
 |---|---|
 | Magnetic ground-state search | Up to 32 collinear sign patterns are screened in the input cell, including the experimental sign pattern. Joint relaxation of at most 500 steps is carried out only if a sign pattern equivalent to the reference is among the top three. Crystal-symmetry permutations are constructed with a tolerance of 0.01 Å on the input cell, and a global flip is allowed. A passing configuration must lie within 1 meV/atom of the lowest converged candidate of the model, and the magnitude on every magnetic site must deviate from DFT by at most 25%. |
-| MP hull with spin | Uses the model configuration that passed the ground-state check. 50% for the side of the hull (>0 versus ≤0) and 50% for numerical accuracy, `2^(-absolute error / 10 meV/atom)`. |
+| MP hull with spin | Uses the model configuration that passed the ground-state check. 50% for agreement on the side of the hull (>0 versus ≤0), also credited when both absolute hull energies are at most 1 meV/atom, and 50% for numerical accuracy, `2^(-absolute error / 10 meV/atom)`. |
 | Phonons with spin | Uses the selected configuration and the model moments. Atomic positions and lattice are refined to a force threshold of 0.01 eV/Å in at most 500 steps. The score is zero if the lowest frequency is below −0.1 THz; a stable spectrum scores `0.5 + 0.5 × 2^(-W₁ / 1 THz)`. |
-| J | Uses the DFT reference structure and moments. 50% for the fraction of correct signs; signs are compared only for parameters with `abs(J_DFT) ≥ 0.2 meV`. 50% for the numerical accuracy of all parameters, `2^(-R)`, with the error scale `max(0.2 × abs(J_DFT), 0.2 meV)`. Both parts use the shell weights 3 : 2.5 : 2 : 1.5 : 1, and every further shell has weight 1. Parameters of the same shell share the weight of that shell equally. |
+| J | Uses the DFT reference structure and moments. 50% for the fraction of correct signs; signs are compared only for parameters with `abs(J_DFT) ≥ 0.2 meV`. 50% for the numerical accuracy of all parameters, `2^(-R)`, with the error scale `max(0.5 × abs(J_DFT), 0.5 meV)`. Both parts use the shell weights 3 : 2.5 : 2 : 1.5 : 1, and every further shell has weight 1. Parameters of the same shell share the weight of that shell equally. |
 | Volume-exchange coupling | Uses the DFT reference structure and moments. 50% for the fraction of correct signs; signs are compared only for parameters whose DFT slope has an absolute value of at least 1 meV. 50% for the numerical accuracy of all slopes, `2^(-R)`, with the error scale `max(0.2 × abs(DFT slope), 1 meV)`. All slope parameters have equal weight. |
 
 For J and the volume-exchange coupling, `R` is the normalised root-mean-square error of a material. If no parameter reaches the sign threshold, the sign part of that material is zero. J and the slopes may be obtained by energy mapping with the model or by an equivalent exchange-head readout. The exchange convention is `E = E₀ + Σ Jₖ sᵢsⱼ`, with every physical bond counted once, `sᵢ = ±1`, and positive J antiferromagnetic.
+
+Current scoring cohorts contain 190 ground-state, 190 hull, 111 phonon, 167 J and 131 slope materials. Dataset component counts above describe the unchanged source data. Use `magbench score --protocol-version 0.2.3` to replay the historical protocol (metadata version 0.2.1); original score records are retained as `scores-v0.2.3.json` in each model folder.
 
 ## Usage
 
@@ -55,13 +57,13 @@ magbench score --targets data/targets --predictions /path/to/predictions.json --
 
 ## Reference result
 
-Prophet-Spin v1s, with moment-head initialisation and exchange-head readout, scores **0.437756477 / 1** under protocol v0.2.1 and data v0.2.3.
+Prophet-Spin v1s, with moment-head initialisation and exchange-head readout, scores **0.460959505 / 1** under protocol v0.3 and data v0.2.3.
 
 | Experimental-order stability | MP hull with spin | Phonons with spin | Exchange J | dJ/dlnV |
 |---:|---:|---:|---:|---:|
-| 0.152879581 | 0.098499952 | 0.058284135 | 0.061501873 | 0.066590936 |
+| 0.153684211 | 0.100071004 | 0.058284135 | 0.081770579 | 0.067149577 |
 
-The complete per-material scores are in `results/prophet_spin_v1s/scores.json` of the dataset.
+Historical data v0.2.3 scores remain in `results/prophet_spin_v1s/scores.json` of the dataset. Current protocol scores are in each model folder of this repository.
 
 ## License
 
@@ -76,10 +78,10 @@ The static site compares owner-approved result records using data v0.2.3. Listed
 <!-- leaderboard:start -->
 | Model | Total | Ground-state passes | Availability |
 |---|---:|---:|---|
-| [Prophet-Spin v2L](models/prophet-spin-v2l/prophet-spin-v2l.yml) | 0.605398474 | 159/191 | Awaiting public release |
-| [Prophet-Spin v1L](models/prophet-spin-v1l/prophet-spin-v1l.yml) | 0.546779806 | 155/191 | Awaiting public release |
-| [Prophet-Spin v1s](models/prophet-spin-v1s/prophet-spin-v1s.yml) | 0.437756477 | 146/191 | Awaiting public release |
-| [Prophet-Spin v1s (6 Å)](models/prophet-spin-v1s-6a/prophet-spin-v1s-6a.yml) | 0.342340461 | 116/191 | Complete |
+| [Prophet-Spin v2L](models/prophet-spin-v2l/prophet-spin-v2l.yml) | 0.634127355 | 158/190 | Awaiting public release |
+| [Prophet-Spin v1L](models/prophet-spin-v1l/prophet-spin-v1l.yml) | 0.572104276 | 154/190 | Awaiting public release |
+| [Prophet-Spin v1s](models/prophet-spin-v1s/prophet-spin-v1s.yml) | 0.460959505 | 146/190 | Awaiting public release |
+| [Prophet-Spin v1s (6 Å)](models/prophet-spin-v1s-6a/prophet-spin-v1s-6a.yml) | 0.360650452 | 116/190 | Complete |
 <!-- leaderboard:end -->
 
 Build and preview locally:

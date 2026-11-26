@@ -36,7 +36,7 @@ evaluation:
   moment_initialisation: moment_head
   seed_amplitudes: uniform_3muB
   exchange_route: exchange_readout
-  protocol_version: 0.2.1
+  protocol_version: '0.3'
   data_version: 0.2.3
   runner_version: 0.6.0
   hardware: NVIDIA A800-SXM4-80GB; 30 concurrent material workers on one GPU
@@ -297,11 +297,11 @@ hyperparams:
     n_layers: 6
     model_params: 35746945
 metrics:
-  total: 0.3423404608716243
-  ground_state: 0.12146596858638743
-  hull: 0.07212938606619256
+  total: 0.36065045154125946
+  ground_state: 0.12210526315789474
+  hull: 0.07250901441390936
   phonons: 0.06003302332866922
-  J: 0.04707261313070338
-  magnetovolume: 0.04163946975967167
+  J: 0.06433943096553771
+  magnetovolume: 0.04166371967524846
   ground_state_passes: 116
 publication_status: metadata_incomplete

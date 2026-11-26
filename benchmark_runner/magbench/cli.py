@@ -47,6 +47,7 @@ def main():
     r.add_argument('--config', type=Path)
     r.add_argument('--exchange-method', choices=['energy-mapping', 'exchange-head'], default='exchange-head')
     s = sub.add_parser('score')
+    s.add_argument('--protocol-version', choices=['0.2.3', '0.3'], default='0.3')
     s.add_argument('--targets', type=Path, required=True)
     s.add_argument('--predictions', type=Path, required=True)
     s.add_argument('--output', type=Path, required=True)
@@ -63,7 +64,7 @@ def main():
         return
     if a.command == 'score':
         from .scoring import evaluate
-        result = evaluate(a.targets, load(a.predictions), a.predictions.resolve().parent)
+        result = evaluate(a.targets, load(a.predictions), a.predictions.resolve().parent, protocol_version=a.protocol_version)
         save(a.output, result)
         print(json.dumps({k: v for k, v in result.items() if k != 'materials'}, indent=2))
         return

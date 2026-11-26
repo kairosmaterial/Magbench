@@ -118,10 +118,42 @@ def phonon_error(ref_dir, pred_file, threshold):
         w1 = float(wasserstein_distance(ref.ravel(), mesh.ravel(), u_weights=w, v_weights=w))
         return dict(stable=True, minimum_frequency_THz=minimum, W1_THz=w1)
 
-def evaluate(reference, predictions, prediction_root, *, ground_only=False):
+PROTOCOL_VERSIONS = ('0.2.3', '0.3')
+DEFAULT_PROTOCOL_VERSION = '0.3'
+
+
+def protocol_config(cfg, version):
+    """Apply versioned scoring rules without modifying reference data.
+
+    0.2.3 names the historical data release, whose score metadata is 0.2.1.
+    """
+    import copy
+    if version not in PROTOCOL_VERSIONS:
+        raise ValueError(f'Unsupported protocol version: {version}')
+    cfg = copy.deepcopy(cfg)
+    if version == '0.3':
+        rules = load(Path(__file__).with_name('protocols') / f'{version}.json')
+        for exclusion in rules['exclusions']:
+            for dimension in exclusion['cohorts']:
+                cfg['cohorts'][dimension] = [key for key in cfg['cohorts'][dimension]
+                                             if key != exclusion['id']]
+        cfg['protocol_version'] = rules['protocol_version']
+        cfg.setdefault('hull', {})['side_tolerance_meV_atom'] = rules['hull_side_tolerance_meV_atom']
+        cfg.setdefault('J', {}).update(rules['J'])
+    return cfg
+
+
+def hull_side_credit(model, reference, tolerance_meV_atom=0.0):
+    return ((model > 0) == (reference > 0)
+            or (tolerance_meV_atom > 0
+                and abs(model) * 1000 <= tolerance_meV_atom
+                and abs(reference) * 1000 <= tolerance_meV_atom))
+
+
+def evaluate(reference, predictions, prediction_root, *, ground_only=False, protocol_version=DEFAULT_PROTOCOL_VERSION):
     reference = Path(reference)
     prediction_root = Path(prediction_root)
-    cfg = load(reference / 'scoring.json')
+    cfg = protocol_config(load(reference / 'scoring.json'), protocol_version)
     gs = load(reference / 'ground_state.json')
     hull = load(reference / 'hull.json')
     materials = load(reference / 'materials.json')
@@ -153,7 +185,8 @@ def evaluate(reference, predictions, prediction_root, *, ground_only=False):
         except (ValueError, TypeError, KeyError, IndexError) as e:
             passed = False
             details['ground_state'] = dict(failed=str(e))
-        scores['ground_state'] = float(passed)
+        if 'ground_state' in eligible:
+            scores['ground_state'] = float(passed)
         if not passed:
             details['gate'] = 'ground_state_incorrect_or_missing'
         elif not ground_only:
@@ -167,7 +200,8 @@ def evaluate(reference, predictions, prediction_root, *, ground_only=False):
                 error = abs(model_hull - dft_hull) * 1000
                 sign_match = (model_hull > 0) == (dft_hull > 0)
                 hull_cfg = cfg['hull']
-                sign_score = hull_cfg.get('sign_weight', 0.0) * float(sign_match)
+                side_credit = hull_side_credit(model_hull, dft_hull, hull_cfg.get('side_tolerance_meV_atom', 0.0))
+                sign_score = hull_cfg.get('sign_weight', 0.0) * float(side_credit)
                 accuracy = hull_cfg.get('accuracy_weight', 1.0) * continuous(error / hull_cfg['scale_meV_atom'])
                 scores['hull'] = sign_score + accuracy
                 details['hull'] = dict(predicted_eV_atom=model_hull, reference_eV_atom=dft_hull, absolute_error_meV_atom=error, sign_match=sign_match, sign_contribution=sign_score, accuracy_contribution=accuracy)
@@ -219,6 +253,10 @@ def evaluate(reference, predictions, prediction_root, *, ground_only=False):
                     details['phonons'] = result
                 except (OSError, ValueError, TypeError, KeyError) as e:
                     details['phonons'] = dict(failed=str(e))
+        for dimension in cohorts:
+            if dimension not in eligible:
+                scores[dimension] = None
+                details.pop(dimension, None)
         contribution = sum((cfg['weights'][k] * scores[k] / len(cohorts[k]) for k in eligible))
         rows.append(dict(id=key, name=material['name'], ground_state_pass=passed, scores=scores, weighted_contribution_to_total=contribution, details=details))
     dimensions = {}
@@ -234,7 +272,7 @@ def evaluate(reference, predictions, prediction_root, *, ground_only=False):
         dimension = dimensions[key]
         factor = dimension['weight'] / dimension['materials']
         for component in components:
-            dimension[f'{component}_weighted_score'] = factor * sum((row['details'].get(key, {}).get(f'{component}_contribution', 0.0) for row in rows))
+            dimension[f'{component}_weighted_score'] = factor * sum((row['details'].get(key, {}).get(f'{component}_contribution', 0.0) for row in rows if row['id'] in cohort_sets[key]))
     total = sum((x['weighted_score'] for x in dimensions.values()))
     assert abs(total - sum((r['weighted_contribution_to_total'] for r in rows))) < 1e-10
     result = dict(total_score=total, maximum_score=1.0, dimensions=dimensions, materials=rows)
@@ -246,7 +284,8 @@ if __name__ == '__main__':
     parser.add_argument('predictions', type=Path)
     parser.add_argument('--reference', type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument('--output', type=Path, default=Path('scores.json'))
+    parser.add_argument('--protocol-version', choices=PROTOCOL_VERSIONS, default=DEFAULT_PROTOCOL_VERSION)
     args = parser.parse_args()
-    result = evaluate(args.reference, load(args.predictions), args.predictions.resolve().parent)
+    result = evaluate(args.reference, load(args.predictions), args.predictions.resolve().parent, protocol_version=args.protocol_version)
     args.output.write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps({k: v for k, v in result.items() if k != 'materials'}, indent=2))

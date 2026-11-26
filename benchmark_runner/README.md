@@ -102,3 +102,5 @@ must use a fresh output directory.
 
 `magbench.dummy:DummyAdapter` is an analytic test fixture with no physical
 meaning. `tests/test_adapter.py` checks loading, invocation, metadata and resume.
+
+Scoring defaults to protocol v0.3 with unchanged reference data v0.2.3. Use `magbench score --protocol-version 0.2.3` to replay historical scores (metadata version 0.2.1), or `--protocol-version 0.3` explicitly. Versioned rules and exclusion reasons are packaged in `magbench/protocols/0.3.json`; see the protocol.

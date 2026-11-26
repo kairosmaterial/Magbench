@@ -1,20 +1,20 @@
 {
-  "total_score": 0.4377564772834376,
+  "total_score": 0.46095950528749463,
   "maximum_score": 1.0,
   "dimensions": {
     "ground_state": {
-      "materials": 191,
-      "mean_material_score": 0.7643979057591623,
+      "materials": 190,
+      "mean_material_score": 0.7684210526315789,
       "weight": 0.2,
-      "weighted_score": 0.15287958115183248
+      "weighted_score": 0.15368421052631578
     },
     "hull": {
-      "materials": 191,
-      "mean_material_score": 0.49249975817198616,
+      "materials": 190,
+      "mean_material_score": 0.5003550200571019,
       "weight": 0.2,
-      "weighted_score": 0.09849995163439723,
-      "sign_weighted_score": 0.05706806282722514,
-      "accuracy_weighted_score": 0.041431888807172065
+      "weighted_score": 0.10007100401142038,
+      "sign_weighted_score": 0.05842105263157894,
+      "accuracy_weighted_score": 0.041649951379841385
     },
     "phonons": {
       "materials": 111,
@@ -25,20 +25,20 @@
       "spectrum_weighted_score": 0.015040892180686246
     },
     "J": {
-      "materials": 172,
-      "mean_material_score": 0.3075093635851809,
+      "materials": 167,
+      "mean_material_score": 0.4088528935994205,
       "weight": 0.2,
-      "weighted_score": 0.06150187271703618,
-      "sign_weighted_score": 0.05460612690809211,
-      "accuracy_weighted_score": 0.006895745808944063
+      "weighted_score": 0.08177057871988411,
+      "sign_weighted_score": 0.05510331633647811,
+      "accuracy_weighted_score": 0.026667262383405974
     },
     "magnetovolume": {
-      "materials": 133,
-      "mean_material_score": 0.3329546817812109,
+      "materials": 131,
+      "mean_material_score": 0.33574788302972375,
       "weight": 0.2,
-      "weighted_score": 0.06659093635624218,
-      "sign_weighted_score": 0.056355833192002554,
-      "accuracy_weighted_score": 0.010235103164239636
+      "weighted_score": 0.06714957660594476,
+      "sign_weighted_score": 0.05675821232470488,
+      "accuracy_weighted_score": 0.01039136428123988
     }
   },
   "materials": [
@@ -50,10 +50,10 @@
         "ground_state": 1.0,
         "hull": 0.3390155594169115,
         "phonons": 0.5157525260684553,
-        "J": 0.5226522662766193,
+        "J": 0.6450195876252699,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.00293912955751973,
+      "weighted_contribution_to_total": 0.0031112524413523064,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -71,20 +71,20 @@
           "accuracy_contribution": 0.3390155594169115
         },
         "J": {
-          "normalized_RMS": 4.464200795905797,
+          "normalized_RMS": 1.785680318362319,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.022652266276619357
+          "accuracy_contribution": 0.14501958762526992
         },
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -9.92439320496451e-08,
-          "W1_THz": 4.98827299264059,
+          "W1_THz": 4.988272992640589,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.01575252606845532
+          "spectrum_contribution": 0.01575252606845534
         }
       }
     },
@@ -112,10 +112,10 @@
         "ground_state": 1.0,
         "hull": 0.9666270491572213,
         "phonons": 0.689560806958375,
-        "J": 0.2189412702325255,
+        "J": 0.3350036911220471,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0035563301162245516,
+      "weighted_contribution_to_total": 0.0037137876656803395,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -133,13 +133,13 @@
           "accuracy_contribution": 0.4666270491572213
         },
         "J": {
-          "normalized_RMS": 4.72232310623787,
+          "normalized_RMS": 1.8889292424951483,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.4,
           "sign_contribution": 0.2,
-          "accuracy_contribution": 0.018941270232525478
+          "accuracy_contribution": 0.13500369112204705
         },
         "phonons": {
           "stable": true,
@@ -174,10 +174,10 @@
         "ground_state": 1.0,
         "hull": 0.4081107406499172,
         "phonons": 0.6857987886632666,
-        "J": 0.33617535674151816,
+        "J": 0.4343167120603195,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003101036579227328,
+      "weighted_contribution_to_total": 0.0032380351002725756,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -195,13 +195,13 @@
           "accuracy_contribution": 0.4081107406499172
         },
         "J": {
-          "normalized_RMS": 5.483535303690126,
+          "normalized_RMS": 2.1934141214760507,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.011175356741518157
+          "accuracy_contribution": 0.1093167120603195
         },
         "phonons": {
           "stable": true,
@@ -220,10 +220,10 @@
         "ground_state": 1.0,
         "hull": 0.7632069526183923,
         "phonons": 0.7777348764531637,
-        "J": 0.36562025038853047,
+        "J": 0.5081804160387472,
         "magnetovolume": 0.4200260962704171
       },
-      "weighted_contribution_to_total": 0.0043043721203726865,
+      "weighted_contribution_to_total": 0.0045071919365883215,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -241,13 +241,13 @@
           "accuracy_contribution": 0.26320695261839233
         },
         "J": {
-          "normalized_RMS": 3.621657057152529,
+          "normalized_RMS": 1.4486628228610114,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.04062025038853046
+          "accuracy_contribution": 0.18318041603874716
         },
         "magnetovolume": {
           "normalized_RMS": 4.641974968833434,
@@ -275,10 +275,10 @@
         "ground_state": 1.0,
         "hull": 0.5063122572159743,
         "phonons": null,
-        "J": 0.21610883284263377,
+        "J": 0.3265341151994694,
         "magnetovolume": 0.3160733479025029
       },
-      "weighted_contribution_to_total": 0.002303877929729371,
+      "weighted_contribution_to_total": 0.0024592053999213342,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -296,13 +296,13 @@
           "accuracy_contribution": 0.006312257215974229
         },
         "J": {
-          "normalized_RMS": 4.956004221685804,
+          "normalized_RMS": 1.9824016886743214,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.4,
           "sign_contribution": 0.2,
-          "accuracy_contribution": 0.016108832842633744
+          "accuracy_contribution": 0.1265341151994694
         },
         "magnetovolume": {
           "normalized_RMS": 4.959185731870297,
@@ -323,10 +323,10 @@
         "ground_state": 1.0,
         "hull": 0.8631734512169844,
         "phonons": null,
-        "J": 0.37920432717349534,
+        "J": 0.4489367922028408,
         "magnetovolume": 0.31644753205019405
       },
-      "weighted_contribution_to_total": 0.0028677631792317615,
+      "weighted_contribution_to_total": 0.0029820100678749533,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -344,13 +344,13 @@
           "accuracy_contribution": 0.36317345121698436
         },
         "J": {
-          "normalized_RMS": 6.893909342951622,
+          "normalized_RMS": 2.7575637371806483,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.75,
           "sign_contribution": 0.375,
-          "accuracy_contribution": 0.004204327173495351
+          "accuracy_contribution": 0.07393679220284077
         },
         "magnetovolume": {
           "normalized_RMS": 4.925985065757006,
@@ -371,10 +371,10 @@
         "ground_state": 1.0,
         "hull": 0.8601322427352279,
         "phonons": 0.7037443938858972,
-        "J": 0.3672233819730326,
+        "J": 0.5110386627145249,
         "magnetovolume": 0.32075204426392256
       },
-      "weighted_contribution_to_total": 0.004125128203712958,
+      "weighted_contribution_to_total": 0.004327761984691309,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -392,13 +392,13 @@
           "accuracy_contribution": 0.3601322427352279
         },
         "J": {
-          "normalized_RMS": 3.5658140506843017,
+          "normalized_RMS": 1.4263256202737207,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.04222338197303258
+          "accuracy_contribution": 0.1860386627145249
         },
         "magnetovolume": {
           "normalized_RMS": 4.590602727813728,
@@ -426,10 +426,10 @@
         "ground_state": 1.0,
         "hull": 0.9501874659697647,
         "phonons": 0.0,
-        "J": 0.5900160316580162,
+        "J": 0.7518314394552882,
         "magnetovolume": 0.6787732519188598
       },
-      "weighted_contribution_to_total": 0.003748857926310265,
+      "weighted_contribution_to_total": 0.003989520886124004,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -447,13 +447,13 @@
           "accuracy_contribution": 0.4501874659697647
         },
         "J": {
-          "normalized_RMS": 2.473674224623511,
+          "normalized_RMS": 0.9894696898494044,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 1,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.09001603165801615
+          "accuracy_contribution": 0.2518314394552882
         },
         "magnetovolume": {
           "normalized_RMS": 1.483797198470944,
@@ -481,10 +481,10 @@
         "ground_state": 1.0,
         "hull": 0.2931194669939738,
         "phonons": null,
-        "J": 0.35941882718827717,
+        "J": 0.4867744067184278,
         "magnetovolume": 0.5993715001056061
       },
-      "weighted_contribution_to_total": 0.0026732911931976228,
+      "weighted_contribution_to_total": 0.0028592127401765237,
       "details": {
         "ground_state": {
           "seed_index": 19,
@@ -502,13 +502,13 @@
           "accuracy_contribution": 0.2931194669939738
         },
         "J": {
-          "normalized_RMS": 4.260608442806081,
+          "normalized_RMS": 1.7042433771224326,
           "sign_matches": 4,
           "parameters": 10,
           "sign_parameters": 6,
           "weighted_sign_accuracy": 0.6666666666666666,
           "sign_contribution": 0.3333333333333333,
-          "accuracy_contribution": 0.02608549385494383
+          "accuracy_contribution": 0.1534410733850945
         },
         "magnetovolume": {
           "normalized_RMS": 2.3310240457527924,
@@ -529,10 +529,10 @@
         "ground_state": 1.0,
         "hull": 0.412696095618691,
         "phonons": null,
-        "J": 0.07870098851074384,
+        "J": 0.23865694527811473,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.001570775704687489,
+      "weighted_contribution_to_total": 0.0017728652226357592,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -550,13 +550,13 @@
           "accuracy_contribution": 0.412696095618691
         },
         "J": {
-          "normalized_RMS": 2.667474433195817,
+          "normalized_RMS": 1.066989773278327,
           "sign_matches": 0,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.0,
           "sign_contribution": 0.0,
-          "accuracy_contribution": 0.07870098851074384
+          "accuracy_contribution": 0.23865694527811473
         }
       }
     },
@@ -568,10 +568,10 @@
         "ground_state": 1.0,
         "hull": 0.9326394449712128,
         "phonons": null,
-        "J": 0.554534947451488,
+        "J": 0.7060876477005913,
         "magnetovolume": 0.6012097281298701
       },
-      "weighted_contribution_to_total": 0.003572589082675371,
+      "weighted_contribution_to_total": 0.003797848707364558,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -589,13 +589,13 @@
           "accuracy_contribution": 0.4326394449712127
         },
         "J": {
-          "normalized_RMS": 3.1966751460001013,
+          "normalized_RMS": 1.2786700584000408,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.054534947451487986
+          "accuracy_contribution": 0.20608764770059126
         },
         "magnetovolume": {
           "normalized_RMS": 2.3045801284697585,
@@ -664,10 +664,10 @@
         "ground_state": 1.0,
         "hull": 0.01585636812161584,
         "phonons": null,
-        "J": 0.3389412480365717,
+        "J": 0.4444270388378476,
         "magnetovolume": 0.31692741482988407
       },
-      "weighted_contribution_to_total": 0.0019344242546437231,
+      "weighted_contribution_to_total": 0.0020854290920588477,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -685,13 +685,13 @@
           "accuracy_contribution": 0.01585636812161584
         },
         "J": {
-          "normalized_RMS": 5.164496471066424,
+          "normalized_RMS": 2.0657985884265697,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.013941248036571693
+          "accuracy_contribution": 0.11942703883784758
         },
         "magnetovolume": {
           "normalized_RMS": 4.884494529411016,
@@ -712,10 +712,10 @@
         "ground_state": 1.0,
         "hull": 0.8420232909878861,
         "phonons": 0.0,
-        "J": 0.3470981219500573,
+        "J": 0.4403623656385001,
         "magnetovolume": 0.3786485404133595
       },
-      "weighted_contribution_to_total": 0.0029018189687445755,
+      "weighted_contribution_to_total": 0.003044441338536273,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -733,13 +733,13 @@
           "accuracy_contribution": 0.3420232909878861
         },
         "J": {
-          "normalized_RMS": 5.703032141161516,
+          "normalized_RMS": 2.2812128564646064,
           "sign_matches": 5,
           "parameters": 8,
           "sign_parameters": 8,
           "weighted_sign_accuracy": 0.675,
           "sign_contribution": 0.3375,
-          "accuracy_contribution": 0.009598121950057274
+          "accuracy_contribution": 0.10286236563850011
         },
         "magnetovolume": {
           "normalized_RMS": 4.539138220998291,
@@ -766,11 +766,11 @@
       "scores": {
         "ground_state": 1.0,
         "hull": 0.7990739765313586,
-        "phonons": 0.532095260028389,
+        "phonons": 0.5320952600283891,
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0028425772940937045,
+      "weighted_contribution_to_total": 0.002852492278808675,
       "details": {
         "ground_state": {
           "seed_index": 31,
@@ -790,9 +790,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -0.01543063423225947,
-          "W1_THz": 3.961495940354561,
+          "W1_THz": 3.9614959403545607,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.03209526002838908
+          "spectrum_contribution": 0.03209526002838909
         }
       }
     },
@@ -804,10 +804,10 @@
         "ground_state": 1.0,
         "hull": 0.6457097032077825,
         "phonons": null,
-        "J": 0.313310407300215,
+        "J": 0.45394052627656756,
         "magnetovolume": 0.4002093753840071
       },
-      "weighted_contribution_to_total": 0.002689389270418711,
+      "weighted_contribution_to_total": 0.0028869740321864094,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -825,13 +825,13 @@
           "accuracy_contribution": 0.14570970320778254
         },
         "J": {
-          "normalized_RMS": 3.706119825801587,
+          "normalized_RMS": 1.4824479303206348,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.03831040730021494
+          "accuracy_contribution": 0.17894052627656756
         },
         "magnetovolume": {
           "normalized_RMS": 11.221620543099505,
@@ -852,10 +852,10 @@
         "ground_state": 1.0,
         "hull": 0.5720094308749832,
         "phonons": 0.6690462869585474,
-        "J": 0.25848536391355764,
+        "J": 0.34791521721581864,
         "magnetovolume": 0.41248966987701624
       },
-      "weighted_contribution_to_total": 0.0037724215735256447,
+      "weighted_contribution_to_total": 0.003906655726656476,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -873,13 +873,13 @@
           "accuracy_contribution": 0.0720094308749833
         },
         "J": {
-          "normalized_RMS": 5.88080775040664,
+          "normalized_RMS": 2.3523231001626557,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.5,
           "sign_contribution": 0.25,
-          "accuracy_contribution": 0.008485363913557635
+          "accuracy_contribution": 0.09791521721581863
         },
         "magnetovolume": {
           "normalized_RMS": 5.323120845181603,
@@ -907,10 +907,10 @@
         "ground_state": 1.0,
         "hull": 0.9735565443156604,
         "phonons": 0.6530037191286764,
-        "J": 0.3017877214494457,
+        "J": 0.42621350997219387,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003594050588187458,
+      "weighted_contribution_to_total": 0.003764446560378297,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -928,13 +928,13 @@
           "accuracy_contribution": 0.4735565443156604
         },
         "J": {
-          "normalized_RMS": 4.380224170825331,
+          "normalized_RMS": 1.7520896683301321,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.5555555555555556,
           "sign_contribution": 0.2777777777777778,
-          "accuracy_contribution": 0.024009943671667946
+          "accuracy_contribution": 0.14843573219441608
         },
         "phonons": {
           "stable": true,
@@ -953,10 +953,10 @@
         "ground_state": 1.0,
         "hull": 0.28261893717372166,
         "phonons": 0.0,
-        "J": 0.8075946523818435,
+        "J": 0.9116930305048874,
         "magnetovolume": 0.8059699875613575
       },
-      "weighted_contribution_to_total": 0.0034941049716984422,
+      "weighted_contribution_to_total": 0.003672461668377413,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -974,13 +974,13 @@
           "accuracy_contribution": 0.28261893717372166
         },
         "J": {
-          "normalized_RMS": 0.7008976730221422,
+          "normalized_RMS": 0.2803590692088569,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.30759465238184347
+          "accuracy_contribution": 0.41169303050488737
         },
         "magnetovolume": {
           "normalized_RMS": 0.7085379482436295,
@@ -1008,10 +1008,10 @@
         "ground_state": 1.0,
         "hull": 0.5113615915021412,
         "phonons": 0.0,
-        "J": 0.46165068211904303,
+        "J": 0.6239681043047418,
         "magnetovolume": 0.43059237872188416
       },
-      "weighted_contribution_to_total": 0.002766888037891715,
+      "weighted_contribution_to_total": 0.002995567073820992,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1029,13 +1029,13 @@
           "accuracy_contribution": 0.01136159150214124
         },
         "J": {
-          "normalized_RMS": 2.396171442308971,
+          "normalized_RMS": 0.9584685769235883,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.7333333333333333,
           "sign_contribution": 0.36666666666666664,
-          "accuracy_contribution": 0.09498401545237638
+          "accuracy_contribution": 0.25730143763807517
         },
         "magnetovolume": {
           "normalized_RMS": 2.3620237583869113,
@@ -1063,10 +1063,10 @@
         "ground_state": 1.0,
         "hull": 0.11439600994544645,
         "phonons": null,
-        "J": 0.5003436427203549,
+        "J": 0.5271534403046666,
         "magnetovolume": 0.5201736979724326
       },
-      "weighted_contribution_to_total": 0.0025309178372691548,
+      "weighted_contribution_to_total": 0.0025985282344314973,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1084,13 +1084,13 @@
           "accuracy_contribution": 0.11439600994544645
         },
         "J": {
-          "normalized_RMS": 10.506802981568429,
+          "normalized_RMS": 4.202721192627371,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.0003436427203548658
+          "accuracy_contribution": 0.02715344030466663
         },
         "magnetovolume": {
           "normalized_RMS": 4.631380626027851,
@@ -1111,10 +1111,10 @@
         "ground_state": 1.0,
         "hull": 0.21271496660504574,
         "phonons": null,
-        "J": 0.34599379154611265,
+        "J": 0.46567546353539635,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.001672176966037839,
+      "weighted_contribution_to_total": 0.0018342372360212289,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1132,13 +1132,13 @@
           "accuracy_contribution": 0.21271496660504574
         },
         "J": {
-          "normalized_RMS": 4.573893444259928,
+          "normalized_RMS": 1.8295573777039713,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.02099379154611265
+          "accuracy_contribution": 0.14067546353539634
         }
       }
     },
@@ -1150,10 +1150,10 @@
         "ground_state": 1.0,
         "hull": 0.7793721950753731,
         "phonons": null,
-        "J": 0.10335685518060111,
+        "J": 0.167570175175761,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0019833993479389934,
+      "weighted_contribution_to_total": 0.0020737062077591044,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1171,13 +1171,13 @@
           "accuracy_contribution": 0.2793721950753732
         },
         "J": {
-          "normalized_RMS": 7.218673986153673,
+          "normalized_RMS": 2.8874695944614697,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.2,
           "sign_contribution": 0.1,
-          "accuracy_contribution": 0.003356855180601113
+          "accuracy_contribution": 0.06757017517576101
         }
       }
     },
@@ -1189,10 +1189,10 @@
         "ground_state": 1.0,
         "hull": 0.20831046740341003,
         "phonons": 0.5482653664141399,
-        "J": 0.30846879022551926,
+        "J": 0.3978386727949805,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.002611796727593722,
+      "weighted_contribution_to_total": 0.0027362247805852767,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1210,13 +1210,13 @@
           "accuracy_contribution": 0.20831046740341003
         },
         "J": {
-          "normalized_RMS": 5.8836283907007605,
+          "normalized_RMS": 2.3534513562803046,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.6,
           "sign_contribution": 0.3,
-          "accuracy_contribution": 0.008468790225519298
+          "accuracy_contribution": 0.0978386727949805
         },
         "phonons": {
           "stable": true,
@@ -1235,10 +1235,10 @@
         "ground_state": 1.0,
         "hull": 0.5579208011172909,
         "phonons": null,
-        "J": 0.4162114264763201,
+        "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.002115297456770676,
+      "weighted_contribution_to_total": 0.0016399166327550432,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1254,15 +1254,6 @@
           "sign_match": true,
           "sign_contribution": 0.5,
           "accuracy_contribution": 0.05792080111729096
-        },
-        "J": {
-          "normalized_RMS": 4.946845147668948,
-          "sign_matches": 4,
-          "parameters": 5,
-          "sign_parameters": 5,
-          "weighted_sign_accuracy": 0.8,
-          "sign_contribution": 0.4,
-          "accuracy_contribution": 0.016211426476320043
         }
       }
     },
@@ -1295,6 +1286,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -1311,6 +1305,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -1322,10 +1319,10 @@
         "ground_state": 1.0,
         "hull": 0.7282142610320279,
         "phonons": 0.0,
-        "J": 0.45788254523005745,
+        "J": 0.6009168069982207,
         "magnetovolume": 0.39963041079301065
       },
-      "weighted_contribution_to_total": 0.002943017991247134,
+      "weighted_contribution_to_total": 0.003148956517623441,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -1343,13 +1340,13 @@
           "accuracy_contribution": 0.2282142610320279
         },
         "J": {
-          "normalized_RMS": 3.6006559418950204,
+          "normalized_RMS": 1.4402623767580083,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.8333333333333334,
           "sign_contribution": 0.4166666666666667,
-          "accuracy_contribution": 0.04121587856339074
+          "accuracy_contribution": 0.18425014033155399
         },
         "magnetovolume": {
           "normalized_RMS": 4.343415500058146,
@@ -1377,10 +1374,10 @@
         "ground_state": 1.0,
         "hull": 0.7194667499606,
         "phonons": 0.5283654609461506,
-        "J": 0.3931077033180713,
+        "J": 0.5375875264119425,
         "magnetovolume": 0.5981638461690965
       },
-      "weighted_contribution_to_total": 0.004109095069076701,
+      "weighted_contribution_to_total": 0.004319019482461359,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -1398,13 +1395,13 @@
           "accuracy_contribution": 0.2194667499606
         },
         "J": {
-          "normalized_RMS": 3.535910488772887,
+          "normalized_RMS": 1.4143641955091546,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.7,
           "sign_contribution": 0.35,
-          "accuracy_contribution": 0.043107703318071317
+          "accuracy_contribution": 0.18758752641194257
         },
         "magnetovolume": {
           "normalized_RMS": 2.34866441326397,
@@ -1418,9 +1415,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -1.323572874244793e-07,
-          "W1_THz": 4.139720881404103,
+          "W1_THz": 4.139720881404102,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.028365460946150525
+          "spectrum_contribution": 0.028365460946150542
         }
       }
     },
@@ -1437,6 +1434,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -1448,10 +1448,10 @@
         "ground_state": 1.0,
         "hull": 0.782074435044552,
         "phonons": null,
-        "J": 0.580946500270164,
+        "J": 0.7413577415053142,
         "magnetovolume": 0.146106116905935
       },
-      "weighted_contribution_to_total": 0.002761274161678209,
+      "weighted_contribution_to_total": 0.002986784182905972,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -1469,13 +1469,13 @@
           "accuracy_contribution": 0.282074435044552
         },
         "J": {
-          "normalized_RMS": 2.6268874829593623,
+          "normalized_RMS": 1.050754993183745,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.08094650027016403
+          "accuracy_contribution": 0.24135774150531417
         },
         "magnetovolume": {
           "normalized_RMS": 4.566195013072466,
@@ -1496,10 +1496,10 @@
         "ground_state": 1.0,
         "hull": 0.828501692952851,
         "phonons": 0.0,
-        "J": 0.4565235811186352,
+        "J": 0.6121104861258008,
         "magnetovolume": 0.39288121718991076
       },
-      "weighted_contribution_to_total": 0.003036301654825106,
+      "weighted_contribution_to_total": 0.0032576237268092936,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -1517,13 +1517,13 @@
           "accuracy_contribution": 0.328501692952851
         },
         "J": {
-          "normalized_RMS": 2.973323133048071,
+          "normalized_RMS": 1.1893292532192286,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.7857142857142857,
           "sign_contribution": 0.39285714285714285,
-          "accuracy_contribution": 0.06366643826149236
+          "accuracy_contribution": 0.21925334326865795
         },
         "magnetovolume": {
           "normalized_RMS": 1.8071118190974456,
@@ -1551,10 +1551,10 @@
         "ground_state": 1.0,
         "hull": 0.8690268935068461,
         "phonons": null,
-        "J": 0.23120471474631385,
+        "J": 0.34332795139887806,
         "magnetovolume": 0.30579921752188444
       },
-      "weighted_contribution_to_total": 0.0026857873625341895,
+      "weighted_contribution_to_total": 0.002845436963671856,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -1572,13 +1572,13 @@
           "accuracy_contribution": 0.3690268935068462
         },
         "J": {
-          "normalized_RMS": 4.885211850225338,
+          "normalized_RMS": 1.9540847400901356,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.42857142857142855,
           "sign_contribution": 0.21428571428571427,
-          "accuracy_contribution": 0.016919000460599572
+          "accuracy_contribution": 0.1290422371131638
         },
         "magnetovolume": {
           "normalized_RMS": 3.1636112986380414,
@@ -1599,10 +1599,10 @@
         "ground_state": 1.0,
         "hull": 0.9105515255219692,
         "phonons": null,
-        "J": 0.5310594063981922,
+        "J": 0.6917999202226512,
         "magnetovolume": 0.6633801624472271
       },
-      "weighted_contribution_to_total": 0.003615652605363867,
+      "weighted_contribution_to_total": 0.0038524039085815398,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -1620,13 +1620,13 @@
           "accuracy_contribution": 0.41055152552196916
         },
         "J": {
-          "normalized_RMS": 1.8551468498362715,
+          "normalized_RMS": 0.7420587399345087,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.7857142857142857,
           "sign_contribution": 0.39285714285714285,
-          "accuracy_contribution": 0.13820226354104936
+          "accuracy_contribution": 0.29894277736550845
         },
         "magnetovolume": {
           "normalized_RMS": 1.6136952722142006,
@@ -1647,10 +1647,10 @@
         "ground_state": 1.0,
         "hull": 0.8990059670632835,
         "phonons": null,
-        "J": 0.4451802326949954,
+        "J": 0.5955597598062338,
         "magnetovolume": 0.3347385550415375
       },
-      "weighted_contribution_to_total": 0.003009505605175512,
+      "weighted_contribution_to_total": 0.003223250099936179,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -1668,13 +1668,13 @@
           "accuracy_contribution": 0.3990059670632835
         },
         "J": {
-          "normalized_RMS": 3.2564084508858957,
+          "normalized_RMS": 1.3025633803543584,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.7857142857142857,
           "sign_contribution": 0.39285714285714285,
-          "accuracy_contribution": 0.05232308983785256
+          "accuracy_contribution": 0.20270261694909095
         },
         "magnetovolume": {
           "normalized_RMS": 2.560837661641503,
@@ -1695,10 +1695,10 @@
         "ground_state": 1.0,
         "hull": 0.8577525389771603,
         "phonons": null,
-        "J": 0.3110302041551608,
+        "J": 0.4516538308427631,
         "magnetovolume": 0.24998781973819895
       },
-      "weighted_contribution_to_total": 0.0026828751782583082,
+      "weighted_contribution_to_total": 0.002878092573318903,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -1716,13 +1716,13 @@
           "accuracy_contribution": 0.35775253897716025
         },
         "J": {
-          "normalized_RMS": 3.706401380009915,
+          "normalized_RMS": 1.482560552003966,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.5454545454545454,
           "sign_contribution": 0.2727272727272727,
-          "accuracy_contribution": 0.03830293142788809
+          "accuracy_contribution": 0.17892655811549044
         },
         "magnetovolume": {
           "normalized_RMS": 2.5851733849728493,
@@ -1764,6 +1764,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -1791,10 +1794,10 @@
         "ground_state": 1.0,
         "hull": 0.028185743821756662,
         "phonons": null,
-        "J": 0.37122082181609994,
+        "J": 0.517893266601381,
         "magnetovolume": 0.1000000000410566
       },
-      "weighted_contribution_to_total": 0.00165866234502653,
+      "weighted_contribution_to_total": 0.0018552039957657849,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -1812,13 +1815,13 @@
           "accuracy_contribution": 0.028185743821756662
         },
         "J": {
-          "normalized_RMS": 3.4353132783146707,
+          "normalized_RMS": 1.3741253113258685,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.04622082181609993
+          "accuracy_contribution": 0.192893266601381
         },
         "magnetovolume": {
           "normalized_RMS": 33.50359522995375,
@@ -1839,10 +1842,10 @@
         "ground_state": 1.0,
         "hull": 0.169415487959292,
         "phonons": null,
-        "J": 0.19141032264105248,
+        "J": 0.299248192073844,
         "magnetovolume": 0.44351987982809
       },
-      "weighted_contribution_to_total": 0.002114036165876757,
+      "weighted_contribution_to_total": 0.0022664743274118074,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -1860,13 +1863,13 @@
           "accuracy_contribution": 0.169415487959292
         },
         "J": {
-          "normalized_RMS": 5.064701689231327,
+          "normalized_RMS": 2.025880675692531,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.35294117647058826,
           "sign_contribution": 0.17647058823529413,
-          "accuracy_contribution": 0.014939734405758348
+          "accuracy_contribution": 0.12277760383854991
         },
         "magnetovolume": {
           "normalized_RMS": 3.522181616910232,
@@ -1903,10 +1906,10 @@
         "ground_state": 1.0,
         "hull": 0.9658513454964608,
         "phonons": 0.8265665613244497,
-        "J": 0.34881296182865423,
+        "J": 0.47294741075537505,
         "magnetovolume": 0.5568147045738036
       },
-      "weighted_contribution_to_total": 0.004790704016259387,
+      "weighted_contribution_to_total": 0.004975129195635098,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -1924,13 +1927,13 @@
           "accuracy_contribution": 0.4658513454964608
         },
         "J": {
-          "normalized_RMS": 4.392109117265426,
+          "normalized_RMS": 1.7568436469061703,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.023812961828654226
+          "accuracy_contribution": 0.14794741075537501
         },
         "magnetovolume": {
           "normalized_RMS": 3.137591818668446,
@@ -1958,10 +1961,10 @@
         "ground_state": 1.0,
         "hull": 0.8365971123853787,
         "phonons": null,
-        "J": 0.13006468078982983,
+        "J": 0.20465312774866773,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0020743763384947194,
+      "weighted_contribution_to_total": 0.002178353684466468,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -1979,13 +1982,13 @@
           "accuracy_contribution": 0.3365971123853787
         },
         "J": {
-          "normalized_RMS": 6.625312941093094,
+          "normalized_RMS": 2.650125176437238,
           "sign_matches": 2,
           "parameters": 11,
           "sign_parameters": 11,
           "weighted_sign_accuracy": 0.25,
           "sign_contribution": 0.125,
-          "accuracy_contribution": 0.0050646807898298216
+          "accuracy_contribution": 0.07965312774866773
         }
       }
     },
@@ -1997,10 +2000,10 @@
         "ground_state": 1.0,
         "hull": 0.4482916430670336,
         "phonons": null,
-        "J": 0.5243159188441774,
+        "J": 0.6491895062701823,
         "magnetovolume": 0.5007961750970176
       },
-      "weighted_contribution_to_total": 0.0028792823800103872,
+      "weighted_contribution_to_total": 0.0030665642947421685,
       "details": {
         "ground_state": {
           "seed_index": 6,
@@ -2018,13 +2021,13 @@
           "accuracy_contribution": 0.4482916430670336
         },
         "J": {
-          "normalized_RMS": 4.361955080949841,
+          "normalized_RMS": 1.7447820323799363,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 1,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.024315918844177366
+          "accuracy_contribution": 0.14918950627018238
         },
         "magnetovolume": {
           "normalized_RMS": 9.294626632424617,
@@ -2064,7 +2067,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.001718513875825685,
+      "weighted_contribution_to_total": 0.0017275586856984517,
       "details": {
         "ground_state": {
           "seed_index": 31,
@@ -2091,10 +2094,10 @@
         "ground_state": 1.0,
         "hull": 0.5080775369394676,
         "phonons": null,
-        "J": 0.3545770271730145,
+        "J": 0.47467623933165587,
         "magnetovolume": 0.2508549531764586
       },
-      "weighted_contribution_to_total": 0.002368663144439833,
+      "weighted_contribution_to_total": 0.0025389092383434984,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -2112,13 +2115,13 @@
           "accuracy_contribution": 0.008077536939467507
         },
         "J": {
-          "normalized_RMS": 4.556821546944609,
+          "normalized_RMS": 1.8227286187778435,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.6666666666666666,
           "sign_contribution": 0.3333333333333333,
-          "accuracy_contribution": 0.021243693839681173
+          "accuracy_contribution": 0.14134290599832255
         },
         "magnetovolume": {
           "normalized_RMS": 9.191866970007965,
@@ -2139,10 +2142,10 @@
         "ground_state": 1.0,
         "hull": 0.13300574615885466,
         "phonons": 0.0,
-        "J": 0.3404443996912924,
+        "J": 0.4974574592269373,
         "magnetovolume": 0.19818027657175463
       },
-      "weighted_contribution_to_total": 0.0018802744860029876,
+      "weighted_contribution_to_total": 0.0020909603714786983,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -2160,13 +2163,13 @@
           "accuracy_contribution": 0.13300574615885466
         },
         "J": {
-          "normalized_RMS": 2.8843354244958066,
+          "normalized_RMS": 1.1537341697983228,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.5454545454545454,
           "sign_contribution": 0.2727272727272727,
-          "accuracy_contribution": 0.06771712696401973
+          "accuracy_contribution": 0.2247301864996646
         },
         "magnetovolume": {
           "normalized_RMS": 3.987881164271458,
@@ -2210,10 +2213,10 @@
         "ground_state": 1.0,
         "hull": 0.04767999146238344,
         "phonons": 0.0,
-        "J": 0.3612789849562643,
+        "J": 0.45972106377715594,
         "magnetovolume": 0.21437091415541973
       },
-      "weighted_contribution_to_total": 0.0018395012313767794,
+      "weighted_contribution_to_total": 0.00198066903028595,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -2231,13 +2234,13 @@
           "accuracy_contribution": 0.04767999146238344
         },
         "J": {
-          "normalized_RMS": 5.4702189504471885,
+          "normalized_RMS": 2.188087580178875,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.7,
           "sign_contribution": 0.35,
-          "accuracy_contribution": 0.011278984956264358
+          "accuracy_contribution": 0.10972106377715599
         },
         "magnetovolume": {
           "normalized_RMS": 5.120704353063482,
@@ -2265,10 +2268,10 @@
         "ground_state": 1.0,
         "hull": 0.3144839850726405,
         "phonons": null,
-        "J": 0.528769675932168,
+        "J": 0.6595717436301989,
         "magnetovolume": 0.10477106301202492
       },
-      "weighted_contribution_to_total": 0.0021488219520994878,
+      "weighted_contribution_to_total": 0.002333529453897092,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -2286,13 +2289,13 @@
           "accuracy_contribution": 0.3144839850726405
         },
         "J": {
-          "normalized_RMS": 4.119307219433964,
+          "normalized_RMS": 1.6477228877735859,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.028769675932167962
+          "accuracy_contribution": 0.15957174363019883
         },
         "magnetovolume": {
           "normalized_RMS": 6.711473544360507,
@@ -2313,10 +2316,10 @@
         "ground_state": 1.0,
         "hull": 0.3677729573650432,
         "phonons": null,
-        "J": 0.34728307758004356,
+        "J": 0.47432470434683555,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.001836040524075099,
+      "weighted_contribution_to_total": 0.0020078145458925995,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2334,13 +2337,13 @@
           "accuracy_contribution": 0.3677729573650432
         },
         "J": {
-          "normalized_RMS": 4.2734404416978276,
+          "normalized_RMS": 1.7093761766791313,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.6428571428571429,
           "sign_contribution": 0.32142857142857145,
-          "accuracy_contribution": 0.025854506151472112
+          "accuracy_contribution": 0.1528961329182641
         }
       }
     },
@@ -2352,10 +2355,10 @@
         "ground_state": 1.0,
         "hull": 0.28190246968681254,
         "phonons": null,
-        "J": 0.34918652844541936,
+        "J": 0.4738714497187735,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0017483370980105133,
+      "weighted_contribution_to_total": 0.0019168817389490366,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2373,13 +2376,13 @@
           "accuracy_contribution": 0.28190246968681254
         },
         "J": {
-          "normalized_RMS": 4.369652479323952,
+          "normalized_RMS": 1.747860991729581,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.024186528445419377
+          "accuracy_contribution": 0.14887144971877345
         }
       }
     },
@@ -2396,6 +2399,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -2407,10 +2413,10 @@
         "ground_state": 1.0,
         "hull": 0.5292432315595527,
         "phonons": 0.5585778656329308,
-        "J": 0.20027061125979118,
+        "J": 0.22467859028304232,
         "magnetovolume": 0.409975878255168
       },
-      "weighted_contribution_to_total": 0.003457126301768798,
+      "weighted_contribution_to_total": 0.0035111698495846584,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2428,13 +2434,13 @@
           "accuracy_contribution": 0.029243231559552663
         },
         "J": {
-          "normalized_RMS": 10.85149051027592,
+          "normalized_RMS": 4.340596204110368,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.4,
           "sign_contribution": 0.2,
-          "accuracy_contribution": 0.00027061125979117325
+          "accuracy_contribution": 0.024678590283042322
         },
         "magnetovolume": {
           "normalized_RMS": 5.6473404259236455,
@@ -2462,10 +2468,10 @@
         "ground_state": 1.0,
         "hull": 0.2825926115422893,
         "phonons": 0.5920634713546471,
-        "J": 0.5688611446883101,
+        "J": 0.7262412010705614,
         "magnetovolume": 0.06870782779841124
       },
-      "weighted_contribution_to_total": 0.0031745964311916705,
+      "weighted_contribution_to_total": 0.0033915259037241665,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2483,13 +2489,13 @@
           "accuracy_contribution": 0.2825926115422893
         },
         "J": {
-          "normalized_RMS": 2.860166026548827,
+          "normalized_RMS": 1.1440664106195308,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 1,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.06886114468831009
+          "accuracy_contribution": 0.22624120107056142
         },
         "magnetovolume": {
           "normalized_RMS": 2.8633817168941067,
@@ -2503,9 +2509,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -1.1364568476897583e-06,
-          "W1_THz": 2.4412273477808673,
+          "W1_THz": 2.4412273477808677,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.0920634713546471
+          "spectrum_contribution": 0.09206347135464707
         }
       }
     },
@@ -2549,10 +2555,10 @@
         "ground_state": 1.0,
         "hull": 0.6367946177733027,
         "phonons": 0.5047991070888435,
-        "J": 0.3723661938371684,
+        "J": 0.4942842201197332,
         "magnetovolume": 0.31971197671384854
       },
-      "weighted_contribution_to_total": 0.003537222842549376,
+      "weighted_contribution_to_total": 0.003712556681576623,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -2570,13 +2576,13 @@
           "accuracy_contribution": 0.13679461777330273
         },
         "J": {
-          "normalized_RMS": 4.482536422847592,
+          "normalized_RMS": 1.7930145691390371,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.7,
           "sign_contribution": 0.35,
-          "accuracy_contribution": 0.02236619383716841
+          "accuracy_contribution": 0.14428422011973324
         },
         "magnetovolume": {
           "normalized_RMS": 4.664783732912705,
@@ -2590,9 +2596,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -4.3413812336464034e-07,
-          "W1_THz": 6.703018278480317,
+          "W1_THz": 6.703018278480319,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.004799107088843472
+          "spectrum_contribution": 0.004799107088843466
         }
       }
     },
@@ -2604,10 +2610,10 @@
         "ground_state": 1.0,
         "hull": 0.8093394955442816,
         "phonons": null,
-        "J": 0.5169453965296673,
+        "J": 0.6291227292175218,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0024956956287031716,
+      "weighted_contribution_to_total": 0.0026580082843190933,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -2625,13 +2631,13 @@
           "accuracy_contribution": 0.3093394955442817
         },
         "J": {
-          "normalized_RMS": 4.88296279286482,
+          "normalized_RMS": 1.953185117145928,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.016945396529667263
+          "accuracy_contribution": 0.12912272921752177
         }
       }
     },
@@ -2643,10 +2649,10 @@
         "ground_state": 1.0,
         "hull": 0.6713258109090279,
         "phonons": null,
-        "J": 0.5000000016514909,
+        "J": 0.5002025501087423,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0023314747339083625,
+      "weighted_contribution_to_total": 0.0023583352974627715,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -2664,13 +2670,13 @@
           "accuracy_contribution": 0.1713258109090279
         },
         "J": {
-          "normalized_RMS": 28.173583799978154,
+          "normalized_RMS": 11.269433519991262,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 1.6514909387621878e-09
+          "accuracy_contribution": 0.00020255010874222656
         }
       }
     },
@@ -2682,10 +2688,10 @@
         "ground_state": 1.0,
         "hull": 0.7560067389165435,
         "phonons": null,
-        "J": 0.2927052166556719,
+        "J": 0.4064082103898618,
         "magnetovolume": 0.4050777470120598
       },
-      "weighted_contribution_to_total": 0.0027882448842335536,
+      "weighted_contribution_to_total": 0.002953583874271876,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -2703,13 +2709,13 @@
           "accuracy_contribution": 0.2560067389165435
         },
         "J": {
-          "normalized_RMS": 4.819681691928361,
+          "normalized_RMS": 1.9278726767713446,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.017705216655671863
+          "accuracy_contribution": 0.13140821038986178
         },
         "magnetovolume": {
           "normalized_RMS": 6.621595767096704,
@@ -2730,10 +2736,10 @@
         "ground_state": 1.0,
         "hull": 0.8899459223105899,
         "phonons": null,
-        "J": 0.46095571694734466,
+        "J": 0.5994573148443783,
         "magnetovolume": 0.1024856476573602
       },
-      "weighted_contribution_to_total": 0.0026691097413521956,
+      "weighted_contribution_to_total": 0.0028637963498811965,
       "details": {
         "ground_state": {
           "seed_index": 21,
@@ -2751,13 +2757,13 @@
           "accuracy_contribution": 0.38994592231058994
         },
         "J": {
-          "normalized_RMS": 3.79763501282785,
+          "normalized_RMS": 1.51905400513114,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.85,
           "sign_contribution": 0.425,
-          "accuracy_contribution": 0.035955716947344674
+          "accuracy_contribution": 0.17445731484437832
         },
         "magnetovolume": {
           "normalized_RMS": 7.652162477010652,
@@ -2794,10 +2800,10 @@
         "ground_state": 1.0,
         "hull": 0.8903628074718934,
         "phonons": 0.0,
-        "J": 0.5951566880326256,
+        "J": 0.7574884362442786,
         "magnetovolume": 0.6367424633464894
       },
-      "weighted_contribution_to_total": 0.0036289876189169517,
+      "weighted_contribution_to_total": 0.0038691532649847023,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2815,13 +2821,13 @@
           "accuracy_contribution": 0.3903628074718934
         },
         "J": {
-          "normalized_RMS": 2.39355113072772,
+          "normalized_RMS": 0.957420452291088,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 1,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.09515668803262553
+          "accuracy_contribution": 0.2574884362442786
         },
         "magnetovolume": {
           "normalized_RMS": 1.870466774792953,
@@ -2849,10 +2855,10 @@
         "ground_state": 1.0,
         "hull": 0.6107988603696832,
         "phonons": null,
-        "J": 0.2978562683705531,
+        "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.002033044875455748,
+      "weighted_contribution_to_total": 0.0016955777477575614,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2868,15 +2874,6 @@
           "sign_match": true,
           "sign_contribution": 0.5,
           "accuracy_contribution": 0.11079886036968326
-        },
-        "J": {
-          "normalized_RMS": 4.45126630865237,
-          "sign_matches": 3,
-          "parameters": 5,
-          "sign_parameters": 5,
-          "weighted_sign_accuracy": 0.55,
-          "sign_contribution": 0.275,
-          "accuracy_contribution": 0.022856268370553115
         }
       }
     },
@@ -2904,10 +2901,10 @@
         "ground_state": 1.0,
         "hull": 0.8302380462150392,
         "phonons": 0.6270310238094756,
-        "J": 0.1691572325170489,
+        "J": 0.28561730530886015,
         "magnetovolume": 0.31201058930996406
       },
-      "weighted_contribution_to_total": 0.0037121485705504677,
+      "weighted_contribution_to_total": 0.003874760690734965,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -2925,13 +2922,13 @@
           "accuracy_contribution": 0.3302380462150392
         },
         "J": {
-          "normalized_RMS": 4.705967027568398,
+          "normalized_RMS": 1.8823868110273592,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.3,
           "sign_contribution": 0.15,
-          "accuracy_contribution": 0.0191572325170489
+          "accuracy_contribution": 0.13561730530886015
         },
         "magnetovolume": {
           "normalized_RMS": 5.379549249913139,
@@ -2959,10 +2956,10 @@
         "ground_state": 1.0,
         "hull": 0.8081092551277842,
         "phonons": 0.8183960219461206,
-        "J": 0.3542456157976643,
+        "J": 0.4856224739471951,
         "magnetovolume": 0.3181190488659143
       },
-      "weighted_contribution_to_total": 0.004258183563796874,
+      "weighted_contribution_to_total": 0.004445122065398691,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -2980,13 +2977,13 @@
           "accuracy_contribution": 0.3081092551277842
         },
         "J": {
-          "normalized_RMS": 4.095635822891976,
+          "normalized_RMS": 1.6382543291567906,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.029245615797664295
+          "accuracy_contribution": 0.1606224739471951
         },
         "magnetovolume": {
           "normalized_RMS": 4.786348964657893,
@@ -3014,10 +3011,10 @@
         "ground_state": 1.0,
         "hull": 0.8220638867812213,
         "phonons": 0.798064844346365,
-        "J": 0.30638343880162,
+        "J": 0.44021984646926804,
         "magnetovolume": 0.3230475666666463
       },
-      "weighted_contribution_to_total": 0.004187920601888761,
+      "weighted_contribution_to_total": 0.0043763284494101095,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3035,13 +3032,13 @@
           "accuracy_contribution": 0.3220638867812214
         },
         "J": {
-          "normalized_RMS": 3.9938527472766068,
+          "normalized_RMS": 1.5975410989106429,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.03138343880162
+          "accuracy_contribution": 0.165219846469268
         },
         "magnetovolume": {
           "normalized_RMS": 4.43924174902362,
@@ -3069,10 +3066,10 @@
         "ground_state": 1.0,
         "hull": 0.8895276771552139,
         "phonons": 0.0,
-        "J": 0.6074692903446083,
+        "J": 0.7703309403054642,
         "magnetovolume": 0.6506321401087551
       },
-      "weighted_contribution_to_total": 0.003663316848315827,
+      "weighted_contribution_to_total": 0.003904860038202988,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3090,13 +3087,13 @@
           "accuracy_contribution": 0.3895276771552138
         },
         "J": {
-          "normalized_RMS": 2.218003630393841,
+          "normalized_RMS": 0.8872014521575367,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 1,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.1074692903446083
+          "accuracy_contribution": 0.27033094030546423
         },
         "magnetovolume": {
           "normalized_RMS": 1.7308984667872525,
@@ -3124,10 +3121,10 @@
         "ground_state": 1.0,
         "hull": 0.6120787347129317,
         "phonons": 0.6350886235555007,
-        "J": 0.2835909242944428,
+        "J": 0.3734006482184732,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003162101274849425,
+      "weighted_contribution_to_total": 0.00328841521518654,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3145,13 +3142,13 @@
           "accuracy_contribution": 0.11207873471293174
         },
         "J": {
-          "normalized_RMS": 5.862970925909253,
+          "normalized_RMS": 2.3451883703637013,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.0085909242944428
+          "accuracy_contribution": 0.09840064821847319
         },
         "phonons": {
           "stable": true,
@@ -3170,10 +3167,10 @@
         "ground_state": 1.0,
         "hull": 0.9101333551023425,
         "phonons": 0.8076697046538941,
-        "J": 0.3651165384242722,
+        "J": 0.5072684008328088,
         "magnetovolume": 0.5333026764048261
       },
-      "weighted_contribution_to_total": 0.004681913394290521,
+      "weighted_contribution_to_total": 0.004887637044949849,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3191,13 +3188,13 @@
           "accuracy_contribution": 0.41013335510234256
         },
         "J": {
-          "normalized_RMS": 3.639659065718724,
+          "normalized_RMS": 1.4558636262874898,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.040116538424272194
+          "accuracy_contribution": 0.18226840083280874
         },
         "magnetovolume": {
           "normalized_RMS": 3.9082180641055215,
@@ -3225,10 +3222,10 @@
         "ground_state": 1.0,
         "hull": 0.8014657883736309,
         "phonons": 0.0,
-        "J": 0.612293131398326,
+        "J": 0.7751207075243565,
         "magnetovolume": 0.6459307626975521
       },
-      "weighted_contribution_to_total": 0.003569644823486644,
+      "weighted_contribution_to_total": 0.003810721885899129,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3246,13 +3243,13 @@
           "accuracy_contribution": 0.3014657883736309
         },
         "J": {
-          "normalized_RMS": 2.1546584093627965,
+          "normalized_RMS": 0.8618633637451186,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 1,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.11229313139832595
+          "accuracy_contribution": 0.2751207075243565
         },
         "magnetovolume": {
           "normalized_RMS": 1.7766440545854887,
@@ -3280,10 +3277,10 @@
         "ground_state": 1.0,
         "hull": 0.9881759029574496,
         "phonons": null,
-        "J": 0.3786966803209652,
+        "J": 0.5094096713820968,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0025222045613660397,
+      "weighted_contribution_to_total": 0.00270288820268826,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3301,13 +3298,13 @@
           "accuracy_contribution": 0.4881759029574496
         },
         "J": {
-          "normalized_RMS": 4.122972336549241,
+          "normalized_RMS": 1.6491889346196966,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.7,
           "sign_contribution": 0.35,
-          "accuracy_contribution": 0.02869668032096524
+          "accuracy_contribution": 0.15940967138209686
         }
       }
     },
@@ -3319,10 +3316,10 @@
         "ground_state": 1.0,
         "hull": 0.7579730548514456,
         "phonons": null,
-        "J": 0.5066766493804082,
+        "J": 0.6629343177453685,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.00242996837614822,
+      "weighted_contribution_to_total": 0.0026444312671403177,
       "details": {
         "ground_state": {
           "seed_index": 6,
@@ -3340,13 +3337,13 @@
           "accuracy_contribution": 0.25797305485144556
         },
         "J": {
-          "normalized_RMS": 2.932357345075337,
+          "normalized_RMS": 1.1729429380301348,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.8823529411764706,
           "sign_contribution": 0.4411764705882353,
-          "accuracy_contribution": 0.0655001787921729
+          "accuracy_contribution": 0.2217578471571332
         }
       }
     },
@@ -3358,10 +3355,10 @@
         "ground_state": 1.0,
         "hull": 0.8810026389658664,
         "phonons": null,
-        "J": 0.45443934884077164,
+        "J": 0.6125253047518577,
         "magnetovolume": 0.6838720814384915
       },
-      "weighted_contribution_to_total": 0.003526433188490034,
+      "weighted_contribution_to_total": 0.0037576455307291408,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -3379,13 +3376,13 @@
           "accuracy_contribution": 0.3810026389658664
         },
         "J": {
-          "normalized_RMS": 1.6948877182854873,
+          "normalized_RMS": 0.6779550873141948,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.6,
           "sign_contribution": 0.3,
-          "accuracy_contribution": 0.15443934884077165
+          "accuracy_contribution": 0.31252530475185775
         },
         "magnetovolume": {
           "normalized_RMS": 1.4432256528097396,
@@ -3406,10 +3403,10 @@
         "ground_state": 1.0,
         "hull": 0.8886559876401351,
         "phonons": 0.0,
-        "J": 0.2759406717978395,
+        "J": 0.3156216212062222,
         "magnetovolume": 0.21501025992951364
       },
-      "weighted_contribution_to_total": 0.0026218351942565213,
+      "weighted_contribution_to_total": 0.002694308838698156,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3427,13 +3424,13 @@
           "accuracy_contribution": 0.3886559876401351
         },
         "J": {
-          "normalized_RMS": 9.054020927819419,
+          "normalized_RMS": 3.6216083711277682,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.0009406717978394563
+          "accuracy_contribution": 0.0406216212062222
         },
         "magnetovolume": {
           "normalized_RMS": 5.0579072297532734,
@@ -3461,10 +3458,10 @@
         "ground_state": 1.0,
         "hull": 0.6160782153131555,
         "phonons": 0.6708991824545903,
-        "J": 0.29526317787422796,
+        "J": 0.41369634782481907,
         "magnetovolume": 0.2879378578992538
       },
-      "weighted_contribution_to_total": 0.003677374390080965,
+      "weighted_contribution_to_total": 0.0038450068302477796,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3482,13 +3479,13 @@
           "accuracy_contribution": 0.11607821531315553
         },
         "J": {
-          "normalized_RMS": 4.624995740025561,
+          "normalized_RMS": 1.8499982960102244,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.020263177874227926
+          "accuracy_contribution": 0.13869634782481904
         },
         "magnetovolume": {
           "normalized_RMS": 3.720217968204281,
@@ -3516,10 +3513,10 @@
         "ground_state": 1.0,
         "hull": 0.10512173456880922,
         "phonons": 0.0,
-        "J": 0.23816920819682122,
+        "J": 0.3417362849446106,
         "magnetovolume": 0.2172904377456621
       },
-      "weighted_contribution_to_total": 0.0017608890113070524,
+      "weighted_contribution_to_total": 0.0019042921746271887,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -3537,13 +3534,13 @@
           "accuracy_contribution": 0.10512173456880922
         },
         "J": {
-          "normalized_RMS": 5.2466875841089395,
+          "normalized_RMS": 2.0986750336435764,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.45,
           "sign_contribution": 0.225,
-          "accuracy_contribution": 0.013169208196821212
+          "accuracy_contribution": 0.11673628494461062
         },
         "magnetovolume": {
           "normalized_RMS": 4.853881795317292,
@@ -3587,10 +3584,10 @@
         "ground_state": 1.0,
         "hull": 0.12630087555908395,
         "phonons": 0.516262598489843,
-        "J": 0.600058747658853,
+        "J": 0.7627144905096692,
         "magnetovolume": 0.4611793745181152
       },
-      "weighted_contribution_to_total": 0.0035008210733864743,
+      "weighted_contribution_to_total": 0.0037333039248471913,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3608,13 +3605,13 @@
           "accuracy_contribution": 0.12630087555908395
         },
         "J": {
-          "normalized_RMS": 2.3210807941867526,
+          "normalized_RMS": 0.9284323176747011,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.10005874765885299
+          "accuracy_contribution": 0.2627144905096692
         },
         "magnetovolume": {
           "normalized_RMS": 1.9675206073739693,
@@ -3642,10 +3639,10 @@
         "ground_state": 1.0,
         "hull": 0.055509006801419014,
         "phonons": 0.0,
-        "J": 0.10078917921251394,
+        "J": 0.13786624647711615,
         "magnetovolume": 0.6575179482480682
       },
-      "weighted_contribution_to_total": 0.002211190547672464,
+      "weighted_contribution_to_total": 0.002280015585439227,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3663,13 +3660,13 @@
           "accuracy_contribution": 0.055509006801419014
         },
         "J": {
-          "normalized_RMS": 9.307359424499152,
+          "normalized_RMS": 3.722943769799661,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.2,
           "sign_contribution": 0.1,
-          "accuracy_contribution": 0.0007891792125139448
+          "accuracy_contribution": 0.03786624647711615
         },
         "magnetovolume": {
           "normalized_RMS": 1.6664118702545012,
@@ -3713,10 +3710,10 @@
         "ground_state": 1.0,
         "hull": 0.02269640853271442,
         "phonons": null,
-        "J": 0.3369594927600344,
+        "J": 0.470818559558965,
         "magnetovolume": 0.14482989212458441
       },
-      "weighted_contribution_to_total": 0.001680488966797292,
+      "weighted_contribution_to_total": 0.001861491436765163,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3734,13 +3731,13 @@
           "accuracy_contribution": 0.02269640853271442
         },
         "J": {
-          "normalized_RMS": 3.992910744374675,
+          "normalized_RMS": 1.5971642977498701,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.6111111111111112,
           "sign_contribution": 0.3055555555555556,
-          "accuracy_contribution": 0.0314039372044788
+          "accuracy_contribution": 0.16526300400340943
         },
         "magnetovolume": {
           "normalized_RMS": 4.656179360506019,
@@ -3761,10 +3758,10 @@
         "ground_state": 1.0,
         "hull": 0.7571894226186456,
         "phonons": 0.640801093535103,
-        "J": 0.3930611556747312,
+        "J": 0.5375064774411612,
         "magnetovolume": 0.10000106334873005
       },
-      "weighted_contribution_to_total": 0.0036020108834421243,
+      "weighted_contribution_to_total": 0.0038006633527920236,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -3782,13 +3779,13 @@
           "accuracy_contribution": 0.25718942261864564
         },
         "J": {
-          "normalized_RMS": 3.5374691507194127,
+          "normalized_RMS": 1.4149876602877651,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.7,
           "sign_contribution": 0.35,
-          "accuracy_contribution": 0.043061155674731226
+          "accuracy_contribution": 0.1875064774411612
         },
         "magnetovolume": {
           "normalized_RMS": 18.84295375647927,
@@ -3821,6 +3818,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -3832,10 +3832,10 @@
         "ground_state": 1.0,
         "hull": 0.6150767099760743,
         "phonons": null,
-        "J": 0.3891233356608234,
+        "J": 0.49504854892758754,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.002143648795976513,
+      "weighted_contribution_to_total": 0.0022929532610289696,
       "details": {
         "ground_state": {
           "seed_index": 31,
@@ -3853,13 +3853,13 @@
           "accuracy_contribution": 0.11507670997607433
         },
         "J": {
-          "normalized_RMS": 5.145775324041555,
+          "normalized_RMS": 2.058310129616622,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.75,
           "sign_contribution": 0.375,
-          "accuracy_contribution": 0.014123335660823421
+          "accuracy_contribution": 0.12004854892758754
         }
       }
     },
@@ -3871,10 +3871,10 @@
         "ground_state": 1.0,
         "hull": 0.001963363088556325,
         "phonons": 0.7989184012211976,
-        "J": 0.2989972648964758,
-        "magnetovolume": 0.3000000000072349
+        "J": null,
+        "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0032874679690522443,
+      "weighted_contribution_to_total": 0.002494190891748291,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -3890,24 +3890,6 @@
           "sign_match": false,
           "sign_contribution": 0.0,
           "accuracy_contribution": 0.001963363088556325
-        },
-        "J": {
-          "normalized_RMS": 4.380986206655577,
-          "sign_matches": 2,
-          "parameters": 5,
-          "sign_parameters": 5,
-          "weighted_sign_accuracy": 0.55,
-          "sign_contribution": 0.275,
-          "accuracy_contribution": 0.02399726489647581
-        },
-        "magnetovolume": {
-          "normalized_RMS": 36.00815955352937,
-          "sign_matches": 3,
-          "parameters": 5,
-          "sign_parameters": 5,
-          "weighted_sign_accuracy": 0.6,
-          "sign_contribution": 0.3,
-          "accuracy_contribution": 7.234922611986047e-12
         },
         "phonons": {
           "stable": true,
@@ -3926,10 +3908,10 @@
         "ground_state": 1.0,
         "hull": 0.7102818317831003,
         "phonons": 0.8094097961398354,
-        "J": 0.31357844133858176,
+        "J": 0.4544402532260739,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0036138931517056623,
+      "weighted_contribution_to_total": 0.0038029325183384704,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -3947,13 +3929,13 @@
           "accuracy_contribution": 0.21028183178310034
         },
         "J": {
-          "normalized_RMS": 3.696061333544883,
+          "normalized_RMS": 1.4784245334179535,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.03857844133858175
+          "accuracy_contribution": 0.17944025322607388
         },
         "phonons": {
           "stable": true,
@@ -3988,10 +3970,10 @@
         "ground_state": 1.0,
         "hull": 0.44574425251439875,
         "phonons": null,
-        "J": 0.051117831703695715,
+        "J": 0.09352437783254411,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0015733076664305522,
+      "weighted_contribution_to_total": 0.001633841298191541,
       "details": {
         "ground_state": {
           "seed_index": 7,
@@ -4009,13 +3991,13 @@
           "accuracy_contribution": 0.44574425251439875
         },
         "J": {
-          "normalized_RMS": 8.805081286570605,
+          "normalized_RMS": 3.5220325146282425,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.1,
           "sign_contribution": 0.05,
-          "accuracy_contribution": 0.0011178317036957142
+          "accuracy_contribution": 0.0435243778325441
         }
       }
     },
@@ -4027,10 +4009,10 @@
         "ground_state": 1.0,
         "hull": 0.5022366698989336,
         "phonons": 0.5881682824129106,
-        "J": 0.4226724825824624,
+        "J": 0.5450713436081484,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0031242649929177414,
+      "weighted_contribution_to_total": 0.003293844481027932,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -4048,20 +4030,20 @@
           "accuracy_contribution": 0.0022366698989335397
         },
         "J": {
-          "normalized_RMS": 4.46291381839999,
+          "normalized_RMS": 1.785165527359996,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.8,
           "sign_contribution": 0.4,
-          "accuracy_contribution": 0.022672482582462405
+          "accuracy_contribution": 0.1450713436081483
         },
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -8.552782208476462e-08,
-          "W1_THz": 2.5035964346181645,
+          "W1_THz": 2.5035964346181654,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.08816828241291064
+          "spectrum_contribution": 0.08816828241291058
         }
       }
     },
@@ -4073,10 +4055,10 @@
         "ground_state": 1.0,
         "hull": 0.5275132358532326,
         "phonons": 0.0,
-        "J": 0.4500338855722972,
+        "J": 0.46074949179526514,
         "magnetovolume": 0.433595727989129
       },
-      "weighted_contribution_to_total": 0.00277480916621597,
+      "weighted_contribution_to_total": 0.002821682678546822,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -4094,13 +4076,13 @@
           "accuracy_contribution": 0.02751323585323265
         },
         "J": {
-          "normalized_RMS": 13.848969336942279,
+          "normalized_RMS": 5.539587734776911,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.9,
           "sign_contribution": 0.45,
-          "accuracy_contribution": 3.388557229719027e-05
+          "accuracy_contribution": 0.010749491795265118
         },
         "magnetovolume": {
           "normalized_RMS": 3.8955783972687974,
@@ -4131,7 +4113,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0015863946625748822,
+      "weighted_contribution_to_total": 0.0015947441081673815,
       "details": {
         "ground_state": {
           "seed_index": 9,
@@ -4156,12 +4138,12 @@
       "ground_state_pass": true,
       "scores": {
         "ground_state": 1.0,
-        "hull": 0.4701402899328997,
+        "hull": 0.9701402899328997,
         "phonons": 0.0,
-        "J": 0.3721721809647529,
+        "J": 0.5319280020254672,
         "magnetovolume": 0.024615675120530117
       },
-      "weighted_contribution_to_total": 0.0020091883189319467,
+      "weighted_contribution_to_total": 0.00274845259091381,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4175,17 +4157,17 @@
           "reference_eV_atom": 0.00018382583333309555,
           "absolute_error_meV_atom": 0.8883677343742846,
           "sign_match": false,
-          "sign_contribution": 0.0,
+          "sign_contribution": 0.5,
           "accuracy_contribution": 0.4701402899328997
         },
         "J": {
-          "normalized_RMS": 1.7868759393113,
+          "normalized_RMS": 0.7147503757245202,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.45454545454545453,
           "sign_contribution": 0.22727272727272727,
-          "accuracy_contribution": 0.14489945369202561
+          "accuracy_contribution": 0.3046552747527399
         },
         "magnetovolume": {
           "normalized_RMS": 4.344278881659018,
@@ -4213,10 +4195,10 @@
         "ground_state": 1.0,
         "hull": 0.372831839050315,
         "phonons": null,
-        "J": 0.6040023498423176,
+        "J": 0.7668082555657421,
         "magnetovolume": 0.575831948655386
       },
-      "weighted_contribution_to_total": 0.0030057612688295446,
+      "weighted_contribution_to_total": 0.0032425521326060035,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4234,13 +4216,13 @@
           "accuracy_contribution": 0.372831839050315
         },
         "J": {
-          "normalized_RMS": 2.2653119697175343,
+          "normalized_RMS": 0.9061247878870137,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.10400234984231757
+          "accuracy_contribution": 0.26680825556574206
         },
         "magnetovolume": {
           "normalized_RMS": 2.7210503934125194,
@@ -4261,10 +4243,10 @@
         "ground_state": 1.0,
         "hull": 0.6994994571147813,
         "phonons": null,
-        "J": 0.44535484576159134,
+        "J": 0.6031915764731717,
         "magnetovolume": 0.5110887305176008
       },
-      "weighted_contribution_to_total": 0.003065989537163422,
+      "weighted_contribution_to_total": 0.003291620056682495,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4282,13 +4264,13 @@
           "accuracy_contribution": 0.19949945711478137
         },
         "J": {
-          "normalized_RMS": 2.8292063958018,
+          "normalized_RMS": 1.13168255832072,
           "sign_matches": 3,
           "parameters": 7,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.75,
           "sign_contribution": 0.375,
-          "accuracy_contribution": 0.07035484576159137
+          "accuracy_contribution": 0.22819157647317168
         },
         "magnetovolume": {
           "normalized_RMS": 2.599159539327258,
@@ -4309,10 +4291,10 @@
         "ground_state": 1.0,
         "hull": 0.7561794261525567,
         "phonons": 0.6118521520059654,
-        "J": 0.23326956321593273,
+        "J": 0.3796377540332082,
         "magnetovolume": 0.5591631367125204
       },
-      "weighted_contribution_to_total": 0.004053458146488211,
+      "weighted_contribution_to_total": 0.004259386403227703,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4330,13 +4312,13 @@
           "accuracy_contribution": 0.2561794261525568
         },
         "J": {
-          "normalized_RMS": 3.4494676655707917,
+          "normalized_RMS": 1.3797870662283165,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.375,
           "sign_contribution": 0.1875,
-          "accuracy_contribution": 0.045769563215932736
+          "accuracy_contribution": 0.19213775403320824
         },
         "magnetovolume": {
           "normalized_RMS": 3.079157646471721,
@@ -4350,9 +4332,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -0.027458791355836433,
-          "W1_THz": 2.1603350811504347,
+          "W1_THz": 2.1603350811504343,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.11185215200596539
+          "spectrum_contribution": 0.11185215200596543
         }
       }
     },
@@ -4364,10 +4346,10 @@
         "ground_state": 1.0,
         "hull": 0.5738580686060277,
         "phonons": null,
-        "J": 0.38930160125298346,
+        "J": 0.5307782178147197,
         "magnetovolume": 0.1557180929852371
       },
-      "weighted_contribution_to_total": 0.002334857746375499,
+      "weighted_contribution_to_total": 0.0025300927866432187,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4385,13 +4367,13 @@
           "accuracy_contribution": 0.07385806860602778
         },
         "J": {
-          "normalized_RMS": 3.6692680968155855,
+          "normalized_RMS": 1.4677072387262344,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.7,
           "sign_contribution": 0.35,
-          "accuracy_contribution": 0.0393016012529835
+          "accuracy_contribution": 0.1807782178147197
         },
         "magnetovolume": {
           "normalized_RMS": 4.024767535113432,
@@ -4411,11 +4393,11 @@
       "scores": {
         "ground_state": 1.0,
         "hull": 0.9169127594182265,
-        "phonons": 0.5603752896034839,
-        "J": 0.370388274439098,
+        "phonons": 0.5603752896034838,
+        "J": 0.44916782645779346,
         "magnetovolume": 0.36328025393471114
       },
-      "weighted_contribution_to_total": 0.003993893834218059,
+      "weighted_contribution_to_total": 0.0041200399936966,
       "details": {
         "ground_state": {
           "seed_index": 31,
@@ -4433,13 +4415,13 @@
           "accuracy_contribution": 0.4169127594182264
         },
         "J": {
-          "normalized_RMS": 6.4045087123017375,
+          "normalized_RMS": 2.5618034849206954,
           "sign_matches": 24,
           "parameters": 39,
           "sign_parameters": 36,
           "weighted_sign_accuracy": 0.7289719626168223,
           "sign_contribution": 0.36448598130841114,
-          "accuracy_contribution": 0.005902293130686862
+          "accuracy_contribution": 0.08468184514938232
         },
         "magnetovolume": {
           "normalized_RMS": 4.561494848611309,
@@ -4453,9 +4435,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -6.182450581180999e-08,
-          "W1_THz": 3.0498979856025796,
+          "W1_THz": 3.04989798560258,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.06037528960348388
+          "spectrum_contribution": 0.06037528960348386
         }
       }
     },
@@ -4472,6 +4454,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -4483,10 +4468,10 @@
         "ground_state": 1.0,
         "hull": 0.9380944681202753,
         "phonons": 0.8455130113301967,
-        "J": 0.28588373336616096,
+        "J": 0.3831665953538772,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.003885288104261641,
+      "weighted_contribution_to_total": 0.004022428457512625,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4504,13 +4489,13 @@
           "accuracy_contribution": 0.4380944681202753
         },
         "J": {
-          "normalized_RMS": 5.521682671333335,
+          "normalized_RMS": 2.2086730685333342,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.010883733366160947
+          "accuracy_contribution": 0.10816659535387718
         },
         "phonons": {
           "stable": true,
@@ -4529,10 +4514,10 @@
         "ground_state": 1.0,
         "hull": 0.6962580137669896,
         "phonons": 0.8049824149226568,
-        "J": 0.27690349287973387,
+        "J": 0.3288520828471942,
         "magnetovolume": 0.4053472572314526
       },
-      "weighted_contribution_to_total": 0.0041581307208672395,
+      "weighted_contribution_to_total": 0.0042486391211163654,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4550,13 +4535,13 @@
           "accuracy_contribution": 0.19625801376698962
         },
         "J": {
-          "normalized_RMS": 8.037135111342891,
+          "normalized_RMS": 3.2148540445371565,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.0019034928797338378
+          "accuracy_contribution": 0.05385208284719416
         },
         "magnetovolume": {
           "normalized_RMS": 4.042290057392318,
@@ -4584,10 +4569,10 @@
         "ground_state": 1.0,
         "hull": 0.9116459390677089,
         "phonons": 0.8520692982371251,
-        "J": 0.2507174841917321,
+        "J": 0.28645078933295276,
         "magnetovolume": 0.11550125838834281
       },
-      "weighted_contribution_to_total": 0.00400220155443172,
+      "weighted_contribution_to_total": 0.004066911516643483,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4605,13 +4590,13 @@
           "accuracy_contribution": 0.41164593906770885
         },
         "J": {
-          "normalized_RMS": 9.444765334187514,
+          "normalized_RMS": 3.7779061336750055,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.5,
           "sign_contribution": 0.25,
-          "accuracy_contribution": 0.0007174841917321103
+          "accuracy_contribution": 0.03645078933295277
         },
         "magnetovolume": {
           "normalized_RMS": 5.011470851892634,
@@ -4639,10 +4624,10 @@
         "ground_state": 1.0,
         "hull": 0.7689004202809767,
         "phonons": 0.8008358083130166,
-        "J": 0.28328171019984383,
+        "J": 0.371968351903605,
         "magnetovolume": 0.41954615390971
       },
-      "weighted_contribution_to_total": 0.004255492960837467,
+      "weighted_contribution_to_total": 0.004390947404142368,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4660,13 +4645,13 @@
           "accuracy_contribution": 0.2689004202809767
         },
         "J": {
-          "normalized_RMS": 5.9158555649974245,
+          "normalized_RMS": 2.3663422259989697,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.008281710199843832
+          "accuracy_contribution": 0.09696835190360499
         },
         "magnetovolume": {
           "normalized_RMS": 4.676971432946131,
@@ -4697,7 +4682,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0019712725924689273,
+      "weighted_contribution_to_total": 0.001981647711376658,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -4731,10 +4716,10 @@
         "ground_state": 1.0,
         "hull": 0.10017991264837282,
         "phonons": 0.6158503939257352,
-        "J": 0.5378914364658094,
+        "J": 0.6714783655902874,
         "magnetovolume": 0.028468618049727404
       },
-      "weighted_contribution_to_total": 0.002929926310992095,
+      "weighted_contribution_to_total": 0.0031153537142939486,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4752,13 +4737,13 @@
           "accuracy_contribution": 0.10017991264837282
         },
         "J": {
-          "normalized_RMS": 1.0716247558299656,
+          "normalized_RMS": 0.4286499023319862,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.6,
           "sign_contribution": 0.3,
-          "accuracy_contribution": 0.2378914364658094
+          "accuracy_contribution": 0.37147836559028735
         },
         "magnetovolume": {
           "normalized_RMS": 4.134483727646252,
@@ -4786,10 +4771,10 @@
         "ground_state": 1.0,
         "hull": 0.8917075053226307,
         "phonons": 0.0,
-        "J": 0.5639807523052399,
+        "J": 0.7196856753286303,
         "magnetovolume": 0.39699182695473
       },
-      "weighted_contribution_to_total": 0.0032336173186689773,
+      "weighted_contribution_to_total": 0.003459264462901263,
       "details": {
         "ground_state": {
           "seed_index": 7,
@@ -4807,13 +4792,13 @@
           "accuracy_contribution": 0.3917075053226307
         },
         "J": {
-          "normalized_RMS": 2.9662182335721856,
+          "normalized_RMS": 1.1864872934288744,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.06398075230523995
+          "accuracy_contribution": 0.2196856753286303
         },
         "magnetovolume": {
           "normalized_RMS": 2.973503171516783,
@@ -4841,10 +4826,10 @@
         "ground_state": 1.0,
         "hull": 0.8355812283927513,
         "phonons": 0.7843670300421054,
-        "J": 0.3793791869152643,
+        "J": 0.517571849749373,
         "magnetovolume": 0.41774864046816323
       },
-      "weighted_contribution_to_total": 0.004404680546457627,
+      "weighted_contribution_to_total": 0.004603095405299821,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4862,13 +4847,13 @@
           "accuracy_contribution": 0.33558122839275134
         },
         "J": {
-          "normalized_RMS": 3.810796629309426,
+          "normalized_RMS": 1.5243186517237706,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.6875,
           "sign_contribution": 0.34375,
-          "accuracy_contribution": 0.03562918691526427
+          "accuracy_contribution": 0.17382184974937295
         },
         "magnetovolume": {
           "normalized_RMS": 3.547977650969814,
@@ -4896,10 +4881,10 @@
         "ground_state": 1.0,
         "hull": 0.7762078260072134,
         "phonons": null,
-        "J": 0.423422094433798,
+        "J": 0.5835805460444979,
         "magnetovolume": 0.4580603571778105
       },
-      "weighted_contribution_to_total": 0.0030410673225121834,
+      "weighted_contribution_to_total": 0.00326792009555141,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4917,13 +4902,13 @@
           "accuracy_contribution": 0.27620782600721333
         },
         "J": {
-          "normalized_RMS": 2.649781688540796,
+          "normalized_RMS": 1.0599126754163184,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.6875,
           "sign_contribution": 0.34375,
-          "accuracy_contribution": 0.07967209443379802
+          "accuracy_contribution": 0.23983054604449794
         },
         "magnetovolume": {
           "normalized_RMS": 2.589696114092585,
@@ -4944,10 +4929,10 @@
         "ground_state": 1.0,
         "hull": 0.5514187879392296,
         "phonons": 0.0,
-        "J": 0.311331212871209,
+        "J": 0.43804687213554744,
         "magnetovolume": 0.6069627048522661
       },
-      "weighted_contribution_to_total": 0.0028992612012164742,
+      "weighted_contribution_to_total": 0.0030843400589498082,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -4965,13 +4950,13 @@
           "accuracy_contribution": 0.05141878793922956
         },
         "J": {
-          "normalized_RMS": 4.286758760205439,
+          "normalized_RMS": 1.714703504082176,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.5714285714285714,
           "sign_contribution": 0.2857142857142857,
-          "accuracy_contribution": 0.02561692715692334
+          "accuracy_contribution": 0.15233258642126174
         },
         "magnetovolume": {
           "normalized_RMS": 2.224820241288016,
@@ -5004,6 +4989,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -5031,10 +5019,10 @@
         "ground_state": 1.0,
         "hull": 0.9662216610965804,
         "phonons": null,
-        "J": 0.6729508996525072,
+        "J": 0.8270025450596317,
         "magnetovolume": 0.421017072015233
       },
-      "weighted_contribution_to_total": 0.003474480274393633,
+      "weighted_contribution_to_total": 0.003702903377081312,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5052,13 +5040,13 @@
           "accuracy_contribution": 0.46622166109658036
         },
         "J": {
-          "normalized_RMS": 1.5315655765749896,
+          "normalized_RMS": 0.612626230629996,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.1729508996525072
+          "accuracy_contribution": 0.32700254505963167
         },
         "magnetovolume": {
           "normalized_RMS": 4.5722944949434785,
@@ -5079,10 +5067,10 @@
         "ground_state": 1.0,
         "hull": 0.9251266621360563,
         "phonons": 0.6144715537168025,
-        "J": 0.5892483400819728,
+        "J": 0.7509701450013191,
         "magnetovolume": 0.6397848846641184
       },
-      "weighted_contribution_to_total": 0.004770250411231481,
+      "weighted_contribution_to_total": 0.00500974133007729,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5100,13 +5088,13 @@
           "accuracy_contribution": 0.4251266621360564
         },
         "J": {
-          "normalized_RMS": 2.4860308528769752,
+          "normalized_RMS": 0.9944123411507902,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 1,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.08924834008197276
+          "accuracy_contribution": 0.25097014500131903
         },
         "magnetovolume": {
           "normalized_RMS": 1.8387197284450567,
@@ -5134,10 +5122,10 @@
         "ground_state": 1.0,
         "hull": 0.8394971010196928,
         "phonons": 0.6405777701801461,
-        "J": 0.18335723371857676,
+        "J": 0.2950091502993131,
         "magnetovolume": 0.3783711690546879
       },
-      "weighted_contribution_to_total": 0.003862554442699771,
+      "weighted_contribution_to_total": 0.004021477196989899,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5155,13 +5143,13 @@
           "accuracy_contribution": 0.3394971010196927
         },
         "J": {
-          "normalized_RMS": 4.904823219551052,
+          "normalized_RMS": 1.961929287820421,
           "sign_matches": 2,
           "parameters": 7,
           "sign_parameters": 7,
           "weighted_sign_accuracy": 0.3333333333333333,
           "sign_contribution": 0.16666666666666666,
-          "accuracy_contribution": 0.01669056705191011
+          "accuracy_contribution": 0.12834248363264647
         },
         "magnetovolume": {
           "normalized_RMS": 4.557866537950177,
@@ -5189,10 +5177,10 @@
         "ground_state": 1.0,
         "hull": 0.8800370595919054,
         "phonons": 0.7034728255345808,
-        "J": 0.16829436353834015,
+        "J": 0.28314011403377176,
         "magnetovolume": 0.30140531823965944
       },
-      "weighted_contribution_to_total": 0.0038850759983098224,
+      "weighted_contribution_to_total": 0.004045755731216867,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5210,13 +5198,13 @@
           "accuracy_contribution": 0.3800370595919054
         },
         "J": {
-          "normalized_RMS": 4.772456964644467,
+          "normalized_RMS": 1.9089827858577866,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.3,
           "sign_contribution": 0.15,
-          "accuracy_contribution": 0.018294363538340155
+          "accuracy_contribution": 0.13314011403377177
         },
         "magnetovolume": {
           "normalized_RMS": 8.474887413440415,
@@ -5244,10 +5232,10 @@
         "ground_state": 1.0,
         "hull": 0.7059958619679864,
         "phonons": 0.8899686942855665,
-        "J": 0.2737031168616937,
+        "J": 0.3976740499977104,
         "magnetovolume": 0.3535054416940678
       },
-      "weighted_contribution_to_total": 0.00423977686702638,
+      "weighted_contribution_to_total": 0.004415291626493041,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5265,13 +5253,13 @@
           "accuracy_contribution": 0.2059958619679864
         },
         "J": {
-          "normalized_RMS": 4.398779409754642,
+          "normalized_RMS": 1.7595117639018572,
           "sign_matches": 2,
           "parameters": 6,
           "sign_parameters": 6,
           "weighted_sign_accuracy": 0.5,
           "sign_contribution": 0.25,
-          "accuracy_contribution": 0.02370311686169368
+          "accuracy_contribution": 0.14767404999771042
         },
         "magnetovolume": {
           "normalized_RMS": 4.631494309462311,
@@ -5299,10 +5287,10 @@
         "ground_state": 1.0,
         "hull": 0.8800160902512605,
         "phonons": 0.8212595092015667,
-        "J": 0.3586508521282682,
+        "J": 0.49489493399635043,
         "magnetovolume": 0.4330749498556897
       },
-      "weighted_contribution_to_total": 0.004516626499957976,
+      "weighted_contribution_to_total": 0.004712582842212765,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5320,13 +5308,13 @@
           "accuracy_contribution": 0.3800160902512605
         },
         "J": {
-          "normalized_RMS": 3.8932131516356776,
+          "normalized_RMS": 1.5572852606542713,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.03365085212826819
+          "accuracy_contribution": 0.16989493399635042
         },
         "magnetovolume": {
           "normalized_RMS": 3.918117220511973,
@@ -5354,10 +5342,10 @@
         "ground_state": 1.0,
         "hull": 0.8376042465640425,
         "phonons": null,
-        "J": 0.35679910176337415,
+        "J": 0.49109170510918376,
         "magnetovolume": 0.5346848070695265
       },
-      "weighted_contribution_to_total": 0.003143112908672301,
+      "weighted_contribution_to_total": 0.0033387667206638658,
       "details": {
         "ground_state": {
           "seed_index": 25,
@@ -5375,13 +5363,13 @@
           "accuracy_contribution": 0.33760424656404253
         },
         "J": {
-          "normalized_RMS": 3.9748701758320135,
+          "normalized_RMS": 1.5899480703328053,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.03179910176337414
+          "accuracy_contribution": 0.16609170510918372
         },
         "magnetovolume": {
           "normalized_RMS": 3.8495523300049284,
@@ -5402,10 +5390,10 @@
         "ground_state": 1.0,
         "hull": 0.8812472968430884,
         "phonons": 0.0,
-        "J": 0.608429285260023,
+        "J": 0.7712942821648396,
         "magnetovolume": 0.6612817145452758
       },
-      "weighted_contribution_to_total": 0.0036717769638215346,
+      "weighted_contribution_to_total": 0.003913556443495846,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5423,13 +5411,13 @@
           "accuracy_contribution": 0.3812472968430885
         },
         "J": {
-          "normalized_RMS": 2.2051736334597747,
+          "normalized_RMS": 0.8820694533839099,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 1,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.10842928526002306
+          "accuracy_contribution": 0.2712942821648396
         },
         "magnetovolume": {
           "normalized_RMS": 1.6323452139278496,
@@ -5457,10 +5445,10 @@
         "ground_state": 1.0,
         "hull": 0.8242732379050526,
         "phonons": 0.6836243099836927,
-        "J": 0.15087681056259186,
+        "J": 0.18949519948948101,
         "magnetovolume": 0.16584599859407043
       },
-      "weighted_contribution_to_total": 0.003566819901358568,
+      "weighted_contribution_to_total": 0.003632183488855135,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5478,13 +5466,13 @@
           "accuracy_contribution": 0.3242732379050525
         },
         "J": {
-          "normalized_RMS": 9.155447201566805,
+          "normalized_RMS": 3.6621788806267226,
           "sign_matches": 2,
           "parameters": 10,
           "sign_parameters": 10,
           "weighted_sign_accuracy": 0.3,
           "sign_contribution": 0.15,
-          "accuracy_contribution": 0.0008768105625918619
+          "accuracy_contribution": 0.039495199489481034
         },
         "magnetovolume": {
           "normalized_RMS": 4.9797376104384306,
@@ -5528,10 +5516,10 @@
         "ground_state": 1.0,
         "hull": 0.8525602946342854,
         "phonons": 0.0,
-        "J": 0.3042946921259451,
+        "J": 0.43833387034824806,
         "magnetovolume": 0.5641309517250865
       },
-      "weighted_contribution_to_total": 0.0031420019696539155,
+      "weighted_contribution_to_total": 0.0033362828395560418,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5549,13 +5537,13 @@
           "accuracy_contribution": 0.3525602946342854
         },
         "J": {
-          "normalized_RMS": 3.985419863013915,
+          "normalized_RMS": 1.594167945205566,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.5454545454545454,
           "sign_contribution": 0.2727272727272727,
-          "accuracy_contribution": 0.03156741939867241
+          "accuracy_contribution": 0.16560659762097535
         },
         "magnetovolume": {
           "normalized_RMS": 2.9628353723561633,
@@ -5586,7 +5574,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0017843558665277875,
+      "weighted_contribution_to_total": 0.0017937472131937231,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -5620,10 +5608,10 @@
         "ground_state": 1.0,
         "hull": 0.9093661670620743,
         "phonons": null,
-        "J": 0.27978129380417827,
+        "J": 0.3528395246527428,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0023246633864073716,
+      "weighted_contribution_to_total": 0.002432421428196581,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5641,13 +5629,13 @@
           "accuracy_contribution": 0.40936616706207435
         },
         "J": {
-          "normalized_RMS": 6.70838322455114,
+          "normalized_RMS": 2.6833532898204564,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.004781293804178238
+          "accuracy_contribution": 0.07783952465274278
         }
       }
     },
@@ -5659,10 +5647,10 @@
         "ground_state": 1.0,
         "hull": 0.9150317467491645,
         "phonons": 0.7436343390912611,
-        "J": 0.36794409858404736,
+        "J": 0.4821145534659833,
         "magnetovolume": 0.3043017634115483
       },
-      "weighted_contribution_to_total": 0.004230589148626674,
+      "weighted_contribution_to_total": 0.004397670127036021,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5680,13 +5668,13 @@
           "accuracy_contribution": 0.41503174674916454
         },
         "J": {
-          "normalized_RMS": 4.800346738116325,
+          "normalized_RMS": 1.92013869524653,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.7,
           "sign_contribution": 0.35,
-          "accuracy_contribution": 0.017944098584047385
+          "accuracy_contribution": 0.13211455346598333
         },
         "magnetovolume": {
           "normalized_RMS": 6.860856103083794,
@@ -5730,10 +5718,10 @@
         "ground_state": 1.0,
         "hull": 0.6696577946068946,
         "phonons": null,
-        "J": 0.3693333862871815,
+        "J": 0.48611474502104196,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0021777901951372065,
+      "weighted_contribution_to_total": 0.002339707867969426,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -5751,13 +5739,13 @@
           "accuracy_contribution": 0.16965779460689454
         },
         "J": {
-          "normalized_RMS": 4.692761838730695,
+          "normalized_RMS": 1.8771047354922779,
           "sign_matches": 4,
           "parameters": 8,
           "sign_parameters": 8,
           "weighted_sign_accuracy": 0.7,
           "sign_contribution": 0.35,
-          "accuracy_contribution": 0.019333386287181516
+          "accuracy_contribution": 0.13611474502104198
         }
       }
     },
@@ -5769,10 +5757,10 @@
         "ground_state": 1.0,
         "hull": 0.34109420114067757,
         "phonons": null,
-        "J": 0.33521867231113184,
+        "J": 0.4730179629503104,
         "magnetovolume": 0.9191797509190927
       },
-      "weighted_contribution_to_total": 0.0031763014648154477,
+      "weighted_contribution_to_total": 0.0033814945488460915,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5790,13 +5778,13 @@
           "accuracy_contribution": 0.34109420114067757
         },
         "J": {
-          "normalized_RMS": 3.8275156669273023,
+          "normalized_RMS": 1.531006266770921,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.6,
           "sign_contribution": 0.3,
-          "accuracy_contribution": 0.03521867231113183
+          "accuracy_contribution": 0.17301796295031038
         },
         "magnetovolume": {
           "normalized_RMS": 0.2543590677882161,
@@ -5833,10 +5821,10 @@
         "ground_state": 1.0,
         "hull": 0.8572651686515544,
         "phonons": 0.5225722286173691,
-        "J": 0.284815293980218,
+        "J": 0.4378336109342068,
         "magnetovolume": 0.8339263416572495
       },
-      "weighted_contribution_to_total": 0.004471557012721165,
+      "weighted_contribution_to_total": 0.004694109167220297,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5854,13 +5842,13 @@
           "accuracy_contribution": 0.3572651686515544
         },
         "J": {
-          "normalized_RMS": 3.1192266153158643,
+          "normalized_RMS": 1.2476906461263457,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.45454545454545453,
           "sign_contribution": 0.22727272727272727,
-          "accuracy_contribution": 0.05754256670749072
+          "accuracy_contribution": 0.21056088366147954
         },
         "magnetovolume": {
           "normalized_RMS": 0.5823981905270113,
@@ -5874,9 +5862,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -9.394870207371256e-08,
-          "W1_THz": 4.4693073230173415,
+          "W1_THz": 4.469307323017341,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.022572228617369065
+          "spectrum_contribution": 0.02257222861736908
         }
       }
     },
@@ -5888,10 +5876,10 @@
         "ground_state": 1.0,
         "hull": 0.9752105723831099,
         "phonons": null,
-        "J": 0.5395837292199872,
+        "J": 0.6812961933763222,
         "magnetovolume": 0.7876208120398509
       },
-      "weighted_contribution_to_total": 0.0038800984613767712,
+      "weighted_contribution_to_total": 0.004097567130641237,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5909,13 +5897,13 @@
           "accuracy_contribution": 0.47521057238310993
         },
         "J": {
-          "normalized_RMS": 3.6589486533433004,
+          "normalized_RMS": 1.4635794613373203,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.03958372921998726
+          "accuracy_contribution": 0.18129619337632225
         },
         "magnetovolume": {
           "normalized_RMS": 0.7977600229336977,
@@ -5934,12 +5922,12 @@
       "ground_state_pass": true,
       "scores": {
         "ground_state": 1.0,
-        "hull": 0.4946716203815951,
+        "hull": 0.9946716203815951,
         "phonons": null,
-        "J": 0.566807457392653,
+        "J": 0.7235177309069141,
         "magnetovolume": 0.6007555430108851
       },
-      "weighted_contribution_to_total": 0.0031275714060044427,
+      "weighted_contribution_to_total": 0.003883326672862229,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -5953,17 +5941,17 @@
           "reference_eV_atom": -1.9900249999871278e-05,
           "absolute_error_meV_atom": 0.1545696132811969,
           "sign_match": false,
-          "sign_contribution": 0.0,
+          "sign_contribution": 0.5,
           "accuracy_contribution": 0.4946716203815951
         },
         "J": {
-          "normalized_RMS": 2.9038470370319396,
+          "normalized_RMS": 1.1615388148127759,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.06680745739265304
+          "accuracy_contribution": 0.2235177309069141
         },
         "magnetovolume": {
           "normalized_RMS": 2.311068884875165,
@@ -5984,10 +5972,10 @@
         "ground_state": 1.0,
         "hull": 0.8734004748441746,
         "phonons": null,
-        "J": 0.31396590181205697,
+        "J": 0.4316709213777863,
         "magnetovolume": 0.1170386367071994
       },
-      "weighted_contribution_to_total": 0.0025027504698388464,
+      "weighted_contribution_to_total": 0.0026676566047003723,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6005,13 +5993,13 @@
           "accuracy_contribution": 0.3734004748441746
         },
         "J": {
-          "normalized_RMS": 4.654844032257829,
+          "normalized_RMS": 1.8619376129031318,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.5882352941176471,
           "sign_contribution": 0.29411764705882354,
-          "accuracy_contribution": 0.019848254753233416
+          "accuracy_contribution": 0.13755327431896278
         },
         "magnetovolume": {
           "normalized_RMS": 4.875046282288726,
@@ -6032,10 +6020,10 @@
         "ground_state": 1.0,
         "hull": 0.831968320455557,
         "phonons": 0.569080998072348,
-        "J": 0.5905990817559659,
+        "J": 0.7524826390704071,
         "magnetovolume": 0.13216046682118857
       },
-      "weighted_contribution_to_total": 0.0038291432651428245,
+      "weighted_contribution_to_total": 0.0040567073917691055,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6053,13 +6041,13 @@
           "accuracy_contribution": 0.331968320455557
         },
         "J": {
-          "normalized_RMS": 2.4643597614991055,
+          "normalized_RMS": 0.9857439045996422,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.09059908175596582
+          "accuracy_contribution": 0.2524826390704071
         },
         "magnetovolume": {
           "normalized_RMS": 6.125730638700525,
@@ -6087,10 +6075,10 @@
         "ground_state": 1.0,
         "hull": 0.6565104283843841,
         "phonons": null,
-        "J": 0.3092570903952656,
+        "J": 0.4461126794938127,
         "magnetovolume": 0.3205405062110636
       },
-      "weighted_contribution_to_total": 0.002576182960311315,
+      "weighted_contribution_to_total": 0.002767336688444399,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6108,13 +6096,13 @@
           "accuracy_contribution": 0.15651042838438411
         },
         "J": {
-          "normalized_RMS": 3.867453567558287,
+          "normalized_RMS": 1.5469814270233149,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.55,
           "sign_contribution": 0.275,
-          "accuracy_contribution": 0.034257090395265616
+          "accuracy_contribution": 0.17111267949381267
         },
         "magnetovolume": {
           "normalized_RMS": 4.6053844531433485,
@@ -6135,10 +6123,10 @@
         "ground_state": 1.0,
         "hull": 0.4225380175018714,
         "phonons": 0.0,
-        "J": 0.37322827810186143,
+        "J": 0.49648353412781154,
         "magnetovolume": 0.30463187427242316
       },
-      "weighted_contribution_to_total": 0.0023816480186185686,
+      "weighted_contribution_to_total": 0.002557086329261621,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -6156,13 +6144,13 @@
           "accuracy_contribution": 0.4225380175018714
         },
         "J": {
-          "normalized_RMS": 4.427973977770849,
+          "normalized_RMS": 1.7711895911083395,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.7,
           "sign_contribution": 0.35,
-          "accuracy_contribution": 0.023228278101861444
+          "accuracy_contribution": 0.14648353412781154
         },
         "magnetovolume": {
           "normalized_RMS": 6.754188191311919,
@@ -6190,10 +6178,10 @@
         "ground_state": 1.0,
         "hull": 0.3372776752537851,
         "phonons": 0.0,
-        "J": 0.17777958682876985,
+        "J": 0.27573866758594795,
         "magnetovolume": 0.3099886509077733
       },
-      "weighted_contribution_to_total": 0.0020731595564586766,
+      "weighted_contribution_to_total": 0.002211151775887916,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6211,13 +6199,13 @@
           "accuracy_contribution": 0.3372776752537851
         },
         "J": {
-          "normalized_RMS": 5.491618223648958,
+          "normalized_RMS": 2.1966472894595834,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.3333333333333333,
           "sign_contribution": 0.16666666666666666,
-          "accuracy_contribution": 0.01111292016210318
+          "accuracy_contribution": 0.10907200091928128
         },
         "magnetovolume": {
           "normalized_RMS": 3.059166602849982,
@@ -6245,10 +6233,10 @@
         "ground_state": 1.0,
         "hull": 0.9371589177328236,
         "phonons": null,
-        "J": 0.23705531312399436,
+        "J": 0.3309213342881762,
         "magnetovolume": 0.39066663170416577
       },
-      "weighted_contribution_to_total": 0.002891552989350743,
+      "weighted_contribution_to_total": 0.003031865231095713,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -6266,13 +6254,13 @@
           "accuracy_contribution": 0.43715891773282356
         },
         "J": {
-          "normalized_RMS": 5.675568418492949,
+          "normalized_RMS": 2.27022736739718,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.45454545454545453,
           "sign_contribution": 0.22727272727272727,
-          "accuracy_contribution": 0.009782585851267102
+          "accuracy_contribution": 0.10364860701544895
         },
         "magnetovolume": {
           "normalized_RMS": 1.829647955255913,
@@ -6293,10 +6281,10 @@
         "ground_state": 1.0,
         "hull": 0.9164425044994513,
         "phonons": 0.0,
-        "J": 0.410843270744125,
+        "J": 0.559737492309813,
         "magnetovolume": 0.06524538115120562
       },
-      "weighted_contribution_to_total": 0.002582584166547893,
+      "weighted_contribution_to_total": 0.0027872634705736854,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -6314,13 +6302,13 @@
           "accuracy_contribution": 0.41644250449945136
         },
         "J": {
-          "normalized_RMS": 3.329677107835972,
+          "normalized_RMS": 1.3318708431343889,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.7222222222222222,
           "sign_contribution": 0.3611111111111111,
-          "accuracy_contribution": 0.0497321596330139
+          "accuracy_contribution": 0.19862638119870185
         },
         "magnetovolume": {
           "normalized_RMS": 2.937980415695406,
@@ -6348,10 +6336,10 @@
         "ground_state": 1.0,
         "hull": 0.802277730780137,
         "phonons": null,
-        "J": 0.010270631680449479,
+        "J": 0.10568682826852731,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0018991444073124893,
+      "weighted_contribution_to_total": 0.0020237055052713714,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6369,13 +6357,13 @@
           "accuracy_contribution": 0.3022777307801369
         },
         "J": {
-          "normalized_RMS": 5.60533127450357,
+          "normalized_RMS": 2.242132509801428,
           "sign_matches": 0,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.0,
           "sign_contribution": 0.0,
-          "accuracy_contribution": 0.010270631680449479
+          "accuracy_contribution": 0.10568682826852731
         }
       }
     },
@@ -6392,6 +6380,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -6403,10 +6394,10 @@
         "ground_state": 1.0,
         "hull": 0.8022847467886867,
         "phonons": null,
-        "J": 0.2721026544678491,
+        "J": 0.4178228426300759,
         "magnetovolume": 0.42261759552036565
       },
-      "weighted_contribution_to_total": 0.0028391227756023978,
+      "weighted_contribution_to_total": 0.0030427461796897915,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -6424,13 +6415,13 @@
           "accuracy_contribution": 0.3022847467886866
         },
         "J": {
-          "normalized_RMS": 3.4793940333556086,
+          "normalized_RMS": 1.3917576133422436,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 0.45454545454545453,
           "sign_contribution": 0.22727272727272727,
-          "accuracy_contribution": 0.0448299271951218
+          "accuracy_contribution": 0.19055011535734864
         },
         "magnetovolume": {
           "normalized_RMS": 3.3923614170964607,
@@ -6456,6 +6447,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -6472,6 +6466,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -6520,6 +6517,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -6531,10 +6531,10 @@
         "ground_state": 1.0,
         "hull": 0.6299979142955993,
         "phonons": null,
-        "J": 0.3611644335748159,
+        "J": 0.4998616892384629,
         "magnetovolume": 0.20776591901177568
       },
-      "weighted_contribution_to_total": 0.0024391926958316603,
+      "weighted_contribution_to_total": 0.0026316239081387474,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6552,13 +6552,13 @@
           "accuracy_contribution": 0.12999791429559923
         },
         "J": {
-          "normalized_RMS": 3.7892846341370094,
+          "normalized_RMS": 1.515713853654804,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.036164433574815906
+          "accuracy_contribution": 0.1748616892384629
         },
         "magnetovolume": {
           "normalized_RMS": 6.008627622731025,
@@ -6579,10 +6579,10 @@
         "ground_state": 1.0,
         "hull": 0.7194362753725065,
         "phonons": null,
-        "J": 0.35406452783959746,
+        "J": 0.48522390471826293,
         "magnetovolume": 0.5032076249483001
       },
-      "weighted_contribution_to_total": 0.0029688629676101388,
+      "weighted_contribution_to_total": 0.00315929531011283,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6600,13 +6600,13 @@
           "accuracy_contribution": 0.21943627537250648
         },
         "J": {
-          "normalized_RMS": 4.104596717950297,
+          "normalized_RMS": 1.6418386871801192,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.029064527839597454
+          "accuracy_contribution": 0.1602239047182629
         },
         "magnetovolume": {
           "normalized_RMS": 7.28427882019453,
@@ -6627,10 +6627,10 @@
         "ground_state": 1.0,
         "hull": 0.698059153149635,
         "phonons": 0.0,
-        "J": 0.5365896842484151,
+        "J": 0.6756812720243587,
         "magnetovolume": 0.5000016343595108
       },
-      "weighted_contribution_to_total": 0.0031538960619187165,
+      "weighted_contribution_to_total": 0.0033599910895301304,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -6648,13 +6648,13 @@
           "accuracy_contribution": 0.19805915314963501
         },
         "J": {
-          "normalized_RMS": 3.7724192238165317,
+          "normalized_RMS": 1.5089676895266126,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.03658968424841513
+          "accuracy_contribution": 0.1756812720243587
         },
         "magnetovolume": {
           "normalized_RMS": 18.222843200571695,
@@ -6682,10 +6682,10 @@
         "ground_state": 1.0,
         "hull": 0.5593212041268862,
         "phonons": 0.0,
-        "J": 0.3769654143461954,
+        "J": 0.4295460933394204,
         "magnetovolume": 0.10000334951743213
       },
-      "weighted_contribution_to_total": 0.0022215099262488562,
+      "weighted_contribution_to_total": 0.0023084940697675853,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6703,13 +6703,13 @@
           "accuracy_contribution": 0.05932120412688628
         },
         "J": {
-          "normalized_RMS": 7.9909507929487855,
+          "normalized_RMS": 3.1963803171795147,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.75,
           "sign_contribution": 0.375,
-          "accuracy_contribution": 0.0019654143461954234
+          "accuracy_contribution": 0.054546093339420405
         },
         "magnetovolume": {
           "normalized_RMS": 17.187615309103048,
@@ -6737,10 +6737,10 @@
         "ground_state": 1.0,
         "hull": 0.36583056629685334,
         "phonons": 0.0,
-        "J": 0.36480475487746095,
+        "J": 0.5067004421540725,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.001854380650095299,
+      "weighted_contribution_to_total": 0.0020445432624068595,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -6758,13 +6758,13 @@
           "accuracy_contribution": 0.36583056629685334
         },
         "J": {
-          "normalized_RMS": 3.6509154115586755,
+          "normalized_RMS": 1.4603661646234702,
           "sign_matches": 3,
           "parameters": 8,
           "sign_parameters": 8,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 0.03980475487746093
+          "accuracy_contribution": 0.1817004421540725
         },
         "phonons": {
           "stable": false,
@@ -6783,10 +6783,10 @@
         "ground_state": 1.0,
         "hull": 0.7464694292649712,
         "phonons": null,
-        "J": 0.571508715752328,
+        "J": 0.7296812769330427,
         "magnetovolume": 0.5712676582593339
       },
-      "weighted_contribution_to_total": 0.0033523579287585295,
+      "weighted_contribution_to_total": 0.003584423029399387,
       "details": {
         "ground_state": {
           "seed_index": 6,
@@ -6804,13 +6804,13 @@
           "accuracy_contribution": 0.24646942926497112
         },
         "J": {
-          "normalized_RMS": 2.805737096046828,
+          "normalized_RMS": 1.1222948384187312,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.07150871575232794
+          "accuracy_contribution": 0.2296812769330427
         },
         "magnetovolume": {
           "normalized_RMS": 2.810608669268477,
@@ -6831,10 +6831,10 @@
         "ground_state": 1.0,
         "hull": 0.913102423019182,
         "phonons": 0.0,
-        "J": 0.12074557632270232,
+        "J": 0.1968698761556535,
         "magnetovolume": 0.0011315446026024189
       },
-      "weighted_contribution_to_total": 0.0021453520142556463,
+      "weighted_contribution_to_total": 0.002251291880015562,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -6852,13 +6852,13 @@
           "accuracy_contribution": 0.41310242301918193
         },
         "J": {
-          "normalized_RMS": 6.543292661524519,
+          "normalized_RMS": 2.6173170646098085,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.23076923076923078,
           "sign_contribution": 0.11538461538461539,
-          "accuracy_contribution": 0.0053609609380869195
+          "accuracy_contribution": 0.08148526077103811
         },
         "magnetovolume": {
           "normalized_RMS": 8.78749083157731,
@@ -6886,10 +6886,10 @@
         "ground_state": 1.0,
         "hull": 0.5904414228685211,
         "phonons": null,
-        "J": 0.6133633840199633,
+        "J": 0.7761665809500217,
         "magnetovolume": 0.7786165169418522
       },
-      "weighted_contribution_to_total": 0.003549448831275795,
+      "weighted_contribution_to_total": 0.0037924171884678526,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -6907,13 +6907,13 @@
           "accuracy_contribution": 0.09044142286852112
         },
         "J": {
-          "normalized_RMS": 2.140973364864326,
+          "normalized_RMS": 0.8563893459457306,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 1,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.11336338401996324
+          "accuracy_contribution": 0.27616658095002167
         },
         "magnetovolume": {
           "normalized_RMS": 0.8436473085785829,
@@ -6939,6 +6939,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -6971,6 +6974,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -6995,13 +7001,13 @@
       "name": "Gd2CuO4",
       "ground_state_pass": false,
       "scores": {
-        "ground_state": 0.0,
-        "hull": 0.0,
+        "ground_state": null,
+        "hull": null,
         "phonons": null,
-        "J": 0.0,
+        "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0,
+      "weighted_contribution_to_total": 0,
       "details": {
         "gate": "ground_state_incorrect_or_missing"
       }
@@ -7014,10 +7020,10 @@
         "ground_state": 1.0,
         "hull": 0.917999612874689,
         "phonons": 0.9170998501955521,
-        "J": 0.4096485558629123,
+        "J": 0.5468921555974802,
         "magnetovolume": 0.4069354087532587
       },
-      "weighted_contribution_to_total": 0.004749077196065252,
+      "weighted_contribution_to_total": 0.00494761522203252,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -7035,13 +7041,13 @@
           "accuracy_contribution": 0.417999612874689
         },
         "J": {
-          "normalized_RMS": 3.8510609670755205,
+          "normalized_RMS": 1.5404243868302083,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.75,
           "sign_contribution": 0.375,
-          "accuracy_contribution": 0.03464855586291231
+          "accuracy_contribution": 0.1718921555974801
         },
         "magnetovolume": {
           "normalized_RMS": 3.9686992735509685,
@@ -7069,10 +7075,10 @@
         "ground_state": 1.0,
         "hull": 0.18593818384857788,
         "phonons": 0.5360618126151127,
-        "J": 0.5314864342501182,
+        "J": 0.6920004247311946,
         "magnetovolume": 0.41270351525357307
       },
-      "weighted_contribution_to_total": 0.0034463114991877893,
+      "weighted_contribution_to_total": 0.0036730578491529367,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7090,13 +7096,13 @@
           "accuracy_contribution": 0.18593818384857788
         },
         "J": {
-          "normalized_RMS": 2.6172962883339124,
+          "normalized_RMS": 1.046918515333565,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.9,
           "sign_contribution": 0.45,
-          "accuracy_contribution": 0.08148643425011823
+          "accuracy_contribution": 0.24200042473119462
         },
         "magnetovolume": {
           "normalized_RMS": 3.729157151626289,
@@ -7124,10 +7130,10 @@
         "ground_state": 1.0,
         "hull": 0.6665968068151726,
         "phonons": null,
-        "J": 0.5626019754078628,
+        "J": 0.7177796109566588,
         "magnetovolume": 0.554091611065492
       },
-      "weighted_contribution_to_total": 0.0032325363576684945,
+      "weighted_contribution_to_total": 0.003459870119713077,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7145,13 +7151,13 @@
           "accuracy_contribution": 0.16659680681517264
         },
         "J": {
-          "normalized_RMS": 2.9976480075982628,
+          "normalized_RMS": 1.199059203039305,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.06260197540786279
+          "accuracy_contribution": 0.21777961095665882
         },
         "magnetovolume": {
           "normalized_RMS": 3.2084513223890214,
@@ -7172,10 +7178,10 @@
         "ground_state": 1.0,
         "hull": 0.9693687701347816,
         "phonons": null,
-        "J": 0.1260290358736079,
+        "J": 0.16710699111278624,
         "magnetovolume": 0.10210498212397108
       },
-      "weighted_contribution_to_total": 0.0023622529685029523,
+      "weighted_contribution_to_total": 0.0024290333599973762,
       "details": {
         "ground_state": {
           "seed_index": 6,
@@ -7193,13 +7199,13 @@
           "accuracy_contribution": 0.4693687701347816
         },
         "J": {
-          "normalized_RMS": 8.924491007217307,
+          "normalized_RMS": 3.5697964028869236,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.25,
           "sign_contribution": 0.125,
-          "accuracy_contribution": 0.0010290358736078904
+          "accuracy_contribution": 0.042106991112786235
         },
         "magnetovolume": {
           "normalized_RMS": 7.891976303041569,
@@ -7220,10 +7226,10 @@
         "ground_state": 1.0,
         "hull": 0.29794118467311254,
         "phonons": null,
-        "J": 0.5565337665846114,
+        "J": 0.7090764758880079,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0020062330036614887,
+      "weighted_contribution_to_total": 0.0022154472629002915,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7241,13 +7247,13 @@
           "accuracy_contribution": 0.29794118467311254
         },
         "J": {
-          "normalized_RMS": 3.144743369450179,
+          "normalized_RMS": 1.2578973477800717,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.0565337665846114
+          "accuracy_contribution": 0.20907647588800787
         }
       }
     },
@@ -7258,11 +7264,11 @@
       "scores": {
         "ground_state": 1.0,
         "hull": 0.1476507135193371,
-        "phonons": 0.5855848966058389,
+        "phonons": 0.585584896605839,
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0022568364176440894,
+      "weighted_contribution_to_total": 0.0022631613044642564,
       "details": {
         "ground_state": {
           "seed_index": 3,
@@ -7282,9 +7288,9 @@
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -1.959175259617251e-07,
-          "W1_THz": 2.546499966914392,
+          "W1_THz": 2.546499966914391,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.08558489660583894
+          "spectrum_contribution": 0.08558489660583898
         }
       }
     },
@@ -7312,10 +7318,10 @@
         "ground_state": 1.0,
         "hull": 0.5164346718203219,
         "phonons": 0.0,
-        "J": 0.510856522204767,
+        "J": 0.6080583402474586,
         "magnetovolume": 0.5603397080496755
       },
-      "weighted_contribution_to_total": 0.0030245250229087263,
+      "weighted_contribution_to_total": 0.0031799410744082894,
       "details": {
         "ground_state": {
           "seed_index": 6,
@@ -7333,13 +7339,13 @@
           "accuracy_contribution": 0.01643467182032189
         },
         "J": {
-          "normalized_RMS": 5.525294167801027,
+          "normalized_RMS": 2.2101176671204112,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.010856522204766909
+          "accuracy_contribution": 0.10805834024745863
         },
         "magnetovolume": {
           "normalized_RMS": 3.0507484736730106,
@@ -7367,10 +7373,10 @@
         "ground_state": 1.0,
         "hull": 0.6597451577756966,
         "phonons": null,
-        "J": 0.5677805301870396,
+        "J": 0.7248143283910646,
         "magnetovolume": 0.5463122889134491
       },
-      "weighted_contribution_to_total": 0.0032196852025810374,
+      "weighted_contribution_to_total": 0.003449205841151907,
       "details": {
         "ground_state": {
           "seed_index": 6,
@@ -7388,13 +7394,13 @@
           "accuracy_contribution": 0.15974515777569662
         },
         "J": {
-          "normalized_RMS": 2.882985267983487,
+          "normalized_RMS": 1.153194107193395,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.0677805301870396
+          "accuracy_contribution": 0.22481432839106466
         },
         "magnetovolume": {
           "normalized_RMS": 3.4324611279938058,
@@ -7415,11 +7421,14 @@
         "ground_state": 0.0,
         "hull": 0.0,
         "phonons": null,
-        "J": 0.0,
-        "magnetovolume": 0.0
+        "J": null,
+        "magnetovolume": null
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -7431,10 +7440,10 @@
         "ground_state": 1.0,
         "hull": 0.6957458334285077,
         "phonons": 0.5230289588081708,
-        "J": 0.5993416147117644,
+        "J": 0.7619597024872113,
         "magnetovolume": 0.5710245883336273
       },
-      "weighted_contribution_to_total": 0.00427363705352992,
+      "weighted_contribution_to_total": 0.00451170998894689,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7452,13 +7461,13 @@
           "accuracy_contribution": 0.19574583342850774
         },
         "J": {
-          "normalized_RMS": 2.331457993052699,
+          "normalized_RMS": 0.9325831972210796,
           "sign_matches": 4,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.09934161471176436
+          "accuracy_contribution": 0.26195970248721134
         },
         "magnetovolume": {
           "normalized_RMS": 2.8155376253557622,
@@ -7486,10 +7495,10 @@
         "ground_state": 1.0,
         "hull": 0.9094180828340612,
         "phonons": 0.0,
-        "J": 0.1340237945775368,
+        "J": 0.16922864472675214,
         "magnetovolume": 0.6230528034346537
       },
-      "weighted_contribution_to_total": 0.0030921537931795457,
+      "weighted_contribution_to_total": 0.0031638084611038835,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -7507,13 +7516,13 @@
           "accuracy_contribution": 0.4094180828340613
         },
         "J": {
-          "normalized_RMS": 9.500151941698464,
+          "normalized_RMS": 3.800060776679386,
           "sign_matches": 1,
           "parameters": 5,
           "sign_parameters": 3,
           "weighted_sign_accuracy": 0.26666666666666666,
           "sign_contribution": 0.13333333333333333,
-          "accuracy_contribution": 0.0006904612442034699
+          "accuracy_contribution": 0.035895311393418824
         },
         "magnetovolume": {
           "normalized_RMS": 2.0226505687028262,
@@ -7541,10 +7550,10 @@
         "ground_state": 1.0,
         "hull": 0.9581191696440854,
         "phonons": 0.0,
-        "J": 0.40761373714441457,
+        "J": 0.563274872762331,
         "magnetovolume": 0.38012043673615475
       },
-      "weighted_contribution_to_total": 0.00309596570617066,
+      "weighted_contribution_to_total": 0.0033160953038878253,
       "details": {
         "ground_state": {
           "seed_index": 1,
@@ -7562,13 +7571,13 @@
           "accuracy_contribution": 0.4581191696440854
         },
         "J": {
-          "normalized_RMS": 2.9688592115306602,
+          "normalized_RMS": 1.1875436846122644,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 4,
           "weighted_sign_accuracy": 0.6875,
           "sign_contribution": 0.34375,
-          "accuracy_contribution": 0.06386373714441455
+          "accuracy_contribution": 0.219524872762331
         },
         "magnetovolume": {
           "normalized_RMS": 2.6416859044782304,
@@ -7601,6 +7610,9 @@
       },
       "weighted_contribution_to_total": 0.0,
       "details": {
+        "ground_state": {
+          "failed": "Missing, nonfinite, or incorrectly sized parameter/moment array"
+        },
         "gate": "ground_state_incorrect_or_missing"
       }
     },
@@ -7612,10 +7624,10 @@
         "ground_state": 1.0,
         "hull": 0.3274853377451019,
         "phonons": 0.0,
-        "J": 0.61038985537871,
+        "J": 0.7732459089236414,
         "magnetovolume": 0.5785711904942962
       },
-      "weighted_contribution_to_total": 0.002969824514068607,
+      "weighted_contribution_to_total": 0.0032067107864468597,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7633,13 +7645,13 @@
           "accuracy_contribution": 0.3274853377451019
         },
         "J": {
-          "normalized_RMS": 2.1793204976562266,
+          "normalized_RMS": 0.8717281990624908,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.11038985537871
+          "accuracy_contribution": 0.2732459089236414
         },
         "magnetovolume": {
           "normalized_RMS": 2.669855769784997,
@@ -7667,10 +7679,10 @@
         "ground_state": 1.0,
         "hull": 0.6845047686089882,
         "phonons": 0.0,
-        "J": 0.5390193879382694,
+        "J": 0.6802578487206377,
         "magnetovolume": 0.550012873304714
       },
-      "weighted_contribution_to_total": 0.003217733096544244,
+      "weighted_contribution_to_total": 0.0034275572830621964,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7688,13 +7700,13 @@
           "accuracy_contribution": 0.18450476860898826
         },
         "J": {
-          "normalized_RMS": 3.6796650418982364,
+          "normalized_RMS": 1.4718660167592947,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.03901938793826938
+          "accuracy_contribution": 0.1802578487206377
         },
         "magnetovolume": {
           "normalized_RMS": 3.321556697638995,
@@ -7722,10 +7734,10 @@
         "ground_state": 1.0,
         "hull": 0.8761652431889473,
         "phonons": 0.0,
-        "J": 0.5852753481162674,
+        "J": 0.7464401151212068,
         "magnetovolume": 0.5809064905757007
       },
-      "weighted_contribution_to_total": 0.0035186672604948155,
+      "weighted_contribution_to_total": 0.0037557311782178554,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7743,13 +7755,13 @@
           "accuracy_contribution": 0.37616524318894723
         },
         "J": {
-          "normalized_RMS": 2.551727450465657,
+          "normalized_RMS": 1.0206909801862627,
           "sign_matches": 2,
           "parameters": 5,
           "sign_parameters": 2,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.0852753481162673
+          "accuracy_contribution": 0.24644011512120678
         },
         "magnetovolume": {
           "normalized_RMS": 2.6276007448974203,
@@ -7777,10 +7789,10 @@
         "ground_state": 1.0,
         "hull": 0.7329878826422608,
         "phonons": 0.0,
-        "J": 0.5391968328473146,
+        "J": 0.6805852993246909,
         "magnetovolume": 0.5500627697225543
       },
-      "weighted_contribution_to_total": 0.0032687821187146935,
+      "weighted_contribution_to_total": 0.003479060474088526,
       "details": {
         "ground_state": {
           "seed_index": 5,
@@ -7798,13 +7810,13 @@
           "accuracy_contribution": 0.23298788264226078
         },
         "J": {
-          "normalized_RMS": 3.6731191022727097,
+          "normalized_RMS": 1.469247640909084,
           "sign_matches": 5,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 1.0,
           "sign_contribution": 0.5,
-          "accuracy_contribution": 0.03919683284731458
+          "accuracy_contribution": 0.1805852993246909
         },
         "magnetovolume": {
           "normalized_RMS": 3.3201180794425267,
@@ -7832,10 +7844,10 @@
         "ground_state": 1.0,
         "hull": 0.1754239430762681,
         "phonons": 0.53830869004131,
-        "J": 0.32504686490770646,
+        "J": 0.3372383003971336,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0025786974500631014,
+      "weighted_contribution_to_total": 0.002611092132843337,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -7853,20 +7865,20 @@
           "accuracy_contribution": 0.1754239430762681
         },
         "J": {
-          "normalized_RMS": 13.381132432890066,
+          "normalized_RMS": 5.352452973156026,
           "sign_matches": 3,
           "parameters": 5,
           "sign_parameters": 5,
           "weighted_sign_accuracy": 0.65,
           "sign_contribution": 0.325,
-          "accuracy_contribution": 4.686490770645105e-05
+          "accuracy_contribution": 0.012238300397133564
         },
         "phonons": {
           "stable": true,
           "minimum_frequency_THz": -3.2272639301035094e-08,
-          "W1_THz": 3.7061844958640786,
+          "W1_THz": 3.7061844958640773,
           "stability_contribution": 0.5,
-          "spectrum_contribution": 0.03830869004130995
+          "spectrum_contribution": 0.03830869004130998
         }
       }
     },
@@ -7881,7 +7893,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.0031824561190074868,
+      "weighted_contribution_to_total": 0.0031926907694064307,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -7918,7 +7930,7 @@
         "J": null,
         "magnetovolume": null
       },
-      "weighted_contribution_to_total": 0.001750449348363197,
+      "weighted_contribution_to_total": 0.0017596622396703718,
       "details": {
         "ground_state": {
           "seed_index": 0,
@@ -7961,5 +7973,5 @@
       }
     }
   ],
-  "protocol_version": "0.2.1"
+  "protocol_version": "0.3"
 }
