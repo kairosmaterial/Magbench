@@ -2667,7 +2667,7 @@
       }
     ]
   },
-  "protocol_version": "0.2.1",
+  "protocol_version": "0.3",
   "runner_version": "0.6.0",
   "package_version": "0.1.0",
   "limits": {
@@ -2678,32 +2678,32 @@
   },
   "awaiting_publication": {
     "prophet-spin-v1l": {
-      "score_sha256": "8433024ce7446820e24e78eba6840bc9c270c734fd7001d8cd0a4c765052b991",
+      "score_sha256": "b4b3a1231b234a602c0f8779eca06a623826efae7639f1c69e9e5b2c4ed5ec1f",
       "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
       "inference_available": false
     },
     "prophet-spin-v2l": {
-      "score_sha256": "3eb46af0f3c7fe69632112ec5f1d2b8301c9a9257f6465b9fdc4a9759926aaf5",
+      "score_sha256": "c5c76fbbb5ae8a07b989b49e65d1cbd1552f497d5db4b19c3e47abb1e9d84902",
       "inference_sha256": "59197319c52c5ca48a7200c10390d9c0810d9605981846fbd25bc75087fff256",
       "inference_available": false
     },
     "prophet-spin-v1s": {
-      "score_sha256": "02180c93bff3cd219ee26ddbe6c94141f9f043f67f28313254ba0e6d95436adb",
+      "score_sha256": "9d434ac44ba54bd3f665f028f92b02453ab7f838028e0cca10a3a7937d67fcee",
       "inference_sha256": "b48076e299454ba70d16d899ca2b9bd59aa77701521494cdfe0434f983194298",
       "inference_available": true
     }
   },
   "cohorts": {
-    "ground_state": 191,
-    "hull": 191,
+    "ground_state": 190,
+    "hull": 190,
     "phonons": 111,
-    "J": 172,
-    "magnetovolume": 133
+    "J": 167,
+    "magnetovolume": 131
   },
   "draft_entries": {},
   "metadata_pending": {
     "prophet-spin-v1s-6a": {
-      "score_sha256": "13c16e1a989fc06e26176debff73aeb146b1e877d899bc8507b525e2012fb684",
+      "score_sha256": "0938a95dbc69809ebc25a9f520f8766519b97208993c83f187f32f10ff21458f",
       "inference_sha256": "a81bd05524a9e042a494ce9f144a149377eb46efed7455fee05368200931f7dd",
       "inference_available": true
     }

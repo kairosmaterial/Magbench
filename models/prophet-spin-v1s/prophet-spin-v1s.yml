@@ -36,7 +36,7 @@ evaluation:
   moment_initialisation: moment_head
   seed_amplitudes: uniform_3muB
   exchange_route: exchange_readout
-  protocol_version: 0.2.1
+  protocol_version: '0.3'
   data_version: 0.2.3
   runner_version: 0.6.0
 inference:
@@ -321,12 +321,12 @@ predictions:
       sha256: 92f6a3f2f86e018b392696286050d82128a79941f8cd41219981e00aaad7d30a
       size: 32023
 metrics:
-  total: 0.4377564772834376
-  ground_state: 0.15287958115183248
-  hull: 0.09849995163439723
+  total: 0.46095950528749463
+  ground_state: 0.15368421052631578
+  hull: 0.10007100401142038
   phonons: 0.05828413542392951
-  J: 0.06150187271703618
-  magnetovolume: 0.06659093635624218
+  J: 0.08177057871988411
+  magnetovolume: 0.06714957660594476
   ground_state_passes: 146
 notes:
   disclosure: 'to be provided: Confirm training and selection exposure to the benchmark

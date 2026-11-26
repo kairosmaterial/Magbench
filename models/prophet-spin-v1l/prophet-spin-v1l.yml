@@ -36,7 +36,7 @@ evaluation:
   moment_initialisation: moment_head
   seed_amplitudes: model
   exchange_route: exchange_readout
-  protocol_version: 0.2.1
+  protocol_version: '0.3'
   data_version: 0.2.3
   runner_version: 0.6.0
 inference:
@@ -330,13 +330,13 @@ predictions:
       sha256: 65a1959358aaf761cda035e1b63fecc3edf9cf275a6fec4924814756f32d8244
       size: 32055
 metrics:
-  total: 0.5467798064153615
-  ground_state: 0.16230366492146597
-  hull: 0.12345164372773759
+  total: 0.5721042755377148
+  ground_state: 0.16210526315789475
+  hull: 0.1273974457517196
   phonons: 0.14870333837566863
-  J: 0.06359435353172398
-  magnetovolume: 0.04872680585876527
-  ground_state_passes: 155
+  J: 0.08488701032475238
+  magnetovolume: 0.049011217927679415
+  ground_state_passes: 154
 notes:
   disclosure: to be provided
   publication: The release repository is private until the owner enables public access.
