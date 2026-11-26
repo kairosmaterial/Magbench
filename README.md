@@ -44,7 +44,7 @@ For J and the volume-exchange coupling, `R` is the normalised root-mean-square e
 
 ## Usage
 
-To evaluate a model from a checkpoint, set up the environment as described in [`benchmark_runner/README.md`](benchmark_runner/README.md), then run the magnetic ground-state search with joint relaxation, the candidate check, the downstream properties and the scoring. The model weights are supplied by the evaluator.
+To evaluate a model from a checkpoint, set up the environment as described in [`benchmark_runner/README.md`](benchmark_runner/README.md), then run the restricted sign-pattern screening and joint relaxation, the candidate check, the downstream properties and the scoring. The model weights are supplied by the evaluator.
 
 With existing model predictions, only NumPy and SciPy are needed. Score `predictions.json` together with the phonon prediction files next to it; the field format is given in `targets/scoring.json` of the dataset.
 
@@ -57,7 +57,7 @@ magbench score --targets data/targets --predictions /path/to/predictions.json --
 
 Prophet-Spin v1s, with moment-head initialisation and exchange-head readout, scores **0.437756477 / 1** under protocol v0.2.1 and data v0.2.3.
 
-| Ground state | MP hull with spin | Phonons with spin | Exchange J | dJ/dlnV |
+| Experimental-order stability | MP hull with spin | Phonons with spin | Exchange J | dJ/dlnV |
 |---:|---:|---:|---:|---:|
 | 0.152879581 | 0.098499952 | 0.058284135 | 0.061501873 | 0.066590936 |
 
@@ -106,3 +106,19 @@ python -m pytest -q
 Follow [CONTRIBUTING.md](CONTRIBUTING.md) for the strict schema, disclosure rule, local replay, CI checks and review steps. Protocol, data revision and target hashes are pinned in `benchmark.json`; the initial target upload is still in progress.
 
 Training datasets have YAML records in [`datasets/`](datasets/). Model cards reference these records; dataset submission is described in [Submitting a dataset](CONTRIBUTING.md#submitting-a-dataset).
+
+## References and acknowledgements
+
+Experimental magnetic structures and their original papers are credited on the
+site's References page, built from `docs/material_references.json`, a snapshot
+of the per-material `reference.json` files in data v0.2.3. The snapshot preserves
+selected MAGNDATA identifiers and DOIs; additional phase references are labelled
+as such. Refresh it from the extracted dataset with
+`python scripts/export_references.py --data data` before rebuilding the site. The Materials Project supplies the historical MP2020 hull reference.
+
+For experimental exchange constants, see M. Alaei, Z. Mosleh, N. Rezaei and
+A. R. Oganov, *Experimental Exchange Interaction Dataset for Magnetic Materials:
+Spin Waves to MC Simulations*, Scientific Data **12**, 1832 (2025),
+[doi:10.1038/s41597-025-06099-x](https://doi.org/10.1038/s41597-025-06099-x).
+This compilation credits experimental exchange measurements; MagBench scores
+DFT energy-mapping references.

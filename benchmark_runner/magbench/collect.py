@@ -1,10 +1,12 @@
 """Merge disjoint GPU shards and score; unfinished runs are explicitly provisional."""
-import argparse,json,os,shutil,time
+import argparse,json,os,shutil,sys,time
 from pathlib import Path
 from .cli import load,save
 from .scoring import evaluate
 
 def collect(root,targets):
+ if not sys.platform.startswith('linux') or not Path('/proc/self/cmdline').is_file():
+  raise RuntimeError('Worker liveness collection requires Linux procfs mounted at /proc')
  launch=load(root/'launch.json');pred={};workers=[];counts={'ground_state':0,'J':0,'magnetovolume':0,'phonons':0}
  destination=root/'combined';destination.mkdir(exist_ok=True)
  for w in launch['workers']:

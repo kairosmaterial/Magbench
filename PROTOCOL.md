@@ -1,11 +1,22 @@
 # MagBench protocol v0.2.1
 
-MagBench measures magnetic ground-state search, energy relative to the Materials Project hull, phonon spectra, exchange parameters J, and volume–exchange derivatives dJ/dlnV. Each dimension contributes at most 0.20 to a total of 1.00. Larger totals rank first. Within each dimension, score each material first and average over its fixed cohort, including failures as zero. The delivered scorer and reference arrays define the numerical protocol.
+The ground-state dimension tests the **stability of the experimental magnetic
+order within the supplied cell**. The experimental sign pattern is always in
+the screening pool (up to global reversal). No supercells or alternative ordering
+wavevectors are searched. At most 32 patterns are screened; spaces with up to
+six magnetic sites are enumerated up to global reversal, while larger spaces
+use seeded random patterns with a reserved experimental pattern. For two-site
+materials the choice is FM versus AFM. This is a restricted stability test, not
+a global ground-state guarantee. Moment magnitudes are compared with DFT, not
+experiment, under the existing 25% criterion.
+
+
+MagBench measures stability of the experimental magnetic order within the supplied cell, energy relative to the Materials Project hull, phonon spectra, exchange parameters J, and volume–exchange derivatives dJ/dlnV. Each dimension contributes at most 0.20 to a total of 1.00. Larger totals rank first. Within each dimension, score each material first and average over its fixed cohort, including failures as zero. The delivered scorer and reference arrays define the numerical protocol.
 
 <!-- cohorts:start -->
 | Dimension | Fixed cohort | Total weight |
 |---|---:|---:|
-| Ground state | 191 | 0.20 |
+| Experimental-order stability | 191 | 0.20 |
 | MP hull with spin | 191 | 0.20 |
 | Phonons with spin | 111 | 0.20 |
 | Exchange J | 172 | 0.20 |

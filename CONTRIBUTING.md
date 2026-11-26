@@ -11,6 +11,27 @@ A submission is one pull request that adds the folder `models/<model_key>/`. The
 
 Weights and prediction files are hosted by the submitter at stable HTTPS addresses, for example Hugging Face, Zenodo or figshare. They are not committed to this repository.
 
+## Physical comparability
+
+The ground-state dimension tests stability of the experimental magnetic order
+within the supplied cell: the experimental pattern is always in the pool,
+no supercells are searched, and at most 32 sign patterns are screened. For two
+magnetic sites this is FM versus AFM. Moment amplitudes are compared with DFT,
+not experimental moments.
+
+Hull scores require raw total cell energies on the reference VASP/PBE energy
+zero, compatible with the historical Materials Project GGA/GGA+U MP2020 recipe
+and its element-specific potentials and U values. The scorer adds the stored
+MP2020 correction exactly once; do not submit formation energies, per-atom
+energies, already corrected energies or energies with arbitrary offsets.
+Models trained with other functionals, pseudopotentials or atomic reference
+energies cannot assume their raw energies share this zero. They need a
+scientifically justified, disclosed alignment to the reference convention and
+independent validation before hull scores are comparable; MP2020 corrections
+alone do not convert another functional into PBE. No offset is fitted by the
+runner. The common magnetic gate and joint relaxation still apply to all
+models and can also be affected by a changed functional.
+
 ## Files in the pull request
 
 ```text
@@ -22,7 +43,7 @@ models/<model_key>/
 
 A model pull request may also add new `datasets/<dataset_key>.yml` records referenced by its card. Existing dataset records and other model folders are not changed.
 
-`inference.py` defines the adapter that connects the model to the runner. The interface is `initial_moments`, `energy`, `energy_gradient`, `joint_efs`, `efs` and, optionally, `exchange_bonds`; see `benchmark_runner/magbench/adapters.py` and [`benchmark_runner/README.md`](benchmark_runner/README.md).
+`inference.py` defines the adapter that connects the model to the runner. Use `--adapter module:Class`; required and optional methods, units and shapes are documented in `benchmark_runner/magbench/adapters.py` and [`benchmark_runner/README.md`](benchmark_runner/README.md).
 
 ## Model card
 
