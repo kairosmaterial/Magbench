@@ -1,0 +1,57 @@
+{
+  "protocol_version": "0.3",
+  "reference_data_version": "0.2.3",
+  "exclusions": [
+    {
+      "id": "033",
+      "name": "CoO",
+      "cohorts": [
+        "J"
+      ],
+      "reason": "High residual in the truncated Heisenberg exchange fit."
+    },
+    {
+      "id": "080",
+      "name": "KCoF3",
+      "cohorts": [
+        "J"
+      ],
+      "reason": "High residual in the truncated Heisenberg exchange fit."
+    },
+    {
+      "id": "108",
+      "name": "Mn2Au",
+      "cohorts": [
+        "J",
+        "magnetovolume"
+      ],
+      "reason": "High residual in the truncated Heisenberg exchange fit."
+    },
+    {
+      "id": "208",
+      "name": "Nb2Co4O9",
+      "cohorts": [
+        "J",
+        "magnetovolume"
+      ],
+      "reason": "High residual in the truncated Heisenberg exchange fit."
+    },
+    {
+      "id": "194",
+      "name": "Gd2CuO4",
+      "cohorts": [
+        "ground_state",
+        "hull",
+        "phonons",
+        "J",
+        "magnetovolume"
+      ],
+      "reason": "Cu moment collapse changes the reference magnetic sites to Gd; the reference does not test the intended Cu order."
+    }
+  ],
+  "hull_side_tolerance_meV_atom": 1.0,
+  "J": {
+    "relative_scale": 0.5,
+    "absolute_floor_meV": 0.5
+  }
+}

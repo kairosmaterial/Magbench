@@ -11,3 +11,6 @@ dependencies = ["numpy>=1.26", "scipy>=1.11", "ase>=3.23", "phonopy>=2.30"]
 magbench = "magbench.cli:main"
 [tool.setuptools.packages.find]
 include = ["magbench*"]
+
+[tool.setuptools.package-data]
+magbench = ["protocols/*.json"]

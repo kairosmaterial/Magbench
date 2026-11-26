@@ -118,9 +118,12 @@ def validate(key,*,root=ROOT,policy_root=ROOT,offline=False,data=None,prediction
     def stored():
         result=read(score_path);compare(metrics_from(result),card['metrics'],'declared metrics')
         if result.get('protocol_version') != settings['protocol_version']:raise ValueError('Score protocol differs')
-        if len(result['materials'])!=settings['cohorts']['ground_state']:raise ValueError('Scores must cover the full pinned ground-state cohort')
+        if len({row['id'] for row in result['materials']}) != len(result['materials']):
+            raise ValueError('Duplicate score material IDs')
         for dimension,count in settings['cohorts'].items():
-            if result['dimensions'][dimension]['materials']!=count:raise ValueError('Score cohort differs from pinned data')
+            if (result['dimensions'][dimension]['materials'] != count
+                    or sum(row['scores'][dimension] is not None for row in result['materials']) != count):
+                raise ValueError('Scores must cover the full pinned dimension cohort')
         return 'Declared metrics agree with scores.json within 1e-9; ground-state passes agree'
     review.check('Stored scores and metrics',stored)
     def unavailable(name,reason):
